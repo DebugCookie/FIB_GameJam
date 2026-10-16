@@ -1,0 +1,14 @@
+{
+  "pro_employee": [
+	{
+	  "text": "Please pay us",
+	  "weight": 10
+	}
+  ],
+  "pro_company": [
+	{
+	  "text": "We are not paying",
+	  "weight": 5
+	}
+  ]
+}
