@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://kmm16nv7hkj2"
+path="res://.godot/imported/Baby_Snivel-003.wav-31f2af456db51e82c9cec78d1c8f253c.sample"
+
+[deps]
+
+source_file="res://Audio/Audio Files/Baby_Snivel-003.wav"
+dest_files=["res://.godot/imported/Baby_Snivel-003.wav-31f2af456db51e82c9cec78d1c8f253c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
