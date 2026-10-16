@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dddr1rp2nt1ff"
+path="res://.godot/imported/Ambience_Office.wav-802f587f3b86e7f4d088ab84dafb462b.sample"
+
+[deps]
+
+source_file="res://Audio/Audio Files/Ambience_Office.wav"
+dest_files=["res://.godot/imported/Ambience_Office.wav-802f587f3b86e7f4d088ab84dafb462b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

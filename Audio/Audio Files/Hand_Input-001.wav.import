@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c7nwsylysqpeq"
+path="res://.godot/imported/Hand_Input-001.wav-ab6875464402e6b58aa0f57e189d88f5.sample"
+
+[deps]
+
+source_file="res://Audio/Audio Files/Hand_Input-001.wav"
+dest_files=["res://.godot/imported/Hand_Input-001.wav-ab6875464402e6b58aa0f57e189d88f5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
