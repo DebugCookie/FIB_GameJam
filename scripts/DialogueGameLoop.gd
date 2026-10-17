@@ -5,11 +5,11 @@ extends Node3D
 @onready var game_ui: GameUI = $GameUI 
 
 @export var day_duration_minutes: float = 2.0  
-@export var money_quota: int = 500             
+@export var money_quota: int = 30000           # Balanserad startkvot ($30 000)
 @export var loading_screen_duration: float = 3.0 
 
 var current_day: int = 1                       
-var current_money: int = 0
+var current_money: int = 0 
 var company_happiness: int = 100 
 
 var time_remaining_seconds: float = 0.0
@@ -29,12 +29,9 @@ func _ready() -> void:
 	time_remaining_seconds = total_day_seconds
 		
 	update_ui()
-	
-	# Starta dygns- och karaktärshanteringen direkt vid scenladdning
 	_start_first_day()
 
 func _start_first_day() -> void:
-	# Släng upp "FÖRBEREDER DAG 1..." i X antal sekunder innan klockan tickar
 	await game_ui.trigger_loading_screen(current_day, loading_screen_duration)
 	
 	for character in characters_container.get_children():
@@ -59,34 +56,34 @@ func modify_game_stats(changes: Dictionary) -> void:
 	company_happiness += int(changes.get("Moral", 0))
 	
 	company_happiness = clamp(company_happiness, 0, 100)
-	
 	update_ui()
 	
 	if company_happiness <= 0:
 		trigger_loss("Personalen har fått nog. Företagets Moral nådde 0%!")
 
-
 func update_ui() -> void:
-	global_morale_ui.update_morale_display(company_happiness, current_money)
+	global_morale_ui.update_morale_display(company_happiness, current_money, money_quota)
 
 func check_win_conditions() -> void:
 	if current_money >= money_quota:
-		print("GRATTIS! Du klarade dagens kvot på %d! (Du fick ihop %d)" % [money_quota, current_money])
-		start_next_day()
+		print("Dagen avklarad! Öppnar vinstmenyn.")
+		game_ui.show_day_win(current_money, money_quota)
 	else:
-		trigger_loss("Tiden tog slut! Du nådde inte pengakvoten på %d. Du fick bara ihop $%d." % [money_quota, current_money])
+		trigger_loss("Tiden tog slut! Du nådde inte pengakvoten på $%d. Du fick bara ihop $%d." % [money_quota, current_money])
 
 func start_next_day() -> void:
 	current_day += 1
 	current_money = 0 
 	time_remaining_seconds = total_day_seconds 
 	
-	money_quota += 250 
+	# Exponentiell ökning på 40% mer mål för varje dygn man klarar
+	money_quota = int(money_quota * 1.4)
 	
 	update_ui()
 	
+	# Visar den svarta laddningsskärmen som pausar spelet i X sekunder
 	await game_ui.trigger_loading_screen(current_day, loading_screen_duration)
-	print("--- STARTAR DAG %d (Ny kvot: %d) ---" % [current_day, money_quota])
+	print("--- STARTAR DAG %d (Ny kvot: $%d) ---" % [current_day, money_quota])
 
 func trigger_loss(_reason: String) -> void:
 	is_game_over = true

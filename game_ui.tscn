@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b00jpei658c0f" path="res://game_ui.gd" id="1_3rlp6"]
 [ext_resource type="PackedScene" uid="uid://k6oir2aigdx7" path="res://pause_menu.tscn" id="3_xlnb1"]
+[ext_resource type="PackedScene" uid="uid://bki582ykwunui" path="res://day_win_screen.tscn" id="4_3rlp6"]
 [ext_resource type="PackedScene" uid="uid://dsj1srax8i15j" path="res://game_over_screen.tscn" id="4_vealc"]
 
 [node name="GameUI" type="CanvasLayer" unique_id=121058546]
@@ -32,3 +33,5 @@ alignment = 1
 layout_mode = 2
 text = "Getting Ready for...."
 horizontal_alignment = 1
+
+[node name="DayWinScreen" parent="." unique_id=289236852 instance=ExtResource("4_3rlp6")]

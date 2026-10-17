@@ -9,11 +9,13 @@ class_name GlobalMorale3D
 @onready var round_label: Label = %RoundLabel
 @onready var time_label: Label = %TimeLabel
 
-func update_morale_display(happiness: int, money: int) -> void:
+func update_morale_display(happiness: int, money: int, quota: int) -> void:
 	happiness_bar.value = happiness
-	money_bar.value = money
 	happiness_label.text = "Company Happiness: %d%%" % happiness
-	money_label.text = "Money: $%d" % money
+	
+	money_bar.max_value = quota
+	money_bar.value = money
+	money_label.text = "Money: $%d / $%d" % [money, quota]
 
 func update_time_and_round(current_day: int, time_left_seconds: float) -> void:
 	round_label.text = "DAG: %d" % current_day
