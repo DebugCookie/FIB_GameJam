@@ -4,12 +4,14 @@
 [ext_resource type="Script" uid="uid://mtv8dcbqu78x" path="res://camera_3d.gd" id="1_sm6nt"]
 [ext_resource type="PackedScene" uid="uid://dt7ibabu7str8" path="res://global_morale_3d.tscn" id="2_3pouy"]
 [ext_resource type="PackedScene" uid="uid://dlnm4crlnxca7" path="res://character_3d.tscn" id="3_be4fj"]
-[ext_resource type="Material" uid="uid://brmrk5kgdgk5b" path="res://Materials/M_Wall.tres" id="3_nhr8d"]
 [ext_resource type="Texture2D" uid="uid://bjucx6bb3xm2j" path="res://Art Assets/2d/characters/Richard.png" id="4_6hq1p"]
 [ext_resource type="Shader" uid="uid://r0uka4i5e0rn" path="res://Art Assets/PixelShader.gdshader" id="5_2ma1t"]
 [ext_resource type="PackedScene" uid="uid://dtk0f1owdt8m8" path="res://Art Assets/3D/SM_Table.glb" id="6_dvp7v"]
-[ext_resource type="PackedScene" uid="uid://cefe8rmec2chl" path="res://Art Assets/3D/Floor.glb" id="7_8kcya"]
+[ext_resource type="PackedScene" uid="uid://cefe8rmec2chl" path="res://Art Assets/3D/SM_Floor.glb" id="7_8kcya"]
 [ext_resource type="PackedScene" uid="uid://cx5h838bf2aeh" path="res://Art Assets/3D/SM_BossTable.glb" id="8_vr2aq"]
+[ext_resource type="PackedScene" uid="uid://cfik1lbetgv6s" path="res://Art Assets/3D/SM_Wall.glb" id="10_3pouy"]
+[ext_resource type="PackedScene" uid="uid://8nedl1c1b5fr" path="res://Art Assets/3D/SM_Roof.glb" id="11_be4fj"]
+[ext_resource type="PackedScene" uid="uid://4ubhy7ltsfgo" path="res://Art Assets/3D/SM_Window.glb" id="12_2p1gs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n20ym"]
 
@@ -20,14 +22,10 @@ sky_material = SubResource("ProceduralSkyMaterial_n20ym")
 background_mode = 2
 sky = SubResource("Sky_l0xq5")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_eugri"]
-
 [sub_resource type="BoxMesh" id="BoxMesh_eugri"]
 size = Vector3(1, 1, 1.1166992)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_eugri"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_n20ym"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_cejtf"]
 
@@ -90,21 +88,6 @@ environment = SubResource("Environment_eugri")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=9738278]
 transform = Transform3D(0.40224501, -0.0007020508, -0.9155318, 0.0017453285, 0.9999985, -1.4978117e-10, 0.91553044, -0.0015979038, 0.4022456, 0.9068241, 1.321417, 0)
 
-[node name="Floor2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1600939644]
-transform = Transform3D(0.41408738, 0, 0, 0, -1.5458856e-08, -0.19107446, 0, 0.3536574, -8.3521305e-09, 0, 0.10513598, -0.6467298)
-material_override = ExtResource("3_nhr8d")
-mesh = SubResource("PlaneMesh_eugri")
-
-[node name="Floor4" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=2054202927]
-transform = Transform3D(0.41408733, 0, 0, 0, -0.3536574, 3.573477e-08, 0, -3.091771e-08, -0.40875807, -0.041405916, 0.27052936, -0.35090935)
-material_override = ExtResource("3_nhr8d")
-mesh = SubResource("PlaneMesh_eugri")
-
-[node name="Floor3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1028841253]
-transform = Transform3D(-1.8100334e-08, -0.3536574, 8.35213e-09, 0, -1.5458854e-08, -0.19107446, 0.41408736, -1.5458854e-08, -9.925824e-16, 0.34430057, 0.10513598, -0.3265216)
-material_override = ExtResource("3_nhr8d")
-mesh = SubResource("PlaneMesh_eugri")
-
 [node name="FrontTable" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1682725433]
 transform = Transform3D(0.002905508, 0, 0.108521916, 0, 0.007782675, 0, -0.068360426, 0, 0.004612482, -0.006332211, -0.041886076, -0.08386652)
 mesh = SubResource("BoxMesh_eugri")
@@ -136,22 +119,6 @@ mesh = SubResource("CylinderMesh_eugri")
 [node name="Chair7" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1874085373]
 transform = Transform3D(0.052500002, 0, 0, 0, 0.035515994, 0, 0, 0, 0.052500002, -0.28293872, -0.075010315, -0.14953485)
 mesh = SubResource("CylinderMesh_eugri")
-
-[node name="LeftWall" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1698488134]
-transform = Transform3D(0.02690353, 0, 0, 0, -1.9072168e-09, -0.57313234, 0, 0.043632034, -2.5052408e-08, -0.41377494, 0.008098759, -0.62932205)
-mesh = SubResource("BoxMesh_n20ym")
-
-[node name="LeftWall2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=659237173]
-transform = Transform3D(0.02690353, 0, 0, 0, -1.9072168e-09, -0.57313234, 0, 0.043632034, -2.5052408e-08, -0.41377494, 0.008098759, -0.366968)
-mesh = SubResource("BoxMesh_n20ym")
-
-[node name="LeftWall3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1299078288]
-transform = Transform3D(0.02690353, 0, 0, 0, -1.9072168e-09, -0.57313234, 0, 0.043632034, -2.5052408e-08, -0.41377494, 0.008098759, -0.15294383)
-mesh = SubResource("BoxMesh_n20ym")
-
-[node name="LeftWall4" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1745836381]
-transform = Transform3D(0.02690353, 0, 0, 0, -1.9072168e-09, -0.57313234, 0, 0.043632034, -2.5052408e-08, -0.41377494, 0.008098759, 0.07101689)
-mesh = SubResource("BoxMesh_n20ym")
 
 [node name="TV" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1998647896]
 transform = Transform3D(0.26148742, 0, 0, 0, 0.15409297, 0, 0, 0, 0.007278506, -0.052960664, 0.06392069, -0.533362)
@@ -227,4 +194,16 @@ transform = Transform3D(0.095, 0, 0, 0, 0.095, 0, 0, 0, 0.095, -0.009925753, -0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07681596, -0.059896484)
 
 [node name="Floor" parent="." unique_id=970781916 instance=ExtResource("7_8kcya")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33426258, -0.072404355, -0.219449)
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0.30511138, -0.071014374, -0.21940626)
+
+[node name="SM_Wall" parent="." unique_id=1219317071 instance=ExtResource("10_3pouy")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.39856073, -0.13130234, -0.31957725)
+
+[node name="SM_Wall2" parent="." unique_id=1887927298 instance=ExtResource("10_3pouy")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0.008830994, -0.13130234, -0.62866175)
+
+[node name="SM_Roof" parent="." unique_id=1421866103 instance=ExtResource("11_be4fj")]
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, -0.063537, 0.28677952, -0.24673656)
+
+[node name="SM_Window" parent="." unique_id=763268013 instance=ExtResource("12_2p1gs")]
+transform = Transform3D(-0.71, 0, -1.07207015e-07, 0, 0.80805326, 0, 1.07207015e-07, 0, -0.71, -0.38354537, -0.055646427, -0.23457122)
