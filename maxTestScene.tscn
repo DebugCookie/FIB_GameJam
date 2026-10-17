@@ -48,7 +48,7 @@ material_override = ExtResource("3_nhr8d")
 mesh = SubResource("PlaneMesh_eugri")
 
 [node name="Floor4" type="MeshInstance3D" parent="." unique_id=2054202927]
-transform = Transform3D(0.41408733, 0, 0, 0, -0.3536574, 3.573477e-08, 0, -3.091771e-08, -0.40875807, -0.040180683, 0.2705294, -0.31053728)
+transform = Transform3D(0.41408733, 0, 0, 0, -0.3536574, 3.573477e-08, 0, -3.091771e-08, -0.40875807, -0.040180683, 0.2705294, -0.35054985)
 material_override = ExtResource("3_nhr8d")
 mesh = SubResource("PlaneMesh_eugri")
 
