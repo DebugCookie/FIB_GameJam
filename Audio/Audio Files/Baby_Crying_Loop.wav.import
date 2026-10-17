@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://0evhfvq5pi74"
-path="res://.godot/imported/Baby_Crying.wav-572b32bdb8791deb6d43ec383c724708.sample"
+path="res://.godot/imported/Baby_Crying_Loop.wav-a677b8ae95471f0ee65d521e4ab51690.sample"
 
 [deps]
 
-source_file="res://Audio/Audio Files/Baby_Crying.wav"
-dest_files=["res://.godot/imported/Baby_Crying.wav-572b32bdb8791deb6d43ec383c724708.sample"]
+source_file="res://Audio/Audio Files/Baby_Crying_Loop.wav"
+dest_files=["res://.godot/imported/Baby_Crying_Loop.wav-a677b8ae95471f0ee65d521e4ab51690.sample"]
 
 [params]
 

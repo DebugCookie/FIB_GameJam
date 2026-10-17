@@ -49,7 +49,7 @@ void fragment() {
 	
 	float h_outline = step(0.1, h_depth) * step(4.0, distance(dl, dr));
 	float v_outline = step(0.1, v_depth) * step(4.0, distance(du, dd));
-	float depth_outline = 1.0 - step(0.1, h_outline + v_outline) * 0.8; //Last number affects the outlines opacity
+	float depth_outline = 1.0 - step(0.1, h_outline + v_outline) * 0.9; //Last number affects the outlines opacity
 	
 	vec3 nc = get_normal(uvs[0]);
 	vec3 nu = get_normal(uvs[1]);

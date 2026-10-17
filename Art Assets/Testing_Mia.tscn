@@ -1,50 +1,77 @@
-[gd_scene format=3 uid="uid://cbawcfb22vet6"]
+[gd_scene format=3 uid="uid://c1i3oqdtqe50u"]
 
 [ext_resource type="PackedScene" uid="uid://dehouo811dwsp" path="res://Art Assets/3D/DancingQueen.glb" id="1_ikpru"]
 [ext_resource type="Shader" uid="uid://r0uka4i5e0rn" path="res://Art Assets/PixelShader.gdshader" id="2_85mbl"]
+[ext_resource type="Texture2D" uid="uid://bjucx6bb3xm2j" path="res://Art Assets/2d/characters/Richard.png" id="3_85mbl"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vd4pe"]
-ground_bottom_color = Color(0.45665157, 0.6699885, 0.8971463, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gneso"]
+sky_top_color = Color(0.25469914, 0.4692822, 0.64269966, 1)
+sky_horizon_color = Color(0.9976782, 1.080861, 1.1484962, 1)
+ground_bottom_color = Color(0.4497524, 0.56790036, 0.66502357, 1)
+ground_horizon_color = Color(0.9976782, 1.080861, 1.1484962, 1)
 
-[sub_resource type="Sky" id="Sky_c8urk"]
-sky_material = SubResource("ProceduralSkyMaterial_vd4pe")
+[sub_resource type="Sky" id="Sky_vab4a"]
+sky_material = SubResource("ProceduralSkyMaterial_gneso")
 
-[sub_resource type="Environment" id="Environment_c8urk"]
+[sub_resource type="Environment" id="Environment_miu4b"]
 background_mode = 2
-sky = SubResource("Sky_c8urk")
-reflected_light_source = 2
+sky = SubResource("Sky_vab4a")
+glow_enabled = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_c8urk"]
-render_priority = 0
-shader = ExtResource("2_85mbl")
+[sub_resource type="CylinderMesh" id="CylinderMesh_ecnap"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_bsh05"]
-material = SubResource("ShaderMaterial_c8urk")
 flip_faces = true
 size = Vector2(2, 2)
 
-[sub_resource type="BoxMesh" id="BoxMesh_ecnap"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5pw1c"]
+render_priority = 0
+shader = ExtResource("2_85mbl")
 
-[node name="Testing" type="Node3D" unique_id=762403487]
+[node name="Test" type="Node3D" unique_id=962362401]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2102032856]
-transform = Transform3D(-0.6996633, -0.7144727, -3.1230595e-08, -0.15686977, 0.15361817, 0.97559893, -0.6970388, 0.6825907, -0.21956018, 0, 0, 0)
-light_energy = 3.25
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=769381364]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=236213158]
+handle_input_locally = false
+size = Vector2i(640, 360)
+render_target_update_mode = 4
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=1870848881]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." unique_id=1319491634 instance=ExtResource("1_ikpru")]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1540882426]
+environment = SubResource("Environment_miu4b")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1771364409]
-transform = Transform3D(1, 0, 0, 0, 0.9999565, 0.0093305735, 0, -0.0093305735, 0.9999565, 0, 1.109246, 1.8979821)
+[node name="Character" parent="SubViewportContainer/SubViewport" unique_id=906504319 instance=ExtResource("1_ikpru")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8641578, 1.1920929e-07, 0.2416557)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1927497522]
-environment = SubResource("Environment_c8urk")
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=48839100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0345328, 2.6217523)
 
-[node name="Shader" type="MeshInstance3D" parent="." unique_id=1070061092]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0058328, -0.62292767)
+[node name="Cylinder" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=899694632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3624449, 1.3577304, 0.48419833)
+mesh = SubResource("CylinderMesh_ecnap")
+
+[node name="Shader" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1267607463]
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_bsh05")
+surface_material_override/0 = SubResource("ShaderMaterial_5pw1c")
 
-[node name="Cube" type="MeshInstance3D" parent="." unique_id=1228888211]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0706282, 0.6164012, -0.44356477)
-mesh = SubResource("BoxMesh_ecnap")
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=673933955]
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_bsh05")
+surface_material_override/0 = SubResource("ShaderMaterial_5pw1c")
+
+[node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport" unique_id=818819205]
+transform = Transform3D(0.31, 0, 0, 0, 0.31, 0, 0, 0, 0.31, -0.009995103, 1.3384689, 0.9617996)
+texture = ExtResource("3_85mbl")
