@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxo2y0iyt8bp4"
-path.s3tc="res://.godot/imported/Table_Material.png-7ca204b6d5e53af95e4117684b22e30f.s3tc.ctex"
+uid="uid://dlbo8adjey1qf"
+path.s3tc="res://.godot/imported/SM_SmallTable_SM_BossTable_DefaultMaterial_Base_color.png-6f7e65deb8e3bed525bb2015e827b0da.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "8e2817d3e7b000597ba7a8ff97873f53"
+"md5": "cd677cb436f5d335b21fc093668cbb1d"
 }
 
 [deps]
 
-source_file="res://Art Assets/2d/Texture/Table_Material.png"
-dest_files=["res://.godot/imported/Table_Material.png-7ca204b6d5e53af95e4117684b22e30f.s3tc.ctex"]
+source_file="res://Art Assets/2d/Texture/SM_SmallTable_SM_BossTable_DefaultMaterial_Base_color.png"
+dest_files=["res://.godot/imported/SM_SmallTable_SM_BossTable_DefaultMaterial_Base_color.png-6f7e65deb8e3bed525bb2015e827b0da.s3tc.ctex"]
 
 [params]
 

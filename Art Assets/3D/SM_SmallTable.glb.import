@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cx5h838bf2aeh"
-path="res://.godot/imported/SM_BossTable.glb-ae9bc7938369a94c7fbcd0c34f687b3c.scn"
+uid="uid://dbo8yhifgwmg2"
+path="res://.godot/imported/SM_SmallTable.glb-c56155ef25115991d47417956cef20ec.scn"
 
 [deps]
 
-source_file="res://Art Assets/3D/SM_BossTable.glb"
-dest_files=["res://.godot/imported/SM_BossTable.glb-ae9bc7938369a94c7fbcd0c34f687b3c.scn"]
+source_file="res://Art Assets/3D/SM_SmallTable.glb"
+dest_files=["res://.godot/imported/SM_SmallTable.glb-c56155ef25115991d47417956cef20ec.scn"]
 
 [params]
 

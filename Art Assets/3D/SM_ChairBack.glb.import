@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://68onlydndcoe"
-path="res://.godot/imported/SM_Table.glb-e6d759702ebd32a1b3ad642ab1661fed.scn"
+uid="uid://cck5di3nf3jgx"
+path="res://.godot/imported/SM_ChairBack.glb-442b5652db46c6bce3c90e738a5ad100.scn"
 
 [deps]
 
-source_file="res://Art Assets/3D/SM_Table.glb"
-dest_files=["res://.godot/imported/SM_Table.glb-e6d759702ebd32a1b3ad642ab1661fed.scn"]
+source_file="res://Art Assets/3D/SM_ChairBack.glb"
+dest_files=["res://.godot/imported/SM_ChairBack.glb-442b5652db46c6bce3c90e738a5ad100.scn"]
 
 [params]
 
