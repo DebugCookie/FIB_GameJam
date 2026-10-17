@@ -35,7 +35,7 @@ process_physics_priority = 20
 priority = 20
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/Area3D" unique_id=1045727943]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.031495094, 0.02917862, -0.0234375)
+transform = Transform3D(1, 0, 0, 0, 1.605, 0, 0, 0, 1, -0.031495094, -1.3721715, -0.0234375)
 shape = SubResource("BoxShape3D_ddgnj")
 
 [connection signal="input_event" from="CharacterBody3D/Area3D" to="CharacterBody3D" method="_on_area_3d_input_event"]
