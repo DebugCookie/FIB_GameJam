@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dlnm4crlnxca7" path="res://character_3d.tscn" id="3_be4fj"]
 [ext_resource type="Texture2D" uid="uid://d26n1kvvr5t24" path="res://Art Assets/2d/characters/Richard.png" id="4_6hq1p"]
 [ext_resource type="Shader" uid="uid://r0uka4i5e0rn" path="res://Art Assets/PixelShader.gdshader" id="5_2ma1t"]
-[ext_resource type="PackedScene" uid="uid://dtk0f1owdt8m8" path="res://Art Assets/3D/SM_Table.glb" id="6_dvp7v"]
 [ext_resource type="Texture2D" uid="uid://2tyqypvy44bs" path="res://Art Assets/2d/characters/Emo_ClosedMouth.png" id="6_ix60g"]
 [ext_resource type="Texture2D" uid="uid://biq43dpdaxepw" path="res://Art Assets/2d/characters/Karen_ClosedMouth.png" id="7_10k1m"]
 [ext_resource type="Texture2D" uid="uid://6u70o77gaabt" path="res://Art Assets/2d/characters/Nepo_ClosedMouth.png" id="8_7oxqh"]
@@ -24,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://dtsv0a4gve7xn" path="res://Art Assets/3D/SM_Door.glb" id="23_25qrb"]
 [ext_resource type="PackedScene" uid="uid://rrk0ivukfx18" path="res://Art Assets/3D/SM_Picture.glb" id="24_3ydh5"]
 [ext_resource type="PackedScene" uid="uid://ccm6ypo7s62uj" path="res://Art Assets/3D/SM_WhiteBoard.glb" id="25_1y33g"]
+[ext_resource type="PackedScene" uid="uid://wlwcjb66bw3f" path="res://Art Assets/3D/Table.glb" id="25_3ydh5"]
 [ext_resource type="PackedScene" uid="uid://cefe8rmec2chl" path="res://Art Assets/3D/Floor.glb" id="25_25qrb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n20ym"]
@@ -34,8 +34,6 @@ sky_material = SubResource("ProceduralSkyMaterial_n20ym")
 [sub_resource type="Environment" id="Environment_eugri"]
 background_mode = 2
 sky = SubResource("Sky_l0xq5")
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_eugri"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_cejtf"]
 
@@ -203,34 +201,6 @@ environment = SubResource("Environment_eugri")
 transform = Transform3D(0.40224501, -0.0007020508, -0.9155318, 0.0017453285, 0.9999985, -1.4978117e-10, 0.91553044, -0.0015979038, 0.4022456, 0.9068241, 1.321417, 0)
 light_color = Color(0.58044404, 0.743117, 0.6554382, 1)
 
-[node name="Chair" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1616817302]
-transform = Transform3D(0.052500002, 0, 0, 0, 0.035515994, 0, 0, 0, 0.052500002, 0, -0.075010315, -0.3642987)
-mesh = SubResource("CylinderMesh_eugri")
-
-[node name="Chair2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=363055474]
-transform = Transform3D(0.052500002, 0, 0, 0, 0.035515994, 0, 0, 0, 0.052500002, -0.13139454, -0.075010315, -0.3201235)
-mesh = SubResource("CylinderMesh_eugri")
-
-[node name="Chair4" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1287408328]
-transform = Transform3D(0.052500002, 0, 0, 0, 0.035515994, 0, 0, 0, 0.052500002, 0.11036947, -0.075010315, -0.3201235)
-mesh = SubResource("CylinderMesh_eugri")
-
-[node name="Chair3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1093370195]
-transform = Transform3D(0.052500002, 0, 0, 0, 0.035515994, 0, 0, 0, 0.052500002, -0.22003555, -0.075010315, -0.23561502)
-mesh = SubResource("CylinderMesh_eugri")
-
-[node name="Chair5" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=924595774]
-transform = Transform3D(0.052500002, 0, 0, 0, 0.035515994, 0, 0, 0, 0.052500002, 0.20073548, -0.075010315, -0.23561502)
-mesh = SubResource("CylinderMesh_eugri")
-
-[node name="Chair6" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1658369702]
-transform = Transform3D(0.052500002, 0, 0, 0, 0.035515994, 0, 0, 0, 0.052500002, 0.25454617, -0.075010315, -0.14953485)
-mesh = SubResource("CylinderMesh_eugri")
-
-[node name="Chair7" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1874085373]
-transform = Transform3D(0.052500002, 0, 0, 0, 0.035515994, 0, 0, 0, 0.052500002, -0.28293872, -0.075010315, -0.14953485)
-mesh = SubResource("CylinderMesh_eugri")
-
 [node name="TV" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1998647896]
 transform = Transform3D(0.26148742, 0, 0, 0, 0.15409297, 0, 0, 0, 0.007278506, -0.052960664, 0.06392069, -0.6163522)
 visible = false
@@ -299,9 +269,6 @@ light_color = Color(0.80418444, 0.8089368, 0.7056107, 1)
 [node name="Room" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=3976714]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3157548, -0.06597404, -0.0003594905)
 
-[node name="SM_Table" parent="." unique_id=720567682 instance=ExtResource("6_dvp7v")]
-transform = Transform3D(0.095, 0, 0, 0, 0.095, 0, 0, 0, 0.095, -0.009925753, -0.08948563, -0.162295)
-
 [node name="SM_BossTable" parent="." unique_id=1646036688 instance=ExtResource("8_vr2aq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10227886, -0.059896484)
 
@@ -356,3 +323,6 @@ transform = Transform3D(-3.5624783e-08, 0, 0.815, 0, 0.815, 0, -0.815, 0, -3.562
 
 [node name="Floor" parent="." unique_id=1442035342 instance=ExtResource("25_25qrb")]
 transform = Transform3D(1.055, 0, 0, 0, 1.055, 0, 0, 0, 1.055, -0.29874298, -0.08565942, -0.08690229)
+
+[node name="Table" parent="." unique_id=1674587173 instance=ExtResource("25_3ydh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015006363, -0.083910696, -0.1595045)
