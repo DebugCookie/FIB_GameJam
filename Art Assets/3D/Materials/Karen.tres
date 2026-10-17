@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cnwrsd6l6l4gv"]
+
+[ext_resource type="Texture2D" uid="uid://2tyqypvy44bs" path="res://Art Assets/2d/characters/Emo_ClosedMouth.png" id="1_x84jx"]
+
+[resource]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("1_x84jx")
+albedo_texture_force_srgb = true

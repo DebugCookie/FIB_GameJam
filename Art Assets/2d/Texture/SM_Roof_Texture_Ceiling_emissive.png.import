@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://goninunrrkxp"
-path.s3tc="res://.godot/imported/SM_BossTable_DefaultMaterial_Base_color.png-58755a6fff97877af2ae3cd388e83d7e.s3tc.ctex"
+uid="uid://b43unrclnjvkv"
+path.s3tc="res://.godot/imported/SM_Roof_Texture_Ceiling_emissive.png-8491d1edf0d4aee619e5024192cd13cb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "6b784a55bda3f2e3d118b6d8f288e2cf"
-}
 
 [deps]
 
-source_file="res://Art Assets/3D/SM_BossTable_DefaultMaterial_Base_color.png"
-dest_files=["res://.godot/imported/SM_BossTable_DefaultMaterial_Base_color.png-58755a6fff97877af2ae3cd388e83d7e.s3tc.ctex"]
+source_file="res://Art Assets/2d/Texture/SM_Roof_Texture_Ceiling_emissive.png"
+dest_files=["res://.godot/imported/SM_Roof_Texture_Ceiling_emissive.png-8491d1edf0d4aee619e5024192cd13cb.s3tc.ctex"]
 
 [params]
 

@@ -2,15 +2,16 @@ extends Node3D
 
 @onready var characters_container: Node3D = $Characters
 @onready var global_morale_ui: GlobalMorale3D = $GlobalMorale3D
+@onready var game_ui: GameUI = $GameUI 
 
 @export var day_duration_minutes: float = 2.0  
 @export var money_quota: int = 500             
+@export var loading_screen_duration: float = 3.0 
 
-var current_day: int = 1                       # NY: Håller koll på vilket dygn vi är på
+var current_day: int = 1                       
 var current_money: int = 0
-var company_happiness: int = 100 # Startar på max (100)
+var company_happiness: int = 100 
 
-# NYTT: Interna tidtagarvariabler
 var time_remaining_seconds: float = 0.0
 var total_day_seconds: float = 0.0
 
@@ -24,29 +25,29 @@ func _ready() -> void:
 		print("Kunde inte ladda JSON-dialogbanken!")
 		return
 		
-	# NYTT: Initiera realtidsklockan baserat på dina inställda minuter
 	total_day_seconds = day_duration_minutes * 60.0
 	time_remaining_seconds = total_day_seconds
 		
 	update_ui()
 	
-	# BORTTAGEN: start_day_timer() behövs inte längre eftersom klockan tickar i _process nu!
+	# Starta dygns- och karaktärshanteringen direkt vid scenladdning
+	_start_first_day()
+
+func _start_first_day() -> void:
+	# Släng upp "FÖRBEREDER DAG 1..." i X antal sekunder innan klockan tickar
+	await game_ui.trigger_loading_screen(current_day, loading_screen_duration)
 	
 	for character in characters_container.get_children():
 		if character is Character3D:
 			character.start_character_loop(manager, self)
 
-# NYTT: Denna inbyggda loop körs varje bildruta och räknar ner sekunderna automatiskt
 func _process(delta: float) -> void:
 	if is_game_over: return
 	
 	if time_remaining_seconds > 0:
-		# Ticka ner klockan baserat på speltid
 		time_remaining_seconds -= delta
-		# Skicka de exakta sekunderna och dygnet till din 3D-tavla
 		global_morale_ui.update_time_and_round(current_day, time_remaining_seconds)
 	else:
-		# Tiden slog precis över till 0!
 		time_remaining_seconds = 0
 		global_morale_ui.update_time_and_round(current_day, 0)
 		check_win_conditions()
@@ -70,10 +71,9 @@ func update_ui() -> void:
 func check_win_conditions() -> void:
 	if current_money >= money_quota:
 		print("GRATTIS! Du klarade dagens kvot på %d! (Du fick ihop %d)" % [money_quota, current_money])
-		# NYTT: I stället för att bara stanna spelet, starta nästa dag automatiskt
 		start_next_day()
 	else:
-		trigger_loss("Tiden tog slut! Du nådde inte pengakvoten på %d." % money_quota)
+		trigger_loss("Tiden tog slut! Du nådde inte pengakvoten på %d. Du fick bara ihop $%d." % [money_quota, current_money])
 
 func start_next_day() -> void:
 	current_day += 1
@@ -83,8 +83,10 @@ func start_next_day() -> void:
 	money_quota += 250 
 	
 	update_ui()
+	
+	await game_ui.trigger_loading_screen(current_day, loading_screen_duration)
 	print("--- STARTAR DAG %d (Ny kvot: %d) ---" % [current_day, money_quota])
 
 func trigger_loss(reason: String) -> void:
 	is_game_over = true
-	print("GAME OVER: ", reason)
+	game_ui.show_game_over()

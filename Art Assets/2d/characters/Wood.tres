@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://6rypjia2rlkc"]
+
+[ext_resource type="Texture2D" uid="uid://do57n222cwow4" path="res://Art Assets/2d/characters/Planes_Emo_ClosedMouth.png" id="1_x1rei"]
+
+[resource]
+resource_name = "Npc Texture"
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("1_x1rei")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0

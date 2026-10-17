@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://1nqm8bpy8iwv"]
+
+[ext_resource type="Texture2D" uid="uid://goninunrrkxp" path="res://Art Assets/3D/SM_BossTable_DefaultMaterial_Base_color.png" id="1_gh1vf"]
+
+[resource]
+resource_name = "Table"
+cull_mode = 2
+albedo_color = Color(0.7545431, 0.84526485, 0.9060452, 1)
+albedo_texture = ExtResource("1_gh1vf")
+roughness = 0.830275
+metadata/_gltf_primary_texture_coord = 0

@@ -23,7 +23,9 @@ func setup_bubble(char_name: String, text: String, impact: Dictionary) -> void:
 	isAlive = true
 	show()
 	
-	active_timer = get_tree().create_timer(bubble_lifetime)
+	$SFX_Popup_Idea.play()
+	
+	active_timer = get_tree().create_timer(bubble_lifetime, false)
 	await active_timer.timeout
 	if is_visible_in_tree():
 		var ignore_penalty = {"happiness": -10, "money": 0}
