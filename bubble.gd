@@ -20,17 +20,20 @@ func setup_bubble(char_name: String, text: String, impact: Dictionary) -> void:
 	character_label.text = char_name
 	dialogue_label.text = text
 	current_impact = impact
-	isAlive = true
+	isAlive = true 
 	show()
 	
-	$SFX_Popup_Idea.play()
+	if has_node("SFX_Popup_Idea"):
+		$SFX_Popup_Idea.play()
 	
 	active_timer = get_tree().create_timer(bubble_lifetime, false)
 	await active_timer.timeout
 	if is_visible_in_tree():
-		var ignore_penalty = {"happiness": -10, "money": 0}
+		var ignore_penalty = {"Moral": -10, "Money": 0}
 		bubble_expired.emit(ignore_penalty)
 		hide_bubble()
+
+
 
 func hide_bubble() -> void:
 	isAlive = false
@@ -49,10 +52,11 @@ func approve_dialogue() -> void:
 	hide_bubble()
 
 func reject_dialogue() -> void:
-	if (isAlive == false):
+	if isAlive == false:
 		print("No Reject")
 		return
 	print("Reject")
-	var zero_impact = {"employee": 0, "work": 0, "happiness": 0, "money": 0}
+	
+	var zero_impact = {"Moral": 0, "Money": 0}
 	action_processed.emit(zero_impact)
 	hide_bubble()

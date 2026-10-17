@@ -35,14 +35,11 @@ func trigger_speech() -> void:
 		
 	var text = rolled_dialogue.get("text", "")
 	
-	var impact = rolled_dialogue.get("morale_impact", {"employee": 0, "work": 0})
-	var converted_impact = {
-		"happiness": int(impact.get("employee", 0)),
-		"money": int(impact.get("work", 0)) * 10 # Multiplicera för att få pengakänsla
-	}
+	var impact = rolled_dialogue.get("morale_impact", {"Moral": 0, "Money": 0})
 	
 	is_speaking = true
-	bubble_3d.setup_bubble(character_name, text, converted_impact)
+	bubble_3d.setup_bubble(character_name, text, impact)
+
 
 
 func _on_bubble_action_processed(impact_change: Dictionary) -> void:

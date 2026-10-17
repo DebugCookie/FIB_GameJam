@@ -55,15 +55,16 @@ func _process(delta: float) -> void:
 func modify_game_stats(changes: Dictionary) -> void:
 	if is_game_over: return
 	
-	current_money += int(changes.get("money", 0))
-	company_happiness += int(changes.get("happiness", 0))
+	current_money += int(changes.get("Money", 0))
+	company_happiness += int(changes.get("Moral", 0))
 	
 	company_happiness = clamp(company_happiness, 0, 100)
 	
 	update_ui()
 	
 	if company_happiness <= 0:
-		trigger_loss("Personalen har fått nog. Företagets happiness nådde 0%!")
+		trigger_loss("Personalen har fått nog. Företagets Moral nådde 0%!")
+
 
 func update_ui() -> void:
 	global_morale_ui.update_morale_display(company_happiness, current_money)
@@ -87,6 +88,6 @@ func start_next_day() -> void:
 	await game_ui.trigger_loading_screen(current_day, loading_screen_duration)
 	print("--- STARTAR DAG %d (Ny kvot: %d) ---" % [current_day, money_quota])
 
-func trigger_loss(reason: String) -> void:
+func trigger_loss(_reason: String) -> void:
 	is_game_over = true
 	game_ui.show_game_over()
