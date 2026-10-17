@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://1nqm8bpy8iwv"]
 
-[ext_resource type="Texture2D" uid="uid://goninunrrkxp" path="res://Art Assets/3D/SM_BossTable_DefaultMaterial_Base_color.png" id="1_gh1vf"]
+[ext_resource type="Texture2D" path="res://Art Assets/3D/SM_BossTable_DefaultMaterial_Base_color.png" id="1_gh1vf"]
 
 [resource]
 resource_name = "Table"
