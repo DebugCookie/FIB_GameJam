@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bki582ykwunui"]
 
 [ext_resource type="Script" uid="uid://rrgmfdd2pc7m" path="res://day_win_screen.gd" id="1_uf6e4"]
+[ext_resource type="Texture2D" uid="uid://dlc0hjypomdg8" path="res://Art Assets/Ui/Ui_day_win_screen.png" id="2_fqv6v"]
 
 [node name="DayWinScreen" type="ColorRect" unique_id=289236852]
 anchors_preset = 15
@@ -10,6 +11,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.25620002, 0.61, 0.5156534, 0.1882353)
 script = ExtResource("1_uf6e4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=87604821]
+position = Vector2(643.5813, 372.5)
+scale = Vector2(0.5702079, 0.44372034)
+texture = ExtResource("2_fqv6v")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=488693835]
 layout_mode = 0
