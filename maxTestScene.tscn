@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d26n1kvvr5t24" path="res://Art Assets/2d/characters/Richard.png" id="4_6hq1p"]
 [ext_resource type="Shader" uid="uid://r0uka4i5e0rn" path="res://Art Assets/PixelShader.gdshader" id="5_2ma1t"]
 [ext_resource type="Texture2D" uid="uid://2tyqypvy44bs" path="res://Art Assets/2d/characters/Emo_ClosedMouth.png" id="6_ix60g"]
+[ext_resource type="AudioStream" uid="uid://dddr1rp2nt1ff" path="res://Audio/Audio Files/Ambience_Office_Loop.wav" id="6_x6efl"]
 [ext_resource type="Texture2D" uid="uid://biq43dpdaxepw" path="res://Art Assets/2d/characters/Karen_ClosedMouth.png" id="7_10k1m"]
 [ext_resource type="Texture2D" uid="uid://6u70o77gaabt" path="res://Art Assets/2d/characters/Nepo_ClosedMouth.png" id="8_7oxqh"]
 [ext_resource type="PackedScene" uid="uid://cx5h838bf2aeh" path="res://Art Assets/3D/SM_BossTable.glb" id="8_vr2aq"]
@@ -176,6 +177,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=990091969]
 handle_input_locally = false
+audio_listener_enable_3d = true
 physics_object_picking = true
 size = Vector2i(1280, 720)
 render_target_update_mode = 4
@@ -193,6 +195,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0022247136, 0.044210754, 0
 near = 0.008
 far = 20.6
 script = ExtResource("1_sm6nt")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=136002597]
+current = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1919570593]
 environment = SubResource("Environment_eugri")
@@ -268,6 +273,13 @@ light_color = Color(0.80418444, 0.8089368, 0.7056107, 1)
 
 [node name="Room" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=3976714]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3157548, -0.06597404, -0.0003594905)
+
+[node name="SFX_Ambience_Bed" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport" unique_id=1933687846]
+stream = ExtResource("6_x6efl")
+attenuation_model = 3
+volume_db = -6.0
+autoplay = true
+panning_strength = 0.0
 
 [node name="SM_BossTable" parent="." unique_id=1646036688 instance=ExtResource("8_vr2aq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10227886, -0.059896484)
