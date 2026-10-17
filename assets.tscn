@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://yn7nwora3m7u"]
+
+[ext_resource type="ArrayMesh" uid="uid://dacfnhp84enel" path="res://Art Assets/3D/phone.obj" id="1_8mp26"]
+[ext_resource type="Texture2D" uid="uid://d1dgsbq3dto8v" path="res://Art Assets/3D/Materials/phoneUV.png" id="2_w0bhn"]
+[ext_resource type="ArrayMesh" uid="uid://cqxkwkm0uxk4s" path="res://Art Assets/3D/fire.obj" id="3_u1um5"]
+[ext_resource type="Texture2D" uid="uid://cl00inb5gmqlf" path="res://Art Assets/3D/Materials/brandsläckareUV.png" id="4_0yd31"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vgucp"]
+albedo_texture = ExtResource("2_w0bhn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gd5vc"]
+albedo_texture = ExtResource("4_0yd31")
+
+[node name="Node3D" type="Node3D" unique_id=722091562]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1625680289]
+mesh = ExtResource("1_8mp26")
+surface_material_override/0 = SubResource("StandardMaterial3D_vgucp")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1137480872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6018986)
+mesh = ExtResource("3_u1um5")
+surface_material_override/0 = SubResource("StandardMaterial3D_gd5vc")
