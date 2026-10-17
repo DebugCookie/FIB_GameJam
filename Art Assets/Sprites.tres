@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://xr74bnn3wo88"]
+
+[ext_resource type="Shader" uid="uid://djumj6cwaqss1" path="res://Art Assets/Sprite.gdshader" id="1_3tjp7"]
+
+[resource]
+shader = ExtResource("1_3tjp7")
+shader_parameter/StripesNum = 9.0
+shader_parameter/StripesAng = 45.0
+shader_parameter/StripesThinkness = 0.5
+shader_parameter/CenterHole = 0.0
+shader_parameter/OuterHole = 1.0

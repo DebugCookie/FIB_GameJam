@@ -16,17 +16,29 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="EmployeeBarLabel" type="Label" parent="SubViewport/VBoxContainer" unique_id=1213951175]
+unique_name_in_owner = true
 layout_mode = 2
-text = "EmployeeBar"
+text = "HappinessBar"
 
 [node name="EmployeeBar" type="ProgressBar" parent="SubViewport/VBoxContainer" unique_id=1589470304]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="WorkBarLabel" type="Label" parent="SubViewport/VBoxContainer" unique_id=805497809]
+unique_name_in_owner = true
 layout_mode = 2
-text = "WorkBar"
+text = "MoneyBar"
 
 [node name="WorkBar" type="ProgressBar" parent="SubViewport/VBoxContainer" unique_id=1569005437]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="RoundLabel" type="Label" parent="SubViewport/VBoxContainer" unique_id=659015132]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TimeLabel" type="Label" parent="SubViewport/VBoxContainer" unique_id=894542206]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1238865906]

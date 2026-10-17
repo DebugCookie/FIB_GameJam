@@ -1,13 +1,24 @@
 extends Node3D
 class_name GlobalMorale3D
 
-@onready var employee_bar: ProgressBar = $SubViewport/VBoxContainer/EmployeeBar
-@onready var work_bar: ProgressBar = $SubViewport/VBoxContainer/WorkBar
-@onready var employee_label: Label = $SubViewport/VBoxContainer/EmployeeBarLabel
-@onready var work_label: Label = $SubViewport/VBoxContainer/WorkBarLabel
+@onready var happiness_bar: ProgressBar = %EmployeeBar
+@onready var money_bar: ProgressBar = %WorkBar
+@onready var happiness_label: Label = %EmployeeBarLabel
+@onready var money_label: Label = %WorkBarLabel
 
-func update_morale_display(emp_morale: int, wrk_morale: int) -> void:
-	employee_bar.value = emp_morale
-	work_bar.value = wrk_morale
-	employee_label.text = "Morale: %d%%" % emp_morale
-	work_label.text = "Money: %d%%" % wrk_morale
+@onready var round_label: Label = %RoundLabel
+@onready var time_label: Label = %TimeLabel
+
+func update_morale_display(happiness: int, money: int) -> void:
+	happiness_bar.value = happiness
+	money_bar.value = money
+	happiness_label.text = "Company Happiness: %d%%" % happiness
+	money_label.text = "Money: $%d" % money
+
+func update_time_and_round(current_day: int, time_left_seconds: float) -> void:
+	round_label.text = "DAG: %d" % current_day
+	
+	var minutes: int = int(time_left_seconds) / 60
+	var seconds: int = int(time_left_seconds) % 60
+	
+	time_label.text = "TID: %02d:%02d" % [minutes, seconds]

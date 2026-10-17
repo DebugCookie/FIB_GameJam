@@ -1,18 +1,89 @@
 {
   "Karen": [
-	{ "text": "Upgrade everyone to a Thinkpad", "weight": 5, "morale_impact": { "Moral": 10, "Money": -2 } },
-	{ "text": "Change office dresscode every single day", "weight": 5, "morale_impact": { "Moral": 10, "Money": -2 } },
-	{ "text": "Drill a hole in office mugs", "weight": 3, "morale_impact": { "Moral": -5, "Money": 15 } }
+	{ "text": "Upgrade everyone to a Thinkpad", "weight": 5, "morale_impact": { "Moral": -20, "Money": 20000 } },
+	{ "text": "Change office dresscode every single day", "weight": 5, "morale_impact": { "Moral": 10, "Money": 0 } },
+	{ "text": "Drill a hole in office mugs", "weight": 5, "morale_impact": { "Moral": -10, "Money": 0 } },
+	{ "text": "Let me play music for entire building 24/7", "weight": 5, "morale_impact": { "Moral": -20, "Money": 0 } },
+	{ "text": "Make sure everyone wears a lot of parfume", "weight": 5, "morale_impact": { "Moral": -10, "Money": 0 } },
+	{ "text": "Ban voting", "weight": 5, "morale_impact": { "Moral": -10, "Money": 0 } },
+	{ "text": "Ban abortions", "weight": 5, "morale_impact": { "Moral": -10, "Money": 0 } },
+	{ "text": "Remove and sell all doors", "weight": 5, "morale_impact": { "Moral": -10, "Money": 10000 } },
+	{ "text": "Only decaffinated coffee in the office", "weight": 5, "morale_impact": { "Moral": -20, "Money": 10000 } },
+	{ "text": "Add positive crystals to the Office", "weight": 5, "morale_impact": { "Moral": 10, "Money": -10000 } },
+	{ "text": "Tarot readings every week", "weight": 5, "morale_impact": { "Moral": 20, "Money": -10000 } },
+	{ "text": "Go shit yourself", "weight": 2, "morale_impact": { "Moral": 20, "Money": 0 } },
+	{ "text": "Punish people more", "weight": 3, "morale_impact": { "Moral": -10, "Money": 0 } }
   ],
   "BossBaby": [
-	{ "text": "Buy me a Ferrari", "weight": 4, "morale_impact": { "Moral": 12, "Money": 0 } },
-	{ "text": "Let me work 2 hours a day", "weight": 5, "morale_impact": { "Moral": -20, "Money": 25 } },
-	{ "text": "Lets party in Ibiza every weekend", "weight": 6, "morale_impact": { "Moral": -20, "Money": 25 } }
+	{ "text": "Buy me a Ferrari", "weight": 4, "morale_impact": { "Moral": 0, "Money": -10000 } },
+	{ "text": "Let me work 2 hours a day", "weight": 5, "morale_impact": { "Moral": 20, "Money": 0 } },
+	{ "text": "Lets rebuild one floor into a spa", "weight": 5, "morale_impact": { "Moral": 20, "Money": -10000 } },
+	{ "text": "Threesome at my place 18:00, 2 spots left", "weight": 5, "morale_impact": { "Moral": 20, "Money": 0 } },
+	{ "text": "Send 300B to Israel", "weight": 5, "morale_impact": { "Moral": -20, "Money": -20000 } },
+	{ "text": "Hire my friend", "weight": 5, "morale_impact": { "Moral": 0, "Money": 0 } },
+	{ "text": "Lets party in Ibiza every weekend", "weight": 6, "morale_impact": { "Moral": 20, "Money": -10000 } }
   ],
-  "Celine": [],
-  "David": [],
-  "Erik": [],
-  "Frida": [],
-  "Gustav": [],
-  "Hanna": []
+  "Depressed": [
+	{ "text": "Stabilize the Middle East", "weight": 4, "morale_impact": { "Moral": 10, "Money": 10000 } },
+	{ "text": "Fix World Hunger", "weight": 4, "morale_impact": { "Moral": 20, "Money": -20000 } },
+	{ "text": "Hire office psychologist", "weight": 4, "morale_impact": { "Moral": 20, "Money": -10000 } },
+	{ "text": "Hire orphans from the streets for free", "weight": 4, "morale_impact": { "Moral": 20, "Money": 10000 } },
+	{ "text": "Dropship products from china", "weight": 4, "morale_impact": { "Moral": 0, "Money": 20000 } },
+	{ "text": "Find every rat in the city and sell them to Circuses", "weight": 4, "morale_impact": { "Moral": 10, "Money": 20000 } },
+	{ "text": "Ressurect Jesus", "weight": 4, "morale_impact": { "Moral": 20, "Money": 20000 } },
+	{ "text": "Hire office psychologist", "weight": 4, "morale_impact": { "Moral": 20, "Money": -10000 } }
+],
+  "Richard": [
+	{ "text": "Can't we just do better?", "weight": 4, "morale_impact": { "Moral": 0, "Money": 0 } },
+	{ "text": "What if we sell air?", "weight": 4, "morale_impact": { "Moral": 0, "Money": 0 } },
+	{ "text": "Why don't we just make more money?", "weight": 4, "morale_impact": { "Moral": 0, "Money": 0 } },
+	{ "text": "Can't we just come up with some ideas?", "weight": 4, "morale_impact": { "Moral": 0, "Money": 0 } },
+	{ "text": "Can't we just be nicer to each other?", "weight": 4, "morale_impact": { "Moral": 0, "Money": 0 } },
+	{ "text": "Should we copyright words?", "weight": 4, "morale_impact": { "Moral": 0, "Money": 0 } }
+],
+  "HR": [
+	{ "text": "Let's buy more AI tokens", "weight": 4, "morale_impact": { "Moral": -10, "Money": -10000 } },
+	{ "text": "Replace Old guy with AI", "weight": 4, "morale_impact": { "Moral": 10, "Money": 10000 } },
+	{ "text": "Fire 50% of the office.", "weight": 4, "morale_impact": { "Moral": -20, "Money": 20000 } },
+	{ "text": "Replace all coffemachines with AI", "weight": 4, "morale_impact": { "Moral": -10, "Money": 10000 } },
+	{ "text": "Sponsor local satanists", "weight": 4, "morale_impact": { "Moral": 10, "Money": -10000 } },
+	{ "text": "Sell water to datacenters", "weight": 4, "morale_impact": { "Moral": -10, "Money": 20000 } },
+	{ "text": "Fire Scorpios.", "weight": 4, "morale_impact": { "Moral": 0, "Money": 10000 } }
+],
+  "MilitaryGuy": [
+	{ "text": "Buy LockheedMartin stocks", "weight": 4, "morale_impact": { "Moral": -10, "Money": 20000 } },
+	{ "text": "Buy Reinmetal stocks", "weight": 4, "morale_impact": { "Moral": -10, "Money": 20000 } },
+	{ "text": "Sell insider information", "weight": 4, "morale_impact": { "Moral": -10, "Money": 20000 } },
+	{ "text": "Pentagon Collab", "weight": 4, "morale_impact": { "Moral": -10, "Money": 20000 } },
+	{ "text": "Sell land in invaded regions", "weight": 4, "morale_impact": { "Moral": -10, "Money": 20000 } },
+	{ "text": "Buy more Oil", "weight": 4, "morale_impact": { "Moral": -10, "Money": 20000 } },
+	{ "text": "Destabilize the Middle East", "weight": 4, "morale_impact": { "Moral": -10, "Money": 20000 } },
+	{ "text": "Introduce the Purge and sell guns", "weight": 4, "morale_impact": { "Moral": -10, "Money": 20000 } },
+	{ "text": "Sell more Oil", "weight": 4, "morale_impact": { "Moral": -10, "Money": 20000 } },
+	{ "text": "Sell guns", "weight": 4, "morale_impact": { "Moral": -10, "Money": 20000 } },
+	{ "text": "Sell people", "weight": 4, "morale_impact": { "Moral": -10, "Money": 20000 } },
+	{ "text": "Sell How to Torture books", "weight": 4, "morale_impact": { "Moral": -10, "Money": 20000 } },
+	{ "text": "Install Palantir cameras everywhere", "weight": 4, "morale_impact": { "Moral": -10, "Money": -10000 } }
+],
+  "OldGuy": [
+	{ "text": "Hold a motivational speech about company values", "weight": 4, "morale_impact": { "Moral": 20, "Money": 0 } },
+	{ "text": "All should compliment the Boss ", "weight": 4, "morale_impact": { "Moral": -10, "Money": 10000 } },
+	{ "text": "Bow to upper managment", "weight": 4, "morale_impact": { "Moral": -10, "Money": 10000 } },
+	{ "text": "Praise the company", "weight": 4, "morale_impact": { "Moral": 10, "Money": 10000 } },
+	{ "text": "Launch a propaganda campaing", "weight": 4, "morale_impact": { "Moral": 20, "Money": 0 } },
+	{ "text": "Give more company stock to senior employees", "weight": 4, "morale_impact": { "Moral": 10, "Money": 0 } },
+	{ "text": "Free viagra at coffee stations", "weight": 4, "morale_impact": { "Moral": -10, "Money": -10000 } },
+	{ "text": "Add Heart starters on walls", "weight": 4, "morale_impact": { "Moral": 10, "Money": -10000 } },
+	{ "text": "Invest in Bitcoin", "weight": 4, "morale_impact": { "Moral": 0, "Money": -10000 } },
+	{ "text": "Funeral financial package for employees", "weight": 4, "morale_impact": { "Moral": 10, "Money": -10000 } }
+],
+  "Janitor": [	
+	{ "text": "Cut costs where possible", "weight": 4, "morale_impact": { "Moral": 0, "Money": 10000 } },
+	{ "text": "Make sure employees are happy", "weight": 4, "morale_impact": { "Moral": 20, "Money": 0 } },
+	{ "text": "Make product line better", "weight": 4, "morale_impact": { "Moral": 0, "Money": 20000 } },
+	{ "text": "Sell solutions to peoples problems", "weight": 4, "morale_impact": { "Moral": 0, "Money": 20000 } },
+	{ "text": "Hire more interns", "weight": 4, "morale_impact": { "Moral": 10, "Money": 20000 } },
+	{ "text": "Donate money to GameTown", "weight": 4, "morale_impact": { "Moral": 50, "Money": 40000 } },
+	{ "text": "Collect all garbage on the streets and sell it", "weight": 4, "morale_impact": { "Moral": 10, "Money": 10000 } }
+	]
 }
