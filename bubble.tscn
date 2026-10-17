@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bytxipnxorm4y"]
 
 [ext_resource type="Script" uid="uid://bel5c8ul0s42h" path="res://bubble.gd" id="1_n2mqj"]
+[ext_resource type="Texture2D" uid="uid://cajxjbuwddo3t" path="res://Art Assets/2d/SpeechBubble.png" id="2_4cx2n"]
 [ext_resource type="AudioStream" uid="uid://b1cq01mhti85m" path="res://Audio/Audio Files/Popup_Idea-001.wav" id="2_05jx6"]
 [ext_resource type="AudioStream" uid="uid://iakhv8svrsbj" path="res://Audio/Audio Files/Popup_Idea-002.wav" id="3_4cx2n"]
 [ext_resource type="AudioStream" uid="uid://bs5dal668sqcf" path="res://Audio/Audio Files/Popup_Idea-003.wav" id="4_1pskq"]
@@ -19,6 +20,21 @@ stream_2/stream = ExtResource("4_1pskq")
 script = ExtResource("1_n2mqj")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1760913540]
+transparent_bg = true
+
+[node name="TextureRect" type="TextureRect" parent="SubViewport" unique_id=997269484]
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.155
+offset_top = -34.0
+offset_right = 67.84497
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.885, 0.885)
+texture = ExtResource("2_4cx2n")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SubViewport" unique_id=1205927695]
 offset_right = 40.0
@@ -26,13 +42,18 @@ offset_bottom = 40.0
 
 [node name="CharacterLabel" type="Label" parent="SubViewport/VBoxContainer" unique_id=709994585]
 modulate = Color(1, 1, 1, 0)
+self_modulate = Color(0, 0, 0, 1)
+show_behind_parent = true
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 56
 
 [node name="DialogueLabel" type="Label" parent="SubViewport/VBoxContainer" unique_id=524804525]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+show_behind_parent = true
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 56
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=2133175379]

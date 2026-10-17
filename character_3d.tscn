@@ -26,6 +26,7 @@ visible = false
 shape = SubResource("BoxShape3D_lnme8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1463075947]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.18049812)
 visible = false
 mesh = SubResource("BoxMesh_fqdyt")
 
