@@ -474,7 +474,7 @@ transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0.031165779, 0.01
 sprite_frames = SubResource("SpriteFrames_ekg17")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.45346814
+frame_progress = 0.65616274
 
 [node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 1/AnimatedSprite3D" unique_id=134879717]
 visible = false
@@ -489,7 +489,7 @@ transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, -0.012707949, 0.0
 sprite_frames = SubResource("SpriteFrames_m1gai")
 animation = &"Talk"
 autoplay = "Talk"
-frame_progress = 0.17966585
+frame_progress = 0.45259085
 
 [node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 2/AnimatedSprite3D" unique_id=22432494]
 visible = false
@@ -505,7 +505,7 @@ billboard = 2
 sprite_frames = SubResource("SpriteFrames_6ypxl")
 animation = &"Talk"
 autoplay = "Talk"
-frame_progress = 0.9577546
+frame_progress = 0.9345197
 
 [node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 3/AnimatedSprite3D" unique_id=2012629137]
 visible = false
@@ -520,7 +520,7 @@ transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, 0.02024278, 0.
 sprite_frames = SubResource("SpriteFrames_44tgu")
 animation = &"Talk"
 autoplay = "Talk"
-frame_progress = 0.79194564
+frame_progress = 0.459254
 
 [node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 5/AnimatedSprite3D" unique_id=578031686]
 visible = false
@@ -537,7 +537,7 @@ billboard = 2
 sprite_frames = SubResource("SpriteFrames_hjgis")
 animation = &"Talk"
 autoplay = "Talk"
-frame_progress = 0.13801111
+frame_progress = 0.24878746
 
 [node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 6/AnimatedSprite3D" unique_id=756906528]
 visible = false
@@ -548,12 +548,12 @@ texture = ExtResource("9_10k1m")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28415585, -0.007881649, -0.08814503)
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Npc 7" unique_id=423306167]
-transform = Transform3D(0.01836982, 0, 0, 0, 0.017494004, 0, 0, 0, 0.015, 0.084983304, -0.011478186, 0.0033140779)
+transform = Transform3D(0.01836982, 0, 0, 0, 0.017494004, 0, 0, 0, 0.015, 0.058925405, -0.011478186, 0.016588204)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_f12nc")
 animation = &"Talk"
 autoplay = "Talk"
-frame_progress = 0.91483
+frame_progress = 0.8365918
 
 [node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 7" unique_id=255206099]
 transform = Transform3D(0.01836982, 0, 0, 0, 0.017494004, 0, 0, 0, 0.015, 0.084983304, -0.011478186, 0.0033140779)
