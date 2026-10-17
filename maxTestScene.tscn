@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://mtv8dcbqu78x" path="res://camera_3d.gd" id="1_sm6nt"]
 [ext_resource type="Material" uid="uid://ccfd3lbbg3kck" path="res://Materials/M_ceiling.tres" id="2_21iph"]
 [ext_resource type="Material" uid="uid://brmrk5kgdgk5b" path="res://Materials/M_Wall.tres" id="3_nhr8d"]
+[ext_resource type="Texture2D" uid="uid://bjucx6bb3xm2j" path="res://Art Assets/2d/characters/Richard.png" id="4_6hq1p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n20ym"]
 
@@ -28,6 +29,13 @@ size = Vector3(1, 1, 1.1166992)
 
 [node name="Node3D" type="Node3D" unique_id=1272375817]
 
+[node name="Npc 4" type="StaticBody3D" parent="." unique_id=869253831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19171095, -0.009771645, -0.22766328)
+
+[node name="Sprite3D" type="Sprite3D" parent="Npc 4" unique_id=1182727577]
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, -0.011478186, 0)
+texture = ExtResource("4_6hq1p")
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=137851750]
 script = ExtResource("1_sm6nt")
 
@@ -38,7 +46,7 @@ environment = SubResource("Environment_eugri")
 transform = Transform3D(0.402245, -0.00070205086, -0.91553175, 0.0017453284, 0.9999984, -1.2501024e-10, 0.9155304, -0.0015979039, 0.40224543, 0.9068241, 1.321417, 0)
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=1121204469]
-transform = Transform3D(0.41408738, 0, 0, 0, 0.35365742, 0, 0, 0, 0.5575625, 0, -0.07317114, -0.45701134)
+transform = Transform3D(0.41408738, 0, 0, 0, 0.3536574, 0, 0, 0, 0.5575624, 0, -0.07317114, -0.45701134)
 material_override = ExtResource("2_21iph")
 mesh = SubResource("PlaneMesh_eugri")
 
@@ -136,3 +144,51 @@ mesh = SubResource("BoxMesh_n20ym")
 [node name="TV" type="MeshInstance3D" parent="." unique_id=1998647896]
 transform = Transform3D(0.26148742, 0, 0, 0, 0.15409297, 0, 0, 0, 0.007278506, -0.052960664, 0.06392069, -0.533362)
 mesh = SubResource("BoxMesh_cejtf")
+
+[node name="Npc 1" type="StaticBody3D" parent="." unique_id=1975367015]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.095855474, -0.007881649, -0.3186159)
+
+[node name="Sprite3D" type="Sprite3D" parent="Npc 1" unique_id=134879717]
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, -0.011478186, 0)
+billboard = 1
+texture = ExtResource("4_6hq1p")
+
+[node name="Npc 2" type="StaticBody3D" parent="." unique_id=1510444227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12852466, 0, -0.3180906)
+
+[node name="Sprite3D" type="Sprite3D" parent="Npc 2" unique_id=22432494]
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, -0.011478186, 0)
+billboard = 1
+texture = ExtResource("4_6hq1p")
+
+[node name="Npc 3" type="StaticBody3D" parent="." unique_id=262773439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23154801, 0, -0.23040584)
+
+[node name="Sprite3D" type="Sprite3D" parent="Npc 3" unique_id=2012629137]
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, -0.011478186, 0)
+billboard = 1
+texture = ExtResource("4_6hq1p")
+
+[node name="Npc 5" type="StaticBody3D" parent="." unique_id=41172918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0023617148, -0.007881649, -0.35148)
+
+[node name="Sprite3D" type="Sprite3D" parent="Npc 5" unique_id=578031686]
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, -0.011478186, 0)
+billboard = 1
+texture = ExtResource("4_6hq1p")
+
+[node name="Npc 6" type="StaticBody3D" parent="." unique_id=211105443]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2424463, -0.01954329, -0.13776079)
+
+[node name="Sprite3D" type="Sprite3D" parent="Npc 6" unique_id=756906528]
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, -0.011478186, 0)
+billboard = 1
+texture = ExtResource("4_6hq1p")
+
+[node name="Npc 7" type="StaticBody3D" parent="." unique_id=463533047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28415585, -0.007881649, -0.13513812)
+
+[node name="Sprite3D" type="Sprite3D" parent="Npc 7" unique_id=255206099]
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, -0.011478186, 0)
+billboard = 1
+texture = ExtResource("4_6hq1p")
