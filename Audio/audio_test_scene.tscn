@@ -19,23 +19,23 @@ stream_5 = ExtResource("6_pobo6")
 
 [node name="Audio test scene" type="Node3D" unique_id=2139666377]
 
-[node name="SFX_Diversity_Talk" type="AudioStreamPlayer2D" parent="." unique_id=1030020705]
+[node name="SFX_Diversity_Talk" type="AudioStreamPlayer3D" parent="." unique_id=376337843]
 stream = SubResource("AudioStreamPlaylist_iomns")
 
-[node name="SFX_HR_Talk" type="AudioStreamPlayer2D" parent="." unique_id=1606956690]
+[node name="SFX_HR_Talk" type="AudioStreamPlayer3D" parent="." unique_id=725479914]
 stream = SubResource("AudioStreamPlaylist_iomns")
 
-[node name="SFX_Karen_Talk" type="AudioStreamPlayer2D" parent="." unique_id=1089403441]
+[node name="SFX_Karen_Talk" type="AudioStreamPlayer3D" parent="." unique_id=1978571788]
 stream = SubResource("AudioStreamPlaylist_iomns")
 
-[node name="SFX_Military_Talk" type="AudioStreamPlayer2D" parent="." unique_id=1272492598]
+[node name="SFX_Military_Talk" type="AudioStreamPlayer3D" parent="." unique_id=351455926]
 stream = SubResource("AudioStreamPlaylist_iomns")
 
-[node name="SFX_Nepo_Talk" type="AudioStreamPlayer2D" parent="." unique_id=1343681319]
+[node name="SFX_Nepo_Talk" type="AudioStreamPlayer3D" parent="." unique_id=44321411]
 stream = SubResource("AudioStreamPlaylist_iomns")
 
-[node name="SFX_OldGuy_Talk" type="AudioStreamPlayer2D" parent="." unique_id=945506594]
+[node name="SFX_OldGuy_Talk" type="AudioStreamPlayer3D" parent="." unique_id=142572185]
 stream = SubResource("AudioStreamPlaylist_iomns")
 
-[node name="SFX_Richard_Talk" type="AudioStreamPlayer2D" parent="." unique_id=1177270605]
+[node name="SFX_Richard_Talk" type="AudioStreamPlayer3D" parent="." unique_id=1662412259]
 stream = SubResource("AudioStreamPlaylist_iomns")

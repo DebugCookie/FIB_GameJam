@@ -32,6 +32,8 @@ func trigger_speech() -> void:
 	
 	var rolled_dialogue = manager.pop_weighted_item(character_name)
 	if rolled_dialogue.is_empty(): return 
+	
+	$"../BossBaby/SFX_BossBaby_Talk".play()
 		
 	var text = rolled_dialogue.get("text", "")
 	
@@ -45,10 +47,12 @@ func trigger_speech() -> void:
 func _on_bubble_action_processed(impact_change: Dictionary) -> void:
 	world_scene.modify_game_stats(impact_change)
 	prepare_next_speech()
+	$"../BossBaby/SFX_BossBaby_Talk".stop()
 
 func _on_bubble_ignored(penalty: Dictionary) -> void:
 	world_scene.modify_game_stats(penalty)
 	prepare_next_speech()
+	$"../BossBaby/SFX_BossBaby_Talk".stop()
 
 
 #func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:

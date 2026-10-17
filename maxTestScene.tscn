@@ -80,6 +80,76 @@
 [ext_resource type="AudioStream" uid="uid://8hklsysxuv6o" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-005.wav" id="63_gqadi"]
 [ext_resource type="AudioStream" uid="uid://cb3041vaqtfed" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-006.wav" id="64_elhmf"]
 
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_a5qvv"]
+shuffle = true
+stream_count = 6
+stream_0 = ExtResource("23_fb1cs")
+stream_1 = ExtResource("24_sp1l3")
+stream_2 = ExtResource("25_614ah")
+stream_3 = ExtResource("26_nionc")
+stream_4 = ExtResource("27_j8swd")
+stream_5 = ExtResource("28_ydp6h")
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_3vvdg"]
+shuffle = true
+stream_count = 6
+stream_0 = ExtResource("43_tojua")
+stream_1 = ExtResource("44_ojgh2")
+stream_2 = ExtResource("45_1angg")
+stream_3 = ExtResource("46_6aa58")
+stream_4 = ExtResource("47_435h1")
+stream_5 = ExtResource("48_m7egt")
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_f7y3h"]
+shuffle = true
+stream_count = 6
+stream_0 = ExtResource("15_tva1y")
+stream_1 = ExtResource("16_nqdn8")
+stream_2 = ExtResource("17_ax7wn")
+stream_3 = ExtResource("18_e0k4k")
+stream_4 = ExtResource("19_jwr2d")
+stream_5 = ExtResource("20_23i77")
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_p186i"]
+shuffle = true
+stream_count = 6
+stream_0 = ExtResource("12_juvig")
+stream_1 = ExtResource("13_x4ery")
+stream_2 = ExtResource("14_b3ijy")
+stream_3 = ExtResource("15_hteu0")
+stream_4 = ExtResource("16_t7m1p")
+stream_5 = ExtResource("17_1uii4")
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_iomns"]
+shuffle = true
+stream_count = 6
+stream_0 = ExtResource("19_utuji")
+stream_1 = ExtResource("20_xl54y")
+stream_2 = ExtResource("21_reepd")
+stream_3 = ExtResource("22_wwm71")
+stream_4 = ExtResource("23_s2y2q")
+stream_5 = ExtResource("24_ueab8")
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_0onsu"]
+shuffle = true
+stream_count = 6
+stream_0 = ExtResource("51_nyr6x")
+stream_1 = ExtResource("52_jkfde")
+stream_2 = ExtResource("53_4chwp")
+stream_3 = ExtResource("54_w54f0")
+stream_4 = ExtResource("55_gu4ko")
+stream_5 = ExtResource("56_fqmj2")
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_0lk7q"]
+shuffle = true
+stream_count = 6
+stream_0 = ExtResource("59_s46yg")
+stream_1 = ExtResource("60_xsyjb")
+stream_2 = ExtResource("61_cxx8f")
+stream_3 = ExtResource("62_wdk1f")
+stream_4 = ExtResource("63_gqadi")
+stream_5 = ExtResource("64_elhmf")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_25qrb"]
 atlas = ExtResource("13_qilwt")
 region = Rect2(0, 0, 256, 256)
@@ -195,16 +265,6 @@ sky = SubResource("Sky_l0xq5")
 
 [sub_resource type="BoxMesh" id="BoxMesh_cejtf"]
 
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_p186i"]
-shuffle = true
-stream_count = 6
-stream_0 = ExtResource("12_juvig")
-stream_1 = ExtResource("13_x4ery")
-stream_2 = ExtResource("14_b3ijy")
-stream_3 = ExtResource("15_hteu0")
-stream_4 = ExtResource("16_t7m1p")
-stream_5 = ExtResource("17_1uii4")
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ghmp"]
 atlas = ExtResource("4_6hq1p")
 region = Rect2(0, 0, 1024, 1024)
@@ -224,16 +284,6 @@ animations = [{
 "name": &"Talk",
 "speed": 5.0
 }]
-
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_iomns"]
-shuffle = true
-stream_count = 6
-stream_0 = ExtResource("19_utuji")
-stream_1 = ExtResource("20_xl54y")
-stream_2 = ExtResource("21_reepd")
-stream_3 = ExtResource("22_wwm71")
-stream_4 = ExtResource("23_s2y2q")
-stream_5 = ExtResource("24_ueab8")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rufch"]
 atlas = ExtResource("12_ybmhm")
@@ -261,16 +311,6 @@ animations = [{
 "name": &"idle",
 "speed": 5.0
 }]
-
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_f7y3h"]
-shuffle = true
-stream_count = 6
-stream_0 = ExtResource("15_tva1y")
-stream_1 = ExtResource("16_nqdn8")
-stream_2 = ExtResource("17_ax7wn")
-stream_3 = ExtResource("18_e0k4k")
-stream_4 = ExtResource("19_jwr2d")
-stream_5 = ExtResource("20_23i77")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i0cdq"]
 atlas = ExtResource("6_ix60g")
@@ -306,16 +346,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_a5qvv"]
-shuffle = true
-stream_count = 6
-stream_0 = ExtResource("23_fb1cs")
-stream_1 = ExtResource("24_sp1l3")
-stream_2 = ExtResource("25_614ah")
-stream_3 = ExtResource("26_nionc")
-stream_4 = ExtResource("27_j8swd")
-stream_5 = ExtResource("28_ydp6h")
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_tva1y"]
 atlas = ExtResource("7_10k1m")
 region = Rect2(0, 0, 1024, 1024)
@@ -350,16 +380,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_3vvdg"]
-shuffle = true
-stream_count = 6
-stream_0 = ExtResource("43_tojua")
-stream_1 = ExtResource("44_ojgh2")
-stream_2 = ExtResource("45_1angg")
-stream_3 = ExtResource("46_6aa58")
-stream_4 = ExtResource("47_435h1")
-stream_5 = ExtResource("48_m7egt")
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_e0k4k"]
 atlas = ExtResource("8_7oxqh")
 region = Rect2(0, 0, 1024, 1024)
@@ -387,16 +407,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_0onsu"]
-shuffle = true
-stream_count = 6
-stream_0 = ExtResource("51_nyr6x")
-stream_1 = ExtResource("52_jkfde")
-stream_2 = ExtResource("53_4chwp")
-stream_3 = ExtResource("54_w54f0")
-stream_4 = ExtResource("55_gu4ko")
-stream_5 = ExtResource("56_fqmj2")
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_23i77"]
 atlas = ExtResource("9_10k1m")
 region = Rect2(0, 0, 580, 580)
@@ -423,16 +433,6 @@ animations = [{
 "name": &"Talk",
 "speed": 5.0
 }]
-
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_0lk7q"]
-shuffle = true
-stream_count = 6
-stream_0 = ExtResource("59_s46yg")
-stream_1 = ExtResource("60_xsyjb")
-stream_2 = ExtResource("61_cxx8f")
-stream_3 = ExtResource("62_wdk1f")
-stream_4 = ExtResource("63_gqadi")
-stream_5 = ExtResource("64_elhmf")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sp1l3"]
 atlas = ExtResource("4_4ljo3")
@@ -500,9 +500,58 @@ transform = Transform3D(0.15, 0, 0, 0, 0.14999999, 0, 0, 0, 0.14999999, 0.183678
 transform = Transform3D(0.022733172, 0, 0.019575566, 0, 0.03, 0, -0.019575566, 0, 0.022733172, -0.26798317, 0.08773553, -0.2385953)
 character_name = "Karen"
 
+[node name="SFX_Karen_Talk" type="AudioStreamPlayer3D" parent="Characters/Karen" unique_id=1756454728]
+transform = Transform3D(25.259083, 0, -21.75063, 0, 33.333332, 0, 21.75063, 0, 25.259083, -0.2799368, -2.9245176, 2.186348)
+stream = SubResource("AudioStreamPlaylist_a5qvv")
+attenuation_model = 3
+
 [node name="BossBaby" parent="Characters" unique_id=1486932446 instance=ExtResource("3_be4fj")]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -0.009102821, 0.088940084, -0.33910713)
 character_name = "BossBaby"
+
+[node name="SFX_BossBaby_Talk" type="AudioStreamPlayer3D" parent="Characters/BossBaby" unique_id=1739839301]
+transform = Transform3D(33.333336, 0, 0, 0, 33.333336, 0, 0, 0, 33.333336, 0.22470358, -3.2273912, 1.154007)
+stream = SubResource("AudioStreamPlaylist_3vvdg")
+attenuation_model = 3
+
+[node name="Depressed" parent="Characters" unique_id=500372228 instance=ExtResource("3_be4fj")]
+character_name = "Depressed"
+
+[node name="SFX_Depressed_Talk" type="AudioStreamPlayer3D" parent="Characters/Depressed" unique_id=1567517505]
+stream = SubResource("AudioStreamPlaylist_f7y3h")
+attenuation_model = 3
+
+[node name="Richard" parent="Characters" unique_id=1969853727 instance=ExtResource("3_be4fj")]
+character_name = "Richard"
+
+[node name="SFX_Richard_Talk" type="AudioStreamPlayer3D" parent="Characters/Richard" unique_id=2072976731]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19171095, -0.009771645, -0.22766328)
+stream = SubResource("AudioStreamPlaylist_p186i")
+attenuation_model = 3
+
+[node name="HR" parent="Characters" unique_id=1858802622 instance=ExtResource("3_be4fj")]
+character_name = "HR"
+
+[node name="SFX_HR_Talk" type="AudioStreamPlayer3D" parent="Characters/HR" unique_id=1800412795]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.095855474, -0.007881651, -0.27162284)
+stream = SubResource("AudioStreamPlaylist_iomns")
+attenuation_model = 3
+
+[node name="Military" parent="Characters" unique_id=494477338 instance=ExtResource("3_be4fj")]
+character_name = "Military"
+
+[node name="SFX_Military_Talk" type="AudioStreamPlayer3D" parent="Characters/Military" unique_id=1702228470]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2424463, -0.01954329, -0.0907677)
+stream = SubResource("AudioStreamPlaylist_0onsu")
+attenuation_model = 3
+
+[node name="OldGuy" parent="Characters" unique_id=874373011 instance=ExtResource("3_be4fj")]
+character_name = "OldGuy"
+
+[node name="SFX_OldGuy_Talk" type="AudioStreamPlayer3D" parent="Characters/OldGuy" unique_id=54020550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28415585, -0.007881649, -0.08814503)
+stream = SubResource("AudioStreamPlaylist_0lk7q")
+attenuation_model = 3
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1310699426]
 texture_filter = 1
@@ -569,10 +618,6 @@ mesh = SubResource("BoxMesh_cejtf")
 [node name="Npc 4" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=869253831]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19171095, -0.009771645, -0.22766328)
 
-[node name="SFX_Richard_Talk" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Npc 4" unique_id=2072976731]
-stream = SubResource("AudioStreamPlaylist_p186i")
-attenuation_model = 3
-
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Npc 4" unique_id=1023750244]
 transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0.006573096, 0, 0.066646814)
 sprite_frames = SubResource("SpriteFrames_68bq4")
@@ -586,11 +631,6 @@ texture = ExtResource("4_6hq1p")
 
 [node name="Npc 1" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=1975367015]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.095855474, -0.007881649, -0.27162284)
-
-[node name="SFX_HR_Talk" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Npc 1" unique_id=1800412795]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8626451e-09, 0)
-stream = SubResource("AudioStreamPlaylist_iomns")
-attenuation_model = 3
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Npc 1" unique_id=1604001300]
 transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0.031165779, 0.018512268, 0.056924954)
@@ -607,11 +647,6 @@ texture = ExtResource("12_ybmhm")
 [node name="Npc 2" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=1510444227]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12852466, 0, -0.27109748)
 
-[node name="SFX_Diversity_Talk" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Npc 2" unique_id=1567517505]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12852466, 0, 0.27109748)
-stream = SubResource("AudioStreamPlaylist_f7y3h")
-attenuation_model = 3
-
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Npc 2" unique_id=649077657]
 transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, -0.012707949, 0.0068039577, 0.054732963)
 sprite_frames = SubResource("SpriteFrames_m1gai")
@@ -627,17 +662,13 @@ texture = ExtResource("6_ix60g")
 [node name="Npc 3" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=262773439]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23154801, 0, -0.18341275)
 
-[node name="SFX_Karen_Talk" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Npc 3" unique_id=1756454728]
-stream = SubResource("AudioStreamPlaylist_a5qvv")
-attenuation_model = 3
-
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Npc 3" unique_id=174450541]
 transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, -0.011478186, 0)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_6ypxl")
 animation = &"Talk"
 autoplay = "Talk"
-frame_progress = 0.9345197
+frame_progress = 0.32582235
 
 [node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 3/AnimatedSprite3D" unique_id=2012629137]
 visible = false
@@ -646,10 +677,6 @@ texture = ExtResource("7_10k1m")
 
 [node name="Npc 5" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=41172918]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0023617148, -0.007881649, -0.30448693)
-
-[node name="SFX_Nepo_Talk" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Npc 5" unique_id=1739839301]
-stream = SubResource("AudioStreamPlaylist_3vvdg")
-attenuation_model = 3
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Npc 5" unique_id=1626134156]
 transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, 0.02024278, 0.03014195)
@@ -667,10 +694,6 @@ texture = ExtResource("8_7oxqh")
 [node name="Npc 6" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=211105443]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2424463, -0.01954329, -0.0907677)
 
-[node name="SFX_Military_Talk" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Npc 6" unique_id=1702228470]
-stream = SubResource("AudioStreamPlaylist_0onsu")
-attenuation_model = 3
-
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Npc 6" unique_id=786385682]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0.01544841, 0)
 billboard = 2
@@ -686,10 +709,6 @@ texture = ExtResource("9_10k1m")
 
 [node name="Npc 7" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=463533047]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28415585, -0.007881649, -0.08814503)
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Npc 7" unique_id=54020550]
-stream = SubResource("AudioStreamPlaylist_0lk7q")
-attenuation_model = 3
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Npc 7" unique_id=423306167]
 transform = Transform3D(0.01836982, 0, 0, 0, 0.017494004, 0, 0, 0, 0.015, 0.058925405, -0.011478186, 0.016588204)
