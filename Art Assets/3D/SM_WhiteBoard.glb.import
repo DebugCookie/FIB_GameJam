@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cefe8rmec2chl"
-path="res://.godot/imported/SM_Floor.glb-b44f234834210e6c595d78e9c9344121.scn"
+uid="uid://ccm6ypo7s62uj"
+path="res://.godot/imported/SM_WhiteBoard.glb-28089b14749b81e85a61ce0a0b03b559.scn"
 
 [deps]
 
-source_file="res://Art Assets/3D/SM_Floor.glb"
-dest_files=["res://.godot/imported/SM_Floor.glb-b44f234834210e6c595d78e9c9344121.scn"]
+source_file="res://Art Assets/3D/SM_WhiteBoard.glb"
+dest_files=["res://.godot/imported/SM_WhiteBoard.glb-28089b14749b81e85a61ce0a0b03b559.scn"]
 
 [params]
 

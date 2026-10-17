@@ -8,7 +8,6 @@
 [ext_resource type="Shader" uid="uid://r0uka4i5e0rn" path="res://Art Assets/PixelShader.gdshader" id="5_2ma1t"]
 [ext_resource type="PackedScene" uid="uid://dtk0f1owdt8m8" path="res://Art Assets/3D/SM_Table.glb" id="6_dvp7v"]
 [ext_resource type="Texture2D" uid="uid://bgb7mb6ya8ovg" path="res://Art Assets/2d/characters/Emo_ClosedMouth.png" id="6_ix60g"]
-[ext_resource type="PackedScene" uid="uid://cefe8rmec2chl" path="res://Art Assets/3D/SM_Floor.glb" id="7_8kcya"]
 [ext_resource type="Texture2D" uid="uid://c0rykd51jdxe8" path="res://Art Assets/2d/characters/Karen_ClosedMouth.png" id="7_10k1m"]
 [ext_resource type="Texture2D" uid="uid://qy88prdk3lp0" path="res://Art Assets/2d/characters/Nepo_ClosedMouth.png" id="8_7oxqh"]
 [ext_resource type="PackedScene" uid="uid://cx5h838bf2aeh" path="res://Art Assets/3D/SM_BossTable.glb" id="8_vr2aq"]
@@ -22,6 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://btxyf0l1xfkas" path="res://Art Assets/2d/Hand_Slap1.png" id="15_b3dm5"]
 [ext_resource type="Texture2D" uid="uid://bj05rhbli6qin" path="res://Art Assets/2d/Hand_Pat.png" id="16_ix60g"]
 [ext_resource type="Texture2D" uid="uid://d1qkltglydv78" path="res://Art Assets/2d/Hand_Slap2.png" id="17_10k1m"]
+[ext_resource type="PackedScene" uid="uid://dtsv0a4gve7xn" path="res://Art Assets/3D/SM_Door.glb" id="23_25qrb"]
+[ext_resource type="PackedScene" uid="uid://rrk0ivukfx18" path="res://Art Assets/3D/SM_Picture.glb" id="24_3ydh5"]
+[ext_resource type="PackedScene" uid="uid://ccm6ypo7s62uj" path="res://Art Assets/3D/SM_WhiteBoard.glb" id="25_1y33g"]
+[ext_resource type="PackedScene" uid="uid://cefe8rmec2chl" path="res://Art Assets/3D/Floor.glb" id="25_25qrb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n20ym"]
 
@@ -31,9 +34,6 @@ sky_material = SubResource("ProceduralSkyMaterial_n20ym")
 [sub_resource type="Environment" id="Environment_eugri"]
 background_mode = 2
 sky = SubResource("Sky_l0xq5")
-
-[sub_resource type="BoxMesh" id="BoxMesh_eugri"]
-size = Vector3(1, 1, 1.1166992)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_eugri"]
 
@@ -197,15 +197,16 @@ script = ExtResource("1_sm6nt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40298247, 0, 0)
 script = ExtResource("1_sm6nt")
 
+[node name="Camera3D3" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1655848189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40298247, 0, 0)
+script = ExtResource("1_sm6nt")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1919570593]
 environment = SubResource("Environment_eugri")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=9738278]
 transform = Transform3D(0.40224501, -0.0007020508, -0.9155318, 0.0017453285, 0.9999985, -1.4978117e-10, 0.91553044, -0.0015979038, 0.4022456, 0.9068241, 1.321417, 0)
-
-[node name="FrontTable" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1682725433]
-transform = Transform3D(0.002905508, 0, 0.108521916, 0, 0.007782675, 0, -0.068360426, 0, 0.004612482, -0.006332211, -0.041886076, -0.08386652)
-mesh = SubResource("BoxMesh_eugri")
+light_color = Color(0.58044404, 0.743117, 0.6554382, 1)
 
 [node name="Chair" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1616817302]
 transform = Transform3D(0.052500002, 0, 0, 0, 0.035515994, 0, 0, 0, 0.052500002, 0, -0.075010315, -0.3642987)
@@ -292,13 +293,13 @@ texture = ExtResource("4_6hq1p")
 
 [node name="PixelShader" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1699253788]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.036463067, 0)
-visible = false
 material_override = SubResource("ShaderMaterial_dvp7v")
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_ecnap")
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=877355216]
-transform = Transform3D(1, 0, 0, 0, 0.99493486, -0.10052219, 0, 0.10052219, 0.99493486, 0, 0, 0)
+transform = Transform3D(-0.4955847, -0.86416024, 0.08730952, 0.8685596, -0.49307448, 0.04981726, 0, 0.10052219, 0.99493486, 0, 0, 0)
+light_color = Color(0.80418444, 0.8089368, 0.7056107, 1)
 
 [node name="Room" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=3976714]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3157548, -0.06597404, -0.0003594905)
@@ -307,10 +308,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3157548, -0.06597404, -0.0
 transform = Transform3D(0.095, 0, 0, 0, 0.095, 0, 0, 0, 0.095, -0.009925753, -0.08948563, -0.162295)
 
 [node name="SM_BossTable" parent="." unique_id=1646036688 instance=ExtResource("8_vr2aq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07681596, -0.059896484)
-
-[node name="Floor" parent="." unique_id=970781916 instance=ExtResource("7_8kcya")]
-transform = Transform3D(-1.2436589, 8.742278e-08, 0, -1.08724116e-07, -1, 0, 0, 0, 1.8158991, 0.43495896, -0.071014374, -0.21940626)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10227886, -0.059896484)
 
 [node name="SM_Wall" parent="." unique_id=1219317071 instance=ExtResource("10_3pouy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.39856073, -0.13130234, -0.23945713)
@@ -351,3 +349,15 @@ sprite_frames = SubResource("SpriteFrames_5fgpt")
 animation = &"Idle"
 autoplay = "Idle"
 frame_progress = 0.041624215
+
+[node name="SM_Door" parent="." unique_id=1678815973 instance=ExtResource("23_25qrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.7636261, 0.3966971, -0.11315133, -0.48290318)
+
+[node name="SM_Picture" parent="." unique_id=1545905301 instance=ExtResource("24_3ydh5")]
+transform = Transform3D(0.56, 0, 0, 0, 0.56, 0, 0, 0, 0.56, 0.38655156, 0.033156253, -0.14853796)
+
+[node name="SM_WhiteBoard" parent="." unique_id=4093690 instance=ExtResource("25_1y33g")]
+transform = Transform3D(-3.5624783e-08, 0, 0.815, 0, 0.815, 0, -0.815, 0, -3.5624783e-08, 0.070173845, 0.036220804, -0.6220665)
+
+[node name="Floor" parent="." unique_id=1442035342 instance=ExtResource("25_25qrb")]
+transform = Transform3D(1.055, 0, 0, 0, 1.055, 0, 0, 0, 1.055, -0.29874298, -0.11038885, -0.08690229)
