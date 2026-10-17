@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c8h1pu812x08i"
+path="res://.godot/imported/NPC_Nepo_Talking-006.wav-57a5fc680dd630ad59643700192b9d4d.sample"
+
+[deps]
+
+source_file="res://Audio/Audio Files/NPC/NPC_Nepo_Talking-006.wav"
+dest_files=["res://.godot/imported/NPC_Nepo_Talking-006.wav-57a5fc680dd630ad59643700192b9d4d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

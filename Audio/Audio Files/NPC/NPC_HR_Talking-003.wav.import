@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dhhhai6nulkc8"
+path="res://.godot/imported/NPC_HR_Talking-003.wav-cd087353441e5274ab5462ac15603b83.sample"
+
+[deps]
+
+source_file="res://Audio/Audio Files/NPC/NPC_HR_Talking-003.wav"
+dest_files=["res://.godot/imported/NPC_HR_Talking-003.wav-cd087353441e5274ab5462ac15603b83.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

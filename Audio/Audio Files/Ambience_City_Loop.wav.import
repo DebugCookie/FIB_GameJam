@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dnx2y5aef1o0i"
+path="res://.godot/imported/Ambience_City_Loop.wav-d7b6341269a5db0ff17e1e6330df046f.sample"
+
+[deps]
+
+source_file="res://Audio/Audio Files/Ambience_City_Loop.wav"
+dest_files=["res://.godot/imported/Ambience_City_Loop.wav-d7b6341269a5db0ff17e1e6330df046f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

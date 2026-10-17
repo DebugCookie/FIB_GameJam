@@ -1,24 +1,41 @@
 [gd_scene format=3 uid="uid://ck1ajmjfs5vmo"]
 
-[ext_resource type="AudioStream" uid="uid://dddr1rp2nt1ff" path="res://Audio/Audio Files/Ambience_Office_Loop.wav" id="1_4x80v"]
-[ext_resource type="Script" uid="uid://d0a7q7i7vou3f" path="res://Audio/audio_stream_player_2d.gd" id="2_dukle"]
-[ext_resource type="AudioStream" uid="uid://da57wkex0nstc" path="res://Audio/Audio Files/Baby_Cough-001.wav" id="3_v2olb"]
-[ext_resource type="AudioStream" uid="uid://diw5qxml4qp0d" path="res://Audio/Audio Files/Baby_Cough-002.wav" id="4_aaexa"]
-[ext_resource type="AudioStream" uid="uid://dtqlruk4r0cwv" path="res://Audio/Audio Files/Baby_Cough-003.wav" id="5_i8qam"]
+[ext_resource type="AudioStream" uid="uid://bhccbxakccc62" path="res://Audio/Audio Files/NPC/NPC_Richard_Talking-001.wav" id="1_aaexa"]
+[ext_resource type="AudioStream" uid="uid://bjrajfjfamd0h" path="res://Audio/Audio Files/NPC/NPC_Richard_Talking-002.wav" id="2_i8qam"]
+[ext_resource type="AudioStream" uid="uid://x38irh4j5623" path="res://Audio/Audio Files/NPC/NPC_Richard_Talking-003.wav" id="3_0tm22"]
+[ext_resource type="AudioStream" uid="uid://d0a2wcee1r74g" path="res://Audio/Audio Files/NPC/NPC_Richard_Talking-004.wav" id="4_hyhq0"]
+[ext_resource type="AudioStream" uid="uid://boej5oeuflcmg" path="res://Audio/Audio Files/NPC/NPC_Richard_Talking-005.wav" id="5_1iiv1"]
+[ext_resource type="AudioStream" uid="uid://bj8rahqcjevmg" path="res://Audio/Audio Files/NPC/NPC_Richard_Talking-006.wav" id="6_pobo6"]
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3vvdg"]
-streams_count = 3
-stream_0/stream = ExtResource("3_v2olb")
-stream_1/stream = ExtResource("4_aaexa")
-stream_2/stream = ExtResource("5_i8qam")
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_iomns"]
+shuffle = true
+stream_count = 6
+stream_0 = ExtResource("1_aaexa")
+stream_1 = ExtResource("2_i8qam")
+stream_2 = ExtResource("3_0tm22")
+stream_3 = ExtResource("4_hyhq0")
+stream_4 = ExtResource("5_1iiv1")
+stream_5 = ExtResource("6_pobo6")
 
 [node name="Audio test scene" type="Node3D" unique_id=2139666377]
 
-[node name="AmbienceBed" type="AudioStreamPlayer2D" parent="." unique_id=1212177256]
-stream = ExtResource("1_4x80v")
-autoplay = true
-panning_strength = 0.0
-script = ExtResource("2_dukle")
+[node name="SFX_Diversity_Talk" type="AudioStreamPlayer2D" parent="." unique_id=1030020705]
+stream = SubResource("AudioStreamPlaylist_iomns")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=694830376]
-stream = SubResource("AudioStreamRandomizer_3vvdg")
+[node name="SFX_HR_Talk" type="AudioStreamPlayer2D" parent="." unique_id=1606956690]
+stream = SubResource("AudioStreamPlaylist_iomns")
+
+[node name="SFX_Karen_Talk" type="AudioStreamPlayer2D" parent="." unique_id=1089403441]
+stream = SubResource("AudioStreamPlaylist_iomns")
+
+[node name="SFX_Military_Talk" type="AudioStreamPlayer2D" parent="." unique_id=1272492598]
+stream = SubResource("AudioStreamPlaylist_iomns")
+
+[node name="SFX_Nepo_Talk" type="AudioStreamPlayer2D" parent="." unique_id=1343681319]
+stream = SubResource("AudioStreamPlaylist_iomns")
+
+[node name="SFX_OldGuy_Talk" type="AudioStreamPlayer2D" parent="." unique_id=945506594]
+stream = SubResource("AudioStreamPlaylist_iomns")
+
+[node name="SFX_Richard_Talk" type="AudioStreamPlayer2D" parent="." unique_id=1177270605]
+stream = SubResource("AudioStreamPlaylist_iomns")

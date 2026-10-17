@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://boej5oeuflcmg"
+path="res://.godot/imported/NPC_Richard_Talking-005.wav-bb7902948b497f3699ade2c2850d9060.sample"
+
+[deps]
+
+source_file="res://Audio/Audio Files/NPC/NPC_Richard_Talking-005.wav"
+dest_files=["res://.godot/imported/NPC_Richard_Talking-005.wav-bb7902948b497f3699ade2c2850d9060.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
