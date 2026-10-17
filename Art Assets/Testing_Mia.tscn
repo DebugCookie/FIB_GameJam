@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cbawcfb22vet6"]
+
+[ext_resource type="PackedScene" uid="uid://dehouo811dwsp" path="res://Art Assets/3D/DancingQueen.glb" id="1_ikpru"]
+[ext_resource type="Shader" uid="uid://r0uka4i5e0rn" path="res://Art Assets/PixelShader.gdshader" id="2_85mbl"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vd4pe"]
+ground_bottom_color = Color(0.45665157, 0.6699885, 0.8971463, 1)
+
+[sub_resource type="Sky" id="Sky_c8urk"]
+sky_material = SubResource("ProceduralSkyMaterial_vd4pe")
+
+[sub_resource type="Environment" id="Environment_c8urk"]
+background_mode = 2
+sky = SubResource("Sky_c8urk")
+reflected_light_source = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c8urk"]
+render_priority = 0
+shader = ExtResource("2_85mbl")
+
+[sub_resource type="QuadMesh" id="QuadMesh_bsh05"]
+material = SubResource("ShaderMaterial_c8urk")
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ecnap"]
+
+[node name="Testing" type="Node3D" unique_id=762403487]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2102032856]
+transform = Transform3D(-0.6996633, -0.7144727, -3.1230595e-08, -0.15686977, 0.15361817, 0.97559893, -0.6970388, 0.6825907, -0.21956018, 0, 0, 0)
+light_energy = 3.25
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=1319491634 instance=ExtResource("1_ikpru")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1771364409]
+transform = Transform3D(1, 0, 0, 0, 0.9999565, 0.0093305735, 0, -0.0093305735, 0.9999565, 0, 1.109246, 1.8979821)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1927497522]
+environment = SubResource("Environment_c8urk")
+
+[node name="Shader" type="MeshInstance3D" parent="." unique_id=1070061092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0058328, -0.62292767)
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_bsh05")
+
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=1228888211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0706282, 0.6164012, -0.44356477)
+mesh = SubResource("BoxMesh_ecnap")
