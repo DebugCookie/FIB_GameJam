@@ -497,7 +497,7 @@ transform = Transform3D(0.15, 0, 0, 0, 0.14999999, 0, 0, 0, 0.14999999, 0.183678
 [node name="Characters" type="Node3D" parent="." unique_id=99532683]
 
 [node name="Karen" parent="Characters" unique_id=923122773 instance=ExtResource("3_be4fj")]
-transform = Transform3D(0.022733172, 0, 0.019575566, 0, 0.03, 0, -0.019575566, 0, 0.022733172, -0.26798317, 0.08773553, -0.2385953)
+transform = Transform3D(0.022733172, 0, 0.019575566, 0, 0.03, 0, -0.019575566, 0, 0.022733172, -0.26798317, 0.08773553, -0.19697961)
 character_name = "Karen"
 
 [node name="SFX_Karen_Talk" type="AudioStreamPlayer3D" parent="Characters/Karen" unique_id=1756454728]
@@ -506,7 +506,7 @@ stream = SubResource("AudioStreamPlaylist_a5qvv")
 attenuation_model = 3
 
 [node name="BossBaby" parent="Characters" unique_id=1486932446 instance=ExtResource("3_be4fj")]
-transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -0.009102821, 0.088940084, -0.33910713)
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -0.016321778, 0.088197984, -0.3037501)
 character_name = "BossBaby"
 
 [node name="SFX_BossBaby_Talk" type="AudioStreamPlayer3D" parent="Characters/BossBaby" unique_id=1739839301]
@@ -515,6 +515,7 @@ stream = SubResource("AudioStreamPlaylist_3vvdg")
 attenuation_model = 3
 
 [node name="Depressed" parent="Characters" unique_id=500372228 instance=ExtResource("3_be4fj")]
+transform = Transform3D(0.029807156, 0, 0.0033960964, 0, 0.03, 0, -0.0033960964, 0, 0.029807156, -0.1774121, 0.08522632, -0.2786423)
 character_name = "Depressed"
 
 [node name="SFX_Depressed_Talk" type="AudioStreamPlayer3D" parent="Characters/Depressed" unique_id=1567517505]
@@ -522,6 +523,7 @@ stream = SubResource("AudioStreamPlaylist_f7y3h")
 attenuation_model = 3
 
 [node name="Richard" parent="Characters" unique_id=1969853727 instance=ExtResource("3_be4fj")]
+transform = Transform3D(0.025553571, 0, -0.01571671, 0, 0.03, 0, 0.01571671, 0, 0.025553571, 0.23350139, 0.08744751, -0.22263052)
 character_name = "Richard"
 
 [node name="SFX_Richard_Talk" type="AudioStreamPlayer3D" parent="Characters/Richard" unique_id=2072976731]
@@ -530,6 +532,7 @@ stream = SubResource("AudioStreamPlaylist_p186i")
 attenuation_model = 3
 
 [node name="HR" parent="Characters" unique_id=1858802622 instance=ExtResource("3_be4fj")]
+transform = Transform3D(0.025951846, 0, -0.015049973, 0, 0.03, 0, 0.015049973, 0, 0.025951846, 0.11664249, 0.0754387, -0.31880862)
 character_name = "HR"
 
 [node name="SFX_HR_Talk" type="AudioStreamPlayer3D" parent="Characters/HR" unique_id=1800412795]
@@ -538,7 +541,8 @@ stream = SubResource("AudioStreamPlaylist_iomns")
 attenuation_model = 3
 
 [node name="Military" parent="Characters" unique_id=494477338 instance=ExtResource("3_be4fj")]
-character_name = "Military"
+transform = Transform3D(0.013348679, 0, -0.026866574, 0, 0.029999997, 0, 0.026866574, 0, 0.013348679, 0.26120126, 0.08163715, -0.10463051)
+character_name = "MilitaryGuy"
 
 [node name="SFX_Military_Talk" type="AudioStreamPlayer3D" parent="Characters/Military" unique_id=1702228470]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2424463, -0.01954329, -0.0907677)
@@ -546,6 +550,7 @@ stream = SubResource("AudioStreamPlaylist_0onsu")
 attenuation_model = 3
 
 [node name="OldGuy" parent="Characters" unique_id=874373011 instance=ExtResource("3_be4fj")]
+transform = Transform3D(0.0132451765, 0, 0.02691775, 0, 0.03, 0, -0.02691775, 0, 0.0132451765, -0.27846366, 0.074002, -0.032372456)
 character_name = "OldGuy"
 
 [node name="SFX_OldGuy_Talk" type="AudioStreamPlayer3D" parent="Characters/OldGuy" unique_id=54020550]
