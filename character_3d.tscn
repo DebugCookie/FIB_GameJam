@@ -10,7 +10,7 @@ size = Vector3(1.4263371, 0.24846101, 0.30297852)
 [sub_resource type="BoxMesh" id="BoxMesh_fqdyt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ddgnj"]
-size = Vector3(7.502548, 7.193054, 1)
+size = Vector3(5.0489025, 5.040001, 0.13476563)
 
 [node name="Character3D" type="Node3D" unique_id=923122773]
 script = ExtResource("1_loobb")
@@ -22,9 +22,11 @@ script = ExtResource("3_lnme8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1670003836]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08730763, 0.009416699, -0.1060791)
+visible = false
 shape = SubResource("BoxShape3D_lnme8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1463075947]
+visible = false
 mesh = SubResource("BoxMesh_fqdyt")
 
 [node name="Area3D" type="Area3D" parent="CharacterBody3D" unique_id=916521912]
@@ -32,7 +34,7 @@ process_physics_priority = 20
 priority = 20
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/Area3D" unique_id=1045727943]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30294037, -0.16769409, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.031495094, 0.02917862, -0.0234375)
 shape = SubResource("BoxShape3D_ddgnj")
 
 [connection signal="input_event" from="CharacterBody3D/Area3D" to="CharacterBody3D" method="_on_area_3d_input_event"]

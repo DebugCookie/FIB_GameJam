@@ -11,6 +11,7 @@ signal bubble_expired(penalty: Dictionary)
 
 var current_impact: Dictionary = {}
 var active_timer: SceneTreeTimer = null
+var isAlive = false
 
 func _ready() -> void:
 	hide_bubble()
@@ -19,6 +20,7 @@ func setup_bubble(char_name: String, text: String, impact: Dictionary) -> void:
 	character_label.text = char_name
 	dialogue_label.text = text
 	current_impact = impact
+	isAlive = true
 	show()
 	
 	active_timer = get_tree().create_timer(bubble_lifetime)
@@ -29,16 +31,26 @@ func setup_bubble(char_name: String, text: String, impact: Dictionary) -> void:
 		hide_bubble()
 
 func hide_bubble() -> void:
+	isAlive = false
 	hide()
 	current_impact = {}
 
 
 func approve_dialogue() -> void:
-	if current_impact.is_empty(): return
+	if (isAlive == false):
+		print("No Approve")
+		return
+	if current_impact.is_empty(): 
+		return
+	print("Approve")
 	action_processed.emit(current_impact)
 	hide_bubble()
 
 func reject_dialogue() -> void:
+	if (isAlive == false):
+		print("No Reject")
+		return
+	print("Reject")
 	var zero_impact = {"employee": 0, "work": 0, "happiness": 0, "money": 0}
 	action_processed.emit(zero_impact)
 	hide_bubble()
