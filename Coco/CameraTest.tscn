@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c4wxjbh67wt6v"]
 
 [ext_resource type="Script" uid="uid://bfeh4r48s4ycy" path="res://Coco/clicker.gd" id="1_lbovf"]
+[ext_resource type="Script" uid="uid://b407rxw6igpuk" path="res://Coco/camera_3dtest.gd" id="1_maiet"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2aodh"]
 
@@ -11,6 +12,7 @@
 [node name="Camera3D" type="Camera3D" parent="." unique_id=284189797]
 transform = Transform3D(1, 0, 0, 0, 0.8907951, 0.4544053, 0, -0.4544053, 0.8907951, 0, 1.2528996, 1.6555908)
 current = true
+script = ExtResource("1_maiet")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=662463164]
 script = ExtResource("1_lbovf")
