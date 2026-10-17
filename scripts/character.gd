@@ -23,7 +23,7 @@ func start_character_loop(dm_manager: DialogueManager, main_world: Node) -> void
 func prepare_next_speech() -> void:
 	is_speaking = false
 	var random_cooldown = randf_range(min_spawn_cooldown, max_spawn_cooldown)
-	await get_tree().create_timer(random_cooldown).timeout
+	await get_tree().create_timer(random_cooldown, false).timeout
 	
 	trigger_speech()
 

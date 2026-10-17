@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://wlwcjb66bw3f" path="res://Art Assets/3D/Table.glb" id="25_3ydh5"]
 [ext_resource type="PackedScene" uid="uid://cefe8rmec2chl" path="res://Art Assets/3D/Floor.glb" id="25_25qrb"]
 [ext_resource type="Shader" uid="uid://js4eg5babfkh" path="res://Art Assets/Buckshot.gdshader" id="27_1y33g"]
+[ext_resource type="PackedScene" uid="uid://cu6wwvy2yn3mp" path="res://game_ui.tscn" id="28_dufa8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_25qrb"]
 atlas = ExtResource("13_qilwt")
@@ -365,3 +366,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="GameUI" parent="." unique_id=121058546 instance=ExtResource("28_dufa8")]
