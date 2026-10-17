@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://p601cch5st5d"]
 
+[ext_resource type="Script" uid="uid://8mm4xsiddp6e" path="res://scripts/DialogueGameLoop.gd" id="1_dx25p"]
 [ext_resource type="Script" uid="uid://mtv8dcbqu78x" path="res://camera_3d.gd" id="1_sm6nt"]
+[ext_resource type="PackedScene" uid="uid://dt7ibabu7str8" path="res://global_morale_3d.tscn" id="2_3pouy"]
+[ext_resource type="PackedScene" uid="uid://dlnm4crlnxca7" path="res://character_3d.tscn" id="3_be4fj"]
 [ext_resource type="Material" uid="uid://brmrk5kgdgk5b" path="res://Materials/M_Wall.tres" id="3_nhr8d"]
 [ext_resource type="Texture2D" uid="uid://bjucx6bb3xm2j" path="res://Art Assets/2d/characters/Richard.png" id="4_6hq1p"]
 [ext_resource type="Shader" uid="uid://r0uka4i5e0rn" path="res://Art Assets/PixelShader.gdshader" id="5_2ma1t"]
@@ -37,6 +40,20 @@ flip_faces = true
 size = Vector2(2, 2)
 
 [node name="Node3D" type="Node3D" unique_id=1272375817]
+script = ExtResource("1_dx25p")
+
+[node name="GlobalMorale3D" parent="." unique_id=615809671 instance=ExtResource("2_3pouy")]
+transform = Transform3D(0.15, 0, 0, 0, 0.14999999, 0, 0, 0, 0.14999999, 0.4158104, -0.14143467, -0.41807657)
+
+[node name="Characters" type="Node3D" parent="." unique_id=99532683]
+
+[node name="Karen" parent="Characters" unique_id=923122773 instance=ExtResource("3_be4fj")]
+transform = Transform3D(0.022733172, 0, 0.019575566, 0, 0.03, 0, -0.019575566, 0, 0.022733172, -0.26798317, 0.12929419, -0.2385953)
+character_name = "Karen"
+
+[node name="BossBaby" parent="Characters" unique_id=1486932446 instance=ExtResource("3_be4fj")]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -0.009102821, 0.14876491, -0.33910713)
+character_name = "BossBaby"
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1310699426]
 texture_filter = 1
@@ -60,7 +77,7 @@ transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, -0.011478186, 
 texture = ExtResource("4_6hq1p")
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=137851750]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0022247136, 2.9802322e-08, 0.00037831068)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0022247136, 0.044210754, 0.00037831068)
 script = ExtResource("1_sm6nt")
 
 [node name="Camera3D2" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=563986135]
@@ -191,6 +208,7 @@ billboard = 1
 texture = ExtResource("4_6hq1p")
 
 [node name="PixelShader" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1699253788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.036463067, 0)
 visible = false
 material_override = SubResource("ShaderMaterial_dvp7v")
 extra_cull_margin = 16384.0

@@ -3,13 +3,7 @@
 [ext_resource type="Script" uid="uid://2jytpbpy30x2" path="res://scripts/character.gd" id="1_loobb"]
 [ext_resource type="PackedScene" uid="uid://bytxipnxorm4y" path="res://bubble.tscn" id="2_lnme8"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_1vivr"]
-
 [node name="Character3D" type="Node3D" unique_id=923122773]
 script = ExtResource("1_loobb")
 
 [node name="Bubble3D" parent="." unique_id=706933889 instance=ExtResource("2_lnme8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.777054, 3.0837429, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=811227690]
-mesh = SubResource("BoxMesh_1vivr")
