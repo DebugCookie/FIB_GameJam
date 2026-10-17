@@ -1,34 +1,18 @@
 {
-  "Alice": {
-	"pro_employee": [
-	  { 
-		"text": "Jag älskar mitt jobb och mina kollegor!", 
-		"weight": 5,
-		"morale_impact": { "employee": 15, "work": -5 }
-	  }
-	],
-	"pro_work": [
-	  { 
-		"text": "Att arbeta hårt ger alltid resultat i längden.", 
-		"weight": 4,
-		"morale_impact": { "employee": -10, "work": 15 }
-	  }
-	]
-  },
-  "Bob": {
-	"pro_employee": [
-	  { 
-		"text": "Företagskulturen här är helt fantastisk under min ledning.", 
-		"weight": 3,
-		"morale_impact": { "employee": 10, "work": -2 }
-	  }
-	],
-	"pro_work": [
-	  { 
-		"text": "Produktivitet handlar om fokus, inte timmar.", 
-		"weight": 4,
-		"morale_impact": { "employee": -5, "work": 10 }
-	  }
-	]
-  }
+  "Karen": [
+	{ "text": "Upgrade everyone to a Thinkpad", "weight": 5, "morale_impact": { "employee": 10, "work": -2 } },
+	{ "text": "Change office dresscode every single day", "weight": 5, "morale_impact": { "employee": 10, "work": -2 } },
+	{ "text": "Drill a hole in office mugs", "weight": 3, "morale_impact": { "employee": -5, "work": 15 } }
+  ],
+  "BossBaby": [
+	{ "text": "Buy me a Ferrari", "weight": 4, "morale_impact": { "employee": 12, "work": 0 } },
+	{ "text": "Let me work 2 hours a day", "weight": 5, "morale_impact": { "employee": -20, "work": 25 } },
+	{ "text": "Lets party in Ibiza every weekend", "weight": 6, "morale_impact": { "employee": -20, "work": 25 } }
+  ],
+  "Celine": [],
+  "David": [],
+  "Erik": [],
+  "Frida": [],
+  "Gustav": [],
+  "Hanna": []
 }

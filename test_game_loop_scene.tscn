@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dmbqkj8pgcw6t"]
+
+[ext_resource type="Script" uid="uid://8mm4xsiddp6e" path="res://scripts/DialogueGameLoop.gd" id="1_8h4lv"]
+[ext_resource type="PackedScene" uid="uid://dlnm4crlnxca7" path="res://character_3d.tscn" id="2_8pbpy"]
+[ext_resource type="PackedScene" uid="uid://dt7ibabu7str8" path="res://global_morale_3d.tscn" id="3_8pbpy"]
+
+[node name="TestGameLoopScene" type="Node3D" unique_id=2093011268]
+script = ExtResource("1_8h4lv")
+
+[node name="Characters" type="Node3D" parent="." unique_id=1859539821]
+
+[node name="KarenCharacter" parent="Characters" unique_id=923122773 instance=ExtResource("2_8pbpy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.280171, 0, 0)
+character_name = "Karen"
+
+[node name="BossBaby" parent="Characters" unique_id=929423696 instance=ExtResource("2_8pbpy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2461963, 0, 0)
+character_name = "BossBaby"
+
+[node name="GlobalMorale3D" parent="." unique_id=615809671 instance=ExtResource("3_8pbpy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0897665, 2.7994955, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1217910064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4761436, 2.5924852, 6.2146344)

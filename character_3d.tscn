@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dlnm4crlnxca7"]
+
+[ext_resource type="Script" uid="uid://2jytpbpy30x2" path="res://scripts/character.gd" id="1_loobb"]
+[ext_resource type="PackedScene" uid="uid://bytxipnxorm4y" path="res://bubble.tscn" id="2_lnme8"]
+
+[node name="Character3D" type="Node3D" unique_id=923122773]
+script = ExtResource("1_loobb")
+
+[node name="Bubble3D" parent="." unique_id=706933889 instance=ExtResource("2_lnme8")]

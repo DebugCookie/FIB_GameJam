@@ -1,0 +1,42 @@
+extends Node3D
+class_name Character3D
+
+@export var character_name: String = "Anna"
+
+@onready var bubble_3d: Bubble3D = $Bubble3D
+
+var world_scene: Node = null 
+var manager: DialogueManager = null
+
+func start_character_loop(dm_manager: DialogueManager, main_world: Node) -> void:
+	manager = dm_manager
+	world_scene = main_world
+	
+	bubble_3d.bubble_expired.connect(_on_bubble_left_alone)
+	
+	prepare_next_speech()
+
+func prepare_next_speech() -> void:
+	var random_cooldown = randf_range(5.0, 10.0)
+	await get_tree().create_timer(random_cooldown).timeout
+	
+	trigger_speech()
+
+func trigger_speech() -> void:
+	var rolled_dialogue = manager.pop_weighted_item(character_name)
+	
+	if rolled_dialogue.is_empty():
+		return 
+		
+	var text = rolled_dialogue.get("text", "")
+	var impact = rolled_dialogue.get("morale_impact", {"employee": 0, "work": 0})
+	
+	bubble_3d.setup_bubble(character_name, text, impact)
+
+
+func _on_player_choice(is_yes: bool, impact: Dictionary) -> void:
+	world_scene.apply_morale_impact(is_yes, impact)
+	prepare_next_speech()
+
+func _on_bubble_left_alone() -> void:
+	prepare_next_speech()
