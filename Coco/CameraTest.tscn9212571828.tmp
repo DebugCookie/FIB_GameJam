@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c4wxjbh67wt6v"]
+
+[ext_resource type="Script" uid="uid://bfeh4r48s4ycy" path="res://Coco/clicker.gd" id="1_lbovf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2aodh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pxabf"]
+
+[node name="CameraTest" type="Node3D" unique_id=548459549]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=284189797]
+transform = Transform3D(1, 0, 0, 0, 0.8907951, 0.4544053, 0, -0.4544053, 0.8907951, 0, 1.2528996, 1.6555908)
+current = true
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=662463164]
+script = ExtResource("1_lbovf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1251873005]
+shape = SubResource("BoxShape3D_2aodh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1435918880]
+mesh = SubResource("BoxMesh_pxabf")
+
+[node name="Area3D" type="Area3D" parent="CharacterBody3D" unique_id=1005337638]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/Area3D" unique_id=999461925]
+transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, 0, 0, 0)
+shape = SubResource("BoxShape3D_2aodh")
+
+[connection signal="input_event" from="CharacterBody3D/Area3D" to="CharacterBody3D" method="_on_area_3d_input_event"]

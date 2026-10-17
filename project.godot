@@ -11,13 +11,16 @@ config_version=5
 [application]
 
 config/name="FIB_GameJam"
-run/main_scene="uid://v5hcyr5nn8gl"
+run/main_scene="uid://p601cch5st5d"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/always_on_top=true
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
 [dotnet]
@@ -30,4 +33,8 @@ project/assembly_name="FIB_GameJam"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+shading/overrides/force_vertex_shading=true
+shading/overrides/force_lambert_over_burley=true
+anti_aliasing/screen_space_roughness_limiter/enabled=false

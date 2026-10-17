@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://p601cch5st5d"]
+
+[ext_resource type="Script" uid="uid://mtv8dcbqu78x" path="res://camera_3d.gd" id="1_sm6nt"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n20ym"]
+
+[sub_resource type="Sky" id="Sky_l0xq5"]
+sky_material = SubResource("ProceduralSkyMaterial_n20ym")
+
+[sub_resource type="Environment" id="Environment_eugri"]
+background_mode = 2
+sky = SubResource("Sky_l0xq5")
+
+[node name="Node3D" type="Node3D" unique_id=1272375817]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=137851750]
+script = ExtResource("1_sm6nt")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1919570593]
+environment = SubResource("Environment_eugri")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=9738278]
