@@ -15,9 +15,8 @@ func start_character_loop(dm_manager: DialogueManager, main_world: Node) -> void
 	manager = dm_manager
 	world_scene = main_world
 	
-	# Koppla bubblans nya signal till vår lokala funktion
 	bubble_3d.action_processed.connect(_on_bubble_action_processed)
-	bubble_3d.bubble_expired.connect(_on_bubble_left_alone)
+	bubble_3d.bubble_expired.connect(_on_bubble_ignored)
 	
 	prepare_next_speech()
 
@@ -35,17 +34,21 @@ func trigger_speech() -> void:
 	if rolled_dialogue.is_empty(): return 
 		
 	var text = rolled_dialogue.get("text", "")
+	
 	var impact = rolled_dialogue.get("morale_impact", {"employee": 0, "work": 0})
+	var converted_impact = {
+		"happiness": int(impact.get("employee", 0)),
+		"money": int(impact.get("work", 0)) * 10 # Multiplicera för att få pengakänsla
+	}
 	
 	is_speaking = true
-	bubble_3d.setup_bubble(character_name, text, impact)
+	bubble_3d.setup_bubble(character_name, text, converted_impact)
 
-# --- HELPER-FUNKTION FÖR INTERAKTION ---
 
-func _on_bubble_action_processed(morale_change: Dictionary) -> void:
-	# Skickar förändrings-buntarna direkt till världens helper
-	world_scene.modify_global_morale(morale_change)
+func _on_bubble_action_processed(impact_change: Dictionary) -> void:
+	world_scene.modify_game_stats(impact_change)
 	prepare_next_speech()
 
-func _on_bubble_left_alone() -> void:
+func _on_bubble_ignored(penalty: Dictionary) -> void:
+	world_scene.modify_game_stats(penalty)
 	prepare_next_speech()
