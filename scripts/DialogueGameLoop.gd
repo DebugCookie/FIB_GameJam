@@ -1,11 +1,11 @@
 extends Node3D
 
-@onready var characters_container: Node3D = $Characters
 @onready var global_morale_ui: GlobalMorale3D = $GlobalMorale3D
+@onready var characters_container: Node3D = $Characters
 @onready var game_ui: GameUI = $GameUI 
 
 @export var day_duration_minutes: float = 2.0  
-@export var money_quota: int = 30000           # Balanserad startkvot ($30 000)
+@export var money_quota: int = 30000           
 @export var loading_screen_duration: float = 3.0 
 
 var current_day: int = 1                       
@@ -27,12 +27,16 @@ func _ready() -> void:
 		
 	total_day_seconds = day_duration_minutes * 60.0
 	time_remaining_seconds = total_day_seconds
+	
+	game_ui.next_day_started.connect(start_next_day)
 		
-	update_ui()
+	
 	_start_first_day()
 
 func _start_first_day() -> void:
 	await game_ui.trigger_loading_screen(current_day, loading_screen_duration)
+	
+	update_ui()
 	
 	for character in characters_container.get_children():
 		if character is Character3D:
@@ -76,15 +80,13 @@ func start_next_day() -> void:
 	current_money = 0 
 	time_remaining_seconds = total_day_seconds 
 	
-	# Exponentiell ökning på 40% mer mål för varje dygn man klarar
 	money_quota = int(money_quota * 1.4)
 	
 	update_ui()
 	
-	# Visar den svarta laddningsskärmen som pausar spelet i X sekunder
 	await game_ui.trigger_loading_screen(current_day, loading_screen_duration)
 	print("--- STARTAR DAG %d (Ny kvot: $%d) ---" % [current_day, money_quota])
 
-func trigger_loss(_reason: String) -> void:
+func trigger_loss(reason: String) -> void:
 	is_game_over = true
 	game_ui.show_game_over()

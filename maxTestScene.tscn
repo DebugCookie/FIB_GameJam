@@ -377,6 +377,8 @@ shader_parameter/viewport_size_override = Vector2(0, 0)
 [node name="Node3D" type="Node3D" unique_id=1272375817]
 script = ExtResource("1_dx25p")
 
+[node name="GameUI" parent="." unique_id=121058546 instance=ExtResource("28_dufa8")]
+
 [node name="GlobalMorale3D" parent="." unique_id=615809671 instance=ExtResource("2_3pouy")]
 transform = Transform3D(0.15, 0, 0, 0, 0.14999999, 0, 0, 0, 0.14999999, 0.18367818, -0.21547118, -0.4690874)
 
@@ -620,8 +622,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="GameUI" parent="." unique_id=121058546 instance=ExtResource("28_dufa8")]
 
 [node name="SM_Table" parent="." unique_id=125241893 instance=ExtResource("28_4ljo3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0025917962, -0.08777, -0.13986395)
