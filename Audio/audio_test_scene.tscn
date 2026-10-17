@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ck1ajmjfs5vmo"]
 
-[ext_resource type="AudioStream" uid="uid://dddr1rp2nt1ff" path="res://Audio/Audio Files/Ambience_Office.wav" id="1_4x80v"]
+[ext_resource type="AudioStream" uid="uid://dddr1rp2nt1ff" path="res://Audio/Audio Files/Ambience_Office_Loop.wav" id="1_4x80v"]
 [ext_resource type="Script" uid="uid://d0a7q7i7vou3f" path="res://Audio/audio_stream_player_2d.gd" id="2_dukle"]
 [ext_resource type="AudioStream" uid="uid://da57wkex0nstc" path="res://Audio/Audio Files/Baby_Cough-001.wav" id="3_v2olb"]
 [ext_resource type="AudioStream" uid="uid://diw5qxml4qp0d" path="res://Audio/Audio Files/Baby_Cough-002.wav" id="4_aaexa"]
