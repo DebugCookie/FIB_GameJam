@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bb37i7lr67awv"]
+
+[ext_resource type="Texture2D" uid="uid://c7a7eidvs34h6" path="res://Art Assets/3D/BG_Buildings_pexels-james-mirakian-774977502-25322978.jpg" id="1_a2akp"]
+
+[resource]
+resource_name = "Building"
+cull_mode = 2
+albedo_texture = ExtResource("1_a2akp")
+roughness = 0.5
+emission_enabled = true
+emission = Color(0.06240093, 0.10517413, 0.13537598, 1)
+emission_energy_multiplier = 2.75
+metadata/_gltf_primary_texture_coord = 0

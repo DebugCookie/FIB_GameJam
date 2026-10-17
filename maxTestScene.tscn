@@ -24,10 +24,11 @@
 [ext_resource type="PackedScene" uid="uid://dtsv0a4gve7xn" path="res://Art Assets/3D/SM_Door.glb" id="23_25qrb"]
 [ext_resource type="PackedScene" uid="uid://rrk0ivukfx18" path="res://Art Assets/3D/SM_Picture.glb" id="24_3ydh5"]
 [ext_resource type="PackedScene" uid="uid://ccm6ypo7s62uj" path="res://Art Assets/3D/SM_WhiteBoard.glb" id="25_1y33g"]
-[ext_resource type="PackedScene" uid="uid://wlwcjb66bw3f" path="res://Art Assets/3D/Table.glb" id="25_3ydh5"]
 [ext_resource type="PackedScene" uid="uid://cefe8rmec2chl" path="res://Art Assets/3D/Floor.glb" id="25_25qrb"]
 [ext_resource type="Shader" uid="uid://js4eg5babfkh" path="res://Art Assets/Buckshot.gdshader" id="27_1y33g"]
+[ext_resource type="PackedScene" uid="uid://68onlydndcoe" path="res://Art Assets/3D/SM_Table.glb" id="28_4ljo3"]
 [ext_resource type="PackedScene" uid="uid://cu6wwvy2yn3mp" path="res://game_ui.tscn" id="28_dufa8"]
+[ext_resource type="PackedScene" uid="uid://b8rvv8eakmc0v" path="res://Art Assets/3D/BG_Buildings.glb" id="30_ybmhm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_25qrb"]
 atlas = ExtResource("13_qilwt")
@@ -173,7 +174,7 @@ shader_parameter/viewport_size_override = Vector2(0, 0)
 script = ExtResource("1_dx25p")
 
 [node name="GlobalMorale3D" parent="." unique_id=615809671 instance=ExtResource("2_3pouy")]
-transform = Transform3D(0.15, 0, 0, 0, 0.14999999, 0, 0, 0, 0.14999999, 0.4158104, -0.14143467, -0.41807657)
+transform = Transform3D(0.15, 0, 0, 0, 0.14999999, 0, 0, 0, 0.14999999, 0.08442888, -0.14143467, -0.37811965)
 
 [node name="Characters" type="Node3D" parent="." unique_id=99532683]
 
@@ -355,7 +356,7 @@ transform = Transform3D(-3.5624783e-08, 0, 0.815, 0, 0.815, 0, -0.815, 0, -3.562
 [node name="Floor" parent="." unique_id=1442035342 instance=ExtResource("25_25qrb")]
 transform = Transform3D(1.055, 0, 0, 0, 1.055, 0, 0, 0, 1.055, -0.29874298, -0.08565942, -0.08690229)
 
-[node name="Table" parent="." unique_id=1674587173 instance=ExtResource("25_3ydh5")]
+[node name="Table" parent="." unique_id=1674587173]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015006363, -0.083910696, -0.11251141)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1262008694]
@@ -368,3 +369,9 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="GameUI" parent="." unique_id=121058546 instance=ExtResource("28_dufa8")]
+
+[node name="SM_Table" parent="." unique_id=125241893 instance=ExtResource("28_4ljo3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0025917962, -0.08777, -0.13986395)
+
+[node name="BG_Buildings" parent="." unique_id=320548735 instance=ExtResource("30_ybmhm")]
+transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -0.68751985, -0.50860167, -0.41640103)
