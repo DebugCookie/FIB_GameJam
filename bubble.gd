@@ -21,7 +21,13 @@ func setup_bubble(char_name: String, text: String, impact: Dictionary) -> void:
 	current_impact = impact
 	show()
 	
+<<<<<<< HEAD
 	active_timer = get_tree().create_timer(bubble_lifetime)
+=======
+	$SFX_Popup_Idea.play()
+	
+	active_timer = get_tree().create_timer(5.0)
+>>>>>>> 0a6416e2696e35c6a2545ac37a049c2e71c79b51
 	await active_timer.timeout
 	if is_visible_in_tree():
 		bubble_expired.emit()
