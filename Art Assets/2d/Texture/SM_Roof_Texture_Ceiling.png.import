@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cljmwkg5w3hpl"
-path.s3tc="res://.godot/imported/Floor_Texture_Floor.png-704288bfa9a30e46e279e024fe556eef.s3tc.ctex"
+uid="uid://dh76vdjx1toae"
+path.s3tc="res://.godot/imported/SM_Roof_Texture_Ceiling.png-bdddde67dca2d179c3913acea7998144.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "0386089191df3edb79301a0fe1accaea"
+"md5": "e9f6236e7263ede2f8dd5bc4430fa91e"
 }
 
 [deps]
 
-source_file="res://Art Assets/3D/Floor_Texture_Floor.png"
-dest_files=["res://.godot/imported/Floor_Texture_Floor.png-704288bfa9a30e46e279e024fe556eef.s3tc.ctex"]
+source_file="res://Art Assets/2d/Texture/SM_Roof_Texture_Ceiling.png"
+dest_files=["res://.godot/imported/SM_Roof_Texture_Ceiling.png-bdddde67dca2d179c3913acea7998144.s3tc.ctex"]
 
 [params]
 
