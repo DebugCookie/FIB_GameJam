@@ -79,6 +79,7 @@
 [ext_resource type="AudioStream" uid="uid://b743ns7ktq50" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-004.wav" id="62_wdk1f"]
 [ext_resource type="AudioStream" uid="uid://8hklsysxuv6o" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-005.wav" id="63_gqadi"]
 [ext_resource type="AudioStream" uid="uid://cb3041vaqtfed" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-006.wav" id="64_elhmf"]
+[ext_resource type="AudioStream" uid="uid://dnx2y5aef1o0i" path="res://Audio/Audio Files/Ambience_City_Loop.wav" id="73_x4ery"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_a5qvv"]
 shuffle = true
@@ -753,7 +754,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3157548, -0.06597404, -0.0
 [node name="SFX_Ambience_Bed" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport" unique_id=1933687846]
 stream = ExtResource("6_x6efl")
 attenuation_model = 3
-volume_db = -6.0
+volume_db = -2.0
 autoplay = true
 panning_strength = 0.0
 
@@ -774,6 +775,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022765517, 0.19934294, -0.
 
 [node name="SM_Window" parent="." unique_id=763268013 instance=ExtResource("12_2p1gs")]
 transform = Transform3D(-0.7099999, 0, -1.4956696e-07, 0, 0.80805326, 0, 1.0720701e-07, 0, -0.9905372, -0.38354537, -0.055646427, -0.23754987)
+
+[node name="SFX_Ambience_City" type="AudioStreamPlayer3D" parent="SM_Window" unique_id=822667818]
+transform = Transform3D(1.408451, 0, 4.2632564e-14, 0, 1.2375423, 0, -2.842171e-14, 0, 1.0095533, 0, 0.08699666, 0)
+stream = ExtResource("73_x4ery")
+attenuation_model = 3
+volume_db = -6.0
+autoplay = true
+panning_strength = 2.01
 
 [node name="SM_Door" parent="." unique_id=1678815973 instance=ExtResource("23_25qrb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.7636261, 0.3966971, -0.11315133, -0.48290318)
