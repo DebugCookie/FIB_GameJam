@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bytxipnxorm4y"]
+
+[ext_resource type="Script" uid="uid://bel5c8ul0s42h" path="res://bubble.gd" id="1_n2mqj"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1vivr"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Bubble3D" type="Node3D" unique_id=706933889]
+script = ExtResource("1_n2mqj")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1760913540]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubViewport" unique_id=1205927695]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CharacterLabel" type="Label" parent="SubViewport/VBoxContainer" unique_id=709994585]
+layout_mode = 2
+
+[node name="DialogueLabel" type="Label" parent="SubViewport/VBoxContainer" unique_id=524804525]
+layout_mode = 2
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=2133175379]
+texture = SubResource("ViewportTexture_1vivr")
