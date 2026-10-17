@@ -64,8 +64,13 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=990091969]
 handle_input_locally = false
+physics_object_picking = true
 size = Vector2i(1280, 720)
 render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=137851750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0022247136, 0.044210754, 0.00037831068)
+script = ExtResource("1_sm6nt")
 
 [node name="Npc 4" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=869253831]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19171095, -0.009771645, -0.22766328)
@@ -73,14 +78,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19171095, -0.009771645, -0.
 [node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 4" unique_id=1182727577]
 transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, -0.011478186, 0)
 texture = ExtResource("4_6hq1p")
-
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=137851750]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0022247136, 0.044210754, 0.00037831068)
-script = ExtResource("1_sm6nt")
-
-[node name="Camera3D2" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=563986135]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40298247, 0, 0)
-script = ExtResource("1_sm6nt")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1919570593]
 environment = SubResource("Environment_eugri")
@@ -131,8 +128,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.095855474, -0.007881649, -0
 transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, -0.011478186, 0)
 billboard = 1
 texture = ExtResource("4_6hq1p")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Npc 1" unique_id=1175644595]
 
 [node name="Npc 2" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=1510444227]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12852466, 0, -0.3180906)
