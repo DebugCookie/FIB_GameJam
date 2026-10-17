@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dy0o3gs81nvfb"]
 
 [ext_resource type="Script" uid="uid://sp04471c3fxa" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://u2est6yf3yp3" path="res://Art Assets/Ui/Mainscene_screen.png" id="2_7vrkn"]
 
 [node name="MainMenu" type="ColorRect" unique_id=378681469]
 script = ExtResource("1_06t4h")
@@ -29,3 +30,8 @@ offset_top = 543.0
 offset_right = 984.0
 offset_bottom = 574.0
 text = "Quit"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1936042723]
+position = Vector2(646, 364.99997)
+scale = Vector2(0.56799996, 0.4336492)
+texture = ExtResource("2_7vrkn")

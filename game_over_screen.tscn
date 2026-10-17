@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dsj1srax8i15j"]
 
 [ext_resource type="Script" uid="uid://emt0ca4udu27" path="res://game_over_screen.gd" id="1_gt22q"]
+[ext_resource type="Texture2D" uid="uid://cqt68afscbt" path="res://Art Assets/Ui/game_over_screen.png" id="2_w3hxg"]
 
 [node name="GameOverScreen" type="ColorRect" unique_id=1439978940]
 anchors_preset = 15
@@ -10,6 +11,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.19, 0.1349, 0.1349, 1)
 script = ExtResource("1_gt22q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1869700427]
+position = Vector2(640.00006, 360.50003)
+scale = Vector2(0.5662223, 0.42120853)
+texture = ExtResource("2_w3hxg")
 
 [node name="Game Over" type="Label" parent="." unique_id=1321020484]
 layout_mode = 0
