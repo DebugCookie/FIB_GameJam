@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://d26n1kvvr5t24" path="res://Art Assets/2d/characters/Richard.png" id="4_6hq1p"]
 [ext_resource type="Shader" uid="uid://r0uka4i5e0rn" path="res://Art Assets/PixelShader.gdshader" id="5_2ma1t"]
 [ext_resource type="PackedScene" uid="uid://dtk0f1owdt8m8" path="res://Art Assets/3D/SM_Table.glb" id="6_dvp7v"]
-[ext_resource type="Texture2D" uid="uid://bgb7mb6ya8ovg" path="res://Art Assets/2d/characters/Emo_ClosedMouth.png" id="6_ix60g"]
-[ext_resource type="Texture2D" uid="uid://c0rykd51jdxe8" path="res://Art Assets/2d/characters/Karen_ClosedMouth.png" id="7_10k1m"]
-[ext_resource type="Texture2D" uid="uid://qy88prdk3lp0" path="res://Art Assets/2d/characters/Nepo_ClosedMouth.png" id="8_7oxqh"]
+[ext_resource type="Texture2D" uid="uid://2tyqypvy44bs" path="res://Art Assets/2d/characters/Emo_ClosedMouth.png" id="6_ix60g"]
+[ext_resource type="Texture2D" uid="uid://biq43dpdaxepw" path="res://Art Assets/2d/characters/Karen_ClosedMouth.png" id="7_10k1m"]
+[ext_resource type="Texture2D" uid="uid://6u70o77gaabt" path="res://Art Assets/2d/characters/Nepo_ClosedMouth.png" id="8_7oxqh"]
 [ext_resource type="PackedScene" uid="uid://cx5h838bf2aeh" path="res://Art Assets/3D/SM_BossTable.glb" id="8_vr2aq"]
 [ext_resource type="Texture2D" uid="uid://dh7usbghd8vmc" path="res://Art Assets/2d/characters/militaryguy.png" id="9_10k1m"]
 [ext_resource type="PackedScene" uid="uid://cfik1lbetgv6s" path="res://Art Assets/3D/SM_Wall.glb" id="10_3pouy"]
@@ -178,6 +178,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=990091969]
 handle_input_locally = false
+physics_object_picking = true
 size = Vector2i(1280, 720)
 render_target_update_mode = 4
 
@@ -191,14 +192,8 @@ texture = ExtResource("4_6hq1p")
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=137851750]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0022247136, 0.044210754, 0.00037831068)
-script = ExtResource("1_sm6nt")
-
-[node name="Camera3D2" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=563986135]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40298247, 0, 0)
-script = ExtResource("1_sm6nt")
-
-[node name="Camera3D3" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1655848189]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40298247, 0, 0)
+near = 0.008
+far = 20.6
 script = ExtResource("1_sm6nt")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1919570593]
@@ -248,8 +243,6 @@ transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, -0.011478186, 
 billboard = 2
 texture = ExtResource("4_6hq1p")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Npc 1" unique_id=1175644595]
-
 [node name="Npc 2" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=1510444227]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12852466, 0, -0.3180906)
 
@@ -293,6 +286,7 @@ texture = ExtResource("4_6hq1p")
 
 [node name="PixelShader" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1699253788]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.036463067, 0)
+visible = false
 material_override = SubResource("ShaderMaterial_dvp7v")
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_ecnap")
