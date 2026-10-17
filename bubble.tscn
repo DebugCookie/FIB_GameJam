@@ -22,3 +22,5 @@ layout_mode = 2
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=2133175379]
 texture = SubResource("ViewportTexture_1vivr")
+
+[node name="SFX_Popup_Idea" type="AudioStreamPlayer2D" parent="." unique_id=2110778684]
