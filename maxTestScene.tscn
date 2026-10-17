@@ -12,6 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://cfik1lbetgv6s" path="res://Art Assets/3D/SM_Wall.glb" id="10_3pouy"]
 [ext_resource type="PackedScene" uid="uid://8nedl1c1b5fr" path="res://Art Assets/3D/SM_Roof.glb" id="11_be4fj"]
 [ext_resource type="PackedScene" uid="uid://4ubhy7ltsfgo" path="res://Art Assets/3D/SM_Window.glb" id="12_2p1gs"]
+[ext_resource type="Texture2D" uid="uid://brmdvqnbbqudj" path="res://Art Assets/2d/Hand_Idle.png" id="13_qilwt"]
+[ext_resource type="Texture2D" uid="uid://b82chp3bsjdai" path="res://Art Assets/2d/hand flipbook.png" id="13_x6efl"]
+[ext_resource type="Texture2D" uid="uid://5u0tv6hfynua" path="res://Art Assets/2d/Hand_No.png" id="14_bfujc"]
+[ext_resource type="Texture2D" uid="uid://btxyf0l1xfkas" path="res://Art Assets/2d/Hand_Slap1.png" id="15_b3dm5"]
+[ext_resource type="Texture2D" uid="uid://bj05rhbli6qin" path="res://Art Assets/2d/Hand_Pat.png" id="16_ix60g"]
+[ext_resource type="Texture2D" uid="uid://d1qkltglydv78" path="res://Art Assets/2d/Hand_Slap2.png" id="17_10k1m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n20ym"]
 
@@ -36,6 +42,110 @@ shader = ExtResource("5_2ma1t")
 [sub_resource type="QuadMesh" id="QuadMesh_ecnap"]
 flip_faces = true
 size = Vector2(2, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25qrb"]
+atlas = ExtResource("13_qilwt")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ydh5"]
+atlas = ExtResource("13_qilwt")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1y33g"]
+atlas = ExtResource("14_bfujc")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dufa8"]
+atlas = ExtResource("15_b3dm5")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ljo3"]
+atlas = ExtResource("16_ix60g")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybmhm"]
+atlas = ExtResource("15_b3dm5")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgof3"]
+atlas = ExtResource("17_10k1m")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oxqh"]
+atlas = ExtResource("13_x6efl")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpdgd"]
+atlas = ExtResource("13_x6efl")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gste"]
+atlas = ExtResource("13_qilwt")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5fgpt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25qrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25qrb")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ydh5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1y33g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1y33g")
+}],
+"loop": 1,
+"name": &"No",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dufa8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ljo3")
+}],
+"loop": 1,
+"name": &"Pet",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybmhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgof3")
+}],
+"loop": 1,
+"name": &"Slap",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7oxqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpdgd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gste")
+}],
+"loop": 1,
+"name": &"Yes",
+"speed": 5.0
+}]
 
 [node name="Node3D" type="Node3D" unique_id=1272375817]
 script = ExtResource("1_dx25p")
@@ -207,3 +317,28 @@ transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, -0.0
 
 [node name="SM_Window" parent="." unique_id=763268013 instance=ExtResource("12_2p1gs")]
 transform = Transform3D(-0.71, 0, -1.07207015e-07, 0, 0.80805326, 0, 1.07207015e-07, 0, -0.71, -0.38354537, -0.055646427, -0.23457122)
+
+[node name="Hand" type="CanvasLayer" parent="." unique_id=1550629561]
+
+[node name="HandBase" type="Control" parent="Hand" unique_id=1903685990]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Hand/HandBase" unique_id=830051114]
+position = Vector2(329.00003, -196)
+scale = Vector2(2.7285154, 1.7949219)
+sprite_frames = SubResource("SpriteFrames_5fgpt")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.26253733
