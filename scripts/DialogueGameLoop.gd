@@ -29,8 +29,8 @@ func _ready() -> void:
 
 
 func modify_global_morale(morale_change: Dictionary) -> void:
-	employee_morale += int(morale_change.get("employee", 0))
-	work_morale += int(morale_change.get("work", 0))
+	employee_morale += int(morale_change.get("Morale", 0))
+	work_morale += int(morale_change.get("Money", 0))
 	
 	# Håll mätarna säkra mellan 0 och 100
 	employee_morale = clamp(employee_morale, 0, 100)

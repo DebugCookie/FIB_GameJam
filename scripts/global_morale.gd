@@ -9,5 +9,5 @@ class_name GlobalMorale3D
 func update_morale_display(emp_morale: int, wrk_morale: int) -> void:
 	employee_bar.value = emp_morale
 	work_bar.value = wrk_morale
-	employee_label.text = "Employee Morale: %d%%" % emp_morale
-	work_label.text = "Work Morale: %d%%" % wrk_morale
+	employee_label.text = "Morale: %d%%" % emp_morale
+	work_label.text = "Money: %d%%" % wrk_morale

@@ -38,5 +38,5 @@ func approve_dialogue() -> void:
 	hide_bubble()
 
 func reject_dialogue() -> void:
-	action_processed.emit({"employee": 0, "work": 0})
+	action_processed.emit({"Moral": 0, "Money": 0})
 	hide_bubble()

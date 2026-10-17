@@ -1,13 +1,13 @@
 {
   "Karen": [
-	{ "text": "Upgrade everyone to a Thinkpad", "weight": 5, "morale_impact": { "employee": 10, "work": -2 } },
-	{ "text": "Change office dresscode every single day", "weight": 5, "morale_impact": { "employee": 10, "work": -2 } },
-	{ "text": "Drill a hole in office mugs", "weight": 3, "morale_impact": { "employee": -5, "work": 15 } }
+	{ "text": "Upgrade everyone to a Thinkpad", "weight": 5, "morale_impact": { "Moral": 10, "Money": -2 } },
+	{ "text": "Change office dresscode every single day", "weight": 5, "morale_impact": { "Moral": 10, "Money": -2 } },
+	{ "text": "Drill a hole in office mugs", "weight": 3, "morale_impact": { "Moral": -5, "Money": 15 } }
   ],
   "BossBaby": [
-	{ "text": "Buy me a Ferrari", "weight": 4, "morale_impact": { "employee": 12, "work": 0 } },
-	{ "text": "Let me work 2 hours a day", "weight": 5, "morale_impact": { "employee": -20, "work": 25 } },
-	{ "text": "Lets party in Ibiza every weekend", "weight": 6, "morale_impact": { "employee": -20, "work": 25 } }
+	{ "text": "Buy me a Ferrari", "weight": 4, "morale_impact": { "Moral": 12, "Money": 0 } },
+	{ "text": "Let me work 2 hours a day", "weight": 5, "morale_impact": { "Moral": -20, "Money": 25 } },
+	{ "text": "Lets party in Ibiza every weekend", "weight": 6, "morale_impact": { "Moral": -20, "Money": 25 } }
   ],
   "Celine": [],
   "David": [],

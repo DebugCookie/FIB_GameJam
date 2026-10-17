@@ -34,7 +34,7 @@ func trigger_speech() -> void:
 	if rolled_dialogue.is_empty(): return 
 		
 	var text = rolled_dialogue.get("text", "")
-	var impact = rolled_dialogue.get("morale_impact", {"employee": 0, "work": 0})
+	var impact = rolled_dialogue.get("morale_impact", {"Moral": 0, "Money": 0})
 	
 	is_speaking = true
 	bubble_3d.setup_bubble(character_name, text, impact)
