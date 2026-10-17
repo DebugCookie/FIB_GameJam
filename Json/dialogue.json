@@ -1,36 +1,34 @@
 {
-  "pro_employee": [
-	{ 
-	  "text": "Jag älskar mitt jobb och mina kollegor!", 
-	  "weight": 5,
-	  "morale_impact": { "employee": 15, "work": -5 }
-	},
-	{ 
-	  "text": "Företagskulturen här är helt fantastisk.", 
-	  "weight": 3,
-	  "morale_impact": { "employee": 10, "work": -2 }
-	},
-	{ 
-	  "text": "Nyckeln till framgång är bra samarbete.", 
-	  "weight": 2,
-	  "morale_impact": { "employee": 5, "work": 0 }
-	}
-  ],
-  "pro_work": [
-	{ 
-	  "text": "Att arbeta hårt ger alltid resultat i längden.", 
-	  "weight": 4,
-	  "morale_impact": { "employee": -10, "work": 15 }
-	},
-	{ 
-	  "text": "Produktivitet handlar om fokus, inte timmar.", 
-	  "weight": 4,
-	  "morale_impact": { "employee": -5, "work": 10 }
-	},
-	{ 
-	  "text": "Ett bra utfört arbete är en belöning i sig självt.", 
-	  "weight": 1,
-	  "morale_impact": { "employee": -15, "work": 20 }
-	}
-  ]
+  "Alice": {
+	"pro_employee": [
+	  { 
+		"text": "Jag älskar mitt jobb och mina kollegor!", 
+		"weight": 5,
+		"morale_impact": { "employee": 15, "work": -5 }
+	  }
+	],
+	"pro_work": [
+	  { 
+		"text": "Att arbeta hårt ger alltid resultat i längden.", 
+		"weight": 4,
+		"morale_impact": { "employee": -10, "work": 15 }
+	  }
+	]
+  },
+  "Bob": {
+	"pro_employee": [
+	  { 
+		"text": "Företagskulturen här är helt fantastisk under min ledning.", 
+		"weight": 3,
+		"morale_impact": { "employee": 10, "work": -2 }
+	  }
+	],
+	"pro_work": [
+	  { 
+		"text": "Produktivitet handlar om fokus, inte timmar.", 
+		"weight": 4,
+		"morale_impact": { "employee": -5, "work": 10 }
+	  }
+	]
+  }
 }

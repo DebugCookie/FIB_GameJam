@@ -1,65 +1,88 @@
-extends Node
+extends CanvasLayer
 
+# UI-referenser för mätarna
+@onready var employee_bar: ProgressBar = %Employeebar
+@onready var work_bar: ProgressBar = %WorkBar
+
+# NYTT: Referenser till textetiketterna för mätarna
+@onready var employee_bar_label: Label = %EmployeeBarLabel
+@onready var work_bar_label: Label = %WorkBarLabel
+
+@onready var dialogue_label: Label = $VBoxContainer/DialogueLabel
+@onready var yes_button: Button = $VBoxContainer/ButtonContainer/YesButton
+@onready var no_button: Button = $VBoxContainer/ButtonContainer/NoButton
+@onready var character_label: Label = $VBoxContainer/CharacterLabel 
+
+# Stats
 var employee_morale: int = 50
 var work_morale: int = 50
 
+var manager: DialogueManager
 const DIALOGUE_FILE_PATH = "Json/dialogue.json"
 
+var current_character: String = ""
+var current_dialogue: Dictionary = {}
+
 func _ready() -> void:
-	print("=== STARTAR VERIFIERING AV ALLA HELPERS ===\n")
-	
-	var manager = DialogueManager.new()
-	
+	manager = DialogueManager.new()
 	if not manager.load_dialogue_file(DIALOGUE_FILE_PATH):
-		print("Fel: Kunde inte ladda filen från: ", DIALOGUE_FILE_PATH)
+		dialogue_label.text = "Fel: Kunde inte ladda dialogfilen."
 		return
-	print(" load_dialogue_file() fungerar.\n")
 	
-	var categories = manager.get_category_names()
-	print(" get_category_names(): ", categories)
-	if categories.is_empty():
-		print("Avbryter testet: Inga kategorier hittades.")
+	yes_button.pressed.connect(_on_yes_button_pressed)
+	no_button.pressed.connect(_on_no_button_pressed)
+	
+	update_ui_bars()
+	display_next_dialogue()
+
+# Uppdaterar mätarna och deras tillhörande textetiketter
+func update_ui_bars() -> void:
+	employee_morale = clamp(employee_morale, 0, 100)
+	work_morale = clamp(work_morale, 0, 100)
+	
+	# Uppdatera själva mätarstaplarna
+	employee_bar.value = employee_morale
+	work_bar.value = work_morale
+	
+	# Korrekt textuppdatering via de externa textetiketterna
+	employee_bar_label.text = "Employee Morale: %d%%" % employee_morale
+	work_bar_label.text = "Work Morale: %d%%" % work_morale
+
+# (Resten av dina funktioner som display_next_dialogue, _on_yes_button_pressed osv. förblir likadana)
+func display_next_dialogue() -> void:
+	var characters = manager.get_character_names()
+	if characters.is_empty():
+		dialogue_label.text = "Inga karaktärer hittades i filen."
 		return
 		
-	var test_cat = categories[0]
-	print("Använder kategorin '%s' för resterande tester...\n" % test_cat)
+	current_character = characters[randi() % characters.size()]
 	
-	var cat_data = manager.get_category_data(test_cat)
-	print(" get_category_data(): Hittade %d objekt." % cat_data.size())
+	var categories = manager.get_character_categories(current_character)
+	if categories.is_empty(): return
+	var random_category = categories[randi() % categories.size()]
 	
-	var all_texts = manager.get_all_texts_in_category(test_cat)
-	print(" get_all_texts_in_category(): ", all_texts)
+	current_dialogue = manager.roll_weighted_item(current_character, random_category)
 	
-	var total_weight = manager.get_total_weight(test_cat)
-	print(" get_total_weight(): Total vikt är ", total_weight)
-	print("")
+	if not current_dialogue.is_empty():
+		character_label.text = "Talare: %s" % current_character
+		dialogue_label.text = "\"%s\"" % current_dialogue.get("text", "")
+
+func _on_yes_button_pressed() -> void:
+	if current_dialogue.is_empty(): return
 	
-	print("--- Testar index-helpers (Index 0) ---")
+	var morale_impact = current_dialogue.get("morale_impact", {"employee": 0, "work": 0})
+	employee_morale += int(morale_impact.get("employee", 0))
+	work_morale += int(morale_impact.get("work", 0))
 	
-	var item = manager.get_item_at_index(test_cat, 0)
-	print(" get_item_at_index(): ", item)
+	update_ui_bars()
+	display_next_dialogue()
+
+func _on_no_button_pressed() -> void:
+	if current_dialogue.is_empty(): return
 	
-	var text_at = manager.get_text_at_index(test_cat, 0)
-	print(" get_text_at_index(): '", text_at, "'")
+	var morale_impact = current_dialogue.get("morale_impact", {"employee": 0, "work": 0})
+	employee_morale -= int(morale_impact.get("employee", 0))
+	work_morale -= int(morale_impact.get("work", 0))
 	
-	var weight_at = manager.get_weight_at_index(test_cat, 0)
-	print(" get_weight_at_index(): ", weight_at)
-	
-	var impact = manager.get_morale_impact_at_index(test_cat, 0)
-	print(" get_morale_impact_at_index(): ", impact)
-	
-	var emp_change = manager.get_employee_morale_change(test_cat, 0)
-	var wrk_change = manager.get_work_morale_change(test_cat, 0)
-	print(" get_employee_morale_change(): ", emp_change)
-	print(" get_work_morale_change(): ", wrk_change)
-	print("")
-	
-	print("--- Testar slumpnings-helpers ---")
-	
-	var rand_text = manager.get_weighted_text(test_cat)
-	print(" get_weighted_text() rullade: '", rand_text, "'")
-	
-	var rand_item = manager.roll_weighted_item(test_cat)
-	print(" roll_weighted_item() rullade hela blocket: ", rand_item)
-	
-	print("\n=== ALLA HELPERS HAR TESTATS ===")
+	update_ui_bars()
+	display_next_dialogue()
