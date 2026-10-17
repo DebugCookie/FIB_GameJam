@@ -7,10 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://d26n1kvvr5t24" path="res://Art Assets/2d/characters/Richard.png" id="4_6hq1p"]
 [ext_resource type="Shader" uid="uid://r0uka4i5e0rn" path="res://Art Assets/PixelShader.gdshader" id="5_2ma1t"]
 [ext_resource type="PackedScene" uid="uid://dtk0f1owdt8m8" path="res://Art Assets/3D/SM_Table.glb" id="6_dvp7v"]
-[ext_resource type="Texture2D" uid="uid://j0vjoe25uj1v" path="res://Art Assets/2d/characters/Emo_ClosedMouth.png" id="6_ix60g"]
+[ext_resource type="Texture2D" uid="uid://bgb7mb6ya8ovg" path="res://Art Assets/2d/characters/Emo_ClosedMouth.png" id="6_ix60g"]
 [ext_resource type="PackedScene" uid="uid://cefe8rmec2chl" path="res://Art Assets/3D/SM_Floor.glb" id="7_8kcya"]
-[ext_resource type="Texture2D" uid="uid://ddekqqedxmq51" path="res://Art Assets/2d/characters/Karen_ClosedMouth.png" id="7_10k1m"]
-[ext_resource type="Texture2D" uid="uid://wkqkb0hvnqyo" path="res://Art Assets/2d/characters/Nepo_ClosedMouth.png" id="8_7oxqh"]
+[ext_resource type="Texture2D" uid="uid://c0rykd51jdxe8" path="res://Art Assets/2d/characters/Karen_ClosedMouth.png" id="7_10k1m"]
+[ext_resource type="Texture2D" uid="uid://qy88prdk3lp0" path="res://Art Assets/2d/characters/Nepo_ClosedMouth.png" id="8_7oxqh"]
 [ext_resource type="PackedScene" uid="uid://cx5h838bf2aeh" path="res://Art Assets/3D/SM_BossTable.glb" id="8_vr2aq"]
 [ext_resource type="Texture2D" uid="uid://dh7usbghd8vmc" path="res://Art Assets/2d/characters/militaryguy.png" id="9_10k1m"]
 [ext_resource type="PackedScene" uid="uid://cfik1lbetgv6s" path="res://Art Assets/3D/SM_Wall.glb" id="10_3pouy"]
@@ -310,19 +310,22 @@ transform = Transform3D(0.095, 0, 0, 0, 0.095, 0, 0, 0, 0.095, -0.009925753, -0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07681596, -0.059896484)
 
 [node name="Floor" parent="." unique_id=970781916 instance=ExtResource("7_8kcya")]
-transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0.30511138, -0.071014374, -0.21940626)
+transform = Transform3D(-1.2436589, 8.742278e-08, 0, -1.08724116e-07, -1, 0, 0, 0, 1.8158991, 0.43495896, -0.071014374, -0.21940626)
 
 [node name="SM_Wall" parent="." unique_id=1219317071 instance=ExtResource("10_3pouy")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.39856073, -0.13130234, -0.31957725)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.39856073, -0.13130234, -0.23945713)
 
 [node name="SM_Wall2" parent="." unique_id=1887927298 instance=ExtResource("10_3pouy")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 0.008830994, -0.13130234, -0.62866175)
+transform = Transform3D(1.3113416e-07, 0, -1.1545465, 0, 1, 0, 1, 0, 1.5140049e-07, 0.008830994, -0.13130234, -0.62866175)
+
+[node name="SM_Wall3" parent="." unique_id=1447902437 instance=ExtResource("10_3pouy")]
+transform = Transform3D(-2.1855693e-07, 0, 1.1545465, 0, 1, 0, -1, 0, -2.5233413e-07, 0.008830994, -0.13130234, 0.123515904)
 
 [node name="SM_Roof" parent="." unique_id=1421866103 instance=ExtResource("11_be4fj")]
 transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, -0.063537, 0.28677952, -0.24673656)
 
 [node name="SM_Window" parent="." unique_id=763268013 instance=ExtResource("12_2p1gs")]
-transform = Transform3D(-0.71, 0, -1.07207015e-07, 0, 0.80805326, 0, 1.07207015e-07, 0, -0.71, -0.38354537, -0.055646427, -0.23457122)
+transform = Transform3D(-0.7099999, 0, -1.4956696e-07, 0, 0.80805326, 0, 1.0720701e-07, 0, -0.9905372, -0.38354537, -0.055646427, -0.23754987)
 
 [node name="Hand" type="CanvasLayer" parent="." unique_id=1550629561]
 
