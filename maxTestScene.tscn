@@ -28,25 +28,6 @@
 [ext_resource type="PackedScene" uid="uid://cefe8rmec2chl" path="res://Art Assets/3D/Floor.glb" id="25_25qrb"]
 [ext_resource type="Shader" uid="uid://js4eg5babfkh" path="res://Art Assets/Buckshot.gdshader" id="27_1y33g"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n20ym"]
-
-[sub_resource type="Sky" id="Sky_l0xq5"]
-sky_material = SubResource("ProceduralSkyMaterial_n20ym")
-
-[sub_resource type="Environment" id="Environment_eugri"]
-background_mode = 2
-sky = SubResource("Sky_l0xq5")
-
-[sub_resource type="BoxMesh" id="BoxMesh_cejtf"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dvp7v"]
-render_priority = 0
-shader = ExtResource("5_2ma1t")
-
-[sub_resource type="QuadMesh" id="QuadMesh_ecnap"]
-flip_faces = true
-size = Vector2(2, 2)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_25qrb"]
 atlas = ExtResource("13_qilwt")
 region = Rect2(0, 0, 256, 256)
@@ -151,13 +132,32 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n20ym"]
+
+[sub_resource type="Sky" id="Sky_l0xq5"]
+sky_material = SubResource("ProceduralSkyMaterial_n20ym")
+
+[sub_resource type="Environment" id="Environment_eugri"]
+background_mode = 2
+sky = SubResource("Sky_l0xq5")
+
+[sub_resource type="BoxMesh" id="BoxMesh_cejtf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dvp7v"]
+render_priority = 0
+shader = ExtResource("5_2ma1t")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ecnap"]
+flip_faces = true
+size = Vector2(2, 2)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dufa8"]
 shader = ExtResource("27_1y33g")
 shader_parameter/exposure = 0.730000010925
 shader_parameter/contrast = 1.1250000296875
 shader_parameter/saturation = 0.786000037335
 shader_parameter/enable_pixelate = true
-shader_parameter/pixel_factor = 3.1550001261125002
+shader_parameter/pixel_factor = 3.1550001261125
 shader_parameter/enable_posterize = true
 shader_parameter/color_levels = 11.6930004604175
 shader_parameter/dither_strength = 1.0
@@ -213,6 +213,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0022247136, 0.044210754, 0
 near = 0.008
 far = 20.6
 script = ExtResource("1_sm6nt")
+
+[node name="Hand" type="CanvasLayer" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=1550629561]
+
+[node name="HandBase" type="Control" parent="SubViewportContainer/SubViewport/Camera3D/Hand" unique_id=1903685990]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport/Camera3D/Hand/HandBase" unique_id=830051114]
+position = Vector2(329.00003, -196)
+scale = Vector2(2.7285154, 1.7949219)
+sprite_frames = SubResource("SpriteFrames_5fgpt")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.041624215
 
 [node name="AudioListener3D" type="AudioListener3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=136002597]
 current = true
@@ -306,41 +331,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10227886, -0.059896484)
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.39856073, -0.13130234, -0.23945713)
 
 [node name="SM_Wall2" parent="." unique_id=1887927298 instance=ExtResource("10_3pouy")]
-transform = Transform3D(1.3113416e-07, 0, -1.1545465, 0, 1, 0, 1, 0, 1.5140049e-07, 0.008830994, -0.13130234, -0.62866175)
+transform = Transform3D(1.3113416e-07, 0, -1.1545465, 0, 1, 0, 1, 0, 1.5140049e-07, 0.008830994, -0.13130234, -0.48150295)
 
 [node name="SM_Wall3" parent="." unique_id=1447902437 instance=ExtResource("10_3pouy")]
 transform = Transform3D(-2.1855693e-07, 0, 1.1545465, 0, 1, 0, -1, 0, -2.5233413e-07, 0.008830994, -0.13130234, 0.123515904)
 
 [node name="SM_Roof" parent="." unique_id=1421866103 instance=ExtResource("11_be4fj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022765517, 0.24811134, -0.24673656)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022765517, 0.19934294, -0.24673656)
 
 [node name="SM_Window" parent="." unique_id=763268013 instance=ExtResource("12_2p1gs")]
 transform = Transform3D(-0.7099999, 0, -1.4956696e-07, 0, 0.80805326, 0, 1.0720701e-07, 0, -0.9905372, -0.38354537, -0.055646427, -0.23754987)
-
-[node name="Hand" type="CanvasLayer" parent="." unique_id=1550629561]
-
-[node name="HandBase" type="Control" parent="Hand" unique_id=1903685990]
-layout_mode = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 0
-size_flags_vertical = 8
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Hand/HandBase" unique_id=830051114]
-position = Vector2(329.00003, -196)
-scale = Vector2(2.7285154, 1.7949219)
-sprite_frames = SubResource("SpriteFrames_5fgpt")
-animation = &"Idle"
-autoplay = "Idle"
-frame_progress = 0.041624215
 
 [node name="SM_Door" parent="." unique_id=1678815973 instance=ExtResource("23_25qrb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.7636261, 0.3966971, -0.11315133, -0.48290318)
@@ -349,7 +349,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.7636261, 0.3966971, -0.1131513
 transform = Transform3D(0.56, 0, 0, 0, 0.56, 0, 0, 0, 0.56, 0.38655156, -0.0050126836, -0.24838927)
 
 [node name="SM_WhiteBoard" parent="." unique_id=4093690 instance=ExtResource("25_1y33g")]
-transform = Transform3D(-3.5624783e-08, 0, 0.815, 0, 0.815, 0, -0.815, 0, -3.5624783e-08, -0.04829803, 0.0048734173, -0.6220665)
+transform = Transform3D(-3.5624783e-08, 0, 0.815, 0, 0.815, 0, -0.815, 0, -3.5624783e-08, -0.04829803, -0.016708277, -0.4749077)
 
 [node name="Floor" parent="." unique_id=1442035342 instance=ExtResource("25_25qrb")]
 transform = Transform3D(1.055, 0, 0, 0, 1.055, 0, 0, 0, 1.055, -0.29874298, -0.08565942, -0.08690229)
