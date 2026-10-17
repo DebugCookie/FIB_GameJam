@@ -5,6 +5,7 @@
 [ext_resource type="Material" uid="uid://brmrk5kgdgk5b" path="res://Materials/M_Wall.tres" id="3_nhr8d"]
 [ext_resource type="Texture2D" uid="uid://bjucx6bb3xm2j" path="res://Art Assets/2d/characters/Richard.png" id="4_6hq1p"]
 [ext_resource type="Shader" uid="uid://r0uka4i5e0rn" path="res://Art Assets/PixelShader.gdshader" id="5_2ma1t"]
+[ext_resource type="PackedScene" uid="uid://dtk0f1owdt8m8" path="res://Art Assets/3D/SM_Table.glb" id="6_dvp7v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n20ym"]
 
@@ -16,8 +17,6 @@ background_mode = 2
 sky = SubResource("Sky_l0xq5")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_eugri"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_l0xq5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_eugri"]
 size = Vector3(1, 1, 1.1166992)
@@ -87,34 +86,6 @@ mesh = SubResource("PlaneMesh_eugri")
 transform = Transform3D(-1.8100334e-08, -0.3536574, 8.35213e-09, 0, -1.5458854e-08, -0.19107446, 0.41408736, -1.5458854e-08, -9.925824e-16, 0.34430057, 0.10513598, -0.3265216)
 material_override = ExtResource("3_nhr8d")
 mesh = SubResource("PlaneMesh_eugri")
-
-[node name="BigTableSection" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1758762916]
-transform = Transform3D(0.002905508, 0, 0.108521916, 0, 0.007782675, 0, -0.068360426, 0, 0.004612482, -0.006332211, -0.041886076, -0.28583416)
-mesh = SubResource("BoxMesh_l0xq5")
-
-[node name="BigTableSection3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1209113399]
-transform = Transform3D(0.036696456, 0, 0.091676496, 0, 0.007782676, 0, -0.057749104, 0, 0.05825548, 0.0758853, -0.041886076, -0.25872004)
-mesh = SubResource("BoxMesh_l0xq5")
-
-[node name="BigTableSection4" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=559949221]
-transform = Transform3D(0.060654618, 0, 0.050266437, 0, 0.0077826767, 0, -0.03166396, 0, 0.096288964, 0.1322093, -0.041886076, -0.19745114)
-mesh = SubResource("BoxMesh_l0xq5")
-
-[node name="BigTableSection6" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=879081608]
-transform = Transform3D(0.060654618, 0, 0.050266437, 0, 0.0077826767, 0, -0.03166396, 0, 0.096288964, 0.17727572, -0.041886076, -0.10967514)
-mesh = SubResource("BoxMesh_l0xq5")
-
-[node name="BigTableSection2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=452402307]
-transform = Transform3D(-0.03166397, 0, 0.09628897, 0, 0.007782676, 0, -0.060654614, 0, -0.05026643, -0.08882737, -0.041886076, -0.26808193)
-mesh = SubResource("BoxMesh_l0xq5")
-
-[node name="BigTableSection5" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=368422342]
-transform = Transform3D(-0.057749107, 0, 0.05825548, 0, 0.0077826767, 0, -0.036696453, 0, -0.09167649, -0.15466893, -0.041886076, -0.20906691)
-mesh = SubResource("BoxMesh_l0xq5")
-
-[node name="BigTableSection7" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=444533881]
-transform = Transform3D(-0.057749107, 0, 0.05825548, 0, 0.0077826767, 0, -0.036696453, 0, -0.09167649, -0.2143795, -0.041886076, -0.11777987)
-mesh = SubResource("BoxMesh_l0xq5")
 
 [node name="FrontTable" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1682725433]
 transform = Transform3D(0.002905508, 0, 0.108521916, 0, 0.007782675, 0, -0.068360426, 0, 0.004612482, -0.006332211, -0.041886076, -0.08386652)
@@ -219,9 +190,13 @@ billboard = 1
 texture = ExtResource("4_6hq1p")
 
 [node name="PixelShader" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1699253788]
+visible = false
 material_override = SubResource("ShaderMaterial_dvp7v")
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_ecnap")
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=877355216]
 transform = Transform3D(1, 0, 0, 0, 0.99493486, -0.10052219, 0, 0.10052219, 0.99493486, 0, 0, 0)
+
+[node name="SM_Table" parent="." unique_id=720567682 instance=ExtResource("6_dvp7v")]
+transform = Transform3D(0.095, 0, 0, 0, 0.095, 0, 0, 0, 0.095, -0.009925753, -0.08948563, -0.162295)
