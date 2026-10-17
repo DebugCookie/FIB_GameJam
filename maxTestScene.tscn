@@ -232,7 +232,8 @@ transform = Transform3D(0.052500002, 0, 0, 0, 0.035515994, 0, 0, 0, 0.052500002,
 mesh = SubResource("CylinderMesh_eugri")
 
 [node name="TV" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1998647896]
-transform = Transform3D(0.26148742, 0, 0, 0, 0.15409297, 0, 0, 0, 0.007278506, -0.052960664, 0.06392069, -0.533362)
+transform = Transform3D(0.26148742, 0, 0, 0, 0.15409297, 0, 0, 0, 0.007278506, -0.052960664, 0.06392069, -0.6163522)
+visible = false
 mesh = SubResource("BoxMesh_cejtf")
 
 [node name="Npc 1" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=1975367015]
@@ -314,7 +315,7 @@ transform = Transform3D(1.3113416e-07, 0, -1.1545465, 0, 1, 0, 1, 0, 1.5140049e-
 transform = Transform3D(-2.1855693e-07, 0, 1.1545465, 0, 1, 0, -1, 0, -2.5233413e-07, 0.008830994, -0.13130234, 0.123515904)
 
 [node name="SM_Roof" parent="." unique_id=1421866103 instance=ExtResource("11_be4fj")]
-transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, -0.063537, 0.28677952, -0.24673656)
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, -0.063537, 0.24811134, -0.24673656)
 
 [node name="SM_Window" parent="." unique_id=763268013 instance=ExtResource("12_2p1gs")]
 transform = Transform3D(-0.7099999, 0, -1.4956696e-07, 0, 0.80805326, 0, 1.0720701e-07, 0, -0.9905372, -0.38354537, -0.055646427, -0.23754987)
@@ -351,7 +352,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.7636261, 0.3966971, -0.1131513
 transform = Transform3D(0.56, 0, 0, 0, 0.56, 0, 0, 0, 0.56, 0.38655156, 0.033156253, -0.14853796)
 
 [node name="SM_WhiteBoard" parent="." unique_id=4093690 instance=ExtResource("25_1y33g")]
-transform = Transform3D(-3.5624783e-08, 0, 0.815, 0, 0.815, 0, -0.815, 0, -3.5624783e-08, 0.070173845, 0.036220804, -0.6220665)
+transform = Transform3D(-3.5624783e-08, 0, 0.815, 0, 0.815, 0, -0.815, 0, -3.5624783e-08, -0.04829803, 0.0048734173, -0.6220665)
 
 [node name="Floor" parent="." unique_id=1442035342 instance=ExtResource("25_25qrb")]
-transform = Transform3D(1.055, 0, 0, 0, 1.055, 0, 0, 0, 1.055, -0.29874298, -0.11038885, -0.08690229)
+transform = Transform3D(1.055, 0, 0, 0, 1.055, 0, 0, 0, 1.055, -0.29874298, -0.08565942, -0.08690229)
