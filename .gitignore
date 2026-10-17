@@ -1,3 +1,10 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+Art Assets/2d/SM_Roof_Texture_Ceiling_Emissive.png.import
+Art Assets/3D/SM_Floor_Texture_Floor.png
+Art Assets/3D/SM_Floor_Texture_Floor.png.import
+Art Assets/3D/SM_Roof_Texture_Ceiling.png
+Art Assets/3D/SM_Roof_Texture_Ceiling.png.import
+Art Assets/3D/SM_Wall_Texture_Wall.png
+Art Assets/3D/SM_Wall_Texture_Wall.png.import
