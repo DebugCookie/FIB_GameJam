@@ -378,16 +378,16 @@ shader_parameter/viewport_size_override = Vector2(0, 0)
 script = ExtResource("1_dx25p")
 
 [node name="GlobalMorale3D" parent="." unique_id=615809671 instance=ExtResource("2_3pouy")]
-transform = Transform3D(0.15, 0, 0, 0, 0.14999999, 0, 0, 0, 0.14999999, 0.08442888, -0.14143467, -0.37811965)
+transform = Transform3D(0.15, 0, 0, 0, 0.14999999, 0, 0, 0, 0.14999999, 0.18367818, -0.21547118, -0.4690874)
 
 [node name="Characters" type="Node3D" parent="." unique_id=99532683]
 
 [node name="Karen" parent="Characters" unique_id=923122773 instance=ExtResource("3_be4fj")]
-transform = Transform3D(0.022733172, 0, 0.019575566, 0, 0.03, 0, -0.019575566, 0, 0.022733172, -0.26798317, 0.12929419, -0.2385953)
+transform = Transform3D(0.022733172, 0, 0.019575566, 0, 0.03, 0, -0.019575566, 0, 0.022733172, -0.26798317, 0.08773553, -0.2385953)
 character_name = "Karen"
 
 [node name="BossBaby" parent="Characters" unique_id=1486932446 instance=ExtResource("3_be4fj")]
-transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -0.009102821, 0.14876491, -0.33910713)
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -0.009102821, 0.088940084, -0.33910713)
 character_name = "BossBaby"
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1310699426]
@@ -607,7 +607,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.7636261, 0.3966971, -0.1131513
 transform = Transform3D(0.56, 0, 0, 0, 0.56, 0, 0, 0, 0.56, 0.38655156, -0.0050126836, -0.24838927)
 
 [node name="SM_WhiteBoard" parent="." unique_id=4093690 instance=ExtResource("25_1y33g")]
-transform = Transform3D(-3.5624783e-08, 0, 0.815, 0, 0.815, 0, -0.815, 0, -3.5624783e-08, -0.04829803, -0.016708277, -0.4749077)
+transform = Transform3D(-3.5624783e-08, 0, 1.0528673, 0, 0.9439945, 0, -0.815, 0, -4.602229e-08, -0.04829803, -0.043196242, -0.4749077)
 
 [node name="Floor" parent="." unique_id=1442035342 instance=ExtResource("25_25qrb")]
 transform = Transform3D(1.055, 0, 0, 0, 1.055, 0, 0, 0, 1.055, -0.29874298, -0.08565942, -0.08690229)
