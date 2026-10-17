@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://ccm6ypo7s62uj" path="res://Art Assets/3D/SM_WhiteBoard.glb" id="25_1y33g"]
 [ext_resource type="PackedScene" uid="uid://wlwcjb66bw3f" path="res://Art Assets/3D/Table.glb" id="25_3ydh5"]
 [ext_resource type="PackedScene" uid="uid://cefe8rmec2chl" path="res://Art Assets/3D/Floor.glb" id="25_25qrb"]
+[ext_resource type="Shader" uid="uid://js4eg5babfkh" path="res://Art Assets/Buckshot.gdshader" id="27_1y33g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n20ym"]
 
@@ -150,6 +151,23 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dufa8"]
+shader = ExtResource("27_1y33g")
+shader_parameter/exposure = 0.730000010925
+shader_parameter/contrast = 1.1250000296875
+shader_parameter/saturation = 0.786000037335
+shader_parameter/enable_pixelate = true
+shader_parameter/pixel_factor = 3.1550001261125002
+shader_parameter/enable_posterize = true
+shader_parameter/color_levels = 11.6930004604175
+shader_parameter/dither_strength = 1.0
+shader_parameter/chrom_aberration = 4.0
+shader_parameter/vignette_strength = 2.0
+shader_parameter/grain_strength = 0.1170000055575
+shader_parameter/tint_color = Vector3(0.95, 1.03, 0.9)
+shader_parameter/tint_strength = 0.15
+shader_parameter/viewport_size_override = Vector2(0, 0)
+
 [node name="Node3D" type="Node3D" unique_id=1272375817]
 script = ExtResource("1_dx25p")
 
@@ -212,7 +230,7 @@ visible = false
 mesh = SubResource("BoxMesh_cejtf")
 
 [node name="Npc 1" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=1975367015]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.095855474, -0.007881649, -0.3186159)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.095855474, -0.007881649, -0.27162284)
 
 [node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 1" unique_id=134879717]
 transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, -0.011478186, 0)
@@ -220,7 +238,7 @@ billboard = 2
 texture = ExtResource("4_6hq1p")
 
 [node name="Npc 2" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=1510444227]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12852466, 0, -0.3180906)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12852466, 0, -0.27109748)
 
 [node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 2" unique_id=22432494]
 transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, 0.0068039577, 0)
@@ -228,7 +246,7 @@ billboard = 1
 texture = ExtResource("6_ix60g")
 
 [node name="Npc 3" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=262773439]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23154801, 0, -0.23040584)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23154801, 0, -0.18341275)
 
 [node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 3" unique_id=2012629137]
 transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, -0.011478186, 0)
@@ -236,7 +254,7 @@ billboard = 2
 texture = ExtResource("7_10k1m")
 
 [node name="Npc 5" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=41172918]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0023617148, -0.007881649, -0.35148)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0023617148, -0.007881649, -0.30448693)
 
 [node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 5" unique_id=578031686]
 transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, 0.02024278, 0)
@@ -245,7 +263,7 @@ billboard = 2
 texture = ExtResource("8_7oxqh")
 
 [node name="Npc 6" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=211105443]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2424463, -0.01954329, -0.13776079)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2424463, -0.01954329, -0.0907677)
 
 [node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 6" unique_id=756906528]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0.01544841, 0)
@@ -253,7 +271,7 @@ billboard = 2
 texture = ExtResource("9_10k1m")
 
 [node name="Npc 7" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=463533047]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28415585, -0.007881649, -0.13513812)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28415585, -0.007881649, -0.08814503)
 
 [node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 7" unique_id=255206099]
 transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, -0.011478186, 0)
@@ -294,7 +312,7 @@ transform = Transform3D(1.3113416e-07, 0, -1.1545465, 0, 1, 0, 1, 0, 1.5140049e-
 transform = Transform3D(-2.1855693e-07, 0, 1.1545465, 0, 1, 0, -1, 0, -2.5233413e-07, 0.008830994, -0.13130234, 0.123515904)
 
 [node name="SM_Roof" parent="." unique_id=1421866103 instance=ExtResource("11_be4fj")]
-transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, -0.063537, 0.24811134, -0.24673656)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022765517, 0.24811134, -0.24673656)
 
 [node name="SM_Window" parent="." unique_id=763268013 instance=ExtResource("12_2p1gs")]
 transform = Transform3D(-0.7099999, 0, -1.4956696e-07, 0, 0.80805326, 0, 1.0720701e-07, 0, -0.9905372, -0.38354537, -0.055646427, -0.23754987)
@@ -328,7 +346,7 @@ frame_progress = 0.041624215
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.7636261, 0.3966971, -0.11315133, -0.48290318)
 
 [node name="SM_Picture" parent="." unique_id=1545905301 instance=ExtResource("24_3ydh5")]
-transform = Transform3D(0.56, 0, 0, 0, 0.56, 0, 0, 0, 0.56, 0.38655156, 0.033156253, -0.14853796)
+transform = Transform3D(0.56, 0, 0, 0, 0.56, 0, 0, 0, 0.56, 0.38655156, -0.0050126836, -0.24838927)
 
 [node name="SM_WhiteBoard" parent="." unique_id=4093690 instance=ExtResource("25_1y33g")]
 transform = Transform3D(-3.5624783e-08, 0, 0.815, 0, 0.815, 0, -0.815, 0, -3.5624783e-08, -0.04829803, 0.0048734173, -0.6220665)
@@ -337,4 +355,13 @@ transform = Transform3D(-3.5624783e-08, 0, 0.815, 0, 0.815, 0, -0.815, 0, -3.562
 transform = Transform3D(1.055, 0, 0, 0, 1.055, 0, 0, 0, 1.055, -0.29874298, -0.08565942, -0.08690229)
 
 [node name="Table" parent="." unique_id=1674587173 instance=ExtResource("25_3ydh5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015006363, -0.083910696, -0.1595045)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015006363, -0.083910696, -0.11251141)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1262008694]
+material = SubResource("ShaderMaterial_dufa8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
