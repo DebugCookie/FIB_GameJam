@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://e4vwe18l2jvs"
+path="res://.godot/imported/Outcome_Morale_Negative-001.wav-5bc66b2860bc1402afbc52a8c0ffbc00.sample"
+
+[deps]
+
+source_file="res://Audio/Audio Files/Outcome_Morale_Negative-001.wav"
+dest_files=["res://.godot/imported/Outcome_Morale_Negative-001.wav-5bc66b2860bc1402afbc52a8c0ffbc00.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

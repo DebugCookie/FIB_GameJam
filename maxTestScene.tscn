@@ -80,6 +80,21 @@
 [ext_resource type="AudioStream" uid="uid://8hklsysxuv6o" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-005.wav" id="63_gqadi"]
 [ext_resource type="AudioStream" uid="uid://cb3041vaqtfed" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-006.wav" id="64_elhmf"]
 [ext_resource type="AudioStream" uid="uid://dnx2y5aef1o0i" path="res://Audio/Audio Files/Ambience_City_Loop.wav" id="73_x4ery"]
+[ext_resource type="AudioStream" uid="uid://c7nwsylysqpeq" path="res://Audio/Audio Files/Hand_Input-001.wav" id="81_435h1"]
+[ext_resource type="AudioStream" uid="uid://bu4ia7pxl50s7" path="res://Audio/Audio Files/Outcome_Morale_Positive-001.wav" id="81_t7m1p"]
+[ext_resource type="AudioStream" uid="uid://bcx5akckopjbt" path="res://Audio/Audio Files/Outcome_Morale_Positive-002.wav" id="82_1uii4"]
+[ext_resource type="AudioStream" uid="uid://bdqawu2vvf3qg" path="res://Audio/Audio Files/Hand_Input-002.wav" id="82_m7egt"]
+[ext_resource type="AudioStream" uid="uid://cpyb8i6yvd3pu" path="res://Audio/Audio Files/Hand_Input-003.wav" id="83_nyr6x"]
+[ext_resource type="AudioStream" uid="uid://dbwyuuw1w76wg" path="res://Audio/Audio Files/Outcome_Morale_Positive-003.wav" id="83_utuji"]
+[ext_resource type="AudioStream" uid="uid://e4vwe18l2jvs" path="res://Audio/Audio Files/Outcome_Morale_Negative-001.wav" id="84_xl54y"]
+[ext_resource type="AudioStream" uid="uid://c1awt0ancb5vc" path="res://Audio/Audio Files/Outcome_Morale_Negative-002.wav" id="85_reepd"]
+[ext_resource type="AudioStream" uid="uid://do0sm4dj07ueq" path="res://Audio/Audio Files/Outcome_Morale_Negative-003.wav" id="86_wwm71"]
+[ext_resource type="AudioStream" uid="uid://ds1y2qu3sksc2" path="res://Audio/Audio Files/Outcome_Money_Negative-001.wav" id="87_ojgh2"]
+[ext_resource type="AudioStream" uid="uid://0ibj04o5scxa" path="res://Audio/Audio Files/Outcome_Money_Negative-002.wav" id="88_1angg"]
+[ext_resource type="AudioStream" uid="uid://bly1k8ja7o70v" path="res://Audio/Audio Files/Outcome_Money_Negative-003.wav" id="89_6aa58"]
+[ext_resource type="AudioStream" uid="uid://c5x23r7j4xd63" path="res://Audio/Audio Files/Outcome_Money_Positive-001.wav" id="90_435h1"]
+[ext_resource type="AudioStream" uid="uid://8ufptx61lm2p" path="res://Audio/Audio Files/Outcome_Money_Positive-002.wav" id="91_m7egt"]
+[ext_resource type="AudioStream" uid="uid://fyxcka7srox5" path="res://Audio/Audio Files/Outcome_Money_Positive-003.wav" id="92_nyr6x"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_a5qvv"]
 shuffle = true
@@ -487,6 +502,41 @@ shader_parameter/tint_color = Vector3(0.95, 1.03, 0.9)
 shader_parameter/tint_strength = 0.15
 shader_parameter/viewport_size_override = Vector2(0, 0)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ojgh2"]
+random_pitch = 1.0663394
+streams_count = 3
+stream_0/stream = ExtResource("81_435h1")
+stream_1/stream = ExtResource("82_m7egt")
+stream_2/stream = ExtResource("83_nyr6x")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_a5qvv"]
+random_pitch = 1.0711546
+streams_count = 3
+stream_0/stream = ExtResource("81_t7m1p")
+stream_1/stream = ExtResource("82_1uii4")
+stream_2/stream = ExtResource("83_utuji")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xl54y"]
+random_pitch = 1.0711546
+streams_count = 3
+stream_0/stream = ExtResource("84_xl54y")
+stream_1/stream = ExtResource("85_reepd")
+stream_2/stream = ExtResource("86_wwm71")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_reepd"]
+random_pitch = 1.0711546
+streams_count = 3
+stream_0/stream = ExtResource("87_ojgh2")
+stream_1/stream = ExtResource("88_1angg")
+stream_2/stream = ExtResource("89_6aa58")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wwm71"]
+random_pitch = 1.0663394
+streams_count = 3
+stream_0/stream = ExtResource("90_435h1")
+stream_1/stream = ExtResource("91_m7egt")
+stream_2/stream = ExtResource("92_nyr6x")
+
 [node name="Node3D" type="Node3D" unique_id=1272375817]
 script = ExtResource("1_dx25p")
 
@@ -810,3 +860,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0025917962, -0.08777, -0.1
 
 [node name="BG_Buildings" parent="." unique_id=320548735 instance=ExtResource("30_ybmhm")]
 transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -0.68751985, -0.50860167, -0.41640103)
+
+[node name="SFX_Hand_Interact" type="AudioStreamPlayer3D" parent="." unique_id=1394561770]
+stream = SubResource("AudioStreamRandomizer_ojgh2")
+attenuation_model = 3
+panning_strength = 0.0
+
+[node name="SFX_Morale_Positive" type="AudioStreamPlayer3D" parent="." unique_id=1928660166]
+stream = SubResource("AudioStreamRandomizer_a5qvv")
+attenuation_model = 3
+panning_strength = 0.0
+
+[node name="SFX_Morale_Negative" type="AudioStreamPlayer3D" parent="." unique_id=929350140]
+stream = SubResource("AudioStreamRandomizer_xl54y")
+attenuation_model = 3
+panning_strength = 0.0
+
+[node name="SFX_Money_Negative" type="AudioStreamPlayer3D" parent="." unique_id=1675174019]
+stream = SubResource("AudioStreamRandomizer_reepd")
+attenuation_model = 3
+volume_db = 6.0
+panning_strength = 0.0
+
+[node name="SFX_Money_Positive" type="AudioStreamPlayer3D" parent="." unique_id=985650354]
+stream = SubResource("AudioStreamRandomizer_wwm71")
+attenuation_model = 3
+volume_db = 6.0
+panning_strength = 0.0

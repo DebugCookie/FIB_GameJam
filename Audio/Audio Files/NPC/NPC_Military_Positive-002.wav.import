@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dwsqnei1jyk0p"
+path="res://.godot/imported/NPC_Military_Positive-002.wav-9c350224f33b5b098efd39f1109139a5.sample"
+
+[deps]
+
+source_file="res://Audio/Audio Files/NPC/NPC_Military_Positive-002.wav"
+dest_files=["res://.godot/imported/NPC_Military_Positive-002.wav-9c350224f33b5b098efd39f1109139a5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

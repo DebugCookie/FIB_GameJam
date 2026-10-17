@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cvkt5kk18l3pn"
+path="res://.godot/imported/NPC_OldGuy_Negative-002.wav-bd8aff2a9eefec0b8a195dfb76faaa32.sample"
+
+[deps]
+
+source_file="res://Audio/Audio Files/NPC/NPC_OldGuy_Negative-002.wav"
+dest_files=["res://.godot/imported/NPC_OldGuy_Negative-002.wav-bd8aff2a9eefec0b8a195dfb76faaa32.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
