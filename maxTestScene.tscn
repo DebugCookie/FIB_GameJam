@@ -4,10 +4,13 @@
 [ext_resource type="Script" uid="uid://mtv8dcbqu78x" path="res://camera_3d.gd" id="1_sm6nt"]
 [ext_resource type="PackedScene" uid="uid://dt7ibabu7str8" path="res://global_morale_3d.tscn" id="2_3pouy"]
 [ext_resource type="PackedScene" uid="uid://dlnm4crlnxca7" path="res://character_3d.tscn" id="3_be4fj"]
-[ext_resource type="Texture2D" uid="uid://bjucx6bb3xm2j" path="res://Art Assets/2d/characters/Richard.png" id="4_6hq1p"]
+[ext_resource type="Texture2D" uid="uid://d26n1kvvr5t24" path="res://Art Assets/2d/characters/Richard.png" id="4_6hq1p"]
 [ext_resource type="Shader" uid="uid://r0uka4i5e0rn" path="res://Art Assets/PixelShader.gdshader" id="5_2ma1t"]
 [ext_resource type="PackedScene" uid="uid://dtk0f1owdt8m8" path="res://Art Assets/3D/SM_Table.glb" id="6_dvp7v"]
+[ext_resource type="Texture2D" uid="uid://j0vjoe25uj1v" path="res://Art Assets/2d/characters/Emo_ClosedMouth.png" id="6_ix60g"]
 [ext_resource type="PackedScene" uid="uid://cefe8rmec2chl" path="res://Art Assets/3D/SM_Floor.glb" id="7_8kcya"]
+[ext_resource type="Texture2D" uid="uid://ddekqqedxmq51" path="res://Art Assets/2d/characters/Karen_ClosedMouth.png" id="7_10k1m"]
+[ext_resource type="Texture2D" uid="uid://wkqkb0hvnqyo" path="res://Art Assets/2d/characters/Nepo_ClosedMouth.png" id="8_7oxqh"]
 [ext_resource type="PackedScene" uid="uid://cx5h838bf2aeh" path="res://Art Assets/3D/SM_BossTable.glb" id="8_vr2aq"]
 [ext_resource type="PackedScene" uid="uid://cfik1lbetgv6s" path="res://Art Assets/3D/SM_Wall.glb" id="10_3pouy"]
 [ext_resource type="PackedScene" uid="uid://8nedl1c1b5fr" path="res://Art Assets/3D/SM_Roof.glb" id="11_be4fj"]
@@ -248,9 +251,9 @@ texture = ExtResource("4_6hq1p")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12852466, 0, -0.3180906)
 
 [node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 2" unique_id=22432494]
-transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, -0.011478186, 0)
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, 0.0068039577, 0)
 billboard = 1
-texture = ExtResource("4_6hq1p")
+texture = ExtResource("6_ix60g")
 
 [node name="Npc 3" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=262773439]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23154801, 0, -0.23040584)
@@ -258,15 +261,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23154801, 0, -0.23040584)
 [node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 3" unique_id=2012629137]
 transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, -0.011478186, 0)
 billboard = 1
-texture = ExtResource("4_6hq1p")
+texture = ExtResource("7_10k1m")
 
 [node name="Npc 5" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=41172918]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0023617148, -0.007881649, -0.35148)
 
 [node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 5" unique_id=578031686]
-transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, -0.011478186, 0)
+transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, 0.02024278, 0)
+flip_h = true
 billboard = 1
-texture = ExtResource("4_6hq1p")
+texture = ExtResource("8_7oxqh")
 
 [node name="Npc 6" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=211105443]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2424463, -0.01954329, -0.13776079)
@@ -341,4 +345,4 @@ scale = Vector2(2.7285154, 1.7949219)
 sprite_frames = SubResource("SpriteFrames_5fgpt")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.26253733
+frame_progress = 0.041624215
