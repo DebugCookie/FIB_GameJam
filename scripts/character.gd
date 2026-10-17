@@ -5,6 +5,8 @@ class_name Character3D
 @export var min_spawn_cooldown: float = 5.0
 @export var max_spawn_cooldown: float = 10.0
 
+@export var custom_sfx_node: AudioStreamPlayer3D
+
 @onready var bubble_3d: Bubble3D = $Bubble3D
 
 var world_scene: Node = null 
@@ -31,32 +33,29 @@ func trigger_speech() -> void:
 	if is_speaking: return
 	
 	var rolled_dialogue = manager.pop_weighted_item(character_name)
-	if rolled_dialogue.is_empty(): return 
-	
-	$"../BossBaby/SFX_BossBaby_Talk".play()
+	if rolled_dialogue.is_empty(): 
+		prepare_next_speech()
+		return 
 		
 	var text = rolled_dialogue.get("text", "")
-	
 	var impact = rolled_dialogue.get("morale_impact", {"Moral": 0, "Money": 0})
 	
+	if custom_sfx_node and custom_sfx_node.stream:
+		custom_sfx_node.play()
+		
 	is_speaking = true
 	bubble_3d.setup_bubble(character_name, text, impact)
 
-
-
 func _on_bubble_action_processed(impact_change: Dictionary) -> void:
+	if custom_sfx_node:
+		custom_sfx_node.stop()
+		
 	world_scene.modify_game_stats(impact_change)
 	prepare_next_speech()
-	$"../BossBaby/SFX_BossBaby_Talk".stop()
 
 func _on_bubble_ignored(penalty: Dictionary) -> void:
+	if custom_sfx_node:
+		custom_sfx_node.stop()
+		
 	world_scene.modify_game_stats(penalty)
 	prepare_next_speech()
-	$"../BossBaby/SFX_BossBaby_Talk".stop()
-
-
-#func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	#print("moo")
-	#if event is InputEventMouseButton:
-		#if event.button_index == MOUSE_BUTTON_LEFT and event.pressed == true:
-			#print("click")

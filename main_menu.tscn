@@ -2,9 +2,15 @@
 
 [ext_resource type="Script" uid="uid://sp04471c3fxa" path="res://main_menu.gd" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://u2est6yf3yp3" path="res://Art Assets/Ui/Mainscene_screen.png" id="2_7vrkn"]
+[ext_resource type="AudioStream" uid="uid://bkfekcfqv6r81" path="res://Audio/Audio Files/Music_Menu.wav" id="3_fu7sn"]
 
 [node name="MainMenu" type="ColorRect" unique_id=378681469]
 script = ExtResource("1_06t4h")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1936042723]
+position = Vector2(646, 364.99997)
+scale = Vector2(0.56799996, 0.4336492)
+texture = ExtResource("2_7vrkn")
 
 [node name="Label" type="Label" parent="." unique_id=1313536925]
 layout_mode = 0
@@ -31,7 +37,6 @@ offset_right = 984.0
 offset_bottom = 574.0
 text = "Quit"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1936042723]
-position = Vector2(646, 364.99997)
-scale = Vector2(0.56799996, 0.4336492)
-texture = ExtResource("2_7vrkn")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1607142802]
+stream = ExtResource("3_fu7sn")
+autoplay = true
