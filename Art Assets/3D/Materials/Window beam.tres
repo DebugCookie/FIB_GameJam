@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bvcpu0so605xt"]
+
+[ext_resource type="Texture2D" uid="uid://bjgjfewj37cj8" path="res://Art Assets/2d/Texture/WindowTex.jpg" id="1_7pvtu"]
+
+[resource]
+resource_name = "Window beam"
+cull_mode = 2
+albedo_texture = ExtResource("1_7pvtu")
+roughness = 0.5
