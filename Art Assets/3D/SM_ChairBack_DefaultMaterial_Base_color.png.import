@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ok4usvms01jx"
-path.s3tc="res://.godot/imported/SM_ChairBack_DefaultMaterial_Base_color.png-1269e91e7b1cc69f79c6cf982cad3c40.s3tc.ctex"
+path.s3tc="res://.godot/imported/SM_ChairBack_DefaultMaterial_Base_color.png-7a0ab98f18b593f8b41805fa6a285285.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Art Assets/2d/Texture/SM_ChairBack_DefaultMaterial_Base_color.png"
-dest_files=["res://.godot/imported/SM_ChairBack_DefaultMaterial_Base_color.png-1269e91e7b1cc69f79c6cf982cad3c40.s3tc.ctex"]
+source_file="res://Art Assets/3D/SM_ChairBack_DefaultMaterial_Base_color.png"
+dest_files=["res://.godot/imported/SM_ChairBack_DefaultMaterial_Base_color.png-7a0ab98f18b593f8b41805fa6a285285.s3tc.ctex"]
 
 [params]
 
