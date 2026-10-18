@@ -21,6 +21,11 @@
 	{ "text": "Threesome at my place 18:00, 2 spots left", "weight": 5, "morale_impact": { "Moral": 20, "Money": 0 } },
 	{ "text": "Send 300B to Israel", "weight": 5, "morale_impact": { "Moral": -20, "Money": -20000 } },
 	{ "text": "Hire my friend", "weight": 5, "morale_impact": { "Moral": 0, "Money": 0 } },
+	{ "text": "Promote me", "weight": 5, "morale_impact": { "Moral": 0, "Money": -10000 } },
+	{ "text": "Upgrade office chairs", "weight": 5, "morale_impact": { "Moral": 10, "Money": -10000 } },
+	{ "text": "Give us gambling money", "weight": 5, "morale_impact": { "Moral": 20, "Money": -10000 } },
+	{ "text": "Casino trip for all", "weight": 5, "morale_impact": { "Moral": 20, "Money": -20000 } },
+
 	{ "text": "Lets party in Ibiza every weekend", "weight": 6, "morale_impact": { "Moral": 20, "Money": -10000 } }
   ],
   "Depressed": [
