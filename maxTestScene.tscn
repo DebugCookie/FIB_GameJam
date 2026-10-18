@@ -414,7 +414,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_25qrb")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Idle",
 "speed": 5.0
 }, {
@@ -428,7 +428,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1y33g")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"No",
 "speed": 5.0
 }, {
@@ -439,7 +439,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4ljo3")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Pet",
 "speed": 5.0
 }, {
@@ -450,7 +450,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jgof3")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Slap",
 "speed": 5.0
 }, {
@@ -464,7 +464,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5gste")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Yes",
 "speed": 5.0
 }]
@@ -713,9 +713,8 @@ size_flags_vertical = 8
 position = Vector2(329.00003, -196)
 scale = Vector2(2.7285154, 1.7949219)
 sprite_frames = SubResource("SpriteFrames_5fgpt")
-animation = &"Idle"
+animation = &"Yes"
 autoplay = "Idle"
-frame_progress = 0.041624215
 
 [node name="AudioListener3D" type="AudioListener3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=136002597]
 current = true

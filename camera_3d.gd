@@ -1,28 +1,6 @@
-#extends Camera3D
-#
-#@onready var camera_3d = $Camera3D
-#
-#const SPEED = 5.0
-#const JUMP_VELOCITY = 4.5
-#const CAMERA_SENS = 0.003
-## Get the gravity from the project settings to be synced with RigidBody nodes.
-#var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-#
-#func _ready():
-	#Input.mouse_mode = Input.MOUSE_MODE_CONFINED
-	#
-#func _input(event):
-	#if event.is_action_pressed("ui_cancel"): get_tree().quit()
-	#
-	#if event is InputEventMouseMotion:
-		#rotation.y -= event.relative.x * CAMERA_SENS
-		#rotation.x -= event.relative.y * CAMERA_SENS
-		#rotation.x = clamp(rotation.x, -0.5, 1.2)
-
-
 extends Camera3D
 
-@onready var camera_3d = $Camera3D
+@onready var hand_sprite: AnimatedSprite2D = $Hand/HandBase/AnimatedSprite2D
 
 var camera
 var cameraLeft = false
@@ -30,21 +8,29 @@ var cameraRight = false
 var cameraUp = false
 var cameraDown = false
 
-
 const CAMERA_SENS = 0.07
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	#var pos = Vector2(0,0)
+func _ready() -> void:
+	if hand_sprite:
+		if hand_sprite.animation_finished.is_connected(_on_hand_animation_finished):
+			hand_sprite.animation_finished.disconnect(_on_hand_animation_finished)
+		hand_sprite.animation_finished.connect(_on_hand_animation_finished)
+		
+		hand_sprite.play("Idle")
 
-	#get_viewport().warp_mouse(pos)
-	
+func _on_hand_animation_finished() -> void:
+	if hand_sprite:
+		var current_anim = hand_sprite.animation
+		if current_anim == "Yes" or current_anim == "No":
+			hand_sprite.play("Idle")
+
+func _process(delta: float) -> void:
 	if cameraLeft:
 		var mousePos = get_viewport().get_mouse_position()
 		var res = get_viewport().get_visible_rect().size
 		if mousePos.x < res.x/10:
 			rotation.y += CAMERA_SENS
-			rotation.y = clamp(rotation.y, -2, 2) #added by Max
+			rotation.y = clamp(rotation.y, -2, 2)
 		else:
 			cameraLeft = false
 	if cameraRight:
@@ -52,7 +38,7 @@ func _process(delta: float) -> void:
 		var res = get_viewport().get_visible_rect().size
 		if mousePos.x > (res.x - res.x/10):
 			rotation.y -= CAMERA_SENS
-			rotation.y = clamp(rotation.y, -2, 2) #added by Max
+			rotation.y = clamp(rotation.y, -2, 2)
 		else:
 			cameraRight = false
 			
@@ -61,7 +47,7 @@ func _process(delta: float) -> void:
 		var res = get_viewport().get_visible_rect().size
 		if mousePos.y < res.y/10:
 			rotation.x += CAMERA_SENS
-			rotation.x = clamp(rotation.x, -1, 0.9) #added by Max
+			rotation.x = clamp(rotation.x, -1, 0.9)
 		else:
 			cameraUp = false
 	if cameraDown:
@@ -69,23 +55,21 @@ func _process(delta: float) -> void:
 		var res = get_viewport().get_visible_rect().size
 		if mousePos.y > (res.y - res.y/10):
 			rotation.x -= CAMERA_SENS
-			
-			rotation.x = clamp(rotation.x, -1, 0.9) #added by Max
-			
-			
+			rotation.x = clamp(rotation.x, -1, 0.9)
 		else:
 			cameraDown = false
 
-
 const RAY_LENGTH = 1000
 
-
-
-#func _ready():
-	#Input.mouse_mode = Input.MOUSE_MODE_CONFINED
-	#
 func _input(event):
 	if event.is_action_pressed("ui_cancel"): get_tree().quit()
+	
+	if event is InputEventMouseButton and event.pressed:
+		if hand_sprite:
+			if event.button_index == MOUSE_BUTTON_LEFT:
+				hand_sprite.play("Yes")
+			elif event.button_index == MOUSE_BUTTON_RIGHT:
+				hand_sprite.play("No")
 	
 	if event is InputEventMouseMotion:
 		var mousePos = get_viewport().get_mouse_position()
@@ -98,4 +82,3 @@ func _input(event):
 			cameraUp = true
 		if mousePos.y > (res.y - res.y/4):
 			cameraDown = true
-		
