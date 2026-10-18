@@ -22,7 +22,7 @@
 
 extends Camera3D
 
-#@onready var camera_3d = $Camera3D
+@onready var camera_3d = $Camera3D
 
 var camera
 var cameraLeft = false
@@ -31,7 +31,7 @@ var cameraUp = false
 var cameraDown = false
 
 
-const CAMERA_SENS = 0.03
+const CAMERA_SENS = 0.07
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -42,32 +42,37 @@ func _process(delta: float) -> void:
 	if cameraLeft:
 		var mousePos = get_viewport().get_mouse_position()
 		var res = get_viewport().get_visible_rect().size
-		if mousePos.x < res.x/4:
+		if mousePos.x < res.x/10:
 			rotation.y += CAMERA_SENS
-			#rotation.x = clamp(rotation.x, -0.5, 1.2)
+			rotation.y = clamp(rotation.y, -2, 2) #added by Max
 		else:
 			cameraLeft = false
 	if cameraRight:
 		var mousePos = get_viewport().get_mouse_position()
 		var res = get_viewport().get_visible_rect().size
-		if mousePos.x > (res.x - res.x/4):
+		if mousePos.x > (res.x - res.x/10):
 			rotation.y -= CAMERA_SENS
+			rotation.y = clamp(rotation.y, -2, 2) #added by Max
 		else:
 			cameraRight = false
 			
 	if cameraUp:
 		var mousePos = get_viewport().get_mouse_position()
 		var res = get_viewport().get_visible_rect().size
-		if mousePos.y < res.y/4:
+		if mousePos.y < res.y/10:
 			rotation.x += CAMERA_SENS
-			#rotation.x = clamp(rotation.x, -0.5, 1.2)
+			rotation.x = clamp(rotation.x, -1, 0.9) #added by Max
 		else:
 			cameraUp = false
 	if cameraDown:
 		var mousePos = get_viewport().get_mouse_position()
 		var res = get_viewport().get_visible_rect().size
-		if mousePos.y > (res.y - res.y/4):
+		if mousePos.y > (res.y - res.y/10):
 			rotation.x -= CAMERA_SENS
+			
+			rotation.x = clamp(rotation.x, -1, 0.9) #added by Max
+			
+			
 		else:
 			cameraDown = false
 
