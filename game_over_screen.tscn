@@ -12,34 +12,31 @@ grow_vertical = 2
 color = Color(0.19, 0.1349, 0.1349, 1)
 script = ExtResource("1_gt22q")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1869700427]
-position = Vector2(640.00006, 360.50003)
-scale = Vector2(0.5662223, 0.42120853)
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=186484506]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer" unique_id=812071990]
+position = Vector2(963.74994, 539.50006)
+scale = Vector2(0.8544444, 0.6380332)
 texture = ExtResource("2_w3hxg")
 
-[node name="Game Over" type="Label" parent="." unique_id=1321020484]
-layout_mode = 0
-offset_left = 334.0
-offset_top = 180.0
-offset_right = 889.0
-offset_bottom = 203.0
+[node name="Game Over" type="Label" parent="VBoxContainer" unique_id=1321020484]
+layout_mode = 2
 text = "Game Over"
 horizontal_alignment = 1
 
-[node name="RestartButton" type="Button" parent="." unique_id=184406603]
+[node name="RestartButton" type="Button" parent="VBoxContainer" unique_id=184406603]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 362.0
-offset_top = 338.0
-offset_right = 866.0
-offset_bottom = 446.0
+layout_mode = 2
 text = "Restart"
 
-[node name="QuitButton" type="Button" parent="." unique_id=2024725780]
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=2024725780]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 362.0
-offset_top = 494.0
-offset_right = 877.0
-offset_bottom = 619.0
+layout_mode = 2
 text = "Quit"
