@@ -64,7 +64,7 @@ func display_next_dialogue() -> void:
 	current_dialogue = manager.roll_weighted_item(current_character, random_category)
 	
 	if not current_dialogue.is_empty():
-		character_label.text = "Talare: %s" % current_character
+		character_label.text = "Speaker: %s" % current_character
 		dialogue_label.text = "\"%s\"" % current_dialogue.get("text", "")
 
 func _on_yes_button_pressed() -> void:
