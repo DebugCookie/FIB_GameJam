@@ -29,7 +29,7 @@ func setup_bubble(char_name: String, text: String, impact: Dictionary) -> void:
 	active_timer = get_tree().create_timer(bubble_lifetime, false)
 	await active_timer.timeout
 	if is_visible_in_tree():
-		var ignore_penalty = {"Moral": -10, "Money": 0}
+		var ignore_penalty = {"Moral": -5, "Money": 0}
 		bubble_expired.emit(ignore_penalty)
 		hide_bubble()
 
