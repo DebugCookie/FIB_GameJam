@@ -4,7 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://cajxjbuwddo3t" path="res://Art Assets/2d/SpeechBubble.png" id="2_4cx2n"]
 [ext_resource type="AudioStream" uid="uid://b1cq01mhti85m" path="res://Audio/Audio Files/Popup_Idea-001.wav" id="2_05jx6"]
 [ext_resource type="AudioStream" uid="uid://iakhv8svrsbj" path="res://Audio/Audio Files/Popup_Idea-002.wav" id="3_4cx2n"]
+[ext_resource type="Texture2D" uid="uid://dk0a1qjjn72mo" path="res://Art Assets/2d/Morale_Plus.png" id="3_gr152"]
 [ext_resource type="AudioStream" uid="uid://bs5dal668sqcf" path="res://Audio/Audio Files/Popup_Idea-003.wav" id="4_1pskq"]
+[ext_resource type="Texture2D" uid="uid://cne66khevh2hx" path="res://Art Assets/2d/Morale_Minus.png" id="4_7anfy"]
+[ext_resource type="Texture2D" uid="uid://b33g5mrr6psur" path="res://Art Assets/2d/Dollar_plus.png" id="5_o6lp5"]
+[ext_resource type="Texture2D" uid="uid://dkoaoeh0n818o" path="res://Art Assets/2d/Dollar_Minus.png" id="6_te3ye"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_1vivr"]
 viewport_path = NodePath("SubViewport")
@@ -59,6 +63,30 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 56
 autowrap_mode = 3
+
+[node name="FeedBackContainer" type="HBoxContainer" parent="SubViewport" unique_id=1644702999]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MoralPosIcon" type="TextureRect" parent="SubViewport/FeedBackContainer" unique_id=1881505041]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("3_gr152")
+
+[node name="MoralMinusIcon" type="TextureRect" parent="SubViewport/FeedBackContainer" unique_id=1652470647]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("4_7anfy")
+
+[node name="MoneyPosIcon" type="TextureRect" parent="SubViewport/FeedBackContainer" unique_id=1074710375]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("5_o6lp5")
+
+[node name="MoneyMinusIcon" type="TextureRect" parent="SubViewport/FeedBackContainer" unique_id=1641826993]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("6_te3ye")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=2133175379]
 texture = SubResource("ViewportTexture_1vivr")

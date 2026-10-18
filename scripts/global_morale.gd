@@ -24,9 +24,9 @@ func update_time_and_round(current_day: int, time_left_seconds: float) -> void:
 	if not is_node_ready():
 		await ready
 		
-	round_label.text = "DAG: %d" % current_day
+	round_label.text = "Day: %d" % current_day
 	
 	var minutes: int = int(time_left_seconds) / 60
 	var seconds: int = int(time_left_seconds) % 60
 	
-	time_label.text = "TID: %02d:%02d" % [minutes, seconds]
+	time_label.text = "Time: %02d:%02d" % [minutes, seconds]
