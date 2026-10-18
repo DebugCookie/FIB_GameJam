@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6f56e84um4e1"
-path.s3tc="res://.godot/imported/SM_confrenceTable_DefaultMaterial_Base_color.png-794ec7c8f8e1a9863792f398683ad1c3.s3tc.ctex"
+uid="uid://dvkx67xgtfmb0"
+path.s3tc="res://.godot/imported/SM_confrenceTable_DefaultMaterial_Base_color1.png-6bb0c7b948298cda68ea01fd2592f309.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Art Assets/2d/Texture/SM_confrenceTable_DefaultMaterial_Base_color.png"
-dest_files=["res://.godot/imported/SM_confrenceTable_DefaultMaterial_Base_color.png-794ec7c8f8e1a9863792f398683ad1c3.s3tc.ctex"]
+source_file="res://Art Assets/2d/Texture/SM_confrenceTable_DefaultMaterial_Base_color1.png"
+dest_files=["res://.godot/imported/SM_confrenceTable_DefaultMaterial_Base_color1.png-6bb0c7b948298cda68ea01fd2592f309.s3tc.ctex"]
 
 [params]
 
