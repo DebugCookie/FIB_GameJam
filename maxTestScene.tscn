@@ -571,7 +571,7 @@ autoplay = "Talk"
 frame_progress = 0.32582235
 
 [node name="BossBaby" parent="Characters" unique_id=1486932446 node_paths=PackedStringArray("custom_sfx_node") instance=ExtResource("3_be4fj")]
-transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -0.016321778, 0.088197984, -0.3037501)
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -0.016321778, 0.088197984, -0.31255496)
 character_name = "BossBaby"
 min_spawn_cooldown = 4.0
 max_spawn_cooldown = 15.0
@@ -602,14 +602,14 @@ stream = SubResource("AudioStreamPlaylist_f7y3h")
 attenuation_model = 3
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/Depressed" unique_id=649077657]
-transform = Transform3D(0.49678594, 0, -0.056601603, 0, 0.49999997, 0, 0.056601603, 0, 0.49678594, 0.9632292, -2.6140788, 2.1991014)
+transform = Transform3D(0.4809968, 0, 0.13653617, 0, 0.49999997, 0, -0.13653617, 0, 0.4809968, 0.9632292, -2.6140788, 2.1991005)
 sprite_frames = SubResource("SpriteFrames_m1gai")
 animation = &"Talk"
 autoplay = "Talk"
 frame_progress = 0.45259085
 
 [node name="Richard" parent="Characters" unique_id=1969853727 node_paths=PackedStringArray("custom_sfx_node") instance=ExtResource("3_be4fj")]
-transform = Transform3D(0.025553571, 0, -0.01571671, 0, 0.03, 0, 0.01571671, 0, 0.025553571, 0.23350139, 0.08744751, -0.22263052)
+transform = Transform3D(0.025553571, 0, -0.01571671, 0, 0.03, 0, 0.01571671, 0, 0.025553571, 0.23350139, 0.08744751, -0.20692438)
 character_name = "Richard"
 min_spawn_cooldown = 6.0
 max_spawn_cooldown = 25.0
@@ -621,12 +621,12 @@ stream = SubResource("AudioStreamPlaylist_p186i")
 attenuation_model = 3
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/Richard" unique_id=1023750244]
-transform = Transform3D(0.42589286, 0, 0.26194516, 0, 0.5, 0, -0.26194516, 0, 0.42589286, 0.07604551, -3.2406387, 2.3644)
+transform = Transform3D(0.48520818, 0, -0.12071878, 0, 0.5, 0, 0.12071878, 0, 0.48520818, 0.07604551, -3.240639, 2.3644009)
 sprite_frames = SubResource("SpriteFrames_68bq4")
 animation = &"Talk"
 
 [node name="HR" parent="Characters" unique_id=1858802622 node_paths=PackedStringArray("custom_sfx_node") instance=ExtResource("3_be4fj")]
-transform = Transform3D(0.025951846, 0, -0.015049973, 0, 0.03, 0, 0.015049973, 0, 0.025951846, 0.11664249, 0.0754387, -0.31880862)
+transform = Transform3D(0.025951846, 0, -0.015049973, 0, 0.03, 0, 0.015049973, 0, 0.025951846, 0.11664249, 0.0754387, -0.29015744)
 character_name = "HR"
 min_spawn_cooldown = 3.0
 custom_sfx_node = NodePath("SFX_HR_Talk")
@@ -637,7 +637,7 @@ stream = SubResource("AudioStreamPlaylist_iomns")
 attenuation_model = 3
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/HR/SFX_HR_Talk" unique_id=1604001300]
-transform = Transform3D(0.012975922, 0, 0.0075249863, 0, 0.014999999, 0, -0.0075249863, 0, 0.012975922, 0.058331415, -0.06457163, 0.09300423)
+transform = Transform3D(0.012975923, 0, 0.007524985, 0, 0.014999999, 0, -0.007524985, 0, 0.012975923, 0.01179564, -0.06457163, 0.056941986)
 sprite_frames = SubResource("SpriteFrames_ekg17")
 animation = &"idle"
 autoplay = "idle"
@@ -905,7 +905,7 @@ transform = Transform3D(-0.8900573, 0, -0.45584863, 0, 1, 0, 0.45584863, 0, -0.8
 transform = Transform3D(-0.9442844, 0, 0.32913074, 0, 1, 0, -0.32913074, 0, -0.9442844, 0.039221674, -0.06457488, -0.30785245)
 
 [node name="SM_ChairBack4" parent="." unique_id=1414963127 instance=ExtResource("97_nyr6x")]
-transform = Transform3D(-0.8464791, 0, 0.53242195, 0, 1, 0, -0.53242195, 0, -0.8464791, 0.18046127, -0.06457488, -0.2714849)
+transform = Transform3D(-0.8464791, 0, 0.53242195, 0, 1, 0, -0.53242195, 0, -0.8464791, 0.1366627, -0.06457488, -0.2714849)
 
 [node name="SM_ChairBack5" parent="." unique_id=1488060161 instance=ExtResource("97_nyr6x")]
 transform = Transform3D(-0.16026959, 0, 0.9870733, 0, 1, 0, -0.9870733, 0, -0.16026959, 0.27075428, -0.06457488, -0.19226703)
