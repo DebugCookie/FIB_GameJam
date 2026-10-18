@@ -1,6 +1,8 @@
 extends Camera3D
 
 @onready var hand_sprite: AnimatedSprite2D = $Hand/HandBase/AnimatedSprite2D
+@onready var sfx_yes: AudioStreamPlayer3D = $SFX_Yes
+@onready var sfx_no: AudioStreamPlayer3D = $SFX_No
 
 var camera
 var cameraLeft = false
@@ -42,22 +44,7 @@ func _process(delta: float) -> void:
 		else:
 			cameraRight = false
 			
-	if cameraUp:
-		var mousePos = get_viewport().get_mouse_position()
-		var res = get_viewport().get_visible_rect().size
-		if mousePos.y < res.y/10:
-			rotation.x += CAMERA_SENS
-			rotation.x = clamp(rotation.x, -1, 0.9)
-		else:
-			cameraUp = false
-	if cameraDown:
-		var mousePos = get_viewport().get_mouse_position()
-		var res = get_viewport().get_visible_rect().size
-		if mousePos.y > (res.y - res.y/10):
-			rotation.x -= CAMERA_SENS
-			rotation.x = clamp(rotation.x, -1, 0.9)
-		else:
-			cameraDown = false
+
 
 const RAY_LENGTH = 1000
 
@@ -68,8 +55,10 @@ func _input(event):
 		if hand_sprite:
 			if event.button_index == MOUSE_BUTTON_LEFT:
 				hand_sprite.play("Yes")
+				sfx_yes.play()
 			elif event.button_index == MOUSE_BUTTON_RIGHT:
 				hand_sprite.play("No")
+				sfx_no.play()
 	
 	if event is InputEventMouseMotion:
 		var mousePos = get_viewport().get_mouse_position()
