@@ -11,7 +11,6 @@
 [ext_resource type="AudioStream" uid="uid://dddr1rp2nt1ff" path="res://Audio/Audio Files/Ambience_Office_Loop.wav" id="6_x6efl"]
 [ext_resource type="Texture2D" uid="uid://biq43dpdaxepw" path="res://Art Assets/2d/characters/Karen_ClosedMouth.png" id="7_10k1m"]
 [ext_resource type="Texture2D" uid="uid://6u70o77gaabt" path="res://Art Assets/2d/characters/Nepo_ClosedMouth.png" id="8_7oxqh"]
-[ext_resource type="PackedScene" uid="uid://cx5h838bf2aeh" path="res://Art Assets/3D/SM_BossTable.glb" id="8_vr2aq"]
 [ext_resource type="Texture2D" uid="uid://dh7usbghd8vmc" path="res://Art Assets/2d/characters/militaryguy.png" id="9_10k1m"]
 [ext_resource type="PackedScene" uid="uid://cfik1lbetgv6s" path="res://Art Assets/3D/SM_Wall.glb" id="10_3pouy"]
 [ext_resource type="PackedScene" uid="uid://8nedl1c1b5fr" path="res://Art Assets/3D/SM_Roof.glb" id="11_be4fj"]
@@ -57,7 +56,7 @@
 [ext_resource type="AudioStream" uid="uid://b7tm4bi87fjk0" path="res://Audio/Audio Files/NPC/NPC_Karen_Talking-004.wav" id="26_nionc"]
 [ext_resource type="Shader" uid="uid://js4eg5babfkh" path="res://Art Assets/Buckshot.gdshader" id="27_1y33g"]
 [ext_resource type="AudioStream" uid="uid://be4ayk7cysohm" path="res://Audio/Audio Files/NPC/NPC_Karen_Talking-005.wav" id="27_j8swd"]
-[ext_resource type="PackedScene" uid="uid://68onlydndcoe" path="res://Art Assets/3D/SM_Table.glb" id="28_4ljo3"]
+[ext_resource type="PackedScene" uid="uid://blajqbqxglwfj" path="res://Art Assets/3D/SM_Table.glb" id="28_4ljo3"]
 [ext_resource type="PackedScene" uid="uid://cu6wwvy2yn3mp" path="res://game_ui.tscn" id="28_dufa8"]
 [ext_resource type="AudioStream" uid="uid://dm5y0kl715uqn" path="res://Audio/Audio Files/NPC/NPC_Karen_Talking-006.wav" id="28_ydp6h"]
 [ext_resource type="PackedScene" uid="uid://b8rvv8eakmc0v" path="res://Art Assets/3D/BG_Buildings.glb" id="30_ybmhm"]
@@ -95,6 +94,9 @@
 [ext_resource type="AudioStream" uid="uid://c5x23r7j4xd63" path="res://Audio/Audio Files/Outcome_Money_Positive-001.wav" id="90_435h1"]
 [ext_resource type="AudioStream" uid="uid://8ufptx61lm2p" path="res://Audio/Audio Files/Outcome_Money_Positive-002.wav" id="91_m7egt"]
 [ext_resource type="AudioStream" uid="uid://fyxcka7srox5" path="res://Audio/Audio Files/Outcome_Money_Positive-003.wav" id="92_nyr6x"]
+[ext_resource type="PackedScene" uid="uid://dbo8yhifgwmg2" path="res://Art Assets/3D/SM_SmallTable.glb" id="94_435h1"]
+[ext_resource type="PackedScene" uid="uid://cyoagi0yows5b" path="res://Art Assets/3D/SM_confrenceTable.glb" id="95_m7egt"]
+[ext_resource type="PackedScene" uid="uid://cck5di3nf3jgx" path="res://Art Assets/3D/SM_ChairBack.glb" id="97_nyr6x"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_a5qvv"]
 shuffle = true
@@ -106,6 +108,40 @@ stream_3 = ExtResource("26_nionc")
 stream_4 = ExtResource("27_j8swd")
 stream_5 = ExtResource("28_ydp6h")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tva1y"]
+atlas = ExtResource("7_10k1m")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqdn8"]
+atlas = ExtResource("7_10k1m")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax7wn"]
+atlas = ExtResource("17_ohxs1")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ypxl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tva1y")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqdn8")
+}, {
+"duration": 1.6,
+"texture": SubResource("AtlasTexture_ax7wn")
+}],
+"loop": 1,
+"name": &"Talk",
+"speed": 5.0
+}]
+
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_3vvdg"]
 shuffle = true
 stream_count = 6
@@ -115,6 +151,33 @@ stream_2 = ExtResource("45_1angg")
 stream_3 = ExtResource("46_6aa58")
 stream_4 = ExtResource("47_435h1")
 stream_5 = ExtResource("48_m7egt")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0k4k"]
+atlas = ExtResource("8_7oxqh")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwr2d"]
+atlas = ExtResource("19_kvojn")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_44tgu"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0k4k")
+}, {
+"duration": 1.7,
+"texture": SubResource("AtlasTexture_jwr2d")
+}],
+"loop": 1,
+"name": &"Talk",
+"speed": 5.0
+}]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_f7y3h"]
 shuffle = true
@@ -126,6 +189,40 @@ stream_3 = ExtResource("18_e0k4k")
 stream_4 = ExtResource("19_jwr2d")
 stream_5 = ExtResource("20_23i77")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0cdq"]
+atlas = ExtResource("6_ix60g")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf5co"]
+atlas = ExtResource("6_ix60g")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyxm7"]
+atlas = ExtResource("15_5sp24")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m1gai"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0cdq")
+}],
+"loop": 1,
+"name": &"Idle ",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cf5co")
+}, {
+"duration": 2.2,
+"texture": SubResource("AtlasTexture_xyxm7")
+}],
+"loop": 1,
+"name": &"Talk",
+"speed": 5.0
+}]
+
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_p186i"]
 shuffle = true
 stream_count = 6
@@ -135,6 +232,26 @@ stream_2 = ExtResource("14_b3ijy")
 stream_3 = ExtResource("15_hteu0")
 stream_4 = ExtResource("16_t7m1p")
 stream_5 = ExtResource("17_1uii4")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ghmp"]
+atlas = ExtResource("4_6hq1p")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_68bq4"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ghmp")
+}],
+"loop": 1,
+"name": &"Talk",
+"speed": 5.0
+}]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_iomns"]
 shuffle = true
@@ -146,6 +263,33 @@ stream_3 = ExtResource("22_wwm71")
 stream_4 = ExtResource("23_s2y2q")
 stream_5 = ExtResource("24_ueab8")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rufch"]
+atlas = ExtResource("12_ybmhm")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oduso"]
+atlas = ExtResource("13_sigox")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ekg17"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"Talk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rufch")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_oduso")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_0onsu"]
 shuffle = true
 stream_count = 6
@@ -156,6 +300,33 @@ stream_3 = ExtResource("54_w54f0")
 stream_4 = ExtResource("55_gu4ko")
 stream_5 = ExtResource("56_fqmj2")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_23i77"]
+atlas = ExtResource("9_10k1m")
+region = Rect2(0, 0, 580, 580)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fb1cs"]
+atlas = ExtResource("21_51fba")
+region = Rect2(0, 0, 580, 580)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hjgis"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23i77")
+}, {
+"duration": 2.3,
+"texture": SubResource("AtlasTexture_fb1cs")
+}],
+"loop": 1,
+"name": &"Talk",
+"speed": 5.0
+}]
+
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_0lk7q"]
 shuffle = true
 stream_count = 6
@@ -165,6 +336,33 @@ stream_2 = ExtResource("61_cxx8f")
 stream_3 = ExtResource("62_wdk1f")
 stream_4 = ExtResource("63_gqadi")
 stream_5 = ExtResource("64_elhmf")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sp1l3"]
+atlas = ExtResource("4_4ljo3")
+region = Rect2(0, 0, 580, 580)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_614ah"]
+atlas = ExtResource("23_pr83e")
+region = Rect2(0, 0, 580, 580)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f12nc"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sp1l3")
+}, {
+"duration": 1.7,
+"texture": SubResource("AtlasTexture_614ah")
+}],
+"loop": 1,
+"name": &"Talk",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_25qrb"]
 atlas = ExtResource("13_qilwt")
@@ -281,202 +479,6 @@ sky = SubResource("Sky_l0xq5")
 
 [sub_resource type="BoxMesh" id="BoxMesh_cejtf"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7ghmp"]
-atlas = ExtResource("4_6hq1p")
-region = Rect2(0, 0, 1024, 1024)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_68bq4"]
-animations = [{
-"frames": [],
-"loop": 1,
-"name": &"Idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7ghmp")
-}],
-"loop": 1,
-"name": &"Talk",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rufch"]
-atlas = ExtResource("12_ybmhm")
-region = Rect2(0, 0, 1024, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oduso"]
-atlas = ExtResource("13_sigox")
-region = Rect2(0, 0, 1024, 1024)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ekg17"]
-animations = [{
-"frames": [],
-"loop": 1,
-"name": &"Talk",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rufch")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_oduso")
-}],
-"loop": 1,
-"name": &"idle",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i0cdq"]
-atlas = ExtResource("6_ix60g")
-region = Rect2(0, 0, 1024, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cf5co"]
-atlas = ExtResource("6_ix60g")
-region = Rect2(0, 0, 1024, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xyxm7"]
-atlas = ExtResource("15_5sp24")
-region = Rect2(0, 0, 1024, 1024)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_m1gai"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i0cdq")
-}],
-"loop": 1,
-"name": &"Idle ",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cf5co")
-}, {
-"duration": 2.2,
-"texture": SubResource("AtlasTexture_xyxm7")
-}],
-"loop": 1,
-"name": &"Talk",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tva1y"]
-atlas = ExtResource("7_10k1m")
-region = Rect2(0, 0, 1024, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nqdn8"]
-atlas = ExtResource("7_10k1m")
-region = Rect2(0, 0, 1024, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ax7wn"]
-atlas = ExtResource("17_ohxs1")
-region = Rect2(0, 0, 1024, 1024)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6ypxl"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tva1y")
-}],
-"loop": 1,
-"name": &"Idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nqdn8")
-}, {
-"duration": 1.6,
-"texture": SubResource("AtlasTexture_ax7wn")
-}],
-"loop": 1,
-"name": &"Talk",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e0k4k"]
-atlas = ExtResource("8_7oxqh")
-region = Rect2(0, 0, 1024, 1024)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jwr2d"]
-atlas = ExtResource("19_kvojn")
-region = Rect2(0, 0, 1024, 1024)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_44tgu"]
-animations = [{
-"frames": [],
-"loop": 1,
-"name": &"Idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e0k4k")
-}, {
-"duration": 1.7,
-"texture": SubResource("AtlasTexture_jwr2d")
-}],
-"loop": 1,
-"name": &"Talk",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_23i77"]
-atlas = ExtResource("9_10k1m")
-region = Rect2(0, 0, 580, 580)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fb1cs"]
-atlas = ExtResource("21_51fba")
-region = Rect2(0, 0, 580, 580)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_hjgis"]
-animations = [{
-"frames": [],
-"loop": 1,
-"name": &"Idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_23i77")
-}, {
-"duration": 2.3,
-"texture": SubResource("AtlasTexture_fb1cs")
-}],
-"loop": 1,
-"name": &"Talk",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sp1l3"]
-atlas = ExtResource("4_4ljo3")
-region = Rect2(0, 0, 580, 580)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_614ah"]
-atlas = ExtResource("23_pr83e")
-region = Rect2(0, 0, 580, 580)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_f12nc"]
-animations = [{
-"frames": [],
-"loop": 1,
-"name": &"Idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sp1l3")
-}, {
-"duration": 1.7,
-"texture": SubResource("AtlasTexture_614ah")
-}],
-"loop": 1,
-"name": &"Talk",
-"speed": 5.0
-}]
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dvp7v"]
 render_priority = 0
 shader = ExtResource("5_2ma1t")
@@ -557,6 +559,14 @@ transform = Transform3D(25.259083, 0, -21.75063, 0, 33.333332, 0, 21.75063, 0, 2
 stream = SubResource("AudioStreamPlaylist_a5qvv")
 attenuation_model = 3
 
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/Karen/SFX_Karen_Talk" unique_id=174450541]
+transform = Transform3D(0.015, 0, -4.4703483e-10, 0, 0.015, 0, 4.4703483e-10, 0, 0.015, 0, -0.011478193, -0.04161568)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_6ypxl")
+animation = &"Talk"
+autoplay = "Talk"
+frame_progress = 0.32582235
+
 [node name="BossBaby" parent="Characters" unique_id=1486932446 node_paths=PackedStringArray("custom_sfx_node") instance=ExtResource("3_be4fj")]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -0.016321778, 0.088197984, -0.3037501)
 character_name = "BossBaby"
@@ -567,14 +577,29 @@ transform = Transform3D(33.333336, 0, 0, 0, 33.333336, 0, 0, 0, 33.333336, 0.224
 stream = SubResource("AudioStreamPlaylist_3vvdg")
 attenuation_model = 3
 
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/BossBaby" unique_id=1626134156]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.4653355, -2.5278952, 0.98017025)
+sprite_frames = SubResource("SpriteFrames_44tgu")
+animation = &"Talk"
+autoplay = "Talk"
+frame_progress = 0.459254
+
 [node name="Depressed" parent="Characters" unique_id=500372228 node_paths=PackedStringArray("custom_sfx_node") instance=ExtResource("3_be4fj")]
 transform = Transform3D(0.029807156, 0, 0.0033960964, 0, 0.03, 0, -0.0033960964, 0, 0.029807156, -0.1774121, 0.08522632, -0.2786423)
 character_name = "Depressed"
 custom_sfx_node = NodePath("SFX_Depressed_Talk")
 
 [node name="SFX_Depressed_Talk" type="AudioStreamPlayer3D" parent="Characters/Depressed" unique_id=1567517505]
+transform = Transform3D(33.333332, 0, 4.7683716e-07, 0, 33.333332, 0, -4.7683716e-07, 0, 33.333332, 0, 0, 0)
 stream = SubResource("AudioStreamPlaylist_f7y3h")
 attenuation_model = 3
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/Depressed" unique_id=649077657]
+transform = Transform3D(0.49678594, 0, -0.056601603, 0, 0.49999997, 0, 0.056601603, 0, 0.49678594, 0.9632292, -2.6140788, 2.1991014)
+sprite_frames = SubResource("SpriteFrames_m1gai")
+animation = &"Talk"
+autoplay = "Talk"
+frame_progress = 0.45259085
 
 [node name="Richard" parent="Characters" unique_id=1969853727 node_paths=PackedStringArray("custom_sfx_node") instance=ExtResource("3_be4fj")]
 transform = Transform3D(0.025553571, 0, -0.01571671, 0, 0.03, 0, 0.01571671, 0, 0.025553571, 0.23350139, 0.08744751, -0.22263052)
@@ -586,6 +611,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19171095, -0.009771645, -0.
 stream = SubResource("AudioStreamPlaylist_p186i")
 attenuation_model = 3
 
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/Richard" unique_id=1023750244]
+transform = Transform3D(0.42589286, 0, 0.26194516, 0, 0.5, 0, -0.26194516, 0, 0.42589286, 0.07604551, -3.2406387, 2.3644)
+sprite_frames = SubResource("SpriteFrames_68bq4")
+animation = &"Talk"
+
 [node name="HR" parent="Characters" unique_id=1858802622 node_paths=PackedStringArray("custom_sfx_node") instance=ExtResource("3_be4fj")]
 transform = Transform3D(0.025951846, 0, -0.015049973, 0, 0.03, 0, 0.015049973, 0, 0.025951846, 0.11664249, 0.0754387, -0.31880862)
 character_name = "HR"
@@ -596,15 +626,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.095855474, -0.007881651, -0
 stream = SubResource("AudioStreamPlaylist_iomns")
 attenuation_model = 3
 
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/HR/SFX_HR_Talk" unique_id=1604001300]
+transform = Transform3D(0.012975922, 0, 0.0075249863, 0, 0.014999999, 0, -0.0075249863, 0, 0.012975922, 0.058331415, -0.06457163, 0.09300423)
+sprite_frames = SubResource("SpriteFrames_ekg17")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.65616274
+
 [node name="Military" parent="Characters" unique_id=494477338 node_paths=PackedStringArray("custom_sfx_node") instance=ExtResource("3_be4fj")]
 transform = Transform3D(0.013348679, 0, -0.026866574, 0, 0.029999997, 0, 0.026866574, 0, 0.013348679, 0.26120126, 0.08163715, -0.10463051)
-character_name = "Military"
+character_name = "MilitaryGuy"
 custom_sfx_node = NodePath("SFX_Military_Talk")
 
 [node name="SFX_Military_Talk" type="AudioStreamPlayer3D" parent="Characters/Military" unique_id=1702228470]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2424463, -0.01954329, -0.0907677)
 stream = SubResource("AudioStreamPlaylist_0onsu")
 attenuation_model = 3
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/Military/SFX_Military_Talk" unique_id=786385682]
+transform = Transform3D(0.008899119, 0, 0.017911047, 0, 0.019999998, 0, -0.017911047, 0, 0.008899119, -0.0032036528, -0.08514572, 0.025687426)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_hjgis")
+animation = &"Talk"
+autoplay = "Talk"
+frame_progress = 0.24878746
 
 [node name="OldGuy" parent="Characters" unique_id=874373011 node_paths=PackedStringArray("custom_sfx_node") instance=ExtResource("3_be4fj")]
 transform = Transform3D(0.0132451765, 0, 0.02691775, 0, 0.03, 0, -0.02691775, 0, 0.0132451765, -0.27846366, 0.074002, -0.032372456)
@@ -615,6 +660,14 @@ custom_sfx_node = NodePath("SFX_OldGuy_Talk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28415585, -0.007881649, -0.08814503)
 stream = SubResource("AudioStreamPlaylist_0lk7q")
 attenuation_model = 3
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/OldGuy" unique_id=423306167]
+transform = Transform3D(0.27034613, 0, -0.44862917, 0, 0.58313346, 0, 0.5494158, 0, 0.22075295, 1.9553759, -3.112061, 1.015461)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_f12nc")
+animation = &"Talk"
+autoplay = "Talk"
+frame_progress = 0.8365918
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1310699426]
 texture_filter = 1
@@ -681,105 +734,23 @@ mesh = SubResource("BoxMesh_cejtf")
 [node name="Npc 4" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=869253831]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19171095, -0.009771645, -0.22766328)
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Npc 4" unique_id=1023750244]
-transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0.006573096, 0, 0.066646814)
-sprite_frames = SubResource("SpriteFrames_68bq4")
-animation = &"Talk"
-
-[node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 4" unique_id=1182727577]
-transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, -0.011478186, 0.0009622127)
-visible = false
-billboard = 2
-texture = ExtResource("4_6hq1p")
-
 [node name="Npc 1" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=1975367015]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.095855474, -0.007881649, -0.27162284)
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Npc 1" unique_id=1604001300]
-transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0.031165779, 0.018512268, 0.056924954)
-sprite_frames = SubResource("SpriteFrames_ekg17")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.65616274
-
-[node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 1/AnimatedSprite3D" unique_id=134879717]
-visible = false
-billboard = 2
-texture = ExtResource("12_ybmhm")
 
 [node name="Npc 2" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=1510444227]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12852466, 0, -0.27109748)
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Npc 2" unique_id=649077657]
-transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, -0.012707949, 0.0068039577, 0.054732963)
-sprite_frames = SubResource("SpriteFrames_m1gai")
-animation = &"Talk"
-autoplay = "Talk"
-frame_progress = 0.45259085
-
-[node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 2/AnimatedSprite3D" unique_id=22432494]
-visible = false
-billboard = 1
-texture = ExtResource("6_ix60g")
-
 [node name="Npc 3" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=262773439]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23154801, 0, -0.18341275)
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Npc 3" unique_id=174450541]
-transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, -0.011478186, 0)
-billboard = 2
-sprite_frames = SubResource("SpriteFrames_6ypxl")
-animation = &"Talk"
-autoplay = "Talk"
-frame_progress = 0.32582235
-
-[node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 3/AnimatedSprite3D" unique_id=2012629137]
-visible = false
-billboard = 2
-texture = ExtResource("7_10k1m")
 
 [node name="Npc 5" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=41172918]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0023617148, -0.007881649, -0.30448693)
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Npc 5" unique_id=1626134156]
-transform = Transform3D(0.015, 0, 0, 0, 0.015, 0, 0, 0, 0.015, 0, 0.02024278, 0.03014195)
-sprite_frames = SubResource("SpriteFrames_44tgu")
-animation = &"Talk"
-autoplay = "Talk"
-frame_progress = 0.459254
-
-[node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 5/AnimatedSprite3D" unique_id=578031686]
-visible = false
-flip_h = true
-billboard = 2
-texture = ExtResource("8_7oxqh")
-
 [node name="Npc 6" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=211105443]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2424463, -0.01954329, -0.0907677)
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Npc 6" unique_id=786385682]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0.01544841, 0)
-billboard = 2
-sprite_frames = SubResource("SpriteFrames_hjgis")
-animation = &"Talk"
-autoplay = "Talk"
-frame_progress = 0.24878746
-
-[node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 6/AnimatedSprite3D" unique_id=756906528]
-visible = false
-billboard = 2
-texture = ExtResource("9_10k1m")
-
 [node name="Npc 7" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=463533047]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28415585, -0.007881649, -0.08814503)
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/Npc 7" unique_id=423306167]
-transform = Transform3D(0.01836982, 0, 0, 0, 0.017494004, 0, 0, 0, 0.015, 0.058925405, -0.011478186, 0.016588204)
-billboard = 2
-sprite_frames = SubResource("SpriteFrames_f12nc")
-animation = &"Talk"
-autoplay = "Talk"
-frame_progress = 0.8365918
 
 [node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 7" unique_id=255206099]
 transform = Transform3D(0.01836982, 0, 0, 0, 0.017494004, 0, 0, 0, 0.015, 0.084983304, -0.011478186, 0.0033140779)
@@ -808,7 +779,7 @@ volume_db = -2.0
 autoplay = true
 panning_strength = 0.0
 
-[node name="SM_BossTable" parent="." unique_id=1646036688 instance=ExtResource("8_vr2aq")]
+[node name="SM_BossTable" parent="." unique_id=1646036688]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10227886, -0.059896484)
 
 [node name="SM_Wall" parent="." unique_id=1219317071 instance=ExtResource("10_3pouy")]
@@ -855,7 +826,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="SM_Table" parent="." unique_id=125241893 instance=ExtResource("28_4ljo3")]
+[node name="SM_Table" parent="." unique_id=125241893]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0025917962, -0.08777, -0.13986395)
 
 [node name="BG_Buildings" parent="." unique_id=320548735 instance=ExtResource("30_ybmhm")]
@@ -887,3 +858,34 @@ stream = SubResource("AudioStreamRandomizer_wwm71")
 attenuation_model = 3
 volume_db = 6.0
 panning_strength = 0.0
+
+[node name="SM_SmallTable" parent="." unique_id=834579928 instance=ExtResource("94_435h1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011000134, -0.09044577, -0.038427994)
+visible = false
+
+[node name="SM_confrenceTable" parent="." unique_id=2143817790 instance=ExtResource("95_m7egt")]
+transform = Transform3D(1.0717357, 0, 0, 0, 1, 0, 0, 0, 1, -0.026849203, -0.091035746, -0.1438007)
+
+[node name="SM_Table2" parent="." unique_id=1495663976 instance=ExtResource("28_4ljo3")]
+transform = Transform3D(1.9548969, 0, 0, 0, 1.010076, 0, 0, 0, 1.4091866, 0.01457198, -0.091589846, -0.04527251)
+
+[node name="SM_ChairBack" parent="." unique_id=894267764 instance=ExtResource("97_nyr6x")]
+transform = Transform3D(-0.8900573, 0, -0.45584863, 0, 1, 0, 0.45584863, 0, -0.8900573, -0.2675256, -0.06457488, -0.23219863)
+
+[node name="SM_ChairBack2" parent="." unique_id=920574862 instance=ExtResource("97_nyr6x")]
+transform = Transform3D(-0.8900573, 0, -0.45584863, 0, 1, 0, 0.45584863, 0, -0.8900573, -0.16419485, -0.06457488, -0.26459485)
+
+[node name="SM_ChairBack3" parent="." unique_id=653149071 instance=ExtResource("97_nyr6x")]
+transform = Transform3D(-0.9442844, 0, 0.32913074, 0, 1, 0, -0.32913074, 0, -0.9442844, 0.039221674, -0.06457488, -0.30785245)
+
+[node name="SM_ChairBack4" parent="." unique_id=1414963127 instance=ExtResource("97_nyr6x")]
+transform = Transform3D(-0.8464791, 0, 0.53242195, 0, 1, 0, -0.53242195, 0, -0.8464791, 0.18046127, -0.06457488, -0.2714849)
+
+[node name="SM_ChairBack5" parent="." unique_id=1488060161 instance=ExtResource("97_nyr6x")]
+transform = Transform3D(-0.16026959, 0, 0.9870733, 0, 1, 0, -0.9870733, 0, -0.16026959, 0.27075428, -0.06457488, -0.19226703)
+
+[node name="SM_ChairBack6" parent="." unique_id=1213986184 instance=ExtResource("97_nyr6x")]
+transform = Transform3D(-0.16026959, 0, 0.9870733, 0, 1, 0, -0.9870733, 0, -0.16026959, 0.3248636, -0.06457488, -0.08218585)
+
+[node name="SM_ChairBack7" parent="." unique_id=1978797678 instance=ExtResource("97_nyr6x")]
+transform = Transform3D(0.0036889315, 0, -0.9999932, 0, 1, 0, 0.9999932, 0, 0.0036889315, -0.2894775, -0.06457488, -0.08276293)
