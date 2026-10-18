@@ -85,7 +85,7 @@ func modify_game_stats(changes: Dictionary) -> void:
 	update_ui()
 	
 	if company_happiness <= 0:
-		trigger_loss("Personalen har fått nog. Företagets Moral nådde 0%!")
+		trigger_loss("Your coworkers had enough. company moral reached 0%!")
 
 func update_ui() -> void:
 	if global_morale_ui:
@@ -97,7 +97,7 @@ func check_win_conditions() -> void:
 		if game_ui:
 			game_ui.show_day_win(current_money, money_quota)
 	else:
-		trigger_loss("Tiden tog slut! Du nådde inte pengakvoten på $%d. Du fick bara ihop $%d." % [money_quota, current_money])
+		trigger_loss("Times out! You didn't reach $%d. You only earned $%d." % [money_quota, current_money])
 
 func start_next_day() -> void:
 	current_day += 1

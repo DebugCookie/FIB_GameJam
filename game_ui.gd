@@ -62,7 +62,7 @@ func _on_restart_game() -> void:
 
 func trigger_loading_screen(day_number: int, duration: float) -> void:
 	get_tree().paused = true
-	day_indicator_label.text = "FÖRBEREDER DAG %d...\nGör dig redo!" % day_number
+	day_indicator_label.text = "Preparing day %d...\nBe Ready!" % day_number
 	loading_screen.show()
 	
 	await get_tree().create_timer(duration, true, false, true).timeout
