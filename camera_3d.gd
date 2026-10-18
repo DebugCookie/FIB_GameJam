@@ -10,7 +10,7 @@ var cameraRight = false
 var cameraUp = false
 var cameraDown = false
 
-const CAMERA_SENS = 0.07
+const CAMERA_SENS = 0.05
 
 var is_interacting_with_baby: bool = false
 
