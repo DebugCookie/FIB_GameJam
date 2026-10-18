@@ -106,6 +106,16 @@
 [ext_resource type="ArrayMesh" uid="uid://ctmmb5i0dtjws" path="res://Art Assets/3D/paperstack.obj" id="102_wdk1f"]
 [ext_resource type="ArrayMesh" uid="uid://cqxkwkm0uxk4s" path="res://Art Assets/3D/fire.obj" id="103_gqadi"]
 [ext_resource type="Texture2D" uid="uid://cl00inb5gmqlf" path="res://Art Assets/3D/Materials/brandsläckareUV.png" id="104_elhmf"]
+[ext_resource type="ArrayMesh" uid="uid://bdr33lqnj823i" path="res://Art Assets/3D/OLDnametag.obj" id="107_p8ube"]
+[ext_resource type="Material" uid="uid://c1qn2nrrb5tj4" path="res://Art Assets/3D/Materials/nametag.tres" id="108_jxtki"]
+[ext_resource type="ArrayMesh" uid="uid://cg6tro31rjf3h" path="res://Art Assets/3D/KARENnametag.obj" id="109_iohwb"]
+[ext_resource type="ArrayMesh" uid="uid://bn5fso7dfqngi" path="res://Art Assets/3D/NONBINARYnametag.obj" id="110_khu0r"]
+[ext_resource type="ArrayMesh" uid="uid://btlmcpv2xp0w2" path="res://Art Assets/3D/NOTEBOOK.obj" id="111_ht34x"]
+[ext_resource type="ArrayMesh" uid="uid://4k25fhs7b26g" path="res://Art Assets/3D/NEPOBABYnametag.obj" id="112_hbkt5"]
+[ext_resource type="ArrayMesh" uid="uid://yk67noed3icg" path="res://Art Assets/3D/HRnametag.obj" id="113_vkcqn"]
+[ext_resource type="ArrayMesh" uid="uid://dh6601dnyh5eg" path="res://Art Assets/3D/RICHARDnametag.obj" id="114_m43pg"]
+[ext_resource type="ArrayMesh" uid="uid://1q0v1sk3jj02" path="res://Art Assets/3D/MILITARYnametag.obj" id="115_biegb"]
+[ext_resource type="Texture2D" uid="uid://dsyitb54i5eek" path="res://Art Assets/2d/InfoPage.png" id="116_jxtki"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_a5qvv"]
 shuffle = true
@@ -824,7 +834,7 @@ transform = Transform3D(-0.99999994, 5.2012583e-15, -4.3711384e-07, 2.2928223e-1
 transform = Transform3D(1.3113416e-07, 0, -1.1545465, 0, 1.3441513, 0, 1, 0, 1.5140049e-07, 0.008830994, -0.26105002, -0.48150295)
 
 [node name="SM_Wall3" parent="." unique_id=1447902437 instance=ExtResource("10_3pouy")]
-transform = Transform3D(-2.1855693e-07, 0, 1.1545465, 0, 1.3441513, 0, -1, 0, -2.5233413e-07, -0.05995655, -0.26105002, 0.123515904)
+transform = Transform3D(-2.1855693e-07, 0, 1.0211408, 0, 1.3441513, 0, -1, 0, -2.231774e-07, -0.015255608, -0.26105002, 0.123515904)
 
 [node name="SM_Roof" parent="." unique_id=1421866103 instance=ExtResource("11_be4fj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022765517, 0.19934294, -0.24673656)
@@ -940,7 +950,7 @@ transform = Transform3D(0.0036889315, 0, -0.9999932, 0, 1, 0, 0.9999932, 0, 0.00
 transform = Transform3D(0.0659937, 0, 0.59231323, 0, 0.4626254, 0, -0.2462918, 0, 0.15870988, 0.28242692, -0.28535783, 0.04839149)
 
 [node name="Baby" parent="." unique_id=1754809547 instance=ExtResource("99_4chwp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.08013003, -0.1165995)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5569766e-06, -0.07989223, -0.11665797)
 
 [node name="SM_Window3" parent="." unique_id=1721516828 instance=ExtResource("12_2p1gs")]
 transform = Transform3D(-0.8823134, 0, -7.327348e-08, 0, 0.33621344, 0, 1.3322561e-07, 0, -0.48526832, -0.43024677, -0.10039476, -0.56530786)
@@ -954,7 +964,7 @@ autoplay = true
 panning_strength = 2.01
 
 [node name="Phone" type="MeshInstance3D" parent="." unique_id=1067749004]
-transform = Transform3D(-0.056847043, 0, 0.048922524, 0, 0.074999996, 0, -0.048922524, 0, -0.056847043, -0.05900569, -0.02497834, -0.0671441)
+transform = Transform3D(-0.08337568, 0, 0.07175303, 0, 0.11, 0, -0.07175303, 0, -0.08337568, -0.09404066, -0.028461982, -0.08880369)
 mesh = ExtResource("100_xsyjb")
 surface_material_override/0 = SubResource("StandardMaterial3D_ggsmt")
 
@@ -963,9 +973,58 @@ transform = Transform3D(0.020910066, 0, 0.061544854, 0, 0.156, 0, -0.061544854, 
 mesh = ExtResource("102_wdk1f")
 
 [node name="SM_Table" parent="." unique_id=1921309987 instance=ExtResource("28_4ljo3")]
-transform = Transform3D(-8.132001e-08, 0, -0.5742291, 0, 1.1154944, 0, 1.8603848, 0, -2.510035e-08, 0.37272984, -0.10810659, -0.06636053)
+transform = Transform3D(-8.132001e-08, 0, -0.5742291, 0, 1.1154944, 0, 1.8603848, 0, -2.510035e-08, 0.37585083, -0.10810659, -0.06636053)
 
 [node name="Fire" type="MeshInstance3D" parent="." unique_id=1425613991]
 transform = Transform3D(0.21, 0, 0, 0, 0.21, 0, 0, 0, 0.21, -0.33822972, -0.071324304, -0.46113467)
 mesh = ExtResource("103_gqadi")
 surface_material_override/0 = SubResource("StandardMaterial3D_d35be")
+
+[node name="OlDnametag" type="MeshInstance3D" parent="." unique_id=1842983905]
+transform = Transform3D(0.013658486, 0, 0.053277064, 0, 0.055000007, 0, -0.053277064, 0, 0.013658486, -0.14822918, -0.026302034, -0.04131883)
+mesh = ExtResource("107_p8ube")
+surface_material_override/0 = ExtResource("108_jxtki")
+
+[node name="KareNnametag" type="MeshInstance3D" parent="." unique_id=672339631]
+transform = Transform3D(0.020359691, 0, 0.05109288, 0, 0.055000015, 0, -0.05109288, 0, 0.020359691, -0.13877407, -0.026755355, -0.1123004)
+mesh = ExtResource("109_iohwb")
+surface_material_override/0 = ExtResource("108_jxtki")
+
+[node name="NonbinarYnametag" type="MeshInstance3D" parent="." unique_id=1251462515]
+transform = Transform3D(0.040234417, 0, 0.037499215, 0, 0.055000003, 0, -0.037499215, 0, 0.040234417, -0.105816215, -0.025885792, -0.17346445)
+mesh = ExtResource("110_khu0r")
+surface_material_override/0 = ExtResource("108_jxtki")
+
+[node name="Notebook" type="MeshInstance3D" parent="." unique_id=1413444798]
+transform = Transform3D(0.0524425, 0, 0.07921355, 0, 0.09500001, 0, -0.07921355, 0, 0.0524425, -0.11395964, -0.02468272, -0.063092865)
+mesh = ExtResource("111_ht34x")
+
+[node name="NepobabYnametag" type="MeshInstance3D" parent="." unique_id=671873182]
+transform = Transform3D(0.054999996, 0, 0, 0, 0.055000007, 0, 0, 0, 0.054999996, 0.02356917, -0.026744466, -0.20593712)
+mesh = ExtResource("112_hbkt5")
+surface_material_override/0 = ExtResource("108_jxtki")
+
+[node name="HRnametag" type="MeshInstance3D" parent="." unique_id=1096532253]
+transform = Transform3D(0.05039168, 0, -0.022038102, 0, 0.055000007, 0, 0.022038102, 0, 0.05039168, 0.10503272, -0.026072327, -0.1986579)
+mesh = ExtResource("113_vkcqn")
+surface_material_override/0 = ExtResource("108_jxtki")
+
+[node name="RicharDnametag" type="MeshInstance3D" parent="." unique_id=1457206567]
+transform = Transform3D(0.020007486, 0, -0.051231828, 0, 0.055000007, 0, 0.051231828, 0, 0.020007486, 0.15360361, -0.02746244, -0.13933785)
+material_override = ExtResource("108_jxtki")
+mesh = ExtResource("114_m43pg")
+surface_material_override/0 = ExtResource("108_jxtki")
+
+[node name="MilitarYnametag" type="MeshInstance3D" parent="." unique_id=2067172773]
+transform = Transform3D(0.006795517, 0, -0.054578573, 0, 0.055000007, 0, 0.054578573, 0, 0.006795517, 0.16446976, -0.027016217, -0.059103806)
+mesh = ExtResource("115_biegb")
+surface_material_override/0 = ExtResource("108_jxtki")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1182019080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66785103, 0.09197715, -0.24590927)
+light_color = Color(0.3663791, 0.625317, 0.66413414, 1)
+light_energy = 0.302
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1468190446]
+transform = Transform3D(0.007038731, -0.00034610555, -8.836346e-05, -9.305057e-05, 0.00047072518, -0.0050524124, -0.00040048553, -0.0061923466, -0.00037913176, 0.009637717, -0.023381263, -0.022296239)
+texture = ExtResource("116_jxtki")
