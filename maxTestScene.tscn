@@ -683,7 +683,7 @@ stretch = true
 handle_input_locally = false
 audio_listener_enable_3d = true
 physics_object_picking = true
-size = Vector2i(1280, 720)
+size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=137851750]
@@ -780,9 +780,6 @@ volume_db = -2.0
 autoplay = true
 panning_strength = 0.0
 
-[node name="SM_BossTable" parent="." unique_id=1646036688]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10227886, -0.059896484)
-
 [node name="SM_Wall" parent="." unique_id=1219317071 instance=ExtResource("10_3pouy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1.3441513, 0, 8.742278e-08, 0, -1, 0.3985607, -0.26105002, -0.61807686)
 
@@ -827,10 +824,10 @@ autoplay = true
 panning_strength = 2.01
 
 [node name="SM_Door" parent="." unique_id=1678815973 instance=ExtResource("23_25qrb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.7636261, 0.3966971, -0.11315133, -0.34845144)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.7636261, 0.3966971, -0.07903213, -0.30719835)
 
 [node name="SM_Picture" parent="." unique_id=1545905301 instance=ExtResource("24_3ydh5")]
-transform = Transform3D(0.56, 0, 0, 0, 0.56, 0, 0, 0, 0.56, 0.38655156, -0.0050126836, -0.24838927)
+transform = Transform3D(-2.4478377e-08, 0, 0.56, 0, 0.56, 0, -0.56, 0, -2.4478377e-08, 0.2704504, 0.016890727, -0.47614652)
 
 [node name="SM_WhiteBoard" parent="." unique_id=4093690 instance=ExtResource("25_1y33g")]
 transform = Transform3D(-3.5624783e-08, 0, 1.0528673, 0, 0.9439945, 0, -0.815, 0, -4.602229e-08, -0.04829803, -0.043196242, -0.4749077)
@@ -846,9 +843,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="SM_Table" parent="." unique_id=125241893]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0025917962, -0.08777, -0.13986395)
 
 [node name="BG_Buildings" parent="." unique_id=320548735 instance=ExtResource("30_ybmhm")]
 transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -0.68751985, -0.50860167, -0.41640103)
