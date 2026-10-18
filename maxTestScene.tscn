@@ -575,7 +575,10 @@ script = ExtResource("1_dx25p")
 [node name="GameUI" parent="." unique_id=121058546 instance=ExtResource("28_dufa8")]
 
 [node name="GlobalMorale3D" parent="." unique_id=615809671 instance=ExtResource("2_3pouy")]
-transform = Transform3D(0.019388625, 0.0010404983, -0.046853717, 4.1161606e-05, 0.02342306, 0.0070325932, 0.012865548, -0.0016429898, 0.070586935, 0.1218936, -0.04119798, -0.07177568)
+transform = Transform3D(0.023299485, 0.0015544449, -0.04442874, 5.5204542e-05, 0.028838176, 0.0055426043, 0.020761376, -0.0018211589, 0.049845476, 0.14649114, -0.04878216, -0.05833627)
+
+[node name="SM_computer" parent="GlobalMorale3D" unique_id=363626069 instance=ExtResource("117_iohwb")]
+transform = Transform3D(42.656944, 0.07037336, 4.883689, 0.32601833, 39.249733, -3.497624, -1.3355179, 0.90075505, 11.62075, -1.5632026, 0.7839602, 0.18278933)
 
 [node name="Characters" type="Node3D" parent="." unique_id=99532683]
 
@@ -873,10 +876,11 @@ autoplay = true
 panning_strength = 2.01
 
 [node name="SM_Picture" parent="." unique_id=1545905301 instance=ExtResource("24_3ydh5")]
-transform = Transform3D(-2.4478377e-08, 0, 0.56, 0, 0.56, 0, -0.56, 0, -2.4478377e-08, 0.2704504, 0.016890727, -0.47614652)
+transform = Transform3D(-2.4478377e-08, 0, 0.56, 0, 0.56, 0, -0.56, 0, -2.4478377e-08, -0.10228366, 0.016890727, -0.47614652)
 
 [node name="SM_WhiteBoard" parent="." unique_id=4093690 instance=ExtResource("25_1y33g")]
 transform = Transform3D(-3.5624783e-08, 0, 1.0528673, 0, 0.9439945, 0, -0.815, 0, -4.602229e-08, -0.04829803, -0.043196242, -0.4749077)
+visible = false
 
 [node name="Floor" parent="." unique_id=1442035342 instance=ExtResource("25_25qrb")]
 transform = Transform3D(1.055, 0, 0, 0, 1.055, 0, 0, 0, 1.055, -0.32686454, -0.081772804, -0.08690229)
@@ -1034,9 +1038,6 @@ light_energy = 0.302
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1468190446]
 transform = Transform3D(0.007038731, -0.00034610555, -8.836346e-05, -9.305057e-05, 0.00047072518, -0.0050524124, -0.00040048553, -0.0061923466, -0.00037913176, 0.009637717, -0.023381263, -0.022296239)
 texture = ExtResource("116_jxtki")
-
-[node name="SM_computer" parent="." unique_id=363626069 instance=ExtResource("117_iohwb")]
-transform = Transform3D(0.89078975, 0, -0.45441565, 0, 1, 0, 0.45441565, 0, 0.89078975, 0.09060727, -0.02621052, -0.08123245)
 
 [node name="T_EmpireState" type="Sprite3D" parent="." unique_id=1943350083]
 transform = Transform3D(0.007160496, 0, 0.049484618, 0, 0.05, 0, -0.049484618, 0, 0.007160496, -0.5467801, 0, -0.5211172)
