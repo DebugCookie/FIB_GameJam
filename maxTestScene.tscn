@@ -575,7 +575,7 @@ script = ExtResource("1_dx25p")
 [node name="GameUI" parent="." unique_id=121058546 instance=ExtResource("28_dufa8")]
 
 [node name="GlobalMorale3D" parent="." unique_id=615809671 instance=ExtResource("2_3pouy")]
-transform = Transform3D(0.15, 0, 0, 0, 0.14999999, 0, 0, 0, 0.14999999, 0.18367818, -0.21547118, -0.4690874)
+transform = Transform3D(0.019388625, 0.0010404983, -0.046853717, 4.1161606e-05, 0.02342306, 0.0070325932, 0.012865548, -0.0016429898, 0.070586935, 0.1218936, -0.04119798, -0.07177568)
 
 [node name="Characters" type="Node3D" parent="." unique_id=99532683]
 
