@@ -78,6 +78,8 @@
 [ext_resource type="AudioStream" uid="uid://b743ns7ktq50" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-004.wav" id="62_wdk1f"]
 [ext_resource type="AudioStream" uid="uid://8hklsysxuv6o" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-005.wav" id="63_gqadi"]
 [ext_resource type="AudioStream" uid="uid://cb3041vaqtfed" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-006.wav" id="64_elhmf"]
+[ext_resource type="AudioStream" uid="uid://j08ygngbhkrf" path="res://Audio/Audio Files/Yes.wav" id="67_w54f0"]
+[ext_resource type="AudioStream" uid="uid://cdsjpu7nes0t3" path="res://Audio/Audio Files/No.wav" id="68_gu4ko"]
 [ext_resource type="AudioStream" uid="uid://dnx2y5aef1o0i" path="res://Audio/Audio Files/Ambience_City_Loop.wav" id="73_x4ery"]
 [ext_resource type="AudioStream" uid="uid://c7nwsylysqpeq" path="res://Audio/Audio Files/Hand_Input-001.wav" id="81_435h1"]
 [ext_resource type="AudioStream" uid="uid://bu4ia7pxl50s7" path="res://Audio/Audio Files/Outcome_Morale_Positive-001.wav" id="81_t7m1p"]
@@ -742,6 +744,12 @@ autoplay = "Idle"
 
 [node name="AudioListener3D" type="AudioListener3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=136002597]
 current = true
+
+[node name="SFX_Yes" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=598037585]
+stream = ExtResource("67_w54f0")
+
+[node name="SFX_No" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=1343467798]
+stream = ExtResource("68_gu4ko")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1919570593]
 environment = SubResource("Environment_eugri")
