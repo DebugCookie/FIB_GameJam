@@ -99,6 +99,11 @@
 [ext_resource type="PackedScene" uid="uid://cck5di3nf3jgx" path="res://Art Assets/3D/SM_ChairBack.glb" id="97_nyr6x"]
 [ext_resource type="PackedScene" uid="uid://bt0w005xtgbq7" path="res://Art Assets/3D/officeBG.glb" id="98_jkfde"]
 [ext_resource type="PackedScene" uid="uid://dogsklul18tru" path="res://baby.tscn" id="99_4chwp"]
+[ext_resource type="ArrayMesh" uid="uid://dacfnhp84enel" path="res://Art Assets/3D/phone.obj" id="100_xsyjb"]
+[ext_resource type="Texture2D" uid="uid://d1dgsbq3dto8v" path="res://Art Assets/3D/Materials/phoneUV.png" id="101_cxx8f"]
+[ext_resource type="ArrayMesh" uid="uid://ctmmb5i0dtjws" path="res://Art Assets/3D/paperstack.obj" id="102_wdk1f"]
+[ext_resource type="ArrayMesh" uid="uid://cqxkwkm0uxk4s" path="res://Art Assets/3D/fire.obj" id="103_gqadi"]
+[ext_resource type="Texture2D" uid="uid://cl00inb5gmqlf" path="res://Art Assets/3D/Materials/brandsläckareUV.png" id="104_elhmf"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_a5qvv"]
 shuffle = true
@@ -541,6 +546,12 @@ stream_0/stream = ExtResource("90_435h1")
 stream_1/stream = ExtResource("91_m7egt")
 stream_2/stream = ExtResource("92_nyr6x")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ggsmt"]
+albedo_texture = ExtResource("101_cxx8f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d35be"]
+albedo_texture = ExtResource("104_elhmf")
+
 [node name="Node3D" type="Node3D" unique_id=1272375817]
 script = ExtResource("1_dx25p")
 
@@ -723,8 +734,8 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport/Camera3D/Hand/HandBase" unique_id=830051114]
-position = Vector2(329.00003, -196)
-scale = Vector2(2.7285154, 1.7949219)
+position = Vector2(612.99994, -233.50003)
+scale = Vector2(2.9062505, 1.7773439)
 sprite_frames = SubResource("SpriteFrames_5fgpt")
 animation = &"Yes"
 autoplay = "Idle"
@@ -805,7 +816,7 @@ transform = Transform3D(-0.99999994, 5.2012583e-15, -4.3711384e-07, 2.2928223e-1
 transform = Transform3D(1.3113416e-07, 0, -1.1545465, 0, 1.3441513, 0, 1, 0, 1.5140049e-07, 0.008830994, -0.26105002, -0.48150295)
 
 [node name="SM_Wall3" parent="." unique_id=1447902437 instance=ExtResource("10_3pouy")]
-transform = Transform3D(-2.1855693e-07, 0, 1.1545465, 0, 1.3441513, 0, -1, 0, -2.5233413e-07, 0.008830994, -0.26105002, 0.123515904)
+transform = Transform3D(-2.1855693e-07, 0, 1.1545465, 0, 1.3441513, 0, -1, 0, -2.5233413e-07, -0.05995655, -0.26105002, 0.123515904)
 
 [node name="SM_Roof" parent="." unique_id=1421866103 instance=ExtResource("11_be4fj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022765517, 0.19934294, -0.24673656)
@@ -912,7 +923,7 @@ transform = Transform3D(-0.8464791, 0, 0.53242195, 0, 1, 0, -0.53242195, 0, -0.8
 transform = Transform3D(-0.16026959, 0, 0.9870733, 0, 1, 0, -0.9870733, 0, -0.16026959, 0.27075428, -0.06457488, -0.19226703)
 
 [node name="SM_ChairBack6" parent="." unique_id=1213986184 instance=ExtResource("97_nyr6x")]
-transform = Transform3D(-0.16026959, 0, 0.9870733, 0, 1, 0, -0.9870733, 0, -0.16026959, 0.3248636, -0.07756303, -0.08218585)
+transform = Transform3D(-0.16026959, 0, 0.9870733, 0, 1, 0, -0.9870733, 0, -0.16026959, 0.28568554, -0.07756303, -0.08218585)
 
 [node name="SM_ChairBack7" parent="." unique_id=1978797678 instance=ExtResource("97_nyr6x")]
 transform = Transform3D(0.0036889315, 0, -0.9999932, 0, 1, 0, 0.9999932, 0, 0.0036889315, -0.2894775, -0.08073623, -0.08276293)
@@ -933,3 +944,20 @@ attenuation_model = 3
 volume_db = -6.0
 autoplay = true
 panning_strength = 2.01
+
+[node name="Phone" type="MeshInstance3D" parent="." unique_id=1067749004]
+transform = Transform3D(-0.056847043, 0, 0.048922524, 0, 0.074999996, 0, -0.048922524, 0, -0.056847043, -0.05900569, -0.02497834, -0.0671441)
+mesh = ExtResource("100_xsyjb")
+surface_material_override/0 = SubResource("StandardMaterial3D_ggsmt")
+
+[node name="Paperstack" type="MeshInstance3D" parent="." unique_id=240101042]
+transform = Transform3D(0.020910066, 0, 0.061544854, 0, 0.156, 0, -0.061544854, 0, 0.020910066, -0.17653757, -0.025453784, 0.020628799)
+mesh = ExtResource("102_wdk1f")
+
+[node name="SM_Table" parent="." unique_id=1921309987 instance=ExtResource("28_4ljo3")]
+transform = Transform3D(-8.132001e-08, 0, -0.5742291, 0, 1.1154944, 0, 1.8603848, 0, -2.510035e-08, 0.37272984, -0.10810659, -0.06636053)
+
+[node name="Fire" type="MeshInstance3D" parent="." unique_id=1425613991]
+transform = Transform3D(0.21, 0, 0, 0, 0.21, 0, 0, 0, 0.21, -0.33822972, -0.071324304, -0.46113467)
+mesh = ExtResource("103_gqadi")
+surface_material_override/0 = SubResource("StandardMaterial3D_d35be")
