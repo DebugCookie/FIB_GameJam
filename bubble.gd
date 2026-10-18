@@ -15,6 +15,7 @@ class_name Bubble3D
 
 signal action_processed(morale_change: Dictionary)
 signal bubble_expired(penalty: Dictionary)
+signal feedback_triggered(impact: Dictionary) 
 
 var current_impact: Dictionary = {}
 var active_timer: SceneTreeTimer = null
@@ -30,7 +31,7 @@ func setup_bubble(char_name: String, text: String, impact: Dictionary) -> void:
 	current_impact = impact
 	isAlive = true 
 	is_showing_feedback = false
-	reset_icons() # Göm gamla ikoner
+	reset_icons()
 	show()
 	
 	if has_node("SFX_Popup_Idea"):
@@ -45,6 +46,9 @@ func setup_bubble(char_name: String, text: String, impact: Dictionary) -> void:
 		is_showing_feedback = true
 		clear_text_labels()
 		if moral_neg_icon: moral_neg_icon.show()
+		
+		# NYTT: Trigga straffljudet direkt när minus-ikonen visas på skärmen
+		feedback_triggered.emit(ignore_penalty)
 		
 		await get_tree().create_timer(feedback_duration, false).timeout
 		
@@ -86,13 +90,14 @@ func show_visual_feedback(impact: Dictionary) -> void:
 	elif money_val < 0:
 		money_neg_icon.show()
 
-
 func approve_dialogue() -> void:
 	if not isAlive or is_showing_feedback: return
 	if current_impact.is_empty(): return
 	print("Approve")
 	
 	show_visual_feedback(current_impact)
+	
+	feedback_triggered.emit(current_impact)
 	
 	await get_tree().create_timer(feedback_duration, false).timeout
 	

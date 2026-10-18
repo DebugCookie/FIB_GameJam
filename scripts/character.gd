@@ -20,7 +20,10 @@ func start_character_loop(dm_manager: DialogueManager, main_world: Node) -> void
 	bubble_3d.action_processed.connect(_on_bubble_action_processed)
 	bubble_3d.bubble_expired.connect(_on_bubble_ignored)
 	
+	bubble_3d.feedback_triggered.connect(func(impact): world_scene.play_feedback_audio(impact))
+	
 	prepare_next_speech()
+
 
 func prepare_next_speech() -> void:
 	is_speaking = false

@@ -1,0 +1,976 @@
+[gd_scene format=3 uid="uid://p601cch5st5d"]
+
+[ext_resource type="Script" uid="uid://8mm4xsiddp6e" path="res://scripts/DialogueGameLoop.gd" id="1_dx25p"]
+[ext_resource type="Script" uid="uid://mtv8dcbqu78x" path="res://camera_3d.gd" id="1_sm6nt"]
+[ext_resource type="PackedScene" uid="uid://dt7ibabu7str8" path="res://global_morale_3d.tscn" id="2_3pouy"]
+[ext_resource type="PackedScene" uid="uid://dlnm4crlnxca7" path="res://character_3d.tscn" id="3_be4fj"]
+[ext_resource type="Texture2D" uid="uid://dup6wdwbo26q6" path="res://Art Assets/2d/characters/OldGuy_ClosedMouth.png" id="4_4ljo3"]
+[ext_resource type="Texture2D" uid="uid://d26n1kvvr5t24" path="res://Art Assets/2d/characters/Richard.png" id="4_6hq1p"]
+[ext_resource type="Shader" uid="uid://r0uka4i5e0rn" path="res://Art Assets/PixelShader.gdshader" id="5_2ma1t"]
+[ext_resource type="Texture2D" uid="uid://2tyqypvy44bs" path="res://Art Assets/2d/characters/Emo_ClosedMouth.png" id="6_ix60g"]
+[ext_resource type="AudioStream" uid="uid://dddr1rp2nt1ff" path="res://Audio/Audio Files/Ambience_Office_Loop.wav" id="6_x6efl"]
+[ext_resource type="Texture2D" uid="uid://biq43dpdaxepw" path="res://Art Assets/2d/characters/Karen_ClosedMouth.png" id="7_10k1m"]
+[ext_resource type="Texture2D" uid="uid://6u70o77gaabt" path="res://Art Assets/2d/characters/Nepo_ClosedMouth.png" id="8_7oxqh"]
+[ext_resource type="Texture2D" uid="uid://dh7usbghd8vmc" path="res://Art Assets/2d/characters/militaryguy.png" id="9_10k1m"]
+[ext_resource type="PackedScene" uid="uid://cfik1lbetgv6s" path="res://Art Assets/3D/SM_Wall.glb" id="10_3pouy"]
+[ext_resource type="PackedScene" uid="uid://8nedl1c1b5fr" path="res://Art Assets/3D/SM_Roof.glb" id="11_be4fj"]
+[ext_resource type="PackedScene" uid="uid://4ubhy7ltsfgo" path="res://Art Assets/3D/SM_Window.glb" id="12_2p1gs"]
+[ext_resource type="AudioStream" uid="uid://bhccbxakccc62" path="res://Audio/Audio Files/NPC/NPC_Richard_Talking-001.wav" id="12_juvig"]
+[ext_resource type="Texture2D" uid="uid://bc5uvcwgut3vc" path="res://Art Assets/2d/characters/HR_ClosedMouth.png" id="12_ybmhm"]
+[ext_resource type="Texture2D" uid="uid://brmdvqnbbqudj" path="res://Art Assets/2d/Hand_Idle.png" id="13_qilwt"]
+[ext_resource type="Texture2D" uid="uid://irfp4t7jqo7k" path="res://Art Assets/2d/characters/HR_OpenMouth.png" id="13_sigox"]
+[ext_resource type="AudioStream" uid="uid://bjrajfjfamd0h" path="res://Audio/Audio Files/NPC/NPC_Richard_Talking-002.wav" id="13_x4ery"]
+[ext_resource type="Texture2D" uid="uid://b82chp3bsjdai" path="res://Art Assets/2d/hand flipbook.png" id="13_x6efl"]
+[ext_resource type="AudioStream" uid="uid://x38irh4j5623" path="res://Audio/Audio Files/NPC/NPC_Richard_Talking-003.wav" id="14_b3ijy"]
+[ext_resource type="Texture2D" uid="uid://5u0tv6hfynua" path="res://Art Assets/2d/Hand_No.png" id="14_bfujc"]
+[ext_resource type="Texture2D" uid="uid://c4p1bjacrwml3" path="res://Art Assets/2d/characters/Emo_OpenMouth.png" id="15_5sp24"]
+[ext_resource type="Texture2D" uid="uid://btxyf0l1xfkas" path="res://Art Assets/2d/Hand_Slap1.png" id="15_b3dm5"]
+[ext_resource type="AudioStream" uid="uid://d0a2wcee1r74g" path="res://Audio/Audio Files/NPC/NPC_Richard_Talking-004.wav" id="15_hteu0"]
+[ext_resource type="AudioStream" uid="uid://bbavyc0rku723" path="res://Audio/Audio Files/NPC/NPC_Diversity_Talking-001.wav" id="15_tva1y"]
+[ext_resource type="Texture2D" uid="uid://bj05rhbli6qin" path="res://Art Assets/2d/Hand_Pat.png" id="16_ix60g"]
+[ext_resource type="AudioStream" uid="uid://c4k3ctm51uk3p" path="res://Audio/Audio Files/NPC/NPC_Diversity_Talking-002.wav" id="16_nqdn8"]
+[ext_resource type="AudioStream" uid="uid://boej5oeuflcmg" path="res://Audio/Audio Files/NPC/NPC_Richard_Talking-005.wav" id="16_t7m1p"]
+[ext_resource type="AudioStream" uid="uid://bj8rahqcjevmg" path="res://Audio/Audio Files/NPC/NPC_Richard_Talking-006.wav" id="17_1uii4"]
+[ext_resource type="Texture2D" uid="uid://d1qkltglydv78" path="res://Art Assets/2d/Hand_Slap2.png" id="17_10k1m"]
+[ext_resource type="AudioStream" uid="uid://b8kk6svxtb6y2" path="res://Audio/Audio Files/NPC/NPC_Diversity_Talking-003.wav" id="17_ax7wn"]
+[ext_resource type="Texture2D" uid="uid://dr0lnivov43yh" path="res://Art Assets/2d/characters/Karen_OpenMouth.png" id="17_ohxs1"]
+[ext_resource type="AudioStream" uid="uid://dygsxk5w5kjis" path="res://Audio/Audio Files/NPC/NPC_Diversity_Talking-004.wav" id="18_e0k4k"]
+[ext_resource type="AudioStream" uid="uid://bf0oqiiikfhfq" path="res://Audio/Audio Files/NPC/NPC_Diversity_Talking-005.wav" id="19_jwr2d"]
+[ext_resource type="Texture2D" uid="uid://knep3hiu3hrf" path="res://Art Assets/2d/characters/Nepo_Open mouth.png" id="19_kvojn"]
+[ext_resource type="AudioStream" uid="uid://dded5hkyodjbh" path="res://Audio/Audio Files/NPC/NPC_HR_Talking-001.wav" id="19_utuji"]
+[ext_resource type="AudioStream" uid="uid://bg26ncdk5oy6n" path="res://Audio/Audio Files/NPC/NPC_Diversity_Talking-006.wav" id="20_23i77"]
+[ext_resource type="AudioStream" uid="uid://2yj4l1mebqjg" path="res://Audio/Audio Files/NPC/NPC_HR_Talking-002.wav" id="20_xl54y"]
+[ext_resource type="Texture2D" uid="uid://qe03o86kolyv" path="res://Art Assets/2d/characters/militaryguy_openmouth.png" id="21_51fba"]
+[ext_resource type="AudioStream" uid="uid://dhhhai6nulkc8" path="res://Audio/Audio Files/NPC/NPC_HR_Talking-003.wav" id="21_reepd"]
+[ext_resource type="AudioStream" uid="uid://cp5pg8vlgogu4" path="res://Audio/Audio Files/NPC/NPC_HR_Talking-004.wav" id="22_wwm71"]
+[ext_resource type="PackedScene" uid="uid://dtsv0a4gve7xn" path="res://Art Assets/3D/SM_Door.glb" id="23_25qrb"]
+[ext_resource type="AudioStream" uid="uid://b2w1csqnlmdts" path="res://Audio/Audio Files/NPC/NPC_Karen_Talking-001.wav" id="23_fb1cs"]
+[ext_resource type="Texture2D" uid="uid://pcbi25hkgrmm" path="res://Art Assets/2d/characters/OldGuy_OpenMouth.png" id="23_pr83e"]
+[ext_resource type="AudioStream" uid="uid://dcrqx07kgl53r" path="res://Audio/Audio Files/NPC/NPC_HR_Talking-005.wav" id="23_s2y2q"]
+[ext_resource type="PackedScene" uid="uid://rrk0ivukfx18" path="res://Art Assets/3D/SM_Picture.glb" id="24_3ydh5"]
+[ext_resource type="AudioStream" uid="uid://dv0blx0grivcr" path="res://Audio/Audio Files/NPC/NPC_Karen_Talking-002.wav" id="24_sp1l3"]
+[ext_resource type="AudioStream" uid="uid://dvvdwdnjbbux" path="res://Audio/Audio Files/NPC/NPC_HR_Talking-006.wav" id="24_ueab8"]
+[ext_resource type="PackedScene" uid="uid://ccm6ypo7s62uj" path="res://Art Assets/3D/SM_WhiteBoard.glb" id="25_1y33g"]
+[ext_resource type="PackedScene" uid="uid://cefe8rmec2chl" path="res://Art Assets/3D/Floor.glb" id="25_25qrb"]
+[ext_resource type="AudioStream" uid="uid://c5g2yjrabdmun" path="res://Audio/Audio Files/NPC/NPC_Karen_Talking-003.wav" id="25_614ah"]
+[ext_resource type="AudioStream" uid="uid://b7tm4bi87fjk0" path="res://Audio/Audio Files/NPC/NPC_Karen_Talking-004.wav" id="26_nionc"]
+[ext_resource type="Shader" uid="uid://js4eg5babfkh" path="res://Art Assets/Buckshot.gdshader" id="27_1y33g"]
+[ext_resource type="AudioStream" uid="uid://be4ayk7cysohm" path="res://Audio/Audio Files/NPC/NPC_Karen_Talking-005.wav" id="27_j8swd"]
+[ext_resource type="PackedScene" uid="uid://blajqbqxglwfj" path="res://Art Assets/3D/SM_Table.glb" id="28_4ljo3"]
+[ext_resource type="PackedScene" uid="uid://cu6wwvy2yn3mp" path="res://game_ui.tscn" id="28_dufa8"]
+[ext_resource type="AudioStream" uid="uid://dm5y0kl715uqn" path="res://Audio/Audio Files/NPC/NPC_Karen_Talking-006.wav" id="28_ydp6h"]
+[ext_resource type="PackedScene" uid="uid://b8rvv8eakmc0v" path="res://Art Assets/3D/BG_Buildings.glb" id="30_ybmhm"]
+[ext_resource type="AudioStream" uid="uid://5n710i8rv5wy" path="res://Audio/Audio Files/NPC/NPC_Nepo_Talking-001.wav" id="43_tojua"]
+[ext_resource type="AudioStream" uid="uid://d18o0qfrdsoqq" path="res://Audio/Audio Files/NPC/NPC_Nepo_Talking-002.wav" id="44_ojgh2"]
+[ext_resource type="AudioStream" uid="uid://cbi4t8qst0pra" path="res://Audio/Audio Files/NPC/NPC_Nepo_Talking-003.wav" id="45_1angg"]
+[ext_resource type="AudioStream" uid="uid://cgivlk6xmo4wv" path="res://Audio/Audio Files/NPC/NPC_Nepo_Talking-004.wav" id="46_6aa58"]
+[ext_resource type="AudioStream" uid="uid://rbuwaa0cly0w" path="res://Audio/Audio Files/NPC/NPC_Nepo_Talking-005.wav" id="47_435h1"]
+[ext_resource type="AudioStream" uid="uid://c8h1pu812x08i" path="res://Audio/Audio Files/NPC/NPC_Nepo_Talking-006.wav" id="48_m7egt"]
+[ext_resource type="AudioStream" uid="uid://ca2wn60wf1kf5" path="res://Audio/Audio Files/NPC/NPC_Military_Talking-001.wav" id="51_nyr6x"]
+[ext_resource type="AudioStream" uid="uid://cbx84ie726hif" path="res://Audio/Audio Files/NPC/NPC_Military_Talking-002.wav" id="52_jkfde"]
+[ext_resource type="AudioStream" uid="uid://d4kw20nx2c2wf" path="res://Audio/Audio Files/NPC/NPC_Military_Talking-003.wav" id="53_4chwp"]
+[ext_resource type="AudioStream" uid="uid://dywoe7ra2g62j" path="res://Audio/Audio Files/NPC/NPC_Military_Talking-004.wav" id="54_w54f0"]
+[ext_resource type="AudioStream" uid="uid://ux7s6t8q0sqk" path="res://Audio/Audio Files/NPC/NPC_Military_Talking-005.wav" id="55_gu4ko"]
+[ext_resource type="AudioStream" uid="uid://cf5pbxuusabqx" path="res://Audio/Audio Files/NPC/NPC_Military_Talking-006.wav" id="56_fqmj2"]
+[ext_resource type="AudioStream" uid="uid://p56jnxfcwcgq" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-001.wav" id="59_s46yg"]
+[ext_resource type="AudioStream" uid="uid://cyftkbnh63di2" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-002.wav" id="60_xsyjb"]
+[ext_resource type="AudioStream" uid="uid://bxhl1dcgq8kvh" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-003.wav" id="61_cxx8f"]
+[ext_resource type="AudioStream" uid="uid://b743ns7ktq50" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-004.wav" id="62_wdk1f"]
+[ext_resource type="AudioStream" uid="uid://8hklsysxuv6o" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-005.wav" id="63_gqadi"]
+[ext_resource type="AudioStream" uid="uid://cb3041vaqtfed" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-006.wav" id="64_elhmf"]
+[ext_resource type="AudioStream" uid="uid://j08ygngbhkrf" path="res://Audio/Audio Files/Yes.wav" id="67_w54f0"]
+[ext_resource type="AudioStream" uid="uid://cdsjpu7nes0t3" path="res://Audio/Audio Files/No.wav" id="68_gu4ko"]
+[ext_resource type="AudioStream" uid="uid://dnx2y5aef1o0i" path="res://Audio/Audio Files/Ambience_City_Loop.wav" id="73_x4ery"]
+[ext_resource type="AudioStream" uid="uid://c7nwsylysqpeq" path="res://Audio/Audio Files/Hand_Input-001.wav" id="81_435h1"]
+[ext_resource type="AudioStream" uid="uid://bu4ia7pxl50s7" path="res://Audio/Audio Files/Outcome_Morale_Positive-001.wav" id="81_t7m1p"]
+[ext_resource type="AudioStream" uid="uid://bcx5akckopjbt" path="res://Audio/Audio Files/Outcome_Morale_Positive-002.wav" id="82_1uii4"]
+[ext_resource type="AudioStream" uid="uid://bdqawu2vvf3qg" path="res://Audio/Audio Files/Hand_Input-002.wav" id="82_m7egt"]
+[ext_resource type="AudioStream" uid="uid://cpyb8i6yvd3pu" path="res://Audio/Audio Files/Hand_Input-003.wav" id="83_nyr6x"]
+[ext_resource type="AudioStream" uid="uid://dbwyuuw1w76wg" path="res://Audio/Audio Files/Outcome_Morale_Positive-003.wav" id="83_utuji"]
+[ext_resource type="AudioStream" uid="uid://e4vwe18l2jvs" path="res://Audio/Audio Files/Outcome_Morale_Negative-001.wav" id="84_xl54y"]
+[ext_resource type="AudioStream" uid="uid://c1awt0ancb5vc" path="res://Audio/Audio Files/Outcome_Morale_Negative-002.wav" id="85_reepd"]
+[ext_resource type="AudioStream" uid="uid://do0sm4dj07ueq" path="res://Audio/Audio Files/Outcome_Morale_Negative-003.wav" id="86_wwm71"]
+[ext_resource type="AudioStream" uid="uid://ds1y2qu3sksc2" path="res://Audio/Audio Files/Outcome_Money_Negative-001.wav" id="87_ojgh2"]
+[ext_resource type="AudioStream" uid="uid://0ibj04o5scxa" path="res://Audio/Audio Files/Outcome_Money_Negative-002.wav" id="88_1angg"]
+[ext_resource type="AudioStream" uid="uid://bly1k8ja7o70v" path="res://Audio/Audio Files/Outcome_Money_Negative-003.wav" id="89_6aa58"]
+[ext_resource type="AudioStream" uid="uid://c5x23r7j4xd63" path="res://Audio/Audio Files/Outcome_Money_Positive-001.wav" id="90_435h1"]
+[ext_resource type="AudioStream" uid="uid://8ufptx61lm2p" path="res://Audio/Audio Files/Outcome_Money_Positive-002.wav" id="91_m7egt"]
+[ext_resource type="AudioStream" uid="uid://fyxcka7srox5" path="res://Audio/Audio Files/Outcome_Money_Positive-003.wav" id="92_nyr6x"]
+[ext_resource type="PackedScene" uid="uid://dbo8yhifgwmg2" path="res://Art Assets/3D/SM_SmallTable.glb" id="94_435h1"]
+[ext_resource type="PackedScene" uid="uid://cyoagi0yows5b" path="res://Art Assets/3D/SM_confrenceTable.glb" id="95_m7egt"]
+[ext_resource type="PackedScene" uid="uid://cck5di3nf3jgx" path="res://Art Assets/3D/SM_ChairBack.glb" id="97_nyr6x"]
+[ext_resource type="PackedScene" uid="uid://bt0w005xtgbq7" path="res://Art Assets/3D/officeBG.glb" id="98_jkfde"]
+[ext_resource type="PackedScene" uid="uid://dogsklul18tru" path="res://baby.tscn" id="99_4chwp"]
+[ext_resource type="ArrayMesh" uid="uid://dacfnhp84enel" path="res://Art Assets/3D/phone.obj" id="100_xsyjb"]
+[ext_resource type="Texture2D" uid="uid://d1dgsbq3dto8v" path="res://Art Assets/3D/Materials/phoneUV.png" id="101_cxx8f"]
+[ext_resource type="ArrayMesh" uid="uid://ctmmb5i0dtjws" path="res://Art Assets/3D/paperstack.obj" id="102_wdk1f"]
+[ext_resource type="ArrayMesh" uid="uid://cqxkwkm0uxk4s" path="res://Art Assets/3D/fire.obj" id="103_gqadi"]
+[ext_resource type="Texture2D" uid="uid://cl00inb5gmqlf" path="res://Art Assets/3D/Materials/brandsläckareUV.png" id="104_elhmf"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_a5qvv"]
+shuffle = true
+stream_count = 6
+stream_0 = ExtResource("23_fb1cs")
+stream_1 = ExtResource("24_sp1l3")
+stream_2 = ExtResource("25_614ah")
+stream_3 = ExtResource("26_nionc")
+stream_4 = ExtResource("27_j8swd")
+stream_5 = ExtResource("28_ydp6h")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tva1y"]
+atlas = ExtResource("7_10k1m")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqdn8"]
+atlas = ExtResource("7_10k1m")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax7wn"]
+atlas = ExtResource("17_ohxs1")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ypxl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tva1y")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqdn8")
+}, {
+"duration": 1.6,
+"texture": SubResource("AtlasTexture_ax7wn")
+}],
+"loop": 1,
+"name": &"Talk",
+"speed": 5.0
+}]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_3vvdg"]
+shuffle = true
+stream_count = 6
+stream_0 = ExtResource("43_tojua")
+stream_1 = ExtResource("44_ojgh2")
+stream_2 = ExtResource("45_1angg")
+stream_3 = ExtResource("46_6aa58")
+stream_4 = ExtResource("47_435h1")
+stream_5 = ExtResource("48_m7egt")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0k4k"]
+atlas = ExtResource("8_7oxqh")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwr2d"]
+atlas = ExtResource("19_kvojn")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_44tgu"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0k4k")
+}, {
+"duration": 1.7,
+"texture": SubResource("AtlasTexture_jwr2d")
+}],
+"loop": 1,
+"name": &"Talk",
+"speed": 5.0
+}]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_f7y3h"]
+shuffle = true
+stream_count = 6
+stream_0 = ExtResource("15_tva1y")
+stream_1 = ExtResource("16_nqdn8")
+stream_2 = ExtResource("17_ax7wn")
+stream_3 = ExtResource("18_e0k4k")
+stream_4 = ExtResource("19_jwr2d")
+stream_5 = ExtResource("20_23i77")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0cdq"]
+atlas = ExtResource("6_ix60g")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf5co"]
+atlas = ExtResource("6_ix60g")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyxm7"]
+atlas = ExtResource("15_5sp24")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m1gai"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0cdq")
+}],
+"loop": 1,
+"name": &"Idle ",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cf5co")
+}, {
+"duration": 2.2,
+"texture": SubResource("AtlasTexture_xyxm7")
+}],
+"loop": 1,
+"name": &"Talk",
+"speed": 5.0
+}]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_p186i"]
+shuffle = true
+stream_count = 6
+stream_0 = ExtResource("12_juvig")
+stream_1 = ExtResource("13_x4ery")
+stream_2 = ExtResource("14_b3ijy")
+stream_3 = ExtResource("15_hteu0")
+stream_4 = ExtResource("16_t7m1p")
+stream_5 = ExtResource("17_1uii4")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ghmp"]
+atlas = ExtResource("4_6hq1p")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_68bq4"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ghmp")
+}],
+"loop": 1,
+"name": &"Talk",
+"speed": 5.0
+}]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_iomns"]
+shuffle = true
+stream_count = 6
+stream_0 = ExtResource("19_utuji")
+stream_1 = ExtResource("20_xl54y")
+stream_2 = ExtResource("21_reepd")
+stream_3 = ExtResource("22_wwm71")
+stream_4 = ExtResource("23_s2y2q")
+stream_5 = ExtResource("24_ueab8")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rufch"]
+atlas = ExtResource("12_ybmhm")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oduso"]
+atlas = ExtResource("13_sigox")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ekg17"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"Talk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rufch")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_oduso")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_0onsu"]
+shuffle = true
+stream_count = 6
+stream_0 = ExtResource("51_nyr6x")
+stream_1 = ExtResource("52_jkfde")
+stream_2 = ExtResource("53_4chwp")
+stream_3 = ExtResource("54_w54f0")
+stream_4 = ExtResource("55_gu4ko")
+stream_5 = ExtResource("56_fqmj2")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23i77"]
+atlas = ExtResource("9_10k1m")
+region = Rect2(0, 0, 580, 580)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fb1cs"]
+atlas = ExtResource("21_51fba")
+region = Rect2(0, 0, 580, 580)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hjgis"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23i77")
+}, {
+"duration": 2.3,
+"texture": SubResource("AtlasTexture_fb1cs")
+}],
+"loop": 1,
+"name": &"Talk",
+"speed": 5.0
+}]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_0lk7q"]
+shuffle = true
+stream_count = 6
+stream_0 = ExtResource("59_s46yg")
+stream_1 = ExtResource("60_xsyjb")
+stream_2 = ExtResource("61_cxx8f")
+stream_3 = ExtResource("62_wdk1f")
+stream_4 = ExtResource("63_gqadi")
+stream_5 = ExtResource("64_elhmf")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sp1l3"]
+atlas = ExtResource("4_4ljo3")
+region = Rect2(0, 0, 580, 580)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_614ah"]
+atlas = ExtResource("23_pr83e")
+region = Rect2(0, 0, 580, 580)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f12nc"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sp1l3")
+}, {
+"duration": 1.7,
+"texture": SubResource("AtlasTexture_614ah")
+}],
+"loop": 1,
+"name": &"Talk",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25qrb"]
+atlas = ExtResource("13_qilwt")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ydh5"]
+atlas = ExtResource("13_qilwt")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1y33g"]
+atlas = ExtResource("14_bfujc")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dufa8"]
+atlas = ExtResource("15_b3dm5")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ljo3"]
+atlas = ExtResource("16_ix60g")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybmhm"]
+atlas = ExtResource("15_b3dm5")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgof3"]
+atlas = ExtResource("17_10k1m")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oxqh"]
+atlas = ExtResource("13_x6efl")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpdgd"]
+atlas = ExtResource("13_x6efl")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gste"]
+atlas = ExtResource("13_qilwt")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5fgpt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25qrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25qrb")
+}],
+"loop": 0,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ydh5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1y33g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1y33g")
+}],
+"loop": 0,
+"name": &"No",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dufa8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ljo3")
+}],
+"loop": 0,
+"name": &"Pet",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybmhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgof3")
+}],
+"loop": 0,
+"name": &"Slap",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7oxqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpdgd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gste")
+}],
+"loop": 0,
+"name": &"Yes",
+"speed": 5.0
+}]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n20ym"]
+
+[sub_resource type="Sky" id="Sky_l0xq5"]
+sky_material = SubResource("ProceduralSkyMaterial_n20ym")
+
+[sub_resource type="Environment" id="Environment_eugri"]
+background_mode = 2
+sky = SubResource("Sky_l0xq5")
+
+[sub_resource type="BoxMesh" id="BoxMesh_cejtf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dvp7v"]
+render_priority = 0
+shader = ExtResource("5_2ma1t")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ecnap"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dufa8"]
+shader = ExtResource("27_1y33g")
+shader_parameter/exposure = 0.730000010925
+shader_parameter/contrast = 1.1250000296875
+shader_parameter/saturation = 0.786000037335
+shader_parameter/enable_pixelate = true
+shader_parameter/pixel_factor = 3.1550001261125
+shader_parameter/enable_posterize = true
+shader_parameter/color_levels = 11.6930004604175
+shader_parameter/dither_strength = 1.0
+shader_parameter/chrom_aberration = 4.0
+shader_parameter/vignette_strength = 2.0
+shader_parameter/grain_strength = 0.1170000055575
+shader_parameter/tint_color = Vector3(0.95, 1.03, 0.9)
+shader_parameter/tint_strength = 0.15
+shader_parameter/viewport_size_override = Vector2(0, 0)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ojgh2"]
+random_pitch = 1.0663394
+streams_count = 3
+stream_0/stream = ExtResource("81_435h1")
+stream_1/stream = ExtResource("82_m7egt")
+stream_2/stream = ExtResource("83_nyr6x")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_a5qvv"]
+random_pitch = 1.0711546
+streams_count = 3
+stream_0/stream = ExtResource("81_t7m1p")
+stream_1/stream = ExtResource("82_1uii4")
+stream_2/stream = ExtResource("83_utuji")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xl54y"]
+random_pitch = 1.0711546
+streams_count = 3
+stream_0/stream = ExtResource("84_xl54y")
+stream_1/stream = ExtResource("85_reepd")
+stream_2/stream = ExtResource("86_wwm71")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_reepd"]
+random_pitch = 1.0711546
+streams_count = 3
+stream_0/stream = ExtResource("87_ojgh2")
+stream_1/stream = ExtResource("88_1angg")
+stream_2/stream = ExtResource("89_6aa58")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wwm71"]
+random_pitch = 1.0663394
+streams_count = 3
+stream_0/stream = ExtResource("90_435h1")
+stream_1/stream = ExtResource("91_m7egt")
+stream_2/stream = ExtResource("92_nyr6x")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ggsmt"]
+albedo_texture = ExtResource("101_cxx8f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d35be"]
+albedo_texture = ExtResource("104_elhmf")
+
+[node name="Node3D" type="Node3D" unique_id=1272375817]
+script = ExtResource("1_dx25p")
+day_duration_minutes = null
+money_quota = null
+loading_screen_duration = null
+
+[node name="GameUI" parent="." unique_id=121058546 instance=ExtResource("28_dufa8")]
+
+[node name="GlobalMorale3D" parent="." unique_id=615809671 instance=ExtResource("2_3pouy")]
+transform = Transform3D(0.15, 0, 0, 0, 0.14999999, 0, 0, 0, 0.14999999, 0.18367818, -0.21547118, -0.4690874)
+
+[node name="Characters" type="Node3D" parent="." unique_id=99532683]
+
+[node name="Karen" parent="Characters" unique_id=923122773 node_paths=PackedStringArray("custom_sfx_node") instance=ExtResource("3_be4fj")]
+transform = Transform3D(0.022733172, 0, 0.019575566, 0, 0.03, 0, -0.019575566, 0, 0.022733172, -0.26798317, 0.08773553, -0.19697961)
+character_name = "Karen"
+min_spawn_cooldown = 8.0
+max_spawn_cooldown = 28.0
+custom_sfx_node = NodePath("SFX_Karen_Talk")
+
+[node name="SFX_Karen_Talk" type="AudioStreamPlayer3D" parent="Characters/Karen" unique_id=1756454728]
+transform = Transform3D(25.259083, 0, -21.75063, 0, 33.333332, 0, 21.75063, 0, 25.259083, -0.2799368, -2.9245176, 2.186348)
+stream = SubResource("AudioStreamPlaylist_a5qvv")
+attenuation_model = 3
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/Karen/SFX_Karen_Talk" unique_id=174450541]
+transform = Transform3D(0.015, 0, -4.4703483e-10, 0, 0.015, 0, 4.4703483e-10, 0, 0.015, 0, -0.011478193, -0.04161568)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_6ypxl")
+animation = &"Talk"
+autoplay = "Talk"
+frame_progress = 0.32582235
+
+[node name="BossBaby" parent="Characters" unique_id=1486932446 node_paths=PackedStringArray("custom_sfx_node") instance=ExtResource("3_be4fj")]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -0.016321778, 0.088197984, -0.31255496)
+character_name = "BossBaby"
+min_spawn_cooldown = 4.0
+max_spawn_cooldown = 15.0
+custom_sfx_node = NodePath("SFX_BossBaby_Talk")
+
+[node name="SFX_BossBaby_Talk" type="AudioStreamPlayer3D" parent="Characters/BossBaby" unique_id=1739839301]
+transform = Transform3D(33.333336, 0, 0, 0, 33.333336, 0, 0, 0, 33.333336, 0.22470358, -3.2273912, 1.154007)
+stream = SubResource("AudioStreamPlaylist_3vvdg")
+attenuation_model = 3
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/BossBaby" unique_id=1626134156]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.4653355, -2.5278952, 0.98017025)
+sprite_frames = SubResource("SpriteFrames_44tgu")
+animation = &"Talk"
+autoplay = "Talk"
+frame_progress = 0.459254
+
+[node name="Depressed" parent="Characters" unique_id=500372228 node_paths=PackedStringArray("custom_sfx_node") instance=ExtResource("3_be4fj")]
+transform = Transform3D(0.029807156, 0, 0.0033960964, 0, 0.03, 0, -0.0033960964, 0, 0.029807156, -0.1774121, 0.08522632, -0.2786423)
+character_name = "Depressed"
+min_spawn_cooldown = 7.0
+max_spawn_cooldown = 24.0
+custom_sfx_node = NodePath("SFX_Depressed_Talk")
+
+[node name="SFX_Depressed_Talk" type="AudioStreamPlayer3D" parent="Characters/Depressed" unique_id=1567517505]
+transform = Transform3D(33.333332, 0, 4.7683716e-07, 0, 33.333332, 0, -4.7683716e-07, 0, 33.333332, 0, 0, 0)
+stream = SubResource("AudioStreamPlaylist_f7y3h")
+attenuation_model = 3
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/Depressed" unique_id=649077657]
+transform = Transform3D(0.4809968, 0, 0.13653617, 0, 0.49999997, 0, -0.13653617, 0, 0.4809968, 0.9632292, -2.6140788, 2.1991005)
+sprite_frames = SubResource("SpriteFrames_m1gai")
+animation = &"Talk"
+autoplay = "Talk"
+frame_progress = 0.45259085
+
+[node name="Richard" parent="Characters" unique_id=1969853727 node_paths=PackedStringArray("custom_sfx_node") instance=ExtResource("3_be4fj")]
+transform = Transform3D(0.025553571, 0, -0.01571671, 0, 0.03, 0, 0.01571671, 0, 0.025553571, 0.23350139, 0.08744751, -0.20692438)
+character_name = "Richard"
+min_spawn_cooldown = 6.0
+max_spawn_cooldown = 25.0
+custom_sfx_node = NodePath("SFX_Richard_Talk")
+
+[node name="SFX_Richard_Talk" type="AudioStreamPlayer3D" parent="Characters/Richard" unique_id=2072976731]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19171095, -0.009771645, -0.22766328)
+stream = SubResource("AudioStreamPlaylist_p186i")
+attenuation_model = 3
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/Richard" unique_id=1023750244]
+transform = Transform3D(0.48520818, 0, -0.12071878, 0, 0.5, 0, 0.12071878, 0, 0.48520818, 0.07604551, -3.240639, 2.3644009)
+sprite_frames = SubResource("SpriteFrames_68bq4")
+animation = &"Talk"
+
+[node name="HR" parent="Characters" unique_id=1858802622 node_paths=PackedStringArray("custom_sfx_node") instance=ExtResource("3_be4fj")]
+transform = Transform3D(0.025951846, 0, -0.015049973, 0, 0.03, 0, 0.015049973, 0, 0.025951846, 0.11664249, 0.0754387, -0.29015744)
+character_name = "HR"
+min_spawn_cooldown = 3.0
+max_spawn_cooldown = null
+custom_sfx_node = NodePath("SFX_HR_Talk")
+
+[node name="SFX_HR_Talk" type="AudioStreamPlayer3D" parent="Characters/HR" unique_id=1800412795]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.095855474, -0.007881651, -0.27162284)
+stream = SubResource("AudioStreamPlaylist_iomns")
+attenuation_model = 3
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/HR/SFX_HR_Talk" unique_id=1604001300]
+transform = Transform3D(0.012975923, 0, 0.007524985, 0, 0.014999999, 0, -0.007524985, 0, 0.012975923, 0.01179564, -0.06457163, 0.056941986)
+sprite_frames = SubResource("SpriteFrames_ekg17")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.65616274
+
+[node name="Military" parent="Characters" unique_id=494477338 node_paths=PackedStringArray("custom_sfx_node") instance=ExtResource("3_be4fj")]
+transform = Transform3D(0.013348679, 0, -0.026866574, 0, 0.029999997, 0, 0.026866574, 0, 0.013348679, 0.26120126, 0.08163715, -0.10463051)
+character_name = "MilitaryGuy"
+min_spawn_cooldown = 7.0
+max_spawn_cooldown = 20.0
+custom_sfx_node = NodePath("SFX_Military_Talk")
+
+[node name="SFX_Military_Talk" type="AudioStreamPlayer3D" parent="Characters/Military" unique_id=1702228470]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2424463, -0.01954329, -0.0907677)
+stream = SubResource("AudioStreamPlaylist_0onsu")
+attenuation_model = 3
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/Military/SFX_Military_Talk" unique_id=786385682]
+transform = Transform3D(0.008899119, 0, 0.017911047, 0, 0.019999998, 0, -0.017911047, 0, 0.008899119, -0.0032036528, -0.08514572, 0.025687426)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_hjgis")
+animation = &"Talk"
+autoplay = "Talk"
+frame_progress = 0.24878746
+
+[node name="OldGuy" parent="Characters" unique_id=874373011 node_paths=PackedStringArray("custom_sfx_node") instance=ExtResource("3_be4fj")]
+transform = Transform3D(0.013248823, 0, 0.026914105, 0, 0.030331066, 0, -0.02692516, 0, 0.013243383, -0.27846366, 0.074002, -0.032372456)
+character_name = "OldGuy"
+min_spawn_cooldown = null
+max_spawn_cooldown = 15.0
+custom_sfx_node = NodePath("SFX_OldGuy_Talk")
+
+[node name="SFX_OldGuy_Talk" type="AudioStreamPlayer3D" parent="Characters/OldGuy" unique_id=54020550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28415585, -0.007881649, -0.08814503)
+stream = SubResource("AudioStreamPlaylist_0lk7q")
+attenuation_model = 3
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/OldGuy" unique_id=423306167]
+transform = Transform3D(0.27034613, 0, -0.44862917, 0, 0.58313346, 0, 0.5494158, 0, 0.22075295, 1.9553759, -3.112061, 1.015461)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_f12nc")
+animation = &"Talk"
+autoplay = "Talk"
+frame_progress = 0.6225078
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1310699426]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=990091969]
+handle_input_locally = false
+audio_listener_enable_3d = true
+physics_object_picking = true
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=137851750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0022247136, 0.044210754, 0.00037831068)
+near = 0.008
+far = 20.6
+script = ExtResource("1_sm6nt")
+
+[node name="Hand" type="CanvasLayer" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=1550629561]
+
+[node name="HandBase" type="Control" parent="SubViewportContainer/SubViewport/Camera3D/Hand" unique_id=1903685990]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport/Camera3D/Hand/HandBase" unique_id=830051114]
+position = Vector2(612.99994, -233.50003)
+scale = Vector2(2.9062505, 1.7773439)
+sprite_frames = SubResource("SpriteFrames_5fgpt")
+animation = &"Yes"
+autoplay = "Idle"
+
+[node name="AudioListener3D" type="AudioListener3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=136002597]
+current = true
+
+[node name="SFX_Yes" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=598037585]
+stream = ExtResource("67_w54f0")
+
+[node name="SFX_No" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=1343467798]
+stream = ExtResource("68_gu4ko")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1919570593]
+environment = SubResource("Environment_eugri")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=9738278]
+transform = Transform3D(0.40224501, -0.0007020508, -0.9155318, 0.0017453285, 0.9999985, -1.4978117e-10, 0.91553044, -0.0015979038, 0.4022456, 0.9068241, 1.321417, 0)
+light_color = Color(0.58044404, 0.743117, 0.6554382, 1)
+
+[node name="TV" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1998647896]
+transform = Transform3D(0.26148742, 0, 0, 0, 0.15409297, 0, 0, 0, 0.007278506, -0.052960664, 0.06392069, -0.6163522)
+visible = false
+mesh = SubResource("BoxMesh_cejtf")
+
+[node name="Npc 4" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=869253831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19171095, -0.009771645, -0.22766328)
+
+[node name="Npc 1" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=1975367015]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.095855474, -0.007881649, -0.27162284)
+
+[node name="Npc 2" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=1510444227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12852466, 0, -0.27109748)
+
+[node name="Npc 3" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=262773439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23154801, 0, -0.18341275)
+
+[node name="Npc 5" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=41172918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0023617148, -0.007881649, -0.30448693)
+
+[node name="Npc 6" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=211105443]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2424463, -0.01954329, -0.0907677)
+
+[node name="Npc 7" type="StaticBody3D" parent="SubViewportContainer/SubViewport" unique_id=463533047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28415585, -0.007881649, -0.08814503)
+
+[node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/Npc 7" unique_id=255206099]
+transform = Transform3D(0.01836982, 0, 0, 0, 0.017494004, 0, 0, 0, 0.015, 0.084983304, -0.011478186, 0.0033140779)
+visible = false
+billboard = 2
+texture = ExtResource("4_4ljo3")
+
+[node name="PixelShader" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1699253788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.036463067, 0)
+visible = false
+material_override = SubResource("ShaderMaterial_dvp7v")
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_ecnap")
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=877355216]
+transform = Transform3D(-0.4955847, -0.86416024, 0.08730952, 0.8685596, -0.49307448, 0.04981726, 0, 0.10052219, 0.99493486, 0, 0, 0)
+light_color = Color(0.80418444, 0.8089368, 0.7056107, 1)
+
+[node name="Room" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=3976714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3157548, -0.06597404, -0.0003594905)
+
+[node name="SFX_Ambience_Bed" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport" unique_id=1933687846]
+stream = ExtResource("6_x6efl")
+attenuation_model = 3
+volume_db = -2.0
+autoplay = true
+panning_strength = 0.0
+
+[node name="SM_Wall" parent="." unique_id=1219317071 instance=ExtResource("10_3pouy")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1.6133662, 0, 8.742278e-08, 0, -1, 0.3985607, -0.31602144, -0.61807686)
+
+[node name="SM_Wall" parent="SM_Wall" unique_id=580721502 instance=ExtResource("10_3pouy")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1.3441513, 0, 8.742278e-08, 0, -1, -0.0038092136, -0.87675613, -0.36651742)
+
+[node name="SM_Wall" parent="SM_Wall/SM_Wall" unique_id=678328271 instance=ExtResource("10_3pouy")]
+transform = Transform3D(-0.99999994, 5.2012583e-15, -4.3711384e-07, 2.2928223e-14, -0.34027442, -8.742278e-08, -4.3711384e-07, -2.9747733e-08, 0.99999994, -0.00086954236, 1.1562865, 0.0407366)
+
+[node name="SM_Wall2" parent="." unique_id=1887927298 instance=ExtResource("10_3pouy")]
+transform = Transform3D(1.3113416e-07, 0, -1.1545465, 0, 1.3441513, 0, 1, 0, 1.5140049e-07, 0.008830994, -0.26105002, -0.48150295)
+
+[node name="SM_Wall3" parent="." unique_id=1447902437 instance=ExtResource("10_3pouy")]
+transform = Transform3D(-2.1855693e-07, 0, 1.1545465, 0, 1.3441513, 0, -1, 0, -2.5233413e-07, -0.05995655, -0.26105002, 0.123515904)
+
+[node name="SM_Roof" parent="." unique_id=1421866103 instance=ExtResource("11_be4fj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022765517, 0.19934294, -0.24673656)
+
+[node name="SM_Roof" parent="SM_Roof" unique_id=232136174 instance=ExtResource("11_be4fj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89182085, 0.0019088686, 0.22792834)
+
+[node name="SM_Window" parent="." unique_id=763268013 instance=ExtResource("12_2p1gs")]
+transform = Transform3D(-0.8823134, 0, -7.327348e-08, 0, 0.33621344, 0, 1.3322561e-07, 0, -0.48526832, -0.43024677, -0.10039476, -0.07298745)
+
+[node name="SFX_Ambience_City" type="AudioStreamPlayer3D" parent="SM_Window" unique_id=822667818]
+transform = Transform3D(1.408451, 0, 4.2632564e-14, 0, 1.2375423, 0, -2.842171e-14, 0, 1.0095533, 0, 0.08699666, 0)
+stream = ExtResource("73_x4ery")
+attenuation_model = 3
+volume_db = -6.0
+autoplay = true
+panning_strength = 2.01
+
+[node name="SM_Door" parent="." unique_id=1678815973 instance=ExtResource("23_25qrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.7636261, 0.3966971, -0.07903213, -0.30719835)
+
+[node name="SM_Window2" parent="." unique_id=1074715542 instance=ExtResource("12_2p1gs")]
+transform = Transform3D(0.17734379, 0, 1.579172e-07, 0, 0.2756813, 0, -4.0010338e-08, 0, 0.34587786, 0.40258473, -0.013300918, -0.08222908)
+
+[node name="SFX_Ambience_City" type="AudioStreamPlayer3D" parent="SM_Window2" unique_id=1429769185]
+transform = Transform3D(1.408451, 0, 4.2632564e-14, 0, 1.2375423, 0, -2.842171e-14, 0, 1.0095533, 0, 0.08699666, 0)
+stream = ExtResource("73_x4ery")
+attenuation_model = 3
+volume_db = -6.0
+autoplay = true
+panning_strength = 2.01
+
+[node name="SM_Picture" parent="." unique_id=1545905301 instance=ExtResource("24_3ydh5")]
+transform = Transform3D(-2.4478377e-08, 0, 0.56, 0, 0.56, 0, -0.56, 0, -2.4478377e-08, 0.2704504, 0.016890727, -0.47614652)
+
+[node name="SM_WhiteBoard" parent="." unique_id=4093690 instance=ExtResource("25_1y33g")]
+transform = Transform3D(-3.5624783e-08, 0, 1.0528673, 0, 0.9439945, 0, -0.815, 0, -4.602229e-08, -0.04829803, -0.043196242, -0.4749077)
+
+[node name="Floor" parent="." unique_id=1442035342 instance=ExtResource("25_25qrb")]
+transform = Transform3D(1.055, 0, 0, 0, 1.055, 0, 0, 0, 1.055, -0.32686454, -0.081772804, -0.08690229)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1262008694]
+material = SubResource("ShaderMaterial_dufa8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BG_Buildings" parent="." unique_id=320548735 instance=ExtResource("30_ybmhm")]
+transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -0.68751985, -0.50860167, -0.41640103)
+
+[node name="SFX_Hand_Interact" type="AudioStreamPlayer3D" parent="." unique_id=1394561770]
+stream = SubResource("AudioStreamRandomizer_ojgh2")
+attenuation_model = 3
+panning_strength = 0.0
+
+[node name="SFX_Morale_Positive" type="AudioStreamPlayer3D" parent="." unique_id=1928660166]
+stream = SubResource("AudioStreamRandomizer_a5qvv")
+attenuation_model = 3
+panning_strength = 0.0
+
+[node name="SFX_Morale_Negative" type="AudioStreamPlayer3D" parent="." unique_id=929350140]
+stream = SubResource("AudioStreamRandomizer_xl54y")
+attenuation_model = 3
+panning_strength = 0.0
+
+[node name="SFX_Money_Negative" type="AudioStreamPlayer3D" parent="." unique_id=1675174019]
+stream = SubResource("AudioStreamRandomizer_reepd")
+attenuation_model = 3
+volume_db = 6.0
+panning_strength = 0.0
+
+[node name="SFX_Money_Positive" type="AudioStreamPlayer3D" parent="." unique_id=985650354]
+stream = SubResource("AudioStreamRandomizer_wwm71")
+attenuation_model = 3
+volume_db = 6.0
+panning_strength = 0.0
+
+[node name="SM_SmallTable" parent="." unique_id=834579928 instance=ExtResource("94_435h1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011000134, -0.09044577, -0.038427994)
+visible = false
+
+[node name="SM_confrenceTable" parent="." unique_id=2143817790 instance=ExtResource("95_m7egt")]
+transform = Transform3D(1.0717357, 0, 0, 0, 1, 0, 0, 0, 1, -0.026849203, -0.091035746, -0.1438007)
+
+[node name="SM_Table2" parent="." unique_id=1495663976 instance=ExtResource("28_4ljo3")]
+transform = Transform3D(1.9548969, 0, 0, 0, 1.010076, 0, 0, 0, 1.4091866, 0.01457198, -0.091589846, -0.04527251)
+
+[node name="SM_ChairBack" parent="." unique_id=894267764 instance=ExtResource("97_nyr6x")]
+transform = Transform3D(-0.8900573, 0, -0.45584863, 0, 1, 0, 0.45584863, 0, -0.8900573, -0.2675256, -0.06457488, -0.23219863)
+
+[node name="SM_ChairBack2" parent="." unique_id=920574862 instance=ExtResource("97_nyr6x")]
+transform = Transform3D(-0.8900573, 0, -0.45584863, 0, 1, 0, 0.45584863, 0, -0.8900573, -0.16419485, -0.06457488, -0.26459485)
+
+[node name="SM_ChairBack3" parent="." unique_id=653149071 instance=ExtResource("97_nyr6x")]
+transform = Transform3D(-0.9442844, 0, 0.32913074, 0, 1, 0, -0.32913074, 0, -0.9442844, 0.039221674, -0.06457488, -0.30785245)
+
+[node name="SM_ChairBack4" parent="." unique_id=1414963127 instance=ExtResource("97_nyr6x")]
+transform = Transform3D(-0.8464791, 0, 0.53242195, 0, 1, 0, -0.53242195, 0, -0.8464791, 0.1366627, -0.06457488, -0.2714849)
+
+[node name="SM_ChairBack5" parent="." unique_id=1488060161 instance=ExtResource("97_nyr6x")]
+transform = Transform3D(-0.16026959, 0, 0.9870733, 0, 1, 0, -0.9870733, 0, -0.16026959, 0.27075428, -0.06457488, -0.19226703)
+
+[node name="SM_ChairBack6" parent="." unique_id=1213986184 instance=ExtResource("97_nyr6x")]
+transform = Transform3D(-0.16026959, 0, 0.9870733, 0, 1, 0, -0.9870733, 0, -0.16026959, 0.28568554, -0.07756303, -0.08218585)
+
+[node name="SM_ChairBack7" parent="." unique_id=1978797678 instance=ExtResource("97_nyr6x")]
+transform = Transform3D(0.0036889315, 0, -0.9999932, 0, 1, 0, 0.9999932, 0, 0.0036889315, -0.2894775, -0.08073623, -0.08276293)
+
+[node name="officeBG" parent="." unique_id=1412442048 instance=ExtResource("98_jkfde")]
+transform = Transform3D(0.0659937, 0, 0.59231323, 0, 0.4626254, 0, -0.2462918, 0, 0.15870988, 0.28242692, -0.28535783, 0.04839149)
+
+[node name="Baby" parent="." unique_id=1754809547 instance=ExtResource("99_4chwp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.08013003, -0.1165995)
+
+[node name="SM_Window3" parent="." unique_id=1721516828 instance=ExtResource("12_2p1gs")]
+transform = Transform3D(-0.8823134, 0, -7.327348e-08, 0, 0.33621344, 0, 1.3322561e-07, 0, -0.48526832, -0.43024677, -0.10039476, -0.56530786)
+
+[node name="SFX_Ambience_City" type="AudioStreamPlayer3D" parent="SM_Window3" unique_id=908990559]
+transform = Transform3D(1.408451, 0, 4.2632564e-14, 0, 1.2375423, 0, -2.842171e-14, 0, 1.0095533, 0, 0.08699666, 0)
+stream = ExtResource("73_x4ery")
+attenuation_model = 3
+volume_db = -6.0
+autoplay = true
+panning_strength = 2.01
+
+[node name="Phone" type="MeshInstance3D" parent="." unique_id=1067749004]
+transform = Transform3D(-0.056847043, 0, 0.048922524, 0, 0.074999996, 0, -0.048922524, 0, -0.056847043, -0.05900569, -0.02497834, -0.0671441)
+mesh = ExtResource("100_xsyjb")
+surface_material_override/0 = SubResource("StandardMaterial3D_ggsmt")
+
+[node name="Paperstack" type="MeshInstance3D" parent="." unique_id=240101042]
+transform = Transform3D(0.020910066, 0, 0.061544854, 0, 0.156, 0, -0.061544854, 0, 0.020910066, -0.17653757, -0.025453784, 0.020628799)
+mesh = ExtResource("102_wdk1f")
+
+[node name="SM_Table" parent="." unique_id=1921309987 instance=ExtResource("28_4ljo3")]
+transform = Transform3D(-8.132001e-08, 0, -0.5742291, 0, 1.1154944, 0, 1.8603848, 0, -2.510035e-08, 0.37272984, -0.10810659, -0.06636053)
+
+[node name="Fire" type="MeshInstance3D" parent="." unique_id=1425613991]
+transform = Transform3D(0.21, 0, 0, 0, 0.21, 0, 0, 0, 0.21, -0.33822972, -0.071324304, -0.46113467)
+mesh = ExtResource("103_gqadi")
+surface_material_override/0 = SubResource("StandardMaterial3D_d35be")

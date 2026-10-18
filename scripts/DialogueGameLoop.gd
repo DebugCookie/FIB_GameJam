@@ -8,6 +8,11 @@ extends Node3D
 @export var money_quota: int = 30000           
 @export var loading_screen_duration: float = 3.0 
 
+@onready var sfx_morale_negative: AudioStreamPlayer3D = $SFX_Morale_Negative
+@onready var sfx_morale_positive: AudioStreamPlayer3D = $SFX_Morale_Positive
+@onready var sfx_money_positive: AudioStreamPlayer3D = $SFX_Money_Positive
+@onready var sfx_money_negative: AudioStreamPlayer3D = $SFX_Money_Negative
+
 var current_day: int = 1                       
 var current_money: int = 0 
 var company_happiness: int = 100 
@@ -28,13 +33,14 @@ func _ready() -> void:
 	total_day_seconds = day_duration_minutes * 60.0
 	time_remaining_seconds = total_day_seconds
 	
-	game_ui.next_day_started.connect(start_next_day)
+	if game_ui:
+		game_ui.next_day_started.connect(start_next_day)
 		
-	
 	_start_first_day()
 
 func _start_first_day() -> void:
-	await game_ui.trigger_loading_screen(current_day, loading_screen_duration)
+	if game_ui:
+		await game_ui.trigger_loading_screen(current_day, loading_screen_duration)
 	
 	update_ui()
 	
@@ -47,11 +53,27 @@ func _process(delta: float) -> void:
 	
 	if time_remaining_seconds > 0:
 		time_remaining_seconds -= delta
-		global_morale_ui.update_time_and_round(current_day, time_remaining_seconds)
+		if global_morale_ui:
+			global_morale_ui.update_time_and_round(current_day, time_remaining_seconds)
 	else:
 		time_remaining_seconds = 0
-		global_morale_ui.update_time_and_round(current_day, 0)
+		if global_morale_ui:
+			global_morale_ui.update_time_and_round(current_day, 0)
 		check_win_conditions()
+
+func play_feedback_audio(changes: Dictionary) -> void:
+	var money_change = int(changes.get("Money", 0))
+	var moral_change = int(changes.get("Moral", 0))
+	
+	if money_change > 0:
+		if sfx_money_positive: sfx_money_positive.play()
+	elif money_change < 0:
+		if sfx_money_negative: sfx_money_negative.play()
+		
+	if moral_change > 0:
+		if sfx_morale_positive: sfx_morale_positive.play()
+	elif moral_change < 0:
+		if sfx_morale_negative: sfx_morale_negative.play()
 
 func modify_game_stats(changes: Dictionary) -> void:
 	if is_game_over: return
@@ -66,12 +88,14 @@ func modify_game_stats(changes: Dictionary) -> void:
 		trigger_loss("Personalen har fått nog. Företagets Moral nådde 0%!")
 
 func update_ui() -> void:
-	global_morale_ui.update_morale_display(company_happiness, current_money, money_quota)
+	if global_morale_ui:
+		global_morale_ui.update_morale_display(company_happiness, current_money, money_quota)
 
 func check_win_conditions() -> void:
 	if current_money >= money_quota:
 		print("Dagen avklarad! Öppnar vinstmenyn.")
-		game_ui.show_day_win(current_money, money_quota)
+		if game_ui:
+			game_ui.show_day_win(current_money, money_quota)
 	else:
 		trigger_loss("Tiden tog slut! Du nådde inte pengakvoten på $%d. Du fick bara ihop $%d." % [money_quota, current_money])
 
@@ -84,9 +108,11 @@ func start_next_day() -> void:
 	
 	update_ui()
 	
-	await game_ui.trigger_loading_screen(current_day, loading_screen_duration)
+	if game_ui:
+		await game_ui.trigger_loading_screen(current_day, loading_screen_duration)
 	print("--- STARTAR DAG %d (Ny kvot: $%d) ---" % [current_day, money_quota])
 
-func trigger_loss(reason: String) -> void:
+func trigger_loss(_reason: String) -> void:
 	is_game_over = true
-	game_ui.show_game_over()
+	if game_ui:
+		game_ui.show_game_over()
