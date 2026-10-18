@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dogsklul18tru"]
+
+[ext_resource type="PackedScene" uid="uid://kown7udwmy4o" path="res://Art Assets/3D/ugly3Dbaby1.glb" id="1_w1w5b"]
+[ext_resource type="Script" uid="uid://bmrbyftcgqeu1" path="res://Art Assets/3D/animateUglyBaby.gd" id="2_2iju7"]
+[ext_resource type="Script" uid="uid://ifhlyl5f44fc" path="res://baby_clicker.gd" id="3_2iju7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ddgnj"]
+size = Vector3(1.5664063, 3.9726563, 1)
+
+[node name="Baby" type="Node3D" unique_id=1754809547]
+
+[node name="ugly3Dbaby1" parent="." unique_id=999323996 instance=ExtResource("1_w1w5b")]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 0, 0)
+script = ExtResource("2_2iju7")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="ugly3Dbaby1" unique_id=1208042630]
+script = ExtResource("3_2iju7")
+
+[node name="Area3D" type="Area3D" parent="ugly3Dbaby1/CharacterBody3D" unique_id=1008823550]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ugly3Dbaby1/CharacterBody3D/Area3D" unique_id=1645668883]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.045654226, 1.486329, 0)
+shape = SubResource("BoxShape3D_ddgnj")
+
+[connection signal="input_event" from="ugly3Dbaby1/CharacterBody3D/Area3D" to="ugly3Dbaby1/CharacterBody3D" method="_on_area_3d_input_event"]
