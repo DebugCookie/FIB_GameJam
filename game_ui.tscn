@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b00jpei658c0f" path="res://game_ui.gd" id="1_3rlp6"]
 [ext_resource type="PackedScene" uid="uid://k6oir2aigdx7" path="res://pause_menu.tscn" id="3_xlnb1"]
 [ext_resource type="PackedScene" uid="uid://bki582ykwunui" path="res://day_win_screen.tscn" id="4_3rlp6"]
+[ext_resource type="Texture2D" uid="uid://bjy17dnixjxwm" path="res://Art Assets/Ui/Day_screen.png" id="4_obik5"]
 [ext_resource type="PackedScene" uid="uid://dsj1srax8i15j" path="res://game_over_screen.tscn" id="4_vealc"]
 
 [node name="GameUI" type="CanvasLayer" unique_id=121058546]
@@ -10,8 +11,10 @@ process_mode = 3
 script = ExtResource("1_3rlp6")
 
 [node name="PauseMenu" parent="." unique_id=561029813 instance=ExtResource("3_xlnb1")]
+visible = false
 
 [node name="GameOverScreen" parent="." unique_id=1439978940 instance=ExtResource("4_vealc")]
+visible = false
 
 [node name="LoadingScreen" type="ColorRect" parent="." unique_id=60971936]
 anchors_preset = 15
@@ -20,6 +23,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="LoadingScreen" unique_id=1871327726]
+position = Vector2(961, 541)
+texture = ExtResource("4_obik5")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="LoadingScreen" unique_id=535617644]
 layout_mode = 1
@@ -36,3 +43,4 @@ text = "Getting Ready for...."
 horizontal_alignment = 1
 
 [node name="DayWinScreen" parent="." unique_id=289236852 instance=ExtResource("4_3rlp6")]
+visible = false
