@@ -10,7 +10,7 @@ class_name Bubble3D
 @onready var money_pos_icon: TextureRect = %MoneyPosIcon
 @onready var money_neg_icon: TextureRect = %MoneyMinusIcon
 
-@export var bubble_lifetime: float = 5.0
+@export var bubble_lifetime: float = 8.0
 @export var feedback_duration: float = 0.8 
 
 signal action_processed(morale_change: Dictionary)
