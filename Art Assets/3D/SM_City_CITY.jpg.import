@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfsoq4mwvn034"
-path.s3tc="res://.godot/imported/T_city.png-31df382064b7b9064e9aaddbf7de5291.s3tc.ctex"
+uid="uid://uf7n7ptuofba"
+path.s3tc="res://.godot/imported/SM_City_CITY.jpg-933d61d80198ca25bade138a47e4dfe8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "af19ff16fcbfbcbb4dcabe0c0725a7a6"
+}
 
 [deps]
 
-source_file="res://Art Assets/2d/T_city.png"
-dest_files=["res://.godot/imported/T_city.png-31df382064b7b9064e9aaddbf7de5291.s3tc.ctex"]
+source_file="res://Art Assets/3D/SM_City_CITY.jpg"
+dest_files=["res://.godot/imported/SM_City_CITY.jpg-933d61d80198ca25bade138a47e4dfe8.s3tc.ctex"]
 
 [params]
 

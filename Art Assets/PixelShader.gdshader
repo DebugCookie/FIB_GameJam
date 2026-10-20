@@ -1,10 +1,10 @@
 shader_type spatial;
 render_mode unshaded, fog_disabled;
 
-const vec2 target_resolution = vec2(380.0, 80.0);
+const vec2 target_resolution = vec2(550.0, 120.0);
 // This part affects the resolution of the pixels
 
-const float colors_per_channel = 30.0;
+const float colors_per_channel = 80.0;
 //The number shows possible values for RGB
 
 uniform sampler2D screen_texture: hint_screen_texture, filter_nearest;
