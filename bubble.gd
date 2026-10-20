@@ -1,112 +1,184 @@
+
 extends Node3D
 class_name Bubble3D
+
+
+# ==================================================
+# REFERENCES
+# ==================================================
 
 @onready var dialogue_label: Label = $SubViewport/VBoxContainer/DialogueLabel
 @onready var character_label: Label = $SubViewport/VBoxContainer/CharacterLabel
 
-# Referenser till dina 4 dolda sprites/ikoner
-@onready var moral_pos_icon: TextureRect = %MoralPosIcon
-@onready var moral_neg_icon: TextureRect = %MoralMinusIcon
-@onready var money_pos_icon: TextureRect = %MoneyPosIcon
-@onready var money_neg_icon: TextureRect = %MoneyMinusIcon
+# The new 3D effect spawn point
+@onready var effect_spawn_point: EffectBurst3D = $"../EffectSpawnPoint"
+
+
+# ==================================================
+# SETTINGS
+# ==================================================
 
 @export var bubble_lifetime: float = 15.0
-@export var feedback_duration: float = 1 #remove this line when particle system feedback is implemented
+
+
+# ==================================================
+# SIGNALS
+# ==================================================
 
 signal action_processed(morale_change: Dictionary)
 signal bubble_expired(penalty: Dictionary)
-signal feedback_triggered(impact: Dictionary) 
+signal feedback_triggered(impact: Dictionary)
+
+
+# ==================================================
+# VARIABLES
+# ==================================================
 
 var current_impact: Dictionary = {}
 var active_timer: SceneTreeTimer = null
+
 var isAlive: bool = false
-var is_showing_feedback: bool = false 
+var is_showing_feedback: bool = false
+
+var bubble_generation: int = 0
+
+
+# ==================================================
+# INITIALIZATION
+# ==================================================
 
 func _ready() -> void:
 	hide_bubble()
 
+
+# ==================================================
+# SETUP BUBBLE
+# ==================================================
+
 func setup_bubble(char_name: String, text: String, impact: Dictionary) -> void:
+	bubble_generation += 1
+	var my_generation: int = bubble_generation
+
 	character_label.text = char_name
 	dialogue_label.text = text
-	current_impact = impact
-	isAlive = true 
+	current_impact = impact.duplicate()
+
+	isAlive = true
 	is_showing_feedback = false
-	reset_icons()
+
 	show()
-	
+
+	# Original popup sound
 	if has_node("SFX_Popup_Idea"):
 		$SFX_Popup_Idea.play()
-	
-	active_timer = get_tree().create_timer(bubble_lifetime, false)
+
+	# Start the idea timeout
+	active_timer = get_tree().create_timer(
+		bubble_lifetime,
+		false
+	)
+
 	await active_timer.timeout
-	
-	if is_visible_in_tree() and isAlive and not is_showing_feedback:
-		var ignore_penalty = {"Moral": -5, "Money": 0}
-		
+
+	# Prevent old timers from affecting new ideas
+	if my_generation != bubble_generation:
+		return
+
+	if isAlive and not is_showing_feedback:
+		var ignore_penalty: Dictionary = {
+			"Moral": -5,
+			"Money": 0
+		}
+
 		is_showing_feedback = true
-		clear_text_labels()
-		if moral_neg_icon: moral_neg_icon.show()
-		
-		# NYTT: Trigga straffljudet direkt när minus-ikonen visas på skärmen
-		feedback_triggered.emit(ignore_penalty)
-		
-		await get_tree().create_timer(feedback_duration, false).timeout
-		
-		bubble_expired.emit(ignore_penalty)
+
+		# First hide the speech bubble
 		hide_bubble()
+
+		# Then spawn 3D icons in front of the character
+		effect_spawn_point.play_effect(ignore_penalty)
+
+		# Original sound/event
+		feedback_triggered.emit(ignore_penalty)
+
+		# Original timeout penalty
+		bubble_expired.emit(ignore_penalty)
+
+
+# ==================================================
+# HIDE BUBBLE
+# ==================================================
 
 func hide_bubble() -> void:
 	isAlive = false
 	is_showing_feedback = false
+
 	hide()
-	reset_icons()
+
 	current_impact = {}
+
+
+# ==================================================
+# CLEAR TEXT
+# ==================================================
 
 func clear_text_labels() -> void:
 	character_label.text = ""
 	dialogue_label.text = ""
 
-func reset_icons() -> void:
-	if moral_pos_icon: moral_pos_icon.hide()
-	if moral_neg_icon: moral_neg_icon.hide()
-	if money_pos_icon: money_pos_icon.hide()
-	if money_neg_icon: money_neg_icon.hide()
 
-func show_visual_feedback(impact: Dictionary) -> void:
-	is_showing_feedback = true
-	clear_text_labels() 
-	reset_icons()
-	
-	var moral_val = int(impact.get("Moral", 0))
-	var money_val = int(impact.get("Money", 0))
-	
-	if moral_val > 0:
-		moral_pos_icon.show()
-	elif moral_val < 0:
-		moral_neg_icon.show()
-		
-	if money_val > 0:
-		money_pos_icon.show()
-	elif money_val < 0:
-		money_neg_icon.show()
+# ==================================================
+# APPROVE IDEA
+# ==================================================
 
 func approve_dialogue() -> void:
-	if not isAlive or is_showing_feedback: return
-	if current_impact.is_empty(): return
+	if not isAlive or is_showing_feedback:
+		return
+
+	if current_impact.is_empty():
+		return
+
 	print("Approve")
-	
-	show_visual_feedback(current_impact)
-	
-	feedback_triggered.emit(current_impact)
-	
-	await get_tree().create_timer(feedback_duration, false).timeout
-	
-	action_processed.emit(current_impact)
+
+	var approved_impact: Dictionary = current_impact.duplicate()
+
+	is_showing_feedback = true
+
+	# 1. Hide speech bubble immediately
 	hide_bubble()
 
+	# 2. Spawn 3D feedback icons
+	effect_spawn_point.play_effect(approved_impact)
+
+	# 3. Trigger original sound/event
+	feedback_triggered.emit(approved_impact)
+
+	# 4. Apply money and morale changes
+	action_processed.emit(approved_impact)
+
+
+# ==================================================
+# REJECT IDEA
+# ==================================================
+
 func reject_dialogue() -> void:
-	if not isAlive or is_showing_feedback: return
-	
-	var zero_impact = {"Moral": 0, "Money": 0}
-	action_processed.emit(zero_impact)
+	if not isAlive or is_showing_feedback:
+		return
+
+	print("Reject")
+
+	var zero_impact: Dictionary = {
+		"Moral": 0,
+		"Money": 0
+	}
+
+	is_showing_feedback = true
+
+	# 1. Hide speech bubble immediately
 	hide_bubble()
+
+	# 2. Spawn three neutral icons
+	effect_spawn_point.play_effect(zero_impact)
+
+	# 3. Process rejected idea
+	action_processed.emit(zero_impact)

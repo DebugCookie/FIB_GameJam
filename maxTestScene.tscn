@@ -581,7 +581,7 @@ script = ExtResource("1_dx25p")
 [node name="GameUI" parent="." unique_id=121058546 instance=ExtResource("28_dufa8")]
 
 [node name="GlobalMorale3D" parent="." unique_id=615809671 instance=ExtResource("2_3pouy")]
-transform = Transform3D(0.023384267, 0.00398145, -0.043400902, 0.0005358255, 0.028179588, 0.015189634, 0.020658959, -0.005237567, 0.048732363, 0.13368899, -0.04451919, -0.06081882)
+transform = Transform3D(0.027087636, 0.004705485, -0.038877, 0.00062068424, 0.033304103, 0.013606339, 0.023930721, -0.006190029, 0.043652732, 0.13998197, -0.055911038, -0.0501644)
 
 [node name="Characters" type="Node3D" parent="." unique_id=99532683]
 
@@ -710,7 +710,7 @@ stream = SubResource("AudioStreamPlaylist_0lk7q")
 attenuation_model = 3
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/OldGuy" unique_id=423306167]
-transform = Transform3D(0.27034613, 0, -0.44862917, 0, 0.58313346, 0, 0.5494158, 0, 0.22075295, 1.9553759, -3.112061, 1.015461)
+transform = Transform3D(0.2703461, 0, -0.44862917, 0, 0.58313346, 0, 0.54941577, 0, 0.22075292, 1.2496797, -3.112061, 1.3628483)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_f12nc")
 animation = &"Talk"

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dt7ibabu7str8"]
 
 [ext_resource type="Script" uid="uid://cju1ky0digoqd" path="res://scripts/global_morale.gd" id="1_ihg0h"]
+[ext_resource type="FontFile" uid="uid://dhfm077evoj0t" path="res://Art Assets/Fonts/Geo-Regular.ttf" id="2_8mxau"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_1vivr"]
 viewport_path = NodePath("SubViewport")
@@ -20,17 +21,22 @@ offset_bottom = 143.0
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8mxau")
+theme_override_font_sizes/font_size = 20
 text = "Company Morale"
 
 [node name="EmployeeBar" type="ProgressBar" parent="SubViewport/VBoxContainer" unique_id=1589470304]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8mxau")
 
 [node name="WorkBarLabel" type="Label" parent="SubViewport/VBoxContainer" unique_id=805497809]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8mxau")
+theme_override_font_sizes/font_size = 20
 text = "Today's Profit"
 
 [node name="WorkBar" type="ProgressBar" parent="SubViewport/VBoxContainer" unique_id=1569005437]
@@ -43,11 +49,15 @@ show_percentage = false
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8mxau")
+theme_override_font_sizes/font_size = 20
 
 [node name="TimeLabel" type="Label" parent="SubViewport/VBoxContainer" unique_id=894542206]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_8mxau")
+theme_override_font_sizes/font_size = 20
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1238865906]
 texture = SubResource("ViewportTexture_1vivr")

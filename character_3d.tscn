@@ -3,6 +3,12 @@
 [ext_resource type="Script" uid="uid://2jytpbpy30x2" path="res://scripts/character.gd" id="1_loobb"]
 [ext_resource type="PackedScene" uid="uid://bytxipnxorm4y" path="res://bubble.tscn" id="2_lnme8"]
 [ext_resource type="Script" uid="uid://bfeh4r48s4ycy" path="res://Coco/clicker.gd" id="3_lnme8"]
+[ext_resource type="Script" uid="uid://ecbft7nifbq8" path="res://effect_burst_3d.gd" id="4_fqdyt"]
+[ext_resource type="Texture2D" uid="uid://b33g5mrr6psur" path="res://Art Assets/2d/Dollar_plus.png" id="5_2ewqt"]
+[ext_resource type="Texture2D" uid="uid://dkoaoeh0n818o" path="res://Art Assets/2d/Dollar_Minus.png" id="6_wijti"]
+[ext_resource type="Texture2D" uid="uid://dk0a1qjjn72mo" path="res://Art Assets/2d/Morale_Plus.png" id="7_3400w"]
+[ext_resource type="Texture2D" uid="uid://cne66khevh2hx" path="res://Art Assets/2d/Morale_Minus.png" id="8_68jk5"]
+[ext_resource type="Texture2D" uid="uid://by4scacib8xlc" path="res://Art Assets/2d/Hand_Yes.png" id="9_7gu60"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lnme8"]
 size = Vector3(1.4263371, 0.24846101, 0.30297852)
@@ -37,5 +43,15 @@ priority = 20
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/Area3D" unique_id=1045727943]
 transform = Transform3D(1, 0, 0, 0, 1.605, 0, 0, 0, 1, -0.031495094, -1.3721715, -0.0234375)
 shape = SubResource("BoxShape3D_ddgnj")
+
+[node name="EffectSpawnPoint" type="Marker3D" parent="." unique_id=1252475917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6661658, -1.7492423, 1.9201055)
+script = ExtResource("4_fqdyt")
+money_up_texture = ExtResource("5_2ewqt")
+money_down_texture = ExtResource("6_wijti")
+morale_up_texture = ExtResource("7_3400w")
+morale_down_texture = ExtResource("8_68jk5")
+neutral_texture = ExtResource("9_7gu60")
+icon_pixel_size = 0.01
 
 [connection signal="input_event" from="CharacterBody3D/Area3D" to="CharacterBody3D" method="_on_area_3d_input_event"]
