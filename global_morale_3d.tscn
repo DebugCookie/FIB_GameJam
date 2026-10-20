@@ -12,14 +12,15 @@ script = ExtResource("1_ihg0h")
 transparent_bg = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SubViewport" unique_id=1907699019]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 9.345
+offset_right = 117.345
+offset_bottom = 143.0
 
 [node name="EmployeeBarLabel" type="Label" parent="SubViewport/VBoxContainer" unique_id=1213951175]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "HappinessBar"
+text = "Company Morale"
 
 [node name="EmployeeBar" type="ProgressBar" parent="SubViewport/VBoxContainer" unique_id=1589470304]
 unique_name_in_owner = true
@@ -30,7 +31,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "MoneyBar"
+text = "Today's Profit"
 
 [node name="WorkBar" type="ProgressBar" parent="SubViewport/VBoxContainer" unique_id=1569005437]
 unique_name_in_owner = true

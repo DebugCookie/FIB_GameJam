@@ -41,11 +41,11 @@ scale = Vector2(0.885, 0.885)
 texture = ExtResource("2_4cx2n")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SubViewport" unique_id=1205927695]
-custom_maximum_size = Vector2(550, 400)
-offset_left = 19.5
-offset_top = -64.22
-offset_right = 569.5
-offset_bottom = 175.78
+custom_maximum_size = Vector2(501.21, 400)
+offset_left = 8.565
+offset_top = -68.16
+offset_right = 509.565
+offset_bottom = 317.84
 
 [node name="CharacterLabel" type="Label" parent="SubViewport/VBoxContainer" unique_id=709994585]
 modulate = Color(1, 1, 1, 0)
@@ -61,7 +61,9 @@ self_modulate = Color(0, 0, 0, 1)
 show_behind_parent = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 56
+theme_override_font_sizes/font_size = 54
+horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="FeedBackContainer" type="HBoxContainer" parent="SubViewport" unique_id=1644702999]

@@ -120,6 +120,7 @@
 [ext_resource type="Texture2D" uid="uid://5bxqehfgvvaf" path="res://Art Assets/2d/T_empireStateBuilding.png" id="118_vkcqn"]
 [ext_resource type="Texture2D" uid="uid://dx8bupypfw8fv" path="res://Art Assets/2d/T_skyscrapers.png" id="119_m43pg"]
 [ext_resource type="Texture2D" uid="uid://dfsoq4mwvn034" path="res://Art Assets/2d/T_city.png" id="120_biegb"]
+[ext_resource type="Texture2D" uid="uid://bjy17dnixjxwm" path="res://Art Assets/Ui/Day_screen.png" id="121_m43pg"]
 [ext_resource type="Texture2D" uid="uid://dj012tqby2p5" path="res://Art Assets/2d/T_SquareBuilding.png" id="121_ux2uo"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_a5qvv"]
@@ -569,17 +570,18 @@ albedo_texture = ExtResource("101_cxx8f")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d35be"]
 albedo_texture = ExtResource("104_elhmf")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_biegb"]
+albedo_texture = ExtResource("121_m43pg")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4kxuq"]
+
 [node name="Node3D" type="Node3D" unique_id=1272375817]
 script = ExtResource("1_dx25p")
 
 [node name="GameUI" parent="." unique_id=121058546 instance=ExtResource("28_dufa8")]
 
 [node name="GlobalMorale3D" parent="." unique_id=615809671 instance=ExtResource("2_3pouy")]
-transform = Transform3D(0.023384267, 0.00398145, -0.043400902, 0.0005358255, 0.028179588, 0.015189634, 0.020658959, -0.005237567, 0.048732363, 0.1411686, -0.04878216, -0.054210138)
-
-[node name="GlobalMorale3D2" parent="." unique_id=558376804 instance=ExtResource("2_3pouy")]
-transform = Transform3D(0.095, 0, 0, 0, 0.095, 0, 0, 0, 0.095, 0.06241393, -0.07328714, -0.4753938)
-visible = false
+transform = Transform3D(0.023384267, 0.00398145, -0.043400902, 0.0005358255, 0.028179588, 0.015189634, 0.020658959, -0.005237567, 0.048732363, 0.13368899, -0.04451919, -0.06081882)
 
 [node name="Characters" type="Node3D" parent="." unique_id=99532683]
 
@@ -604,7 +606,7 @@ autoplay = "Talk"
 frame_progress = 0.32582235
 
 [node name="BossBaby" parent="Characters" unique_id=1486932446 node_paths=PackedStringArray("custom_sfx_node") instance=ExtResource("3_be4fj")]
-transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -0.016321778, 0.088197984, -0.31255496)
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -0.029344816, 0.088197984, -0.31255496)
 character_name = "BossBaby"
 min_spawn_cooldown = 4.0
 max_spawn_cooldown = 15.0
@@ -677,7 +679,7 @@ autoplay = "idle"
 frame_progress = 0.65616274
 
 [node name="Military" parent="Characters" unique_id=494477338 node_paths=PackedStringArray("custom_sfx_node") instance=ExtResource("3_be4fj")]
-transform = Transform3D(0.013348679, 0, -0.026866574, 0, 0.029999997, 0, 0.026866574, 0, 0.013348679, 0.26120126, 0.08163715, -0.10463051)
+transform = Transform3D(0.013348679, 0, -0.026866574, 0, 0.029999997, 0, 0.026866574, 0, 0.013348679, 0.26120126, 0.08163715, -0.07128535)
 character_name = "MilitaryGuy"
 min_spawn_cooldown = 7.0
 max_spawn_cooldown = 20.0
@@ -689,7 +691,7 @@ stream = SubResource("AudioStreamPlaylist_0onsu")
 attenuation_model = 3
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/Military/SFX_Military_Talk" unique_id=786385682]
-transform = Transform3D(0.008899119, 0, 0.017911047, 0, 0.019999998, 0, -0.017911047, 0, 0.008899119, -0.0032036528, -0.08514572, 0.025687426)
+transform = Transform3D(0.00889912, 0, 0.017911047, 0, 0.019999998, 0, -0.017911047, 0, 0.00889912, -0.020159636, -0.08514572, 0.017262846)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_hjgis")
 animation = &"Talk"
@@ -943,7 +945,7 @@ transform = Transform3D(-0.8900573, 0, -0.45584863, 0, 1, 0, 0.45584863, 0, -0.8
 transform = Transform3D(-0.8900573, 0, -0.45584863, 0, 1, 0, 0.45584863, 0, -0.8900573, -0.16419485, -0.06457488, -0.26459485)
 
 [node name="SM_ChairBack3" parent="." unique_id=653149071 instance=ExtResource("97_nyr6x")]
-transform = Transform3D(-0.9442844, 0, 0.32913074, 0, 1, 0, -0.32913074, 0, -0.9442844, 0.039221674, -0.06457488, -0.30785245)
+transform = Transform3D(-0.9442844, 0, 0.32913074, 0, 1, 0, -0.32913074, 0, -0.9442844, 0.02149874, -0.06457488, -0.30785245)
 
 [node name="SM_ChairBack4" parent="." unique_id=1414963127 instance=ExtResource("97_nyr6x")]
 transform = Transform3D(-0.8464791, 0, 0.53242195, 0, 1, 0, -0.53242195, 0, -0.8464791, 0.1366627, -0.06457488, -0.2714849)
@@ -1057,7 +1059,12 @@ transform = Transform3D(0.0050123474, 0, 0.03463923, 0, 0.035, 0, -0.03463923, 0
 texture = ExtResource("121_ux2uo")
 
 [node name="SM_WhiteBoard2" parent="." unique_id=925664934 instance=ExtResource("25_1y33g")]
-transform = Transform3D(-3.2564984e-08, 0, 0.745, 0, 0.745, 0, -0.745, 0, -3.2564984e-08, -0.082756765, 0.0037375838, -0.47884724)
+transform = Transform3D(-3.2564984e-08, 0, 0.745, 0, 0.745, 0, -0.745, 0, -3.2564984e-08, -0.082756765, -0.010523118, -0.48330197)
+
+[node name="PlaneWithImage" type="MeshInstance3D" parent="SM_WhiteBoard2" unique_id=528854142]
+transform = Transform3D(-1.9133708e-08, -1, -5.8361493e-15, 5.8665964e-15, 5.722492e-14, -0.12577721, 0.21886398, -8.742278e-08, -2.551065e-22, -0.0036218762, 0.10991058, 0.0034179464)
+material_override = SubResource("StandardMaterial3D_biegb")
+mesh = SubResource("PlaneMesh_4kxuq")
 
 [node name="SM_computer" parent="." unique_id=363626069 instance=ExtResource("117_iohwb")]
 transform = Transform3D(1.053727, 0.022631798, -0.40794474, 0.0043543833, 1.1368872, -0.036186278, 0.81845367, -0.025120385, 0.6870037, 0.10316685, -0.025247343, -0.083107)

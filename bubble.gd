@@ -10,8 +10,8 @@ class_name Bubble3D
 @onready var money_pos_icon: TextureRect = %MoneyPosIcon
 @onready var money_neg_icon: TextureRect = %MoneyMinusIcon
 
-@export var bubble_lifetime: float = 8.0
-@export var feedback_duration: float = 0.8 
+@export var bubble_lifetime: float = 15.0
+@export var feedback_duration: float = 1 #remove this line when particle system feedback is implemented
 
 signal action_processed(morale_change: Dictionary)
 signal bubble_expired(penalty: Dictionary)

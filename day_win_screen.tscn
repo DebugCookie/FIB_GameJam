@@ -13,21 +13,25 @@ color = Color(0.25620002, 0.61, 0.5156534, 0.1882353)
 script = ExtResource("1_uf6e4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=87604821]
-position = Vector2(643.5813, 372.5)
-scale = Vector2(0.5702079, 0.44372034)
+position = Vector2(963.74994, 539.50006)
+scale = Vector2(0.8544444, 0.6380332)
 texture = ExtResource("2_fqv6v")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=488693835]
-layout_mode = 0
-offset_left = 225.0
-offset_top = 112.0
-offset_right = 1087.0
-offset_bottom = 597.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -273.49
+offset_bottom = -273.49
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
 [node name="WinLabel" type="Label" parent="VBoxContainer" unique_id=1573717]
 unique_name_in_owner = true
 layout_mode = 2
-text = "You made it through the day!"
+text = "You made it through  the day!"
 horizontal_alignment = 1
 
 [node name="CongratsLabel" type="Label" parent="VBoxContainer" unique_id=40149407]
