@@ -714,6 +714,25 @@ animation = &"Talk"
 autoplay = "Talk"
 frame_progress = 0.6225078
 
+[node name="Janitor" parent="Characters" unique_id=610252353 node_paths=PackedStringArray("custom_sfx_node") instance=ExtResource("3_be4fj")]
+transform = Transform3D(0.01772869, 0, -0.024201397, 0, 0.030331066, 0, 0.02421134, 0, 0.017721415, 0.44502315, 0.074002, 0.1168967)
+character_name = "OldGuy"
+max_spawn_cooldown = 15.0
+custom_sfx_node = NodePath("SFX_Janitor_Talk")
+
+[node name="SFX_Janitor_Talk" type="AudioStreamPlayer3D" parent="Characters/Janitor" unique_id=986099688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28415585, -0.007881649, -0.08814503)
+stream = SubResource("AudioStreamPlaylist_0lk7q")
+attenuation_model = 3
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/Janitor" unique_id=1754746173]
+transform = Transform3D(0.2703461, 0, -0.44862917, 0, 0.58313346, 0, 0.54941577, 0, 0.22075292, 1.2496797, -3.112061, 1.3628483)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_f12nc")
+animation = &"Talk"
+autoplay = "Talk"
+frame_progress = 0.6225078
+
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1310699426]
 texture_filter = 1
 anchors_preset = 15
@@ -951,13 +970,19 @@ transform = Transform3D(1.055, 0, 0, 0, 1.055, 0, 0, 0, 1.055, -0.32686454, -0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.7636261, 0.3966971, -0.07903213, -0.30719835)
 
 [node name="SM_Wall" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1219317071 instance=ExtResource("10_3pouy")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1.6133662, 0, 8.742278e-08, 0, -1, 0.3985607, -0.31602144, -0.61807686)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1.6133662, 0, 8.742278e-08, 0, -1, 0.3985607, -0.31365228, -0.7673473)
 
-[node name="SM_Wall" parent="SubViewportContainer/SubViewport/EnviromentAssets/SM_Wall" unique_id=580721502 instance=ExtResource("10_3pouy")]
+[node name="SM_Wall4" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=468414951 instance=ExtResource("10_3pouy")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1.6133662, 0, 8.742278e-08, 0, -1, 0.3985607, -0.32028005, 0.45947677)
+
+[node name="SM_Wall" parent="SubViewportContainer/SubViewport/EnviromentAssets/SM_Wall4" unique_id=407303031 instance=ExtResource("10_3pouy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1.3441513, 0, 8.742278e-08, 0, -1, -0.0038092136, -0.87675613, -0.36651742)
 
-[node name="SM_Wall" parent="SubViewportContainer/SubViewport/EnviromentAssets/SM_Wall/SM_Wall" unique_id=678328271 instance=ExtResource("10_3pouy")]
-transform = Transform3D(-0.99999994, 5.2012583e-15, -4.3711384e-07, 2.2928223e-14, -0.34027442, -8.742278e-08, -4.3711384e-07, -2.9747733e-08, 0.99999994, -0.00086954236, 1.1562865, 0.0407366)
+[node name="SM_Wall" parent="SubViewportContainer/SubViewport/EnviromentAssets/SM_Wall4/SM_Wall" unique_id=523088681 instance=ExtResource("10_3pouy")]
+transform = Transform3D(-0.99999994, -3.2013334e-21, -8.742272e-08, 0, 0.85737073, 1.3105968e-14, 8.742272e-08, -5.597389e-28, -0.99999994, -0.005, 0.115, -0.674)
+
+[node name="SM_Wall2" parent="SubViewportContainer/SubViewport/EnviromentAssets/SM_Wall4/SM_Wall" unique_id=1806742379 instance=ExtResource("10_3pouy")]
+transform = Transform3D(-0.99999976, -2.8060012e-21, -1.5659802e-07, 0, 0.7514943, 2.3476377e-14, 8.742269e-08, -4.9061683e-28, -1.7912737, -0.0031198263, 0.87686783, -0.90101343)
 
 [node name="SM_Wall2" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1887927298 instance=ExtResource("10_3pouy")]
 transform = Transform3D(1.3113416e-07, 0, -1.1545465, 0, 1.3441513, 0, 1, 0, 1.5140049e-07, 0.008830994, -0.26105002, -0.48150295)
@@ -983,7 +1008,7 @@ autoplay = true
 panning_strength = 2.01
 
 [node name="SM_Window2" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1074715542 instance=ExtResource("12_2p1gs")]
-transform = Transform3D(0.17734379, 0, 1.579172e-07, 0, 0.2756813, 0, -4.0010338e-08, 0, 0.34587786, 0.40258473, -0.013300918, -0.08222908)
+transform = Transform3D(0.17734379, 0, 1.579172e-07, 0, 0.2756813, 0, -4.0010338e-08, 0, 0.34587786, 0.40258473, -0.013300918, -0.081330545)
 
 [node name="SFX_Ambience_City" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/EnviromentAssets/SM_Window2" unique_id=1429769185]
 transform = Transform3D(1.408451, 0, 4.2632564e-14, 0, 1.2375423, 0, -2.842171e-14, 0, 1.0095533, 0, 0.08699666, 0)
