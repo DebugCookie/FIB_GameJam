@@ -45,7 +45,6 @@
 [ext_resource type="AudioStream" uid="uid://cp5pg8vlgogu4" path="res://Audio/Audio Files/NPC/NPC_HR_Talking-004.wav" id="22_wwm71"]
 [ext_resource type="PackedScene" uid="uid://dtsv0a4gve7xn" path="res://Art Assets/3D/SM_Door.glb" id="23_25qrb"]
 [ext_resource type="AudioStream" uid="uid://b2w1csqnlmdts" path="res://Audio/Audio Files/NPC/NPC_Karen_Talking-001.wav" id="23_fb1cs"]
-[ext_resource type="Texture2D" uid="uid://pcbi25hkgrmm" path="res://Art Assets/2d/characters/OldGuy_OpenMouth.png" id="23_pr83e"]
 [ext_resource type="AudioStream" uid="uid://dcrqx07kgl53r" path="res://Audio/Audio Files/NPC/NPC_HR_Talking-005.wav" id="23_s2y2q"]
 [ext_resource type="PackedScene" uid="uid://rrk0ivukfx18" path="res://Art Assets/3D/SM_Picture.glb" id="24_3ydh5"]
 [ext_resource type="AudioStream" uid="uid://dv0blx0grivcr" path="res://Audio/Audio Files/NPC/NPC_Karen_Talking-002.wav" id="24_sp1l3"]
@@ -73,8 +72,11 @@
 [ext_resource type="AudioStream" uid="uid://ux7s6t8q0sqk" path="res://Audio/Audio Files/NPC/NPC_Military_Talking-005.wav" id="55_gu4ko"]
 [ext_resource type="AudioStream" uid="uid://cf5pbxuusabqx" path="res://Audio/Audio Files/NPC/NPC_Military_Talking-006.wav" id="56_fqmj2"]
 [ext_resource type="AudioStream" uid="uid://p56jnxfcwcgq" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-001.wav" id="59_s46yg"]
+[ext_resource type="Texture2D" uid="uid://p2j5ud1uqdiv" path="res://Art Assets/2d/characters/Janitor_ClosedMouth.png" id="59_vkcqn"]
+[ext_resource type="Texture2D" uid="uid://mr3owpymoffl" path="res://Art Assets/2d/characters/Janitor_OpenMouth.png" id="60_m43pg"]
 [ext_resource type="AudioStream" uid="uid://cyftkbnh63di2" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-002.wav" id="60_xsyjb"]
 [ext_resource type="AudioStream" uid="uid://bxhl1dcgq8kvh" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-003.wav" id="61_cxx8f"]
+[ext_resource type="Script" uid="uid://cs1ouvbs5lt54" path="res://janitor_controller.gd" id="61_hbkt5"]
 [ext_resource type="AudioStream" uid="uid://b743ns7ktq50" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-004.wav" id="62_wdk1f"]
 [ext_resource type="AudioStream" uid="uid://8hklsysxuv6o" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-005.wav" id="63_gqadi"]
 [ext_resource type="AudioStream" uid="uid://cb3041vaqtfed" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-006.wav" id="64_elhmf"]
@@ -359,14 +361,6 @@ stream_3 = ExtResource("62_wdk1f")
 stream_4 = ExtResource("63_gqadi")
 stream_5 = ExtResource("64_elhmf")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sp1l3"]
-atlas = ExtResource("4_4ljo3")
-region = Rect2(0, 0, 580, 580)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_614ah"]
-atlas = ExtResource("23_pr83e")
-region = Rect2(0, 0, 580, 580)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_f12nc"]
 animations = [{
 "frames": [],
@@ -376,10 +370,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sp1l3")
+"texture": ExtResource("59_vkcqn")
 }, {
-"duration": 1.7,
-"texture": SubResource("AtlasTexture_614ah")
+"duration": 1.0,
+"texture": ExtResource("60_m43pg")
 }],
 "loop": 1,
 "name": &"Talk",
@@ -572,13 +566,27 @@ stream_0/stream = ExtResource("90_435h1")
 stream_1/stream = ExtResource("91_m7egt")
 stream_2/stream = ExtResource("92_nyr6x")
 
-[node name="Node3D" type="Node3D" unique_id=1272375817]
+[node name="Node3D" type="Node3D" unique_id=1272375817 node_paths=PackedStringArray("janitor_controller", "janitor_dialogue_character")]
 script = ExtResource("1_dx25p")
+janitor_controller = NodePath("Characters/JanitorMoverScriptHolder")
+janitor_dialogue_character = NodePath("Characters/JanitorMoverScriptHolder/Janitor")
 
 [node name="GameUI" parent="." unique_id=121058546 instance=ExtResource("28_dufa8")]
 
 [node name="GlobalMorale3D" parent="." unique_id=615809671 instance=ExtResource("2_3pouy")]
 transform = Transform3D(0.027087636, 0.004705485, -0.038877, 0.00062068424, 0.033304103, 0.013606339, 0.023930721, -0.006190029, 0.043652732, 0.13998197, -0.055911038, -0.0501644)
+
+[node name="JanitorPointB" type="Marker3D" parent="." unique_id=1958006021]
+transform = Transform3D(0.01772869, 0, -0.024201397, 0, 0.030331066, 0, 0.02421134, 0, 0.017721415, 0.43134987, 0.072848104, -0.004502237)
+
+[node name="JanitorPointC" type="Marker3D" parent="." unique_id=1169796595]
+transform = Transform3D(-0.0021770103, 0, -0.029916897, 0, 0.030331066, 0, 0.029929183, 0, -0.0021761134, 0.3266977, 0.02189432, -0.0014654584)
+
+[node name="DoorPivot" type="Node3D" parent="." unique_id=1795855741]
+transform = Transform3D(0.01772869, 0, -0.024201397, 0, 0.030331066, 0, 0.02421134, 0, 0.017721415, 0.3966971, -0.07903214, 0.054637805)
+
+[node name="SM_Door" parent="DoorPivot" unique_id=1678815973 instance=ExtResource("23_25qrb")]
+transform = Transform3D(-19.687706, 0, -20.531376, 0, 32.969498, 0, 26.897738, 0, -15.040219, -1.4866614, 0, -1.0890503)
 
 [node name="Characters" type="Node3D" parent="." unique_id=99532683]
 
@@ -714,18 +722,27 @@ animation = &"Talk"
 autoplay = "Talk"
 frame_progress = 0.6225078
 
-[node name="Janitor" parent="Characters" unique_id=610252353 node_paths=PackedStringArray("custom_sfx_node") instance=ExtResource("3_be4fj")]
-transform = Transform3D(0.01772869, 0, -0.024201397, 0, 0.030331066, 0, 0.02421134, 0, 0.017721415, 0.44502315, 0.074002, 0.1168967)
-character_name = "OldGuy"
-max_spawn_cooldown = 15.0
-custom_sfx_node = NodePath("SFX_Janitor_Talk")
+[node name="JanitorMoverScriptHolder" type="Node3D" parent="Characters" unique_id=1321639188 node_paths=PackedStringArray("janitor_visual", "point_b", "point_c", "door_pivot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07263994, -0.7236812)
+script = ExtResource("61_hbkt5")
+janitor_visual = NodePath("Janitor/AnimatedSprite3D")
+point_b = NodePath("../../JanitorPointB")
+point_c = NodePath("../../JanitorPointC")
+door_pivot = NodePath("../../DoorPivot")
+walk_speed = 0.3
+bob_height = 0.02
+bob_duration = 0.3
 
-[node name="SFX_Janitor_Talk" type="AudioStreamPlayer3D" parent="Characters/Janitor" unique_id=986099688]
+[node name="Janitor" parent="Characters/JanitorMoverScriptHolder" unique_id=610252353 instance=ExtResource("3_be4fj")]
+transform = Transform3D(-0.00219733, 0, -0.029915407, 0, 0.030331066, 0, 0.029927697, 0, -0.0021964237, 0.44502315, 0.074002, 0.11689669)
+character_name = "Janitor"
+
+[node name="SFX_Janitor_Talk" type="AudioStreamPlayer3D" parent="Characters/JanitorMoverScriptHolder/Janitor" unique_id=986099688]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28415585, -0.007881649, -0.08814503)
 stream = SubResource("AudioStreamPlaylist_0lk7q")
 attenuation_model = 3
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/Janitor" unique_id=1754746173]
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/JanitorMoverScriptHolder/Janitor" unique_id=1754746173]
 transform = Transform3D(0.2703461, 0, -0.44862917, 0, 0.58313346, 0, 0.54941577, 0, 0.22075292, 1.2496797, -3.112061, 1.3628483)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_f12nc")
@@ -905,7 +922,7 @@ transform = Transform3D(0.020910066, 0, 0.061544854, 0, 0.156, 0, -0.061544854, 
 mesh = ExtResource("102_wdk1f")
 
 [node name="SM_Table" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1921309987 instance=ExtResource("28_4ljo3")]
-transform = Transform3D(-8.132001e-08, 0, -0.5742291, 0, 1.1154944, 0, 1.8603848, 0, -2.510035e-08, 0.37585083, -0.10810659, -0.06636053)
+transform = Transform3D(-8.132001e-08, 0, -0.5742291, 0, 1.1154944, 0, 1.8603848, 0, -2.510035e-08, 0.37585083, -0.10810659, -0.25920767)
 
 [node name="Fire" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1425613991]
 transform = Transform3D(0.21, 0, 0, 0, 0.21, 0, 0, 0, 0.21, -0.33822972, -0.071324304, -0.46113467)
@@ -966,11 +983,8 @@ visible = false
 [node name="Floor" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1442035342 instance=ExtResource("25_25qrb")]
 transform = Transform3D(1.055, 0, 0, 0, 1.055, 0, 0, 0, 1.055, -0.32686454, -0.081772804, -0.08690229)
 
-[node name="SM_Door" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1678815973 instance=ExtResource("23_25qrb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.7636261, 0.3966971, -0.07903213, -0.30719835)
-
 [node name="SM_Wall" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1219317071 instance=ExtResource("10_3pouy")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1.6133662, 0, 8.742278e-08, 0, -1, 0.3985607, -0.31365228, -0.7673473)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1.6133662, 0, 8.742278e-08, 0, -1, 0.3985607, -0.31365228, -0.8071616)
 
 [node name="SM_Wall4" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=468414951 instance=ExtResource("10_3pouy")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1.6133662, 0, 8.742278e-08, 0, -1, 0.3985607, -0.32028005, 0.45947677)
@@ -979,10 +993,10 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1.6133662, 0, 8.742278e-08, 0, 
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1.3441513, 0, 8.742278e-08, 0, -1, -0.0038092136, -0.87675613, -0.36651742)
 
 [node name="SM_Wall" parent="SubViewportContainer/SubViewport/EnviromentAssets/SM_Wall4/SM_Wall" unique_id=523088681 instance=ExtResource("10_3pouy")]
-transform = Transform3D(-0.99999994, -3.2013334e-21, -8.742272e-08, 0, 0.85737073, 1.3105968e-14, 8.742272e-08, -5.597389e-28, -0.99999994, -0.005, 0.115, -0.674)
+transform = Transform3D(-0.99999994, -3.2013334e-21, -8.742272e-08, 0, 0.85737073, 1.3105968e-14, 8.742272e-08, -5.597389e-28, -0.99999994, -0.004999876, 0.11500001, -1.2893205)
 
 [node name="SM_Wall2" parent="SubViewportContainer/SubViewport/EnviromentAssets/SM_Wall4/SM_Wall" unique_id=1806742379 instance=ExtResource("10_3pouy")]
-transform = Transform3D(-0.99999976, -2.8060012e-21, -1.5659802e-07, 0, 0.7514943, 2.3476377e-14, 8.742269e-08, -4.9061683e-28, -1.7912737, -0.0031198263, 0.87686783, -0.90101343)
+transform = Transform3D(-0.99999976, -2.8060012e-21, -1.5659802e-07, 0, 0.7514943, 2.3476377e-14, 8.742269e-08, -4.9061683e-28, -1.7912737, -0.0031198263, 0.87400293, -0.90101343)
 
 [node name="SM_Wall2" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1887927298 instance=ExtResource("10_3pouy")]
 transform = Transform3D(1.3113416e-07, 0, -1.1545465, 0, 1.3441513, 0, 1, 0, 1.5140049e-07, 0.008830994, -0.26105002, -0.48150295)
@@ -1008,7 +1022,7 @@ autoplay = true
 panning_strength = 2.01
 
 [node name="SM_Window2" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1074715542 instance=ExtResource("12_2p1gs")]
-transform = Transform3D(0.17734379, 0, 1.579172e-07, 0, 0.2756813, 0, -4.0010338e-08, 0, 0.34587786, 0.40258473, -0.013300918, -0.081330545)
+transform = Transform3D(0.17734379, 0, 1.579172e-07, 0, 0.2756813, 0, -4.0010338e-08, 0, 0.34587786, 0.40258473, -0.013300918, -0.2672882)
 
 [node name="SFX_Ambience_City" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/EnviromentAssets/SM_Window2" unique_id=1429769185]
 transform = Transform3D(1.408451, 0, 4.2632564e-14, 0, 1.2375423, 0, -2.842171e-14, 0, 1.0095533, 0, 0.08699666, 0)
