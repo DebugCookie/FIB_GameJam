@@ -3,7 +3,7 @@ extends Node3D
 
 
 # ==========================================
-# EXISTING NODE REFERENCES
+# NODE REFERENCES
 # ==========================================
 
 @onready var global_morale_ui: GlobalMorale3D = $GlobalMorale3D
@@ -15,6 +15,14 @@ extends Node3D
 @onready var sfx_money_positive: AudioStreamPlayer3D = $SFX_Money_Positive
 @onready var sfx_money_negative: AudioStreamPlayer3D = $SFX_Money_Negative
 
+
+# ==========================================
+# JANITOR REFERENCES
+# Based on your actual scene hierarchy
+# ==========================================
+
+@onready var janitor_controller: JanitorController = $Characters/JanitorMoverScriptHolder
+@onready var janitor_character: Character3D = $Characters/JanitorMoverScriptHolder/Janitor
 
 # ==========================================
 # GAME SETTINGS
@@ -29,17 +37,9 @@ extends Node3D
 
 # ==========================================
 # JANITOR SETTINGS
-# Assign these in the main office Inspector
 # ==========================================
 
 @export_group("Janitor")
-
-@export var janitor_controller: JanitorController
-
-# Character3D instance whose Bubble3D
-# will be used by the Janitor.
-@export var janitor_dialogue_character: Character3D
-
 @export var enable_janitor_test: bool = true
 
 
@@ -56,9 +56,10 @@ var total_day_seconds: float = 0.0
 
 var manager: DialogueManager
 
-const DIALOGUE_FILE_PATH = "res://Json/dialogue.json"
+const DIALOGUE_FILE_PATH: String = "res://Json/dialogue.json"
 
 var is_game_over: bool = false
+var day_active: bool = false
 
 
 # ==========================================
@@ -67,19 +68,21 @@ var is_game_over: bool = false
 
 func _ready() -> void:
 
+	print("OFFICE: Initializing game")
+
 	manager = DialogueManager.new()
 
 	if not manager.load_dialogue_file(DIALOGUE_FILE_PATH):
-		print("Kunde inte ladda JSON-dialogbanken!")
+		push_error("OFFICE: Could not load dialogue JSON.")
 		return
 
 	total_day_seconds = day_duration_minutes * 60.0
 	time_remaining_seconds = total_day_seconds
 
 	if game_ui:
-		game_ui.next_day_started.connect(start_next_day)
+		if not game_ui.next_day_started.is_connected(start_next_day):
+			game_ui.next_day_started.connect(start_next_day)
 
-	# Connect the Janitor to their dialogue bubble
 	setup_janitor()
 
 	_start_first_day()
@@ -92,62 +95,30 @@ func _ready() -> void:
 func setup_janitor() -> void:
 
 	if not is_instance_valid(janitor_controller):
-		push_warning("OFFICE: Janitor controller not assigned.")
+		push_error("OFFICE: JanitorMoverScriptHolder missing.")
 		return
 
-	if not is_instance_valid(janitor_dialogue_character):
-		push_warning("OFFICE: Janitor dialogue character not assigned.")
+	if not is_instance_valid(janitor_character):
+		push_error("OFFICE: Janitor character missing.")
 		return
 
-	# Find the Bubble3D inside the character scene
-	var janitor_bubble: Bubble3D = find_bubble(
-		janitor_dialogue_character
-	)
+	janitor_character.character_name = "Janitor"
+	janitor_character.is_janitor = true
+	janitor_character.janitor_controller = janitor_controller
 
-	if janitor_bubble == null:
-		push_error("OFFICE: No Bubble3D found in Janitor dialogue character.")
-		return
+	# Character3D will connect the Bubble3D signals.
+	# No duplicate connections here.
 
-	# Connect the bubble to the Janitor controller
-	janitor_controller.set_bubble(janitor_bubble)
-
-	# Connect the bubble to existing gameplay systems
-	if not janitor_bubble.action_processed.is_connected(modify_game_stats):
-		janitor_bubble.action_processed.connect(modify_game_stats)
-
-	if not janitor_bubble.bubble_expired.is_connected(modify_game_stats):
-		janitor_bubble.bubble_expired.connect(modify_game_stats)
-
-	if not janitor_bubble.feedback_triggered.is_connected(play_feedback_audio):
-		janitor_bubble.feedback_triggered.connect(play_feedback_audio)
-
-	print("OFFICE: Janitor successfully connected.")
+	print("OFFICE: Janitor references configured.")
 
 
 # ==========================================
-# FIND BUBBLE INSIDE CHARACTER SCENE
-# ==========================================
-
-func find_bubble(parent: Node) -> Bubble3D:
-
-	if parent is Bubble3D:
-		return parent as Bubble3D
-
-	for child in parent.get_children():
-
-		var result: Bubble3D = find_bubble(child)
-
-		if result != null:
-			return result
-
-	return null
-
-
-# ==========================================
-# FIRST DAY
+# START FIRST DAY
 # ==========================================
 
 func _start_first_day() -> void:
+
+	day_active = false
 
 	if game_ui:
 		await game_ui.trigger_loading_screen(
@@ -157,16 +128,38 @@ func _start_first_day() -> void:
 
 	update_ui()
 
+	# Start ordinary NPC dialogue loops once.
 	for character in characters_container.get_children():
 
 		if character is Character3D:
-
-			# Janitor's dialogue character is controlled
-			# separately by JanitorController.
-			if character == janitor_dialogue_character:
-				continue
-
 			character.start_character_loop(manager, self)
+
+	# Janitor is outside the Characters container.
+	if is_instance_valid(janitor_character):
+
+		if is_instance_valid(janitor_controller):
+
+			# Allow scheduling from this point onward.
+			day_active = true
+
+			janitor_character.start_character_loop(
+				manager,
+				self
+			)
+
+			print("OFFICE: Janitor initialized.")
+			print(
+				"OFFICE: Bubble connected = ",
+				is_instance_valid(janitor_controller.bubble)
+			)
+		else:
+			day_active = true
+			push_error("OFFICE: Janitor controller invalid.")
+	else:
+		day_active = true
+		push_error("OFFICE: Janitor character invalid.")
+
+	print("OFFICE: Day ", current_day, " started.")
 
 
 # ==========================================
@@ -175,42 +168,34 @@ func _start_first_day() -> void:
 
 func _process(delta: float) -> void:
 
-	if is_game_over:
+	if is_game_over or not day_active:
 		return
 
-	if time_remaining_seconds > 0:
+	time_remaining_seconds = maxf(
+		time_remaining_seconds - delta,
+		0.0
+	)
 
-		time_remaining_seconds -= delta
+	if global_morale_ui:
+		global_morale_ui.update_time_and_round(
+			current_day,
+			time_remaining_seconds
+		)
 
-		if global_morale_ui:
-			global_morale_ui.update_time_and_round(
-				current_day,
-				time_remaining_seconds
-			)
-
-	else:
-
-		time_remaining_seconds = 0
-
-		if global_morale_ui:
-			global_morale_ui.update_time_and_round(
-				current_day,
-				0
-			)
-
+	if time_remaining_seconds <= 0.0:
 		check_win_conditions()
 
 
 # ==========================================
-# JANITOR TEST - PRESS J
+# JANITOR TEST - J KEY
 # ==========================================
 
-func _unhandled_key_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 
 	if not enable_janitor_test:
 		return
 
-	if is_game_over:
+	if is_game_over or not day_active:
 		return
 
 	if event is InputEventKey:
@@ -219,6 +204,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 			if event.keycode == KEY_J:
 
+				print("OFFICE: J pressed")
 				test_janitor()
 
 
@@ -229,15 +215,17 @@ func test_janitor() -> void:
 		return
 
 	if janitor_controller.state != JanitorController.State.IDLE:
-		print("OFFICE: Janitor already busy.")
+		print("OFFICE: Janitor is already busy.")
 		return
 
 	if not is_instance_valid(janitor_controller.bubble):
-		push_error("OFFICE: Janitor bubble not connected.")
+		push_error("OFFICE: Janitor bubble is not connected.")
 		return
 
-	print("OFFICE: Starting Janitor test.")
+	print("OFFICE: Starting manual Janitor test.")
 
+	# Keep the existing hardcoded test proposal.
+	# Automatic visits use real dialogue.json ideas.
 	janitor_controller.start_visit(
 		"Make product line better",
 		{
@@ -253,22 +241,26 @@ func test_janitor() -> void:
 
 func play_feedback_audio(changes: Dictionary) -> void:
 
-	var money_change = int(changes.get("Money", 0))
-	var moral_change = int(changes.get("Moral", 0))
+	var money_change: int = int(changes.get("Money", 0))
+	var moral_change: int = int(changes.get("Moral", 0))
 
 	if money_change > 0:
+
 		if sfx_money_positive:
 			sfx_money_positive.play()
 
 	elif money_change < 0:
+
 		if sfx_money_negative:
 			sfx_money_negative.play()
 
 	if moral_change > 0:
+
 		if sfx_morale_positive:
 			sfx_morale_positive.play()
 
 	elif moral_change < 0:
+
 		if sfx_morale_negative:
 			sfx_morale_negative.play()
 
@@ -279,13 +271,13 @@ func play_feedback_audio(changes: Dictionary) -> void:
 
 func modify_game_stats(changes: Dictionary) -> void:
 
-	if is_game_over:
+	if is_game_over or not day_active:
 		return
 
 	current_money += int(changes.get("Money", 0))
 	company_happiness += int(changes.get("Moral", 0))
 
-	company_happiness = clamp(
+	company_happiness = clampi(
 		company_happiness,
 		0,
 		100
@@ -294,8 +286,9 @@ func modify_game_stats(changes: Dictionary) -> void:
 	update_ui()
 
 	if company_happiness <= 0:
+
 		trigger_loss(
-			"Your coworkers had enough. company moral reached 0%!"
+			"Your coworkers had enough. Company morale reached 0%!"
 		)
 
 
@@ -315,6 +308,21 @@ func update_ui() -> void:
 
 
 # ==========================================
+# STOP DAILY ACTIVITY
+# ==========================================
+
+func stop_day_activity() -> void:
+
+	day_active = false
+
+	if is_instance_valid(janitor_character):
+		janitor_character.stop_janitor_day()
+
+	if is_instance_valid(janitor_controller):
+		janitor_controller.cancel_visit()
+
+
+# ==========================================
 # CHECK WIN CONDITIONS
 # ==========================================
 
@@ -323,12 +331,12 @@ func check_win_conditions() -> void:
 	if is_game_over:
 		return
 
-	# Prevent repeated win/loss checks
 	is_game_over = true
+	stop_day_activity()
 
 	if current_money >= money_quota:
 
-		print("Dagen avklarad! Öppnar vinstmenyn.")
+		print("OFFICE: Day completed.")
 
 		if game_ui:
 			game_ui.show_day_win(
@@ -338,17 +346,27 @@ func check_win_conditions() -> void:
 
 	else:
 
-		trigger_loss(
-			"Times out! You didn't reach $%d. You only earned $%d."
-			% [money_quota, current_money]
+		if game_ui:
+			game_ui.show_game_over()
+
+		print(
+			"OFFICE: Day failed. Money: ",
+			current_money,
+			" / ",
+			money_quota
 		)
 
 
 # ==========================================
-# NEXT DAY
+# START NEXT DAY
 # ==========================================
 
 func start_next_day() -> void:
+
+	# Stop any unfinished Janitor activity.
+	stop_day_activity()
+
+	is_game_over = true
 
 	current_day += 1
 
@@ -368,6 +386,15 @@ func start_next_day() -> void:
 		)
 
 	is_game_over = false
+	day_active = true
+
+	# Restart only the special Janitor schedule.
+	# Normal NPC dialogue loops are already running.
+	if is_instance_valid(janitor_character):
+
+		if is_instance_valid(janitor_controller):
+
+			janitor_character.start_janitor_day()
 
 	print(
 		"--- STARTAR DAG %d (Ny kvot: $%d) ---"
@@ -381,7 +408,13 @@ func start_next_day() -> void:
 
 func trigger_loss(_reason: String) -> void:
 
+	if is_game_over:
+		return
+
 	is_game_over = true
+	stop_day_activity()
+
+	print("OFFICE: Game over. ", _reason)
 
 	if game_ui:
 		game_ui.show_game_over()

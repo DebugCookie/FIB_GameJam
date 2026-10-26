@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://clb8iwcxs7k44" path="res://pause_menu.gd" id="1_hdmo1"]
 [ext_resource type="Texture2D" uid="uid://bjy17dnixjxwm" path="res://Art Assets/Ui/Day_screen.png" id="2_nwcfo"]
+[ext_resource type="FontFile" uid="uid://dhfm077evoj0t" path="res://Art Assets/Fonts/Geo-Regular.ttf" id="3_05uyy"]
 
 [node name="PauseMenu" type="ColorRect" unique_id=561029813]
 anchors_preset = 15
@@ -22,30 +23,38 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 659.0
-offset_top = -207.0
-offset_right = -610.0
-offset_bottom = -207.0
+offset_left = 805.0
+offset_top = -246.0
+offset_right = -464.0
+offset_bottom = -246.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=1424337551]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_05uyy")
+theme_override_font_sizes/font_size = 40
 text = "Paused"
 horizontal_alignment = 1
 
 [node name="ResumeButton" type="Button" parent="VBoxContainer" unique_id=1397683526]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_05uyy")
+theme_override_font_sizes/font_size = 22
 text = "Resume"
 
 [node name="MainMenuButton" type="Button" parent="VBoxContainer" unique_id=1484247452]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_05uyy")
+theme_override_font_sizes/font_size = 22
 text = "Main Menu"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=521502225]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_05uyy")
+theme_override_font_sizes/font_size = 22
 text = "Quit"

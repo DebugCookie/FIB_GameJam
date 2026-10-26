@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://rrgmfdd2pc7m" path="res://day_win_screen.gd" id="1_uf6e4"]
 [ext_resource type="Texture2D" uid="uid://dlc0hjypomdg8" path="res://Art Assets/Ui/Ui_day_win_screen.png" id="2_fqv6v"]
+[ext_resource type="FontFile" uid="uid://dhfm077evoj0t" path="res://Art Assets/Fonts/Geo-Regular.ttf" id="3_2tgt8"]
 
 [node name="DayWinScreen" type="ColorRect" unique_id=289236852]
 anchors_preset = 15
@@ -31,16 +32,22 @@ alignment = 1
 [node name="WinLabel" type="Label" parent="VBoxContainer" unique_id=1573717]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2tgt8")
+theme_override_font_sizes/font_size = 30
 text = "You made it through  the day!"
 horizontal_alignment = 1
 
 [node name="CongratsLabel" type="Label" parent="VBoxContainer" unique_id=40149407]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2tgt8")
+theme_override_font_sizes/font_size = 29
 text = "You Earned:"
 horizontal_alignment = 1
 
 [node name="NextDayButton" type="Button" parent="VBoxContainer" unique_id=134127557]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2tgt8")
+theme_override_font_sizes/font_size = 23
 text = "Next Day"
