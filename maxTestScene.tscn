@@ -76,7 +76,9 @@
 [ext_resource type="AudioStream" uid="uid://cyftkbnh63di2" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-002.wav" id="60_xsyjb"]
 [ext_resource type="AudioStream" uid="uid://bxhl1dcgq8kvh" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-003.wav" id="61_cxx8f"]
 [ext_resource type="Script" uid="uid://cs1ouvbs5lt54" path="res://janitor_controller.gd" id="61_hbkt5"]
+[ext_resource type="Texture2D" uid="uid://mr3owpymoffl" path="res://Art Assets/2d/characters/Janitor_OpenMouth.png" id="62_m43pg"]
 [ext_resource type="AudioStream" uid="uid://b743ns7ktq50" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-004.wav" id="62_wdk1f"]
+[ext_resource type="Texture2D" uid="uid://p2j5ud1uqdiv" path="res://Art Assets/2d/characters/Janitor_ClosedMouth.png" id="63_biegb"]
 [ext_resource type="AudioStream" uid="uid://8hklsysxuv6o" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-005.wav" id="63_gqadi"]
 [ext_resource type="AudioStream" uid="uid://cb3041vaqtfed" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-006.wav" id="64_elhmf"]
 [ext_resource type="AudioStream" uid="uid://j08ygngbhkrf" path="res://Audio/Audio Files/Yes.wav" id="67_w54f0"]
@@ -379,6 +381,25 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ux2uo"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("62_m43pg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_biegb")
+}],
+"loop": 1,
+"name": &"Talk",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_25qrb"]
 atlas = ExtResource("13_qilwt")
 region = Rect2(0, 0, 256, 256)
@@ -578,7 +599,7 @@ enable_janitor_test = false
 transform = Transform3D(0.027087636, 0.004705485, -0.038877, 0.00062068424, 0.033304103, 0.013606339, 0.023930721, -0.006190029, 0.043652732, 0.13998197, -0.055911038, -0.0501644)
 
 [node name="JanitorPointA" type="Marker3D" parent="." unique_id=1640353462]
-transform = Transform3D(0.01772869, 0, -0.024201397, 0, 0.030331066, 0, 0.02421134, 0, 0.017721415, 0.43134987, 0.072848104, -0.56207633)
+transform = Transform3D(0.01772869, 0, -0.024201397, 0, 0.030331066, 0, 0.02421134, 0, 0.017721415, 0.4512285, 0.072848104, -0.56207633)
 
 [node name="JanitorPointB" type="Marker3D" parent="." unique_id=1958006021]
 transform = Transform3D(0.01772869, 0, -0.024201397, 0, 0.030331066, 0, 0.02421134, 0, 0.017721415, 0.43134987, 0.072848104, -0.004502237)
@@ -734,7 +755,7 @@ point_a = NodePath("../../JanitorPointA")
 point_b = NodePath("../../JanitorPointB")
 point_c = NodePath("../../JanitorPointC")
 door_pivot = NodePath("../../DoorPivot")
-walk_speed = 0.3
+walk_speed = 0.2
 bob_height = 0.5
 bob_duration = 0.3
 
@@ -744,8 +765,9 @@ character_name = "Janitor"
 custom_sfx_node = NodePath("SFX_Janitor_Talk")
 is_janitor = true
 janitor_controller = NodePath("..")
-janitor_first_min = 25.0
-janitor_first_max = 35.0
+janitor_first_min = 35.0
+janitor_first_max = 60.0
+janitor_min_pause = 15.0
 
 [node name="SFX_Janitor_Talk" type="AudioStreamPlayer3D" parent="Characters/JanitorMoverScriptHolder/Janitor" unique_id=986099688]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28415585, -0.007881649, -0.08814503)
@@ -753,12 +775,11 @@ stream = SubResource("AudioStreamPlaylist_0lk7q")
 attenuation_model = 3
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/JanitorMoverScriptHolder/Janitor" unique_id=1754746173]
-transform = Transform3D(0.2703461, 0, -0.44862917, 0, 0.58313346, 0, 0.54941577, 0, 0.22075292, 1.4182835, -3.112061, 1.3504639)
+transform = Transform3D(0.2703461, 0, -0.44862917, 0, 0.58313346, 0, 0.54941577, 0, 0.22075292, 1.2912407, -3.112061, -0.38057995)
 billboard = 2
-sprite_frames = SubResource("SpriteFrames_f12nc")
+sprite_frames = SubResource("SpriteFrames_ux2uo")
 animation = &"Talk"
 autoplay = "Talk"
-frame_progress = 0.6225078
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1310699426]
 texture_filter = 1
@@ -908,7 +929,7 @@ transform = Transform3D(0.0659937, 0, 0.59231323, 0, 0.4626254, 0, -0.2462918, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5569766e-06, -0.07989223, -0.11665797)
 
 [node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1468190446]
-transform = Transform3D(0.007038731, -0.00034610555, -8.836346e-05, -9.305057e-05, 0.00047072518, -0.0050524124, -0.00040048553, -0.0061923466, -0.00037913176, 0.009637717, -0.023381263, -0.022296239)
+transform = Transform3D(-0.0069025457, -0.0012683847, -1.2773606e-05, -0.0014349183, 0.006070925, 0.00038908355, 9.305077e-05, -0.00047072556, 0.0050524105, 0.0657599, 0.058127232, 0.11977913)
 texture = ExtResource("116_jxtki")
 
 [node name="SM_WhiteBoard2" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=925664934 instance=ExtResource("25_1y33g")]
