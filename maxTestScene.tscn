@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://mtv8dcbqu78x" path="res://camera_3d.gd" id="1_sm6nt"]
 [ext_resource type="PackedScene" uid="uid://dt7ibabu7str8" path="res://global_morale_3d.tscn" id="2_3pouy"]
 [ext_resource type="Script" uid="uid://css0bhjuxv07b" path="res://day_cycle_light.gd" id="2_biegb"]
+[ext_resource type="Script" uid="uid://dtts2qckc2vlr" path="res://backdrop_lighting_fix.gd" id="2_ux2uo"]
 [ext_resource type="PackedScene" uid="uid://dlnm4crlnxca7" path="res://character_3d.tscn" id="3_be4fj"]
 [ext_resource type="Texture2D" uid="uid://dup6wdwbo26q6" path="res://Art Assets/2d/characters/OldGuy_ClosedMouth.png" id="4_4ljo3"]
 [ext_resource type="Texture2D" uid="uid://d26n1kvvr5t24" path="res://Art Assets/2d/characters/Richard.png" id="4_6hq1p"]
@@ -634,6 +635,10 @@ stream_2/stream = ExtResource("92_nyr6x")
 [node name="Node3D" type="Node3D" unique_id=1272375817]
 script = ExtResource("1_dx25p")
 enable_janitor_test = false
+
+[node name="BackdropLightingFix" type="Node3D" parent="." unique_id=1313700714 node_paths=PackedStringArray("city_backdrop")]
+script = ExtResource("2_ux2uo")
+city_backdrop = NodePath("../SubViewportContainer/SubViewport/EnviromentAssets/Back wall2")
 
 [node name="Sunlight" type="DirectionalLight3D" parent="." unique_id=235843941 node_paths=PackedStringArray("office_scene")]
 transform = Transform3D(-0.04937611, 0.20290588, -0.97795254, 0.010231538, 0.9791982, 0.20264776, 0.99872786, 0, -0.05042504, -0.7939407, 0.26409, -0.1260615)
