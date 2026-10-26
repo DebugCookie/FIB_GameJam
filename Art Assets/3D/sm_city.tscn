@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c2megw2ebki8v"]
+
+[ext_resource type="PackedScene" uid="uid://dnhffjonux16l" path="res://Art Assets/3D/SM_City.glb" id="1_5pijs"]
+
+[node name="SM_City" unique_id=1594608668 instance=ExtResource("1_5pijs")]
+
+[node name="Back wall" parent="." index="0" unique_id=1971871875]
+cast_shadow = 0

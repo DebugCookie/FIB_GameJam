@@ -1,8 +1,9 @@
-[gd_scene format=3 uid="uid://p601cch5st5d"]
+[gd_scene format=4 uid="uid://p601cch5st5d"]
 
 [ext_resource type="Script" uid="uid://8mm4xsiddp6e" path="res://scripts/DialogueGameLoop.gd" id="1_dx25p"]
 [ext_resource type="Script" uid="uid://mtv8dcbqu78x" path="res://camera_3d.gd" id="1_sm6nt"]
 [ext_resource type="PackedScene" uid="uid://dt7ibabu7str8" path="res://global_morale_3d.tscn" id="2_3pouy"]
+[ext_resource type="Script" uid="uid://css0bhjuxv07b" path="res://day_cycle_light.gd" id="2_biegb"]
 [ext_resource type="PackedScene" uid="uid://dlnm4crlnxca7" path="res://character_3d.tscn" id="3_be4fj"]
 [ext_resource type="Texture2D" uid="uid://dup6wdwbo26q6" path="res://Art Assets/2d/characters/OldGuy_ClosedMouth.png" id="4_4ljo3"]
 [ext_resource type="Texture2D" uid="uid://d26n1kvvr5t24" path="res://Art Assets/2d/characters/Richard.png" id="4_6hq1p"]
@@ -108,8 +109,8 @@
 [ext_resource type="Texture2D" uid="uid://d1dgsbq3dto8v" path="res://Art Assets/3D/Materials/phoneUV.png" id="101_cxx8f"]
 [ext_resource type="ArrayMesh" uid="uid://ctmmb5i0dtjws" path="res://Art Assets/3D/paperstack.obj" id="102_wdk1f"]
 [ext_resource type="ArrayMesh" uid="uid://cqxkwkm0uxk4s" path="res://Art Assets/3D/fire.obj" id="103_gqadi"]
-[ext_resource type="PackedScene" uid="uid://dnhffjonux16l" path="res://Art Assets/3D/SM_City.glb" id="103_khu0r"]
 [ext_resource type="Texture2D" uid="uid://cl00inb5gmqlf" path="res://Art Assets/3D/Materials/brandsläckareUV.png" id="104_elhmf"]
+[ext_resource type="Texture2D" uid="uid://uf7n7ptuofba" path="res://Art Assets/3D/SM_City_CITY.jpg" id="107_biegb"]
 [ext_resource type="ArrayMesh" uid="uid://bdr33lqnj823i" path="res://Art Assets/3D/OLDnametag.obj" id="107_p8ube"]
 [ext_resource type="Material" uid="uid://c1qn2nrrb5tj4" path="res://Art Assets/3D/Materials/nametag.tres" id="108_jxtki"]
 [ext_resource type="ArrayMesh" uid="uid://cg6tro31rjf3h" path="res://Art Assets/3D/KARENnametag.obj" id="109_iohwb"]
@@ -528,6 +529,47 @@ albedo_texture = ExtResource("101_cxx8f")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d35be"]
 albedo_texture = ExtResource("104_elhmf")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7uj08"]
+resource_name = "Material.002"
+cull_mode = 2
+albedo_texture = ExtResource("107_biegb")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lsxfp"]
+_surfaces = [{
+"aabb": AABB(-1, 0.014551282, 0, 2, 1.9999999, 1),
+"format": 34896613377,
+"index_count": 141,
+"index_data": PackedByteArray("AAABAAIAAAAWAAEAFgADAAEADQAWAAAAFgAXAAMAFwAEAAMAFwAYAAQAFgAYABcAGAAFAAQAGAATAAUAGAAWABMAEwAGAAUAEwAZAAYAEwAWABkAGQAHAAYAGQAaAAcAGgAIAAcAGgAbAAgAGQAbABoAGwAJAAgAGwAUAAkAFAAKAAkAGQAcABsAGwAcABQAFAAcAAoAFgAcABkAHAALAAoAHAAdAAsAHQAMAAsAHQAeAAwAHAAeAB0AHgAOAAwAHwAcABYAHgAgAA4AHgAcACAAIAAPAA4AHwAWAA0AHwANABIAHwASABEAFQAfABEAFQARABAAIAAhAA8AIQAfABUAIQAQAA8AIQAVABAAIQAcAB8AIAAcACEA"),
+"lods": [0.171428, PackedByteArray("AAABAAIAAAADAAEAAAAEAAMAAAATAAQAEwAFAAQAEwAGAAUAEwAHAAYAEwAIAAcAEwAUAAgAAAAUABMAFAAJAAgAFAAKAAkAFAALAAoAFAAMAAsAFQAUAAAAFAAVAAwAFQAAAA0AFQAOAAwAFQANABIAFQAPAA4AFQASABEAFQAQAA8AFQARABAA"), 1.5162827, PackedByteArray("AAABAAIAAAADAAEAAAAEAAMAAAAFAAQAAAAGAAUAAAAHAAYAAAAIAAcAAAAJAAgAAAAKAAkAAAALAAoAAAAMAAsAAAANAAwADQAOAAwADQAPAA4ADQAQAA8ADQARABAADQASABEA")],
+"name": "Material.002",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 34,
+"vertex_data": PackedByteArray("//8AAAAAAACJ/f//8TEAAP////8AAAAAQPb///dhAABs6v//OY4AAIHa//8EtQAAHMf//9rUAAD7sP//guwAAPiY//8T+wAA/3//////AAAGZ///E/sAAANP//+C7AAA4jj//9rUAAAAAAAAAAAAAH0l//8EtQAAkhX//zmOAAC+Cf//92EAAHUC///xMQAAAAD//wAAAACB2gAABLUAAP9/AAD//wAAvgkAAPdhAACJ/QAA8TEAAED2AAD3YQAAbOoAADmOAAAcxwAA2tQAAPuwAACC7AAA+JgAABP7AAAGZwAAE/sAAANPAACC7AAA4jgAANrUAAB1AgAA8TEAAH0lAAAEtQAAkhUAADmOAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_w0haf"]
+resource_name = "SM_City_Cylinder"
+_surfaces = [{
+"aabb": AABB(-1, 0.014551282, 0, 2, 1.9999999, 1),
+"attribute_data": PackedByteArray("///+/yX4aYD//2mAS/BpgHLoaYCY4GmAv9hpgOXQaYAMyWmAMsFpgFm5aYB/sWmApqlpgGaC///MoWmA85lpgBmSaYBAimmAZoJpgJjg//8ywf//GZL//yX4/v9L8P//cuj//7/Y///l0P//DMn//1m5//9/sf//pqn//0CK///Mof//85n//w=="),
+"format": 34896613399,
+"index_count": 141,
+"index_data": PackedByteArray("AAABAAIAAAAWAAEAFgADAAEADQAWAAAAFgAXAAMAFwAEAAMAFwAYAAQAFgAYABcAGAAFAAQAGAATAAUAGAAWABMAEwAGAAUAEwAZAAYAEwAWABkAGQAHAAYAGQAaAAcAGgAIAAcAGgAbAAgAGQAbABoAGwAJAAgAGwAUAAkAFAAKAAkAGQAcABsAGwAcABQAFAAcAAoAFgAcABkAHAALAAoAHAAdAAsAHQAMAAsAHQAeAAwAHAAeAB0AHgAOAAwAHwAcABYAHgAgAA4AHgAcACAAIAAPAA4AHwAWAA0AHwANABIAHwASABEAFQAfABEAFQARABAAIAAhAA8AIQAfABUAIQAQAA8AIQAVABAAIQAcAB8AIAAcACEA"),
+"lods": [0.171428, PackedByteArray("AAABAAIAAAADAAEAAAAEAAMAAAATAAQAEwAFAAQAEwAGAAUAEwAHAAYAEwAIAAcAEwAUAAgAAAAUABMAFAAJAAgAFAAKAAkAFAALAAoAFAAMAAsAFQAUAAAAFAAVAAwAFQAAAA0AFQAOAAwAFQANABIAFQAPAA4AFQASABEAFQAQAA8AFQARABAA"), 1.5162827, PackedByteArray("AAABAAIAAAADAAEAAAAEAAMAAAAFAAQAAAAGAAUAAAAHAAYAAAAIAAcAAAAJAAgAAAAKAAkAAAALAAoAAAAMAAsAAAANAAwADQAOAAwADQAPAA4ADQAQAA8ADQARABAADQASABEA")],
+"material": SubResource("StandardMaterial3D_7uj08"),
+"name": "Material.002",
+"primitive": 3,
+"uv_scale": Vector4(2.0120122, 1.9935279, 0, 0),
+"vertex_count": 34,
+"vertex_data": PackedByteArray("//8AAAAADcKJ/f//8TH/t/////8AAP+7QPb///dh/69s6v//OY7/p4Ha//8Etf+fHMf//9rU/5f7sP//guz/j/iY//8T+/+H/3//////AIAGZ///E/v/hwNP//+C7P+P4jj//9rU/5cAAAAAAADxPX0l//8Etf+fkhX//zmO/6e+Cf//92H/r3UC///xMf+3AAD//wAA/7uB2gAABLXJVP9/AAD//8ievgkAAPdhm7eJ/QAA8TE9vkD2AAD3Yc9IbOoAADmOC08cxwAA2tSspvuwAACC7IOi+JgAABP7wZ8GZwAAE/s/pANPAACC7IOi4jgAANrUrKZ1AgAA8TG7vH0lAAAEtdarkhUAADmOXrCCYR46/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/f////3/+//9//v//f/7/4EWC4f9/////f/7//3////9/////f///i0iPSQAA/38/QGvYx10MPOJWzT9+UCREGEKtULU0RFrzIGhoES5ofrsltbRRLxjCc0N32Fo27MvgO4PN")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_lsxfp")
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n20ym"]
 
 [sub_resource type="Sky" id="Sky_l0xq5"]
@@ -592,6 +634,16 @@ stream_2/stream = ExtResource("92_nyr6x")
 [node name="Node3D" type="Node3D" unique_id=1272375817]
 script = ExtResource("1_dx25p")
 enable_janitor_test = false
+
+[node name="Sunlight" type="DirectionalLight3D" parent="." unique_id=235843941 node_paths=PackedStringArray("office_scene")]
+transform = Transform3D(-0.04937611, 0.20290588, -0.97795254, 0.010231538, 0.9791982, 0.20264776, 0.99872786, 0, -0.05042504, -0.7939407, 0.26409, -0.1260615)
+light_color = Color(0.80822814, 0.84929353, 0.69446325, 1)
+light_energy = 0.502
+shadow_enabled = true
+script = ExtResource("2_biegb")
+office_scene = NodePath("..")
+morning_color = Color(0.62546676, 0.7989125, 0.6148553, 1)
+evening_color = Color(0.478935, 0.6757743, 0.28761593, 1)
 
 [node name="GameUI" parent="." unique_id=121058546 instance=ExtResource("28_dufa8")]
 
@@ -877,6 +929,7 @@ mesh = SubResource("QuadMesh_ecnap")
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=877355216]
 transform = Transform3D(-0.4955847, -0.86416024, 0.08730952, 0.8685596, -0.49307448, 0.04981726, 0, 0.10052219, 0.99493486, 0, 0, 0)
+visible = false
 light_color = Color(0.80418444, 0.8089368, 0.7056107, 1)
 
 [node name="Room" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=3976714]
@@ -1055,62 +1108,32 @@ panning_strength = 2.01
 [node name="SM_Window2" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1074715542 instance=ExtResource("12_2p1gs")]
 transform = Transform3D(0.17734379, 0, 1.579172e-07, 0, 0.2756813, 0, -4.0010338e-08, 0, 0.34587786, 0.40258473, -0.013300918, -0.2672882)
 
-[node name="SFX_Ambience_City" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/EnviromentAssets/SM_Window2" unique_id=1429769185]
-transform = Transform3D(1.408451, 0, 4.2632564e-14, 0, 1.2375423, 0, -2.842171e-14, 0, 1.0095533, 0, 0.08699666, 0)
-stream = ExtResource("73_x4ery")
-attenuation_model = 3
-volume_db = -6.0
-autoplay = true
-panning_strength = 2.01
-
 [node name="SM_Window3" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1721516828 instance=ExtResource("12_2p1gs")]
 transform = Transform3D(-0.8823134, 0, -7.56318e-08, 0, 0.3146816, 0, 1.3322561e-07, 0, -0.5008868, -0.43024677, -0.07986018, -0.5821075)
-
-[node name="SFX_Ambience_City" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/EnviromentAssets/SM_Window3" unique_id=908990559]
-transform = Transform3D(1.408451, 0, 4.2632564e-14, 0, 1.2375423, 0, -2.842171e-14, 0, 1.0095533, 0, 0.08699666, 0)
-stream = ExtResource("73_x4ery")
-attenuation_model = 3
-volume_db = -6.0
-autoplay = true
-panning_strength = 2.01
 
 [node name="SM_Window4" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=274372248 instance=ExtResource("12_2p1gs")]
 transform = Transform3D(-0.8823134, 0, -7.327348e-08, 0, 0.3146816, 0, 1.3322561e-07, 0, -0.48526832, -0.43024677, 0.17971672, -0.07298745)
 
-[node name="SFX_Ambience_City" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/EnviromentAssets/SM_Window4" unique_id=388640302]
-transform = Transform3D(1.408451, 0, 4.2632564e-14, 0, 1.2375423, 0, -2.842171e-14, 0, 1.0095533, 0, 0.08699666, 0)
-stream = ExtResource("73_x4ery")
-attenuation_model = 3
-volume_db = -6.0
-autoplay = true
-panning_strength = 2.01
-
 [node name="SM_Window5" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1463672028 instance=ExtResource("12_2p1gs")]
 transform = Transform3D(-0.8823134, 0, -7.327348e-08, 0, 0.3146816, 0, 1.3322561e-07, 0, -0.48526832, -0.43024677, 0.17971672, -0.56530786)
 
-[node name="SFX_Ambience_City" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/EnviromentAssets/SM_Window5" unique_id=528287553]
-transform = Transform3D(1.408451, 0, 4.2632564e-14, 0, 1.2375423, 0, -2.842171e-14, 0, 1.0095533, 0, 0.08699666, 0)
-stream = ExtResource("73_x4ery")
-attenuation_model = 3
-volume_db = -6.0
-autoplay = true
-panning_strength = 2.01
-
-[node name="SM_City" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=495543959 instance=ExtResource("103_khu0r")]
-transform = Transform3D(-1.988868e-08, 0, -0.45499998, 0, 0.45499998, 0, 0.45499998, 0, -1.988868e-08, -0.4214965, -0.2228637, -0.76783663)
+[node name="Back wall2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1401339741]
+transform = Transform3D(-4.3207063e-08, 0, -0.5889626, 0, 0.32159925, 0, 0.98846245, 0, -2.574437e-08, -0.4214965, -0.2228637, -0.76783663)
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_w0haf")
 
 [node name="Lightning" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1920078151]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Lightning" unique_id=1182019080]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66785103, 0.09197715, -0.24590927)
-light_color = Color(0.3663791, 0.625317, 0.66413414, 1)
-light_energy = 0.302
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.050572544, 0.15482913, -0.24590927)
+light_energy = 0.211
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport/Lightning" unique_id=1919570593]
 environment = SubResource("Environment_eugri")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/Lightning" unique_id=9738278]
 transform = Transform3D(0.40224501, -0.0007020508, -0.9155318, 0.0017453285, 0.9999985, -3.3366025e-11, 0.91553044, -0.0015979038, 0.4022456, 0.9068241, 1.321417, 0)
+visible = false
 light_color = Color(0.58044404, 0.743117, 0.6554382, 1)
 
 [node name="BuckshotShader" type="ColorRect" parent="." unique_id=1262008694]
