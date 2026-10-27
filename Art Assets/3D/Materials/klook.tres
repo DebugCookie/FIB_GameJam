@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://chwycb6erdllo"]
+
+[ext_resource type="Texture2D" uid="uid://b058elrbxskh3" path="res://Art Assets/3D/Materials/klook.png" id="1_hm0fa"]
+
+[resource]
+albedo_texture = ExtResource("1_hm0fa")

@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://d1dgsbq3dto8v" path="res://Art Assets/3D/Materials/phoneUV.png" id="2_w0bhn"]
 [ext_resource type="ArrayMesh" uid="uid://cqxkwkm0uxk4s" path="res://Art Assets/3D/fire.obj" id="3_u1um5"]
 [ext_resource type="Texture2D" uid="uid://cl00inb5gmqlf" path="res://Art Assets/3D/Materials/brandsläckareUV.png" id="4_0yd31"]
+[ext_resource type="ArrayMesh" uid="uid://donh5hwwv2sn1" path="res://Art Assets/3D/klook.obj" id="5_0yd31"]
+[ext_resource type="Material" uid="uid://chwycb6erdllo" path="res://Art Assets/3D/Materials/klook.tres" id="6_noamg"]
+[ext_resource type="Material" uid="uid://cytldrfco78ju" path="res://Art Assets/3D/Materials/klook_Screen.tres" id="7_v5fse"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vgucp"]
 albedo_texture = ExtResource("2_w0bhn")
@@ -21,3 +24,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_vgucp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6018986)
 mesh = ExtResource("3_u1um5")
 surface_material_override/0 = SubResource("StandardMaterial3D_gd5vc")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1337099910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.8682275)
+mesh = ExtResource("5_0yd31")
+surface_material_override/0 = ExtResource("6_noamg")
+surface_material_override/1 = ExtResource("7_v5fse")
