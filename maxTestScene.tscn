@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://d26n1kvvr5t24" path="res://Art Assets/2d/characters/Richard.png" id="4_6hq1p"]
 [ext_resource type="Shader" uid="uid://r0uka4i5e0rn" path="res://Art Assets/PixelShader.gdshader" id="5_2ma1t"]
 [ext_resource type="Texture2D" uid="uid://2tyqypvy44bs" path="res://Art Assets/2d/characters/Emo_ClosedMouth.png" id="6_ix60g"]
-[ext_resource type="AudioStream" uid="uid://dddr1rp2nt1ff" path="res://Audio/Audio Files/Ambience_Office_Loop.wav" id="6_x6efl"]
 [ext_resource type="Texture2D" uid="uid://biq43dpdaxepw" path="res://Art Assets/2d/characters/Karen_ClosedMouth.png" id="7_10k1m"]
 [ext_resource type="Texture2D" uid="uid://6u70o77gaabt" path="res://Art Assets/2d/characters/Nepo_ClosedMouth.png" id="8_7oxqh"]
 [ext_resource type="Texture2D" uid="uid://dh7usbghd8vmc" path="res://Art Assets/2d/characters/militaryguy.png" id="9_10k1m"]
@@ -82,9 +81,15 @@
 [ext_resource type="AudioStream" uid="uid://b743ns7ktq50" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-004.wav" id="62_wdk1f"]
 [ext_resource type="Texture2D" uid="uid://p2j5ud1uqdiv" path="res://Art Assets/2d/characters/Janitor_ClosedMouth.png" id="63_biegb"]
 [ext_resource type="AudioStream" uid="uid://8hklsysxuv6o" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-005.wav" id="63_gqadi"]
+[ext_resource type="AudioStream" uid="uid://tf3xb10utg7e" path="res://Audio/Audio Files/NPC/NPC_Janitor_Talking-001.wav" id="64_1ii7p"]
 [ext_resource type="AudioStream" uid="uid://cb3041vaqtfed" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-006.wav" id="64_elhmf"]
+[ext_resource type="AudioStream" uid="uid://bvk8ldlvwovd8" path="res://Audio/Audio Files/NPC/NPC_Janitor_Talking-002.wav" id="65_rddk1"]
+[ext_resource type="AudioStream" uid="uid://tfae4vuca0b1" path="res://Audio/Audio Files/NPC/NPC_Janitor_Talking-003.wav" id="66_tkbkf"]
 [ext_resource type="AudioStream" uid="uid://j08ygngbhkrf" path="res://Audio/Audio Files/Yes.wav" id="67_w54f0"]
+[ext_resource type="AudioStream" uid="uid://dnkkqv406hg2x" path="res://Audio/Audio Files/NPC/NPC_Janitor_Talking-004.wav" id="67_yxp24"]
 [ext_resource type="AudioStream" uid="uid://cdsjpu7nes0t3" path="res://Audio/Audio Files/No.wav" id="68_gu4ko"]
+[ext_resource type="AudioStream" uid="uid://d30tqu8urmebs" path="res://Audio/Audio Files/NPC/NPC_Janitor_Talking-005.wav" id="68_pgtdy"]
+[ext_resource type="AudioStream" uid="uid://cq1pro07wqlc7" path="res://Audio/Audio Files/NPC/NPC_Janitor_Talking-006.wav" id="69_um3f3"]
 [ext_resource type="AudioStream" uid="uid://dnx2y5aef1o0i" path="res://Audio/Audio Files/Ambience_City_Loop.wav" id="73_x4ery"]
 [ext_resource type="AudioStream" uid="uid://c7nwsylysqpeq" path="res://Audio/Audio Files/Hand_Input-001.wav" id="81_435h1"]
 [ext_resource type="AudioStream" uid="uid://bu4ia7pxl50s7" path="res://Audio/Audio Files/Outcome_Morale_Positive-001.wav" id="81_t7m1p"]
@@ -383,6 +388,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_e4ldk"]
+shuffle = true
+stream_count = 6
+stream_0 = ExtResource("64_1ii7p")
+stream_1 = ExtResource("65_rddk1")
+stream_2 = ExtResource("66_tkbkf")
+stream_3 = ExtResource("67_yxp24")
+stream_4 = ExtResource("68_pgtdy")
+stream_5 = ExtResource("69_um3f3")
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ux2uo"]
 animations = [{
 "frames": [],
@@ -506,6 +521,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ojgh2"]
+random_pitch = 1.0663394
+streams_count = 3
+stream_0/stream = ExtResource("81_435h1")
+stream_1/stream = ExtResource("82_m7egt")
+stream_2/stream = ExtResource("83_nyr6x")
+
 [sub_resource type="BoxMesh" id="BoxMesh_cejtf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dvp7v"]
@@ -596,13 +618,6 @@ shader_parameter/grain_strength = 0.1170000055575
 shader_parameter/tint_color = Vector3(0.95, 1.03, 0.9)
 shader_parameter/tint_strength = 0.15
 shader_parameter/viewport_size_override = Vector2(0, 0)
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ojgh2"]
-random_pitch = 1.0663394
-streams_count = 3
-stream_0/stream = ExtResource("81_435h1")
-stream_1/stream = ExtResource("82_m7egt")
-stream_2/stream = ExtResource("83_nyr6x")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_a5qvv"]
 random_pitch = 1.0711546
@@ -828,7 +843,7 @@ janitor_min_pause = 15.0
 
 [node name="SFX_Janitor_Talk" type="AudioStreamPlayer3D" parent="Characters/JanitorMoverScriptHolder/Janitor" unique_id=986099688]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28415585, -0.007881649, -0.08814503)
-stream = SubResource("AudioStreamPlaylist_0lk7q")
+stream = SubResource("AudioStreamPlaylist_e4ldk")
 attenuation_model = 3
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/JanitorMoverScriptHolder/Janitor" unique_id=1754746173]
@@ -887,6 +902,13 @@ autoplay = "Idle"
 [node name="AudioListener3D" type="AudioListener3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=136002597]
 current = true
 
+[node name="SFX_Hand_Interact" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=1394561770]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0022247136, -0.044210754, -0.00037831068)
+stream = SubResource("AudioStreamRandomizer_ojgh2")
+attenuation_model = 3
+volume_db = 6.0
+panning_strength = 0.0
+
 [node name="SFX_Yes" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=598037585]
 stream = ExtResource("67_w54f0")
 
@@ -939,13 +961,6 @@ light_color = Color(0.80418444, 0.8089368, 0.7056107, 1)
 
 [node name="Room" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=3976714]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3157548, -0.06597404, -0.0003594905)
-
-[node name="SFX_Ambience_Bed" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport" unique_id=1933687846]
-stream = ExtResource("6_x6efl")
-attenuation_model = 3
-volume_db = -2.0
-autoplay = true
-panning_strength = 0.0
 
 [node name="EnviromentAssets" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1095502375]
 
@@ -1149,11 +1164,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="SFX_Hand_Interact" type="AudioStreamPlayer3D" parent="." unique_id=1394561770]
-stream = SubResource("AudioStreamRandomizer_ojgh2")
-attenuation_model = 3
-panning_strength = 0.0
 
 [node name="SFX_Morale_Positive" type="AudioStreamPlayer3D" parent="." unique_id=1928660166]
 stream = SubResource("AudioStreamRandomizer_a5qvv")

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bjy17dnixjxwm" path="res://Art Assets/Ui/Day_screen.png" id="4_obik5"]
 [ext_resource type="PackedScene" uid="uid://dsj1srax8i15j" path="res://game_over_screen.tscn" id="4_vealc"]
 [ext_resource type="FontFile" uid="uid://dhfm077evoj0t" path="res://Art Assets/Fonts/Geo-Regular.ttf" id="5_xlnb1"]
+[ext_resource type="AudioStream" uid="uid://dddr1rp2nt1ff" path="res://Audio/Audio Files/Ambience_Office_Loop.wav" id="7_vealc"]
 
 [node name="GameUI" type="CanvasLayer" unique_id=121058546]
 process_mode = 3
@@ -47,3 +48,8 @@ horizontal_alignment = 1
 
 [node name="DayWinScreen" parent="." unique_id=289236852 instance=ExtResource("4_3rlp6")]
 visible = false
+
+[node name="SFX_Ambience_Bed" type="AudioStreamPlayer" parent="." unique_id=1097550788]
+stream = ExtResource("7_vealc")
+volume_db = -2.0
+autoplay = true
