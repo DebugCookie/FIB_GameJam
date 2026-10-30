@@ -65,7 +65,7 @@ func trigger_loading_screen(day_number: int, duration: float) -> void:
 	day_indicator_label.text = "Preparing day %d...\nBe Ready!" % day_number
 	loading_screen.show()
 	
-	await get_tree().create_timer(duration, true, false, true).timeout
+	await get_tree().create_timer(7, true, false, true).timeout
 	
 	loading_screen.hide()
 	get_tree().paused = false

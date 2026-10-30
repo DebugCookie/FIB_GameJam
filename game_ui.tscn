@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bki582ykwunui" path="res://day_win_screen.tscn" id="4_3rlp6"]
 [ext_resource type="Texture2D" uid="uid://bjy17dnixjxwm" path="res://Art Assets/Ui/Day_screen.png" id="4_obik5"]
 [ext_resource type="PackedScene" uid="uid://dsj1srax8i15j" path="res://game_over_screen.tscn" id="4_vealc"]
+[ext_resource type="FontFile" uid="uid://dhfm077evoj0t" path="res://Art Assets/Fonts/Geo-Regular.ttf" id="5_xlnb1"]
+[ext_resource type="AudioStream" uid="uid://dddr1rp2nt1ff" path="res://Audio/Audio Files/Ambience_Office_Loop.wav" id="7_vealc"]
 
 [node name="GameUI" type="CanvasLayer" unique_id=121058546]
 process_mode = 3
@@ -39,8 +41,15 @@ alignment = 1
 
 [node name="DayIndicatorLabel" type="Label" parent="LoadingScreen/VBoxContainer" unique_id=1167763542]
 layout_mode = 2
-text = "Getting Ready for...."
+theme_override_fonts/font = ExtResource("5_xlnb1")
+theme_override_font_sizes/font_size = 22
+text = "Be a good boss to them..."
 horizontal_alignment = 1
 
 [node name="DayWinScreen" parent="." unique_id=289236852 instance=ExtResource("4_3rlp6")]
 visible = false
+
+[node name="SFX_Ambience_Bed" type="AudioStreamPlayer" parent="." unique_id=1097550788]
+stream = ExtResource("7_vealc")
+volume_db = -2.0
+autoplay = true

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5bxqehfgvvaf"
-path.s3tc="res://.godot/imported/T_empireStateBuilding.png-e23d94105257b758c060df54c1ea9ce0.s3tc.ctex"
+uid="uid://b058elrbxskh3"
+path.s3tc="res://.godot/imported/klook.png-b44ff4ae0c93f8ef9cd3a8d8ce6d3043.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Art Assets/2d/T_empireStateBuilding.png"
-dest_files=["res://.godot/imported/T_empireStateBuilding.png-e23d94105257b758c060df54c1ea9ce0.s3tc.ctex"]
+source_file="res://Art Assets/3D/Materials/klook.png"
+dest_files=["res://.godot/imported/klook.png-b44ff4ae0c93f8ef9cd3a8d8ce6d3043.s3tc.ctex"]
 
 [params]
 

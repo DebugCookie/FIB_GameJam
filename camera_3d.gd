@@ -3,6 +3,7 @@ extends Camera3D
 @onready var hand_sprite: AnimatedSprite2D = $Hand/HandBase/AnimatedSprite2D
 @onready var sfx_yes: AudioStreamPlayer3D = $SFX_Yes
 @onready var sfx_no: AudioStreamPlayer3D = $SFX_No
+@onready var sfx_hand: AudioStreamPlayer3D = $SFX_Hand_Interact
 
 var camera
 var cameraLeft = false
@@ -10,7 +11,7 @@ var cameraRight = false
 var cameraUp = false
 var cameraDown = false
 
-const CAMERA_SENS = 0.07
+const CAMERA_SENS = 0.05
 
 var is_interacting_with_baby: bool = false
 
@@ -65,9 +66,11 @@ func _input(event):
 		if hand_sprite and hand_sprite.animation == "Idle":
 			if event.button_index == MOUSE_BUTTON_LEFT:
 				hand_sprite.play("Yes")
+				sfx_hand.play()
 				sfx_yes.play()
 			elif event.button_index == MOUSE_BUTTON_RIGHT:
 				hand_sprite.play("No")
+				sfx_hand.play()
 				sfx_no.play()
 	
 	if event is InputEventMouseMotion:

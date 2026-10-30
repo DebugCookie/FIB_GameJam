@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cytldrfco78ju"]
+
+[ext_resource type="Texture2D" uid="uid://b058elrbxskh3" path="res://Art Assets/3D/Materials/klook.png" id="1_73p3u"]
+
+[resource]
+albedo_texture = ExtResource("1_73p3u")
+roughness = 0.25

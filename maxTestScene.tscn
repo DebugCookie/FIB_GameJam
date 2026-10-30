@@ -1,14 +1,15 @@
-[gd_scene format=3 uid="uid://p601cch5st5d"]
+[gd_scene format=4 uid="uid://p601cch5st5d"]
 
 [ext_resource type="Script" uid="uid://8mm4xsiddp6e" path="res://scripts/DialogueGameLoop.gd" id="1_dx25p"]
 [ext_resource type="Script" uid="uid://mtv8dcbqu78x" path="res://camera_3d.gd" id="1_sm6nt"]
 [ext_resource type="PackedScene" uid="uid://dt7ibabu7str8" path="res://global_morale_3d.tscn" id="2_3pouy"]
+[ext_resource type="Script" uid="uid://css0bhjuxv07b" path="res://day_cycle_light.gd" id="2_biegb"]
+[ext_resource type="Script" uid="uid://dtts2qckc2vlr" path="res://backdrop_lighting_fix.gd" id="2_ux2uo"]
 [ext_resource type="PackedScene" uid="uid://dlnm4crlnxca7" path="res://character_3d.tscn" id="3_be4fj"]
 [ext_resource type="Texture2D" uid="uid://dup6wdwbo26q6" path="res://Art Assets/2d/characters/OldGuy_ClosedMouth.png" id="4_4ljo3"]
 [ext_resource type="Texture2D" uid="uid://d26n1kvvr5t24" path="res://Art Assets/2d/characters/Richard.png" id="4_6hq1p"]
 [ext_resource type="Shader" uid="uid://r0uka4i5e0rn" path="res://Art Assets/PixelShader.gdshader" id="5_2ma1t"]
 [ext_resource type="Texture2D" uid="uid://2tyqypvy44bs" path="res://Art Assets/2d/characters/Emo_ClosedMouth.png" id="6_ix60g"]
-[ext_resource type="AudioStream" uid="uid://dddr1rp2nt1ff" path="res://Audio/Audio Files/Ambience_Office_Loop.wav" id="6_x6efl"]
 [ext_resource type="Texture2D" uid="uid://biq43dpdaxepw" path="res://Art Assets/2d/characters/Karen_ClosedMouth.png" id="7_10k1m"]
 [ext_resource type="Texture2D" uid="uid://6u70o77gaabt" path="res://Art Assets/2d/characters/Nepo_ClosedMouth.png" id="8_7oxqh"]
 [ext_resource type="Texture2D" uid="uid://dh7usbghd8vmc" path="res://Art Assets/2d/characters/militaryguy.png" id="9_10k1m"]
@@ -45,7 +46,6 @@
 [ext_resource type="AudioStream" uid="uid://cp5pg8vlgogu4" path="res://Audio/Audio Files/NPC/NPC_HR_Talking-004.wav" id="22_wwm71"]
 [ext_resource type="PackedScene" uid="uid://dtsv0a4gve7xn" path="res://Art Assets/3D/SM_Door.glb" id="23_25qrb"]
 [ext_resource type="AudioStream" uid="uid://b2w1csqnlmdts" path="res://Audio/Audio Files/NPC/NPC_Karen_Talking-001.wav" id="23_fb1cs"]
-[ext_resource type="Texture2D" uid="uid://pcbi25hkgrmm" path="res://Art Assets/2d/characters/OldGuy_OpenMouth.png" id="23_pr83e"]
 [ext_resource type="AudioStream" uid="uid://dcrqx07kgl53r" path="res://Audio/Audio Files/NPC/NPC_HR_Talking-005.wav" id="23_s2y2q"]
 [ext_resource type="PackedScene" uid="uid://rrk0ivukfx18" path="res://Art Assets/3D/SM_Picture.glb" id="24_3ydh5"]
 [ext_resource type="AudioStream" uid="uid://dv0blx0grivcr" path="res://Audio/Audio Files/NPC/NPC_Karen_Talking-002.wav" id="24_sp1l3"]
@@ -73,13 +73,23 @@
 [ext_resource type="AudioStream" uid="uid://ux7s6t8q0sqk" path="res://Audio/Audio Files/NPC/NPC_Military_Talking-005.wav" id="55_gu4ko"]
 [ext_resource type="AudioStream" uid="uid://cf5pbxuusabqx" path="res://Audio/Audio Files/NPC/NPC_Military_Talking-006.wav" id="56_fqmj2"]
 [ext_resource type="AudioStream" uid="uid://p56jnxfcwcgq" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-001.wav" id="59_s46yg"]
+[ext_resource type="Texture2D" uid="uid://pcbi25hkgrmm" path="res://Art Assets/2d/characters/OldGuy_OpenMouth.png" id="60_hbkt5"]
 [ext_resource type="AudioStream" uid="uid://cyftkbnh63di2" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-002.wav" id="60_xsyjb"]
 [ext_resource type="AudioStream" uid="uid://bxhl1dcgq8kvh" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-003.wav" id="61_cxx8f"]
+[ext_resource type="Script" uid="uid://cs1ouvbs5lt54" path="res://janitor_controller.gd" id="61_hbkt5"]
+[ext_resource type="Texture2D" uid="uid://mr3owpymoffl" path="res://Art Assets/2d/characters/Janitor_OpenMouth.png" id="62_m43pg"]
 [ext_resource type="AudioStream" uid="uid://b743ns7ktq50" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-004.wav" id="62_wdk1f"]
+[ext_resource type="Texture2D" uid="uid://p2j5ud1uqdiv" path="res://Art Assets/2d/characters/Janitor_ClosedMouth.png" id="63_biegb"]
 [ext_resource type="AudioStream" uid="uid://8hklsysxuv6o" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-005.wav" id="63_gqadi"]
+[ext_resource type="AudioStream" uid="uid://tf3xb10utg7e" path="res://Audio/Audio Files/NPC/NPC_Janitor_Talking-001.wav" id="64_1ii7p"]
 [ext_resource type="AudioStream" uid="uid://cb3041vaqtfed" path="res://Audio/Audio Files/NPC/NPC_OldGuy_Talking-006.wav" id="64_elhmf"]
+[ext_resource type="AudioStream" uid="uid://bvk8ldlvwovd8" path="res://Audio/Audio Files/NPC/NPC_Janitor_Talking-002.wav" id="65_rddk1"]
+[ext_resource type="AudioStream" uid="uid://tfae4vuca0b1" path="res://Audio/Audio Files/NPC/NPC_Janitor_Talking-003.wav" id="66_tkbkf"]
 [ext_resource type="AudioStream" uid="uid://j08ygngbhkrf" path="res://Audio/Audio Files/Yes.wav" id="67_w54f0"]
+[ext_resource type="AudioStream" uid="uid://dnkkqv406hg2x" path="res://Audio/Audio Files/NPC/NPC_Janitor_Talking-004.wav" id="67_yxp24"]
 [ext_resource type="AudioStream" uid="uid://cdsjpu7nes0t3" path="res://Audio/Audio Files/No.wav" id="68_gu4ko"]
+[ext_resource type="AudioStream" uid="uid://d30tqu8urmebs" path="res://Audio/Audio Files/NPC/NPC_Janitor_Talking-005.wav" id="68_pgtdy"]
+[ext_resource type="AudioStream" uid="uid://cq1pro07wqlc7" path="res://Audio/Audio Files/NPC/NPC_Janitor_Talking-006.wav" id="69_um3f3"]
 [ext_resource type="AudioStream" uid="uid://dnx2y5aef1o0i" path="res://Audio/Audio Files/Ambience_City_Loop.wav" id="73_x4ery"]
 [ext_resource type="AudioStream" uid="uid://c7nwsylysqpeq" path="res://Audio/Audio Files/Hand_Input-001.wav" id="81_435h1"]
 [ext_resource type="AudioStream" uid="uid://bu4ia7pxl50s7" path="res://Audio/Audio Files/Outcome_Morale_Positive-001.wav" id="81_t7m1p"]
@@ -106,6 +116,7 @@
 [ext_resource type="ArrayMesh" uid="uid://ctmmb5i0dtjws" path="res://Art Assets/3D/paperstack.obj" id="102_wdk1f"]
 [ext_resource type="ArrayMesh" uid="uid://cqxkwkm0uxk4s" path="res://Art Assets/3D/fire.obj" id="103_gqadi"]
 [ext_resource type="Texture2D" uid="uid://cl00inb5gmqlf" path="res://Art Assets/3D/Materials/brandsläckareUV.png" id="104_elhmf"]
+[ext_resource type="Texture2D" uid="uid://uf7n7ptuofba" path="res://Art Assets/3D/SM_City_CITY.jpg" id="107_biegb"]
 [ext_resource type="ArrayMesh" uid="uid://bdr33lqnj823i" path="res://Art Assets/3D/OLDnametag.obj" id="107_p8ube"]
 [ext_resource type="Material" uid="uid://c1qn2nrrb5tj4" path="res://Art Assets/3D/Materials/nametag.tres" id="108_jxtki"]
 [ext_resource type="ArrayMesh" uid="uid://cg6tro31rjf3h" path="res://Art Assets/3D/KARENnametag.obj" id="109_iohwb"]
@@ -117,10 +128,7 @@
 [ext_resource type="ArrayMesh" uid="uid://1q0v1sk3jj02" path="res://Art Assets/3D/MILITARYnametag.obj" id="115_biegb"]
 [ext_resource type="Texture2D" uid="uid://dsyitb54i5eek" path="res://Art Assets/2d/InfoPage.png" id="116_jxtki"]
 [ext_resource type="PackedScene" uid="uid://cxumsnw3soh87" path="res://Art Assets/3D/SM_computer.glb" id="117_iohwb"]
-[ext_resource type="Texture2D" uid="uid://5bxqehfgvvaf" path="res://Art Assets/2d/T_empireStateBuilding.png" id="118_vkcqn"]
-[ext_resource type="Texture2D" uid="uid://dx8bupypfw8fv" path="res://Art Assets/2d/T_skyscrapers.png" id="119_m43pg"]
-[ext_resource type="Texture2D" uid="uid://dfsoq4mwvn034" path="res://Art Assets/2d/T_city.png" id="120_biegb"]
-[ext_resource type="Texture2D" uid="uid://dj012tqby2p5" path="res://Art Assets/2d/T_SquareBuilding.png" id="121_ux2uo"]
+[ext_resource type="Texture2D" uid="uid://bjy17dnixjxwm" path="res://Art Assets/Ui/Day_screen.png" id="121_m43pg"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_a5qvv"]
 shuffle = true
@@ -361,14 +369,6 @@ stream_3 = ExtResource("62_wdk1f")
 stream_4 = ExtResource("63_gqadi")
 stream_5 = ExtResource("64_elhmf")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sp1l3"]
-atlas = ExtResource("4_4ljo3")
-region = Rect2(0, 0, 580, 580)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_614ah"]
-atlas = ExtResource("23_pr83e")
-region = Rect2(0, 0, 580, 580)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_f12nc"]
 animations = [{
 "frames": [],
@@ -378,10 +378,39 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sp1l3")
+"texture": ExtResource("4_4ljo3")
 }, {
-"duration": 1.7,
-"texture": SubResource("AtlasTexture_614ah")
+"duration": 1.0,
+"texture": ExtResource("60_hbkt5")
+}],
+"loop": 1,
+"name": &"Talk",
+"speed": 5.0
+}]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_e4ldk"]
+shuffle = true
+stream_count = 6
+stream_0 = ExtResource("64_1ii7p")
+stream_1 = ExtResource("65_rddk1")
+stream_2 = ExtResource("66_tkbkf")
+stream_3 = ExtResource("67_yxp24")
+stream_4 = ExtResource("68_pgtdy")
+stream_5 = ExtResource("69_um3f3")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ux2uo"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("62_m43pg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_biegb")
 }],
 "loop": 1,
 "name": &"Talk",
@@ -492,6 +521,78 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ojgh2"]
+random_pitch = 1.0663394
+streams_count = 3
+stream_0/stream = ExtResource("81_435h1")
+stream_1/stream = ExtResource("82_m7egt")
+stream_2/stream = ExtResource("83_nyr6x")
+
+[sub_resource type="BoxMesh" id="BoxMesh_cejtf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dvp7v"]
+render_priority = 0
+shader = ExtResource("5_2ma1t")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/multiplier = 1.0
+shader_parameter/softness = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_ecnap"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_biegb"]
+albedo_texture = ExtResource("121_m43pg")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4kxuq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ggsmt"]
+albedo_texture = ExtResource("101_cxx8f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d35be"]
+albedo_texture = ExtResource("104_elhmf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7uj08"]
+resource_name = "Material.002"
+cull_mode = 2
+albedo_texture = ExtResource("107_biegb")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lsxfp"]
+_surfaces = [{
+"aabb": AABB(-1, 0.014551282, 0, 2, 1.9999999, 1),
+"format": 34896613377,
+"index_count": 141,
+"index_data": PackedByteArray("AAABAAIAAAAWAAEAFgADAAEADQAWAAAAFgAXAAMAFwAEAAMAFwAYAAQAFgAYABcAGAAFAAQAGAATAAUAGAAWABMAEwAGAAUAEwAZAAYAEwAWABkAGQAHAAYAGQAaAAcAGgAIAAcAGgAbAAgAGQAbABoAGwAJAAgAGwAUAAkAFAAKAAkAGQAcABsAGwAcABQAFAAcAAoAFgAcABkAHAALAAoAHAAdAAsAHQAMAAsAHQAeAAwAHAAeAB0AHgAOAAwAHwAcABYAHgAgAA4AHgAcACAAIAAPAA4AHwAWAA0AHwANABIAHwASABEAFQAfABEAFQARABAAIAAhAA8AIQAfABUAIQAQAA8AIQAVABAAIQAcAB8AIAAcACEA"),
+"lods": [0.171428, PackedByteArray("AAABAAIAAAADAAEAAAAEAAMAAAATAAQAEwAFAAQAEwAGAAUAEwAHAAYAEwAIAAcAEwAUAAgAAAAUABMAFAAJAAgAFAAKAAkAFAALAAoAFAAMAAsAFQAUAAAAFAAVAAwAFQAAAA0AFQAOAAwAFQANABIAFQAPAA4AFQASABEAFQAQAA8AFQARABAA"), 1.5162827, PackedByteArray("AAABAAIAAAADAAEAAAAEAAMAAAAFAAQAAAAGAAUAAAAHAAYAAAAIAAcAAAAJAAgAAAAKAAkAAAALAAoAAAAMAAsAAAANAAwADQAOAAwADQAPAA4ADQAQAA8ADQARABAADQASABEA")],
+"name": "Material.002",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 34,
+"vertex_data": PackedByteArray("//8AAAAAAACJ/f//8TEAAP////8AAAAAQPb///dhAABs6v//OY4AAIHa//8EtQAAHMf//9rUAAD7sP//guwAAPiY//8T+wAA/3//////AAAGZ///E/sAAANP//+C7AAA4jj//9rUAAAAAAAAAAAAAH0l//8EtQAAkhX//zmOAAC+Cf//92EAAHUC///xMQAAAAD//wAAAACB2gAABLUAAP9/AAD//wAAvgkAAPdhAACJ/QAA8TEAAED2AAD3YQAAbOoAADmOAAAcxwAA2tQAAPuwAACC7AAA+JgAABP7AAAGZwAAE/sAAANPAACC7AAA4jgAANrUAAB1AgAA8TEAAH0lAAAEtQAAkhUAADmOAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_w0haf"]
+resource_name = "SM_City_Cylinder"
+_surfaces = [{
+"aabb": AABB(-1, 0.014551282, 0, 2, 1.9999999, 1),
+"attribute_data": PackedByteArray("///+/yX4aYD//2mAS/BpgHLoaYCY4GmAv9hpgOXQaYAMyWmAMsFpgFm5aYB/sWmApqlpgGaC///MoWmA85lpgBmSaYBAimmAZoJpgJjg//8ywf//GZL//yX4/v9L8P//cuj//7/Y///l0P//DMn//1m5//9/sf//pqn//0CK///Mof//85n//w=="),
+"format": 34896613399,
+"index_count": 141,
+"index_data": PackedByteArray("AAABAAIAAAAWAAEAFgADAAEADQAWAAAAFgAXAAMAFwAEAAMAFwAYAAQAFgAYABcAGAAFAAQAGAATAAUAGAAWABMAEwAGAAUAEwAZAAYAEwAWABkAGQAHAAYAGQAaAAcAGgAIAAcAGgAbAAgAGQAbABoAGwAJAAgAGwAUAAkAFAAKAAkAGQAcABsAGwAcABQAFAAcAAoAFgAcABkAHAALAAoAHAAdAAsAHQAMAAsAHQAeAAwAHAAeAB0AHgAOAAwAHwAcABYAHgAgAA4AHgAcACAAIAAPAA4AHwAWAA0AHwANABIAHwASABEAFQAfABEAFQARABAAIAAhAA8AIQAfABUAIQAQAA8AIQAVABAAIQAcAB8AIAAcACEA"),
+"lods": [0.171428, PackedByteArray("AAABAAIAAAADAAEAAAAEAAMAAAATAAQAEwAFAAQAEwAGAAUAEwAHAAYAEwAIAAcAEwAUAAgAAAAUABMAFAAJAAgAFAAKAAkAFAALAAoAFAAMAAsAFQAUAAAAFAAVAAwAFQAAAA0AFQAOAAwAFQANABIAFQAPAA4AFQASABEAFQAQAA8AFQARABAA"), 1.5162827, PackedByteArray("AAABAAIAAAADAAEAAAAEAAMAAAAFAAQAAAAGAAUAAAAHAAYAAAAIAAcAAAAJAAgAAAAKAAkAAAALAAoAAAAMAAsAAAANAAwADQAOAAwADQAPAA4ADQAQAA8ADQARABAADQASABEA")],
+"material": SubResource("StandardMaterial3D_7uj08"),
+"name": "Material.002",
+"primitive": 3,
+"uv_scale": Vector4(2.0120122, 1.9935279, 0, 0),
+"vertex_count": 34,
+"vertex_data": PackedByteArray("//8AAAAADcKJ/f//8TH/t/////8AAP+7QPb///dh/69s6v//OY7/p4Ha//8Etf+fHMf//9rU/5f7sP//guz/j/iY//8T+/+H/3//////AIAGZ///E/v/hwNP//+C7P+P4jj//9rU/5cAAAAAAADxPX0l//8Etf+fkhX//zmO/6e+Cf//92H/r3UC///xMf+3AAD//wAA/7uB2gAABLXJVP9/AAD//8ievgkAAPdhm7eJ/QAA8TE9vkD2AAD3Yc9IbOoAADmOC08cxwAA2tSspvuwAACC7IOi+JgAABP7wZ8GZwAAE/s/pANPAACC7IOi4jgAANrUrKZ1AgAA8TG7vH0lAAAEtdarkhUAADmOXrCCYR46/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/f////3/+//9//v//f/7/4EWC4f9/////f/7//3////9/////f///i0iPSQAA/38/QGvYx10MPOJWzT9+UCREGEKtULU0RFrzIGhoES5ofrsltbRRLxjCc0N32Fo27MvgO4PN")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_lsxfp")
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n20ym"]
 
 [sub_resource type="Sky" id="Sky_l0xq5"]
@@ -500,16 +601,6 @@ sky_material = SubResource("ProceduralSkyMaterial_n20ym")
 [sub_resource type="Environment" id="Environment_eugri"]
 background_mode = 2
 sky = SubResource("Sky_l0xq5")
-
-[sub_resource type="BoxMesh" id="BoxMesh_cejtf"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dvp7v"]
-render_priority = 0
-shader = ExtResource("5_2ma1t")
-
-[sub_resource type="QuadMesh" id="QuadMesh_ecnap"]
-flip_faces = true
-size = Vector2(2, 2)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dufa8"]
 shader = ExtResource("27_1y33g")
@@ -527,13 +618,6 @@ shader_parameter/grain_strength = 0.1170000055575
 shader_parameter/tint_color = Vector3(0.95, 1.03, 0.9)
 shader_parameter/tint_strength = 0.15
 shader_parameter/viewport_size_override = Vector2(0, 0)
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ojgh2"]
-random_pitch = 1.0663394
-streams_count = 3
-stream_0/stream = ExtResource("81_435h1")
-stream_1/stream = ExtResource("82_m7egt")
-stream_2/stream = ExtResource("83_nyr6x")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_a5qvv"]
 random_pitch = 1.0711546
@@ -563,19 +647,43 @@ stream_0/stream = ExtResource("90_435h1")
 stream_1/stream = ExtResource("91_m7egt")
 stream_2/stream = ExtResource("92_nyr6x")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ggsmt"]
-albedo_texture = ExtResource("101_cxx8f")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d35be"]
-albedo_texture = ExtResource("104_elhmf")
-
 [node name="Node3D" type="Node3D" unique_id=1272375817]
 script = ExtResource("1_dx25p")
+enable_janitor_test = false
+
+[node name="BackdropLightingFix" type="Node3D" parent="." unique_id=1313700714 node_paths=PackedStringArray("city_backdrop")]
+script = ExtResource("2_ux2uo")
+city_backdrop = NodePath("../SubViewportContainer/SubViewport/EnviromentAssets/Back wall2")
+
+[node name="Sunlight" type="DirectionalLight3D" parent="." unique_id=235843941 node_paths=PackedStringArray("office_scene")]
+transform = Transform3D(-0.04937611, 0.20290588, -0.97795254, 0.010231538, 0.9791982, 0.20264776, 0.99872786, 0, -0.05042504, -0.7939407, 0.26409, -0.1260615)
+light_color = Color(0.80822814, 0.84929353, 0.69446325, 1)
+light_energy = 0.502
+shadow_enabled = true
+script = ExtResource("2_biegb")
+office_scene = NodePath("..")
+morning_color = Color(0.62546676, 0.7989125, 0.6148553, 1)
+evening_color = Color(0.478935, 0.6757743, 0.28761593, 1)
 
 [node name="GameUI" parent="." unique_id=121058546 instance=ExtResource("28_dufa8")]
 
 [node name="GlobalMorale3D" parent="." unique_id=615809671 instance=ExtResource("2_3pouy")]
-transform = Transform3D(0.019388625, 0.0010404983, -0.046853717, 4.1161606e-05, 0.02342306, 0.0070325932, 0.012865548, -0.0016429898, 0.070586935, 0.1218936, -0.04119798, -0.07177568)
+transform = Transform3D(0.027087636, 0.004705485, -0.038877, 0.00062068424, 0.033304103, 0.013606339, 0.023930721, -0.006190029, 0.043652732, 0.13998197, -0.055911038, -0.0501644)
+
+[node name="JanitorPointA" type="Marker3D" parent="." unique_id=1640353462]
+transform = Transform3D(0.01772869, 0, -0.024201397, 0, 0.030331066, 0, 0.02421134, 0, 0.017721415, 0.4512285, 0.072848104, -0.56207633)
+
+[node name="JanitorPointB" type="Marker3D" parent="." unique_id=1958006021]
+transform = Transform3D(0.01772869, 0, -0.024201397, 0, 0.030331066, 0, 0.02421134, 0, 0.017721415, 0.43134987, 0.072848104, -0.004502237)
+
+[node name="JanitorPointC" type="Marker3D" parent="." unique_id=1169796595]
+transform = Transform3D(-0.0021770103, 0, -0.029916897, 0, 0.030331066, 0, 0.029929183, 0, -0.0021761134, 0.3266977, 0.02189432, -0.0014654584)
+
+[node name="DoorPivot" type="Node3D" parent="." unique_id=1795855741]
+transform = Transform3D(0.01772869, 0, -0.024201397, 0, 0.030331066, 0, 0.02421134, 0, 0.017721415, 0.3966971, -0.07903214, 0.054637805)
+
+[node name="SM_Door" parent="DoorPivot" unique_id=1678815973 instance=ExtResource("23_25qrb")]
+transform = Transform3D(-19.687706, 0, -20.531376, 0, 32.969498, 0, 26.897738, 0, -15.040219, -1.4866614, 0, -1.0890503)
 
 [node name="Characters" type="Node3D" parent="." unique_id=99532683]
 
@@ -600,7 +708,7 @@ autoplay = "Talk"
 frame_progress = 0.32582235
 
 [node name="BossBaby" parent="Characters" unique_id=1486932446 node_paths=PackedStringArray("custom_sfx_node") instance=ExtResource("3_be4fj")]
-transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -0.016321778, 0.088197984, -0.31255496)
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -0.029344816, 0.088197984, -0.31255496)
 character_name = "BossBaby"
 min_spawn_cooldown = 4.0
 max_spawn_cooldown = 15.0
@@ -673,7 +781,7 @@ autoplay = "idle"
 frame_progress = 0.65616274
 
 [node name="Military" parent="Characters" unique_id=494477338 node_paths=PackedStringArray("custom_sfx_node") instance=ExtResource("3_be4fj")]
-transform = Transform3D(0.013348679, 0, -0.026866574, 0, 0.029999997, 0, 0.026866574, 0, 0.013348679, 0.26120126, 0.08163715, -0.10463051)
+transform = Transform3D(0.011879838, 0, -0.025640706, 0, 0.029999997, 0, 0.023910271, 0, 0.012739605, 0.34757307, 0.08163715, -0.12601484)
 character_name = "MilitaryGuy"
 min_spawn_cooldown = 7.0
 max_spawn_cooldown = 20.0
@@ -685,7 +793,7 @@ stream = SubResource("AudioStreamPlaylist_0onsu")
 attenuation_model = 3
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/Military/SFX_Military_Talk" unique_id=786385682]
-transform = Transform3D(0.008899119, 0, 0.017911047, 0, 0.019999998, 0, -0.017911047, 0, 0.008899119, -0.0032036528, -0.08514572, 0.025687426)
+transform = Transform3D(0.008899119, 0, 0.017911052, 0, 0.019999998, 0, -0.017911049, 0, 0.008899121, 0.0005953163, -0.08514572, 0.109972954)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_hjgis")
 animation = &"Talk"
@@ -704,12 +812,46 @@ stream = SubResource("AudioStreamPlaylist_0lk7q")
 attenuation_model = 3
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/OldGuy" unique_id=423306167]
-transform = Transform3D(0.27034613, 0, -0.44862917, 0, 0.58313346, 0, 0.5494158, 0, 0.22075295, 1.9553759, -3.112061, 1.015461)
+transform = Transform3D(0.2703461, 0, -0.44862917, 0, 0.58313346, 0, 0.54941577, 0, 0.22075292, 1.2496797, -3.112061, 1.3628483)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_f12nc")
 animation = &"Talk"
 autoplay = "Talk"
 frame_progress = 0.6225078
+
+[node name="JanitorMoverScriptHolder" type="Node3D" parent="Characters" unique_id=1321639188 node_paths=PackedStringArray("janitor_visual", "point_a", "point_b", "point_c", "door_pivot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07263994, -0.7236812)
+script = ExtResource("61_hbkt5")
+janitor_visual = NodePath("Janitor/AnimatedSprite3D")
+point_a = NodePath("../../JanitorPointA")
+point_b = NodePath("../../JanitorPointB")
+point_c = NodePath("../../JanitorPointC")
+door_pivot = NodePath("../../DoorPivot")
+walk_speed = 0.2
+bob_height = 0.5
+bob_duration = 0.3
+
+[node name="Janitor" parent="Characters/JanitorMoverScriptHolder" unique_id=610252353 node_paths=PackedStringArray("custom_sfx_node", "janitor_controller") instance=ExtResource("3_be4fj")]
+transform = Transform3D(-0.00219733, 0, -0.029915407, 0, 0.030331066, 0, 0.029927697, 0, -0.0021964237, 0.44502315, 0.074002, 0.11689669)
+character_name = "Janitor"
+custom_sfx_node = NodePath("SFX_Janitor_Talk")
+is_janitor = true
+janitor_controller = NodePath("..")
+janitor_first_min = 35.0
+janitor_first_max = 60.0
+janitor_min_pause = 15.0
+
+[node name="SFX_Janitor_Talk" type="AudioStreamPlayer3D" parent="Characters/JanitorMoverScriptHolder/Janitor" unique_id=986099688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28415585, -0.007881649, -0.08814503)
+stream = SubResource("AudioStreamPlaylist_e4ldk")
+attenuation_model = 3
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/JanitorMoverScriptHolder/Janitor" unique_id=1754746173]
+transform = Transform3D(0.2703461, 0, -0.44862917, 0, 0.58313346, 0, 0.54941577, 0, 0.22075292, 1.2912407, -3.112061, -0.38057995)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_ux2uo")
+animation = &"Talk"
+autoplay = "Talk"
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1310699426]
 texture_filter = 1
@@ -760,18 +902,18 @@ autoplay = "Idle"
 [node name="AudioListener3D" type="AudioListener3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=136002597]
 current = true
 
+[node name="SFX_Hand_Interact" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=1394561770]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0022247136, -0.044210754, -0.00037831068)
+stream = SubResource("AudioStreamRandomizer_ojgh2")
+attenuation_model = 3
+volume_db = 6.0
+panning_strength = 0.0
+
 [node name="SFX_Yes" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=598037585]
 stream = ExtResource("67_w54f0")
 
 [node name="SFX_No" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/Camera3D" unique_id=1343467798]
 stream = ExtResource("68_gu4ko")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1919570593]
-environment = SubResource("Environment_eugri")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=9738278]
-transform = Transform3D(0.40224501, -0.0007020508, -0.9155318, 0.0017453285, 0.9999985, -1.4978117e-10, 0.91553044, -0.0015979038, 0.4022456, 0.9068241, 1.321417, 0)
-light_color = Color(0.58044404, 0.743117, 0.6554382, 1)
 
 [node name="TV" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1998647896]
 transform = Transform3D(0.26148742, 0, 0, 0, 0.15409297, 0, 0, 0, 0.007278506, -0.052960664, 0.06392069, -0.6163522)
@@ -806,7 +948,7 @@ billboard = 2
 texture = ExtResource("4_4ljo3")
 
 [node name="PixelShader" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1699253788]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.036463067, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7268036, 0.036463067, -0.30238375)
 visible = false
 material_override = SubResource("ShaderMaterial_dvp7v")
 extra_cull_margin = 16384.0
@@ -814,74 +956,207 @@ mesh = SubResource("QuadMesh_ecnap")
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=877355216]
 transform = Transform3D(-0.4955847, -0.86416024, 0.08730952, 0.8685596, -0.49307448, 0.04981726, 0, 0.10052219, 0.99493486, 0, 0, 0)
+visible = false
 light_color = Color(0.80418444, 0.8089368, 0.7056107, 1)
 
 [node name="Room" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=3976714]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3157548, -0.06597404, -0.0003594905)
 
-[node name="SFX_Ambience_Bed" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport" unique_id=1933687846]
-stream = ExtResource("6_x6efl")
-attenuation_model = 3
-volume_db = -2.0
-autoplay = true
-panning_strength = 0.0
+[node name="EnviromentAssets" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1095502375]
 
-[node name="SM_Wall" parent="." unique_id=1219317071 instance=ExtResource("10_3pouy")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1.6133662, 0, 8.742278e-08, 0, -1, 0.3985607, -0.31602144, -0.61807686)
+[node name="SM_SmallTable" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=834579928 instance=ExtResource("94_435h1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011000134, -0.09044577, -0.038427994)
+visible = false
 
-[node name="SM_Wall" parent="SM_Wall" unique_id=580721502 instance=ExtResource("10_3pouy")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1.3441513, 0, 8.742278e-08, 0, -1, -0.0038092136, -0.87675613, -0.36651742)
+[node name="SM_confrenceTable" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=2143817790 instance=ExtResource("95_m7egt")]
+transform = Transform3D(1.0717357, 0, 0, 0, 1, 0, 0, 0, 1, -0.026849203, -0.091035746, -0.1438007)
 
-[node name="SM_Wall" parent="SM_Wall/SM_Wall" unique_id=678328271 instance=ExtResource("10_3pouy")]
-transform = Transform3D(-0.99999994, 5.2012583e-15, -4.3711384e-07, 2.2928223e-14, -0.34027442, -8.742278e-08, -4.3711384e-07, -2.9747733e-08, 0.99999994, -0.00086954236, 1.1562865, 0.0407366)
+[node name="SM_Table2" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1495663976 instance=ExtResource("28_4ljo3")]
+transform = Transform3D(1.9548969, 0, 0, 0, 1.010076, 0, 0, 0, 1.4091866, 0.01457198, -0.091589846, -0.04527251)
 
-[node name="SM_Wall2" parent="." unique_id=1887927298 instance=ExtResource("10_3pouy")]
-transform = Transform3D(1.3113416e-07, 0, -1.1545465, 0, 1.3441513, 0, 1, 0, 1.5140049e-07, 0.008830994, -0.26105002, -0.48150295)
+[node name="SM_ChairBack" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=894267764 instance=ExtResource("97_nyr6x")]
+transform = Transform3D(-0.8900573, 0, -0.45584863, 0, 1, 0, 0.45584863, 0, -0.8900573, -0.2675256, -0.06457488, -0.23219863)
 
-[node name="SM_Wall3" parent="." unique_id=1447902437 instance=ExtResource("10_3pouy")]
-transform = Transform3D(-2.1855693e-07, 0, 1.0211408, 0, 1.3441513, 0, -1, 0, -2.231774e-07, -0.015255608, -0.26105002, 0.123515904)
+[node name="SM_ChairBack2" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=920574862 instance=ExtResource("97_nyr6x")]
+transform = Transform3D(-0.8900573, 0, -0.45584863, 0, 1, 0, 0.45584863, 0, -0.8900573, -0.16419485, -0.06457488, -0.26459485)
 
-[node name="SM_Roof" parent="." unique_id=1421866103 instance=ExtResource("11_be4fj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022765517, 0.19934294, -0.24673656)
+[node name="SM_ChairBack3" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=653149071 instance=ExtResource("97_nyr6x")]
+transform = Transform3D(-0.9442844, 0, 0.32913074, 0, 1, 0, -0.32913074, 0, -0.9442844, 0.02149874, -0.06457488, -0.30785245)
 
-[node name="SM_Roof" parent="SM_Roof" unique_id=232136174 instance=ExtResource("11_be4fj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89182085, 0.0019088686, 0.22792834)
+[node name="SM_ChairBack4" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1414963127 instance=ExtResource("97_nyr6x")]
+transform = Transform3D(-0.8464791, 0, 0.53242195, 0, 1, 0, -0.53242195, 0, -0.8464791, 0.1366627, -0.06457488, -0.2714849)
 
-[node name="SM_Window" parent="." unique_id=763268013 instance=ExtResource("12_2p1gs")]
-transform = Transform3D(-0.8823134, 0, -7.327348e-08, 0, 0.33621344, 0, 1.3322561e-07, 0, -0.48526832, -0.43024677, -0.10039476, -0.07298745)
+[node name="SM_ChairBack5" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1488060161 instance=ExtResource("97_nyr6x")]
+transform = Transform3D(-0.16026959, 0, 0.9870733, 0, 1, 0, -0.9870733, 0, -0.16026959, 0.27075428, -0.06457488, -0.19226703)
 
-[node name="SFX_Ambience_City" type="AudioStreamPlayer3D" parent="SM_Window" unique_id=822667818]
-transform = Transform3D(1.408451, 0, 4.2632564e-14, 0, 1.2375423, 0, -2.842171e-14, 0, 1.0095533, 0, 0.08699666, 0)
-stream = ExtResource("73_x4ery")
-attenuation_model = 3
-volume_db = -6.0
-autoplay = true
-panning_strength = 2.01
+[node name="SM_ChairBack6" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1213986184 instance=ExtResource("97_nyr6x")]
+transform = Transform3D(-0.16026959, 0, 0.9870733, 0, 1, 0, -0.9870733, 0, -0.16026959, 0.28568554, -0.07756303, -0.08218585)
 
-[node name="SM_Door" parent="." unique_id=1678815973 instance=ExtResource("23_25qrb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.7636261, 0.3966971, -0.07903213, -0.30719835)
+[node name="SM_ChairBack7" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1978797678 instance=ExtResource("97_nyr6x")]
+transform = Transform3D(0.0036889315, 0, -0.9999932, 0, 1, 0, 0.9999932, 0, 0.0036889315, -0.2894775, -0.08073623, -0.08276293)
 
-[node name="SM_Window2" parent="." unique_id=1074715542 instance=ExtResource("12_2p1gs")]
-transform = Transform3D(0.17734379, 0, 1.579172e-07, 0, 0.2756813, 0, -4.0010338e-08, 0, 0.34587786, 0.40258473, -0.013300918, -0.08222908)
+[node name="officeBG" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1412442048 instance=ExtResource("98_jkfde")]
+transform = Transform3D(0.0659937, 0, 0.59231323, 0, 0.4626254, 0, -0.2462918, 0, 0.15870988, 0.28242692, -0.28535783, 0.04839149)
 
-[node name="SFX_Ambience_City" type="AudioStreamPlayer3D" parent="SM_Window2" unique_id=1429769185]
-transform = Transform3D(1.408451, 0, 4.2632564e-14, 0, 1.2375423, 0, -2.842171e-14, 0, 1.0095533, 0, 0.08699666, 0)
-stream = ExtResource("73_x4ery")
-attenuation_model = 3
-volume_db = -6.0
-autoplay = true
-panning_strength = 2.01
+[node name="Baby" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1754809547 instance=ExtResource("99_4chwp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5569766e-06, -0.07989223, -0.11665797)
 
-[node name="SM_Picture" parent="." unique_id=1545905301 instance=ExtResource("24_3ydh5")]
-transform = Transform3D(-2.4478377e-08, 0, 0.56, 0, 0.56, 0, -0.56, 0, -2.4478377e-08, 0.2704504, 0.016890727, -0.47614652)
+[node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1468190446]
+transform = Transform3D(-0.0069025457, -0.0012683847, -1.2773606e-05, -0.0014349183, 0.006070925, 0.00038908355, 9.305077e-05, -0.00047072556, 0.0050524105, 0.0657599, 0.058127232, 0.11977913)
+texture = ExtResource("116_jxtki")
 
-[node name="SM_WhiteBoard" parent="." unique_id=4093690 instance=ExtResource("25_1y33g")]
+[node name="SM_WhiteBoard2" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=925664934 instance=ExtResource("25_1y33g")]
+transform = Transform3D(-3.2564984e-08, 0, 0.745, 0, 0.745, 0, -0.745, 0, -3.2564984e-08, -0.082756765, -0.010523118, -0.48330197)
+
+[node name="PlaneWithImage" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnviromentAssets/SM_WhiteBoard2" unique_id=528854142]
+transform = Transform3D(-1.9133708e-08, -1, -5.8361493e-15, 5.8665964e-15, 5.722492e-14, -0.12577721, 0.21886398, -8.742278e-08, -2.551065e-22, -0.0036218762, 0.10991058, 0.0034179464)
+material_override = SubResource("StandardMaterial3D_biegb")
+mesh = SubResource("PlaneMesh_4kxuq")
+
+[node name="SM_computer" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=363626069 instance=ExtResource("117_iohwb")]
+transform = Transform3D(1.053727, 0.022631798, -0.40794474, 0.0043543833, 1.1368872, -0.036186278, 0.81845367, -0.025120385, 0.6870037, 0.10316685, -0.025247343, -0.083107)
+
+[node name="Phone" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1067749004]
+transform = Transform3D(-0.08337568, 0, 0.07175303, 0, 0.11, 0, -0.07175303, 0, -0.08337568, -0.09404066, -0.028461982, -0.08880369)
+mesh = ExtResource("100_xsyjb")
+surface_material_override/0 = SubResource("StandardMaterial3D_ggsmt")
+
+[node name="Paperstack" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=240101042]
+transform = Transform3D(0.020910066, 0, 0.061544854, 0, 0.156, 0, -0.061544854, 0, 0.020910066, -0.17653757, -0.025453784, 0.020628799)
+mesh = ExtResource("102_wdk1f")
+
+[node name="SM_Table" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1921309987 instance=ExtResource("28_4ljo3")]
+transform = Transform3D(-8.132001e-08, 0, -0.5742291, 0, 1.1154944, 0, 1.8603848, 0, -2.510035e-08, 0.37585083, -0.10810659, -0.25920767)
+
+[node name="Fire" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1425613991]
+transform = Transform3D(0.21, 0, 0, 0, 0.21, 0, 0, 0, 0.21, -0.33822972, -0.071324304, -0.46113467)
+mesh = ExtResource("103_gqadi")
+surface_material_override/0 = SubResource("StandardMaterial3D_d35be")
+
+[node name="OlDnametag" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1842983905]
+transform = Transform3D(0.013658486, 0, 0.053277064, 0, 0.055000007, 0, -0.053277064, 0, 0.013658486, -0.14822918, -0.026302034, -0.04131883)
+mesh = ExtResource("107_p8ube")
+surface_material_override/0 = ExtResource("108_jxtki")
+
+[node name="KareNnametag" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=672339631]
+transform = Transform3D(0.020359691, 0, 0.05109288, 0, 0.055000015, 0, -0.05109288, 0, 0.020359691, -0.13877407, -0.026755355, -0.1123004)
+mesh = ExtResource("109_iohwb")
+surface_material_override/0 = ExtResource("108_jxtki")
+
+[node name="NonbinarYnametag" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1251462515]
+transform = Transform3D(0.040234417, 0, 0.037499215, 0, 0.055000003, 0, -0.037499215, 0, 0.040234417, -0.105816215, -0.025885792, -0.17346445)
+mesh = ExtResource("110_khu0r")
+surface_material_override/0 = ExtResource("108_jxtki")
+
+[node name="Notebook" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1413444798]
+transform = Transform3D(0.0524425, 0, 0.07921355, 0, 0.09500001, 0, -0.07921355, 0, 0.0524425, -0.11395964, -0.02468272, -0.063092865)
+mesh = ExtResource("111_ht34x")
+
+[node name="NepobabYnametag" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=671873182]
+transform = Transform3D(0.054999996, 0, 0, 0, 0.055000007, 0, 0, 0, 0.054999996, 0.02356917, -0.026744466, -0.20593712)
+mesh = ExtResource("112_hbkt5")
+surface_material_override/0 = ExtResource("108_jxtki")
+
+[node name="HRnametag" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1096532253]
+transform = Transform3D(0.05039168, 0, -0.022038102, 0, 0.055000007, 0, 0.022038102, 0, 0.05039168, 0.10503272, -0.026072327, -0.1986579)
+mesh = ExtResource("113_vkcqn")
+surface_material_override/0 = ExtResource("108_jxtki")
+
+[node name="RicharDnametag" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1457206567]
+transform = Transform3D(0.020007486, 0, -0.051231828, 0, 0.055000007, 0, 0.051231828, 0, 0.020007486, 0.15360361, -0.02746244, -0.13933785)
+material_override = ExtResource("108_jxtki")
+mesh = ExtResource("114_m43pg")
+surface_material_override/0 = ExtResource("108_jxtki")
+
+[node name="MilitarYnametag" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=2067172773]
+transform = Transform3D(0.006795517, 0, -0.054578573, 0, 0.055000007, 0, 0.054578573, 0, 0.006795517, 0.16446976, -0.027016217, -0.059103806)
+mesh = ExtResource("115_biegb")
+surface_material_override/0 = ExtResource("108_jxtki")
+
+[node name="BG_Buildings" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=320548735 instance=ExtResource("30_ybmhm")]
+transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -0.68751985, -0.50860167, -0.41640103)
+visible = false
+
+[node name="SM_Picture" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1545905301 instance=ExtResource("24_3ydh5")]
+transform = Transform3D(-2.4478377e-08, 0, 0.56, 0, 0.56, 0, -0.56, 0, -2.4478377e-08, 0.1955876, 0.016890727, -0.47614652)
+
+[node name="SM_WhiteBoard" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=4093690 instance=ExtResource("25_1y33g")]
 transform = Transform3D(-3.5624783e-08, 0, 1.0528673, 0, 0.9439945, 0, -0.815, 0, -4.602229e-08, -0.04829803, -0.043196242, -0.4749077)
+visible = false
 
-[node name="Floor" parent="." unique_id=1442035342 instance=ExtResource("25_25qrb")]
+[node name="Floor" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1442035342 instance=ExtResource("25_25qrb")]
 transform = Transform3D(1.055, 0, 0, 0, 1.055, 0, 0, 0, 1.055, -0.32686454, -0.081772804, -0.08690229)
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1262008694]
+[node name="SM_Wall" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1219317071 instance=ExtResource("10_3pouy")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1.6133662, 0, 8.742278e-08, 0, -1, 0.3985607, -0.31365228, -0.8071616)
+
+[node name="SM_Wall4" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=468414951 instance=ExtResource("10_3pouy")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1.6133662, 0, 8.742278e-08, 0, -1, 0.3985607, -0.32028005, 0.45947677)
+
+[node name="SM_Wall" parent="SubViewportContainer/SubViewport/EnviromentAssets/SM_Wall4" unique_id=407303031 instance=ExtResource("10_3pouy")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1.3441513, 0, 8.742278e-08, 0, -1, -0.0038092136, -0.87675613, -0.36651742)
+
+[node name="SM_Wall" parent="SubViewportContainer/SubViewport/EnviromentAssets/SM_Wall4/SM_Wall" unique_id=523088681 instance=ExtResource("10_3pouy")]
+transform = Transform3D(-0.99999994, -3.2013334e-21, -8.742272e-08, 0, 0.85737073, 1.3105968e-14, 8.742272e-08, -5.597389e-28, -0.99999994, -0.004999876, 0.11500001, -1.2893205)
+
+[node name="SM_Wall2" parent="SubViewportContainer/SubViewport/EnviromentAssets/SM_Wall4/SM_Wall" unique_id=1806742379 instance=ExtResource("10_3pouy")]
+transform = Transform3D(-0.99999976, -2.8060012e-21, -1.5659802e-07, 0, 0.7514943, 2.3476377e-14, 8.742269e-08, -4.9061683e-28, -1.7912737, -0.0031198263, 0.87400293, -0.90101343)
+
+[node name="SM_Wall2" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1887927298 instance=ExtResource("10_3pouy")]
+transform = Transform3D(1.3113416e-07, 0, -1.1545465, 0, 1.3441513, 0, 1, 0, 1.5140049e-07, 0.008830994, -0.26105002, -0.48150295)
+
+[node name="SM_Wall3" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1447902437 instance=ExtResource("10_3pouy")]
+transform = Transform3D(-2.1855693e-07, 0, 1.0211408, 0, 1.3441513, 0, -1, 0, -2.231774e-07, -0.015255608, -0.26105002, 0.123515904)
+
+[node name="SM_Roof" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1421866103 instance=ExtResource("11_be4fj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022765517, 0.19934294, -0.24673656)
+
+[node name="SM_Roof" parent="SubViewportContainer/SubViewport/EnviromentAssets/SM_Roof" unique_id=232136174 instance=ExtResource("11_be4fj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89182085, 0.0019088686, 0.22792834)
+
+[node name="SM_Window" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=763268013 instance=ExtResource("12_2p1gs")]
+transform = Transform3D(-0.8823134, 0, -7.56318e-08, 0, 0.3146816, 0, 1.3322561e-07, 0, -0.5008868, -0.43024677, -0.07986018, -0.07394162)
+
+[node name="SFX_Ambience_City" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport/EnviromentAssets/SM_Window" unique_id=822667818]
+transform = Transform3D(1.408451, 0, 4.2632564e-14, 0, 1.2375423, 0, -2.842171e-14, 0, 1.0095533, 0, 0.08699666, 0)
+stream = ExtResource("73_x4ery")
+attenuation_model = 3
+volume_db = -6.0
+autoplay = true
+panning_strength = 2.01
+
+[node name="SM_Window2" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1074715542 instance=ExtResource("12_2p1gs")]
+transform = Transform3D(0.17734379, 0, 1.579172e-07, 0, 0.2756813, 0, -4.0010338e-08, 0, 0.34587786, 0.40258473, -0.013300918, -0.2672882)
+
+[node name="SM_Window3" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1721516828 instance=ExtResource("12_2p1gs")]
+transform = Transform3D(-0.8823134, 0, -7.56318e-08, 0, 0.3146816, 0, 1.3322561e-07, 0, -0.5008868, -0.43024677, -0.07986018, -0.5821075)
+
+[node name="SM_Window4" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=274372248 instance=ExtResource("12_2p1gs")]
+transform = Transform3D(-0.8823134, 0, -7.327348e-08, 0, 0.3146816, 0, 1.3322561e-07, 0, -0.48526832, -0.43024677, 0.17971672, -0.07298745)
+
+[node name="SM_Window5" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1463672028 instance=ExtResource("12_2p1gs")]
+transform = Transform3D(-0.8823134, 0, -7.327348e-08, 0, 0.3146816, 0, 1.3322561e-07, 0, -0.48526832, -0.43024677, 0.17971672, -0.56530786)
+
+[node name="Back wall2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/EnviromentAssets" unique_id=1401339741]
+transform = Transform3D(-4.3207063e-08, 0, -0.5889626, 0, 0.32159925, 0, 0.98846245, 0, -2.574437e-08, -0.4214965, -0.2228637, -0.76783663)
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_w0haf")
+
+[node name="Lightning" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1920078151]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport/Lightning" unique_id=1182019080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.050572544, 0.15482913, -0.24590927)
+light_energy = 0.211
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport/Lightning" unique_id=1919570593]
+environment = SubResource("Environment_eugri")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/Lightning" unique_id=9738278]
+transform = Transform3D(0.40224501, -0.0007020508, -0.9155318, 0.0017453285, 0.9999985, -3.3366025e-11, 0.91553044, -0.0015979038, 0.4022456, 0.9068241, 1.321417, 0)
+visible = false
+light_color = Color(0.58044404, 0.743117, 0.6554382, 1)
+
+[node name="BuckshotShader" type="ColorRect" parent="." unique_id=1262008694]
 material = SubResource("ShaderMaterial_dufa8")
 anchors_preset = 15
 anchor_right = 1.0
@@ -889,15 +1164,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="BG_Buildings" parent="." unique_id=320548735 instance=ExtResource("30_ybmhm")]
-transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -0.68751985, -0.50860167, -0.41640103)
-visible = false
-
-[node name="SFX_Hand_Interact" type="AudioStreamPlayer3D" parent="." unique_id=1394561770]
-stream = SubResource("AudioStreamRandomizer_ojgh2")
-attenuation_model = 3
-panning_strength = 0.0
 
 [node name="SFX_Morale_Positive" type="AudioStreamPlayer3D" parent="." unique_id=1928660166]
 stream = SubResource("AudioStreamRandomizer_a5qvv")
@@ -920,136 +1186,3 @@ stream = SubResource("AudioStreamRandomizer_wwm71")
 attenuation_model = 3
 volume_db = 6.0
 panning_strength = 0.0
-
-[node name="SM_SmallTable" parent="." unique_id=834579928 instance=ExtResource("94_435h1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011000134, -0.09044577, -0.038427994)
-visible = false
-
-[node name="SM_confrenceTable" parent="." unique_id=2143817790 instance=ExtResource("95_m7egt")]
-transform = Transform3D(1.0717357, 0, 0, 0, 1, 0, 0, 0, 1, -0.026849203, -0.091035746, -0.1438007)
-
-[node name="SM_Table2" parent="." unique_id=1495663976 instance=ExtResource("28_4ljo3")]
-transform = Transform3D(1.9548969, 0, 0, 0, 1.010076, 0, 0, 0, 1.4091866, 0.01457198, -0.091589846, -0.04527251)
-
-[node name="SM_ChairBack" parent="." unique_id=894267764 instance=ExtResource("97_nyr6x")]
-transform = Transform3D(-0.8900573, 0, -0.45584863, 0, 1, 0, 0.45584863, 0, -0.8900573, -0.2675256, -0.06457488, -0.23219863)
-
-[node name="SM_ChairBack2" parent="." unique_id=920574862 instance=ExtResource("97_nyr6x")]
-transform = Transform3D(-0.8900573, 0, -0.45584863, 0, 1, 0, 0.45584863, 0, -0.8900573, -0.16419485, -0.06457488, -0.26459485)
-
-[node name="SM_ChairBack3" parent="." unique_id=653149071 instance=ExtResource("97_nyr6x")]
-transform = Transform3D(-0.9442844, 0, 0.32913074, 0, 1, 0, -0.32913074, 0, -0.9442844, 0.039221674, -0.06457488, -0.30785245)
-
-[node name="SM_ChairBack4" parent="." unique_id=1414963127 instance=ExtResource("97_nyr6x")]
-transform = Transform3D(-0.8464791, 0, 0.53242195, 0, 1, 0, -0.53242195, 0, -0.8464791, 0.1366627, -0.06457488, -0.2714849)
-
-[node name="SM_ChairBack5" parent="." unique_id=1488060161 instance=ExtResource("97_nyr6x")]
-transform = Transform3D(-0.16026959, 0, 0.9870733, 0, 1, 0, -0.9870733, 0, -0.16026959, 0.27075428, -0.06457488, -0.19226703)
-
-[node name="SM_ChairBack6" parent="." unique_id=1213986184 instance=ExtResource("97_nyr6x")]
-transform = Transform3D(-0.16026959, 0, 0.9870733, 0, 1, 0, -0.9870733, 0, -0.16026959, 0.28568554, -0.07756303, -0.08218585)
-
-[node name="SM_ChairBack7" parent="." unique_id=1978797678 instance=ExtResource("97_nyr6x")]
-transform = Transform3D(0.0036889315, 0, -0.9999932, 0, 1, 0, 0.9999932, 0, 0.0036889315, -0.2894775, -0.08073623, -0.08276293)
-
-[node name="officeBG" parent="." unique_id=1412442048 instance=ExtResource("98_jkfde")]
-transform = Transform3D(0.0659937, 0, 0.59231323, 0, 0.4626254, 0, -0.2462918, 0, 0.15870988, 0.28242692, -0.28535783, 0.04839149)
-
-[node name="Baby" parent="." unique_id=1754809547 instance=ExtResource("99_4chwp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5569766e-06, -0.07989223, -0.11665797)
-
-[node name="SM_Window3" parent="." unique_id=1721516828 instance=ExtResource("12_2p1gs")]
-transform = Transform3D(-0.8823134, 0, -7.327348e-08, 0, 0.33621344, 0, 1.3322561e-07, 0, -0.48526832, -0.43024677, -0.10039476, -0.56530786)
-
-[node name="SFX_Ambience_City" type="AudioStreamPlayer3D" parent="SM_Window3" unique_id=908990559]
-transform = Transform3D(1.408451, 0, 4.2632564e-14, 0, 1.2375423, 0, -2.842171e-14, 0, 1.0095533, 0, 0.08699666, 0)
-stream = ExtResource("73_x4ery")
-attenuation_model = 3
-volume_db = -6.0
-autoplay = true
-panning_strength = 2.01
-
-[node name="Phone" type="MeshInstance3D" parent="." unique_id=1067749004]
-transform = Transform3D(-0.08337568, 0, 0.07175303, 0, 0.11, 0, -0.07175303, 0, -0.08337568, -0.09404066, -0.028461982, -0.08880369)
-mesh = ExtResource("100_xsyjb")
-surface_material_override/0 = SubResource("StandardMaterial3D_ggsmt")
-
-[node name="Paperstack" type="MeshInstance3D" parent="." unique_id=240101042]
-transform = Transform3D(0.020910066, 0, 0.061544854, 0, 0.156, 0, -0.061544854, 0, 0.020910066, -0.17653757, -0.025453784, 0.020628799)
-mesh = ExtResource("102_wdk1f")
-
-[node name="SM_Table" parent="." unique_id=1921309987 instance=ExtResource("28_4ljo3")]
-transform = Transform3D(-8.132001e-08, 0, -0.5742291, 0, 1.1154944, 0, 1.8603848, 0, -2.510035e-08, 0.37585083, -0.10810659, -0.06636053)
-
-[node name="Fire" type="MeshInstance3D" parent="." unique_id=1425613991]
-transform = Transform3D(0.21, 0, 0, 0, 0.21, 0, 0, 0, 0.21, -0.33822972, -0.071324304, -0.46113467)
-mesh = ExtResource("103_gqadi")
-surface_material_override/0 = SubResource("StandardMaterial3D_d35be")
-
-[node name="OlDnametag" type="MeshInstance3D" parent="." unique_id=1842983905]
-transform = Transform3D(0.013658486, 0, 0.053277064, 0, 0.055000007, 0, -0.053277064, 0, 0.013658486, -0.14822918, -0.026302034, -0.04131883)
-mesh = ExtResource("107_p8ube")
-surface_material_override/0 = ExtResource("108_jxtki")
-
-[node name="KareNnametag" type="MeshInstance3D" parent="." unique_id=672339631]
-transform = Transform3D(0.020359691, 0, 0.05109288, 0, 0.055000015, 0, -0.05109288, 0, 0.020359691, -0.13877407, -0.026755355, -0.1123004)
-mesh = ExtResource("109_iohwb")
-surface_material_override/0 = ExtResource("108_jxtki")
-
-[node name="NonbinarYnametag" type="MeshInstance3D" parent="." unique_id=1251462515]
-transform = Transform3D(0.040234417, 0, 0.037499215, 0, 0.055000003, 0, -0.037499215, 0, 0.040234417, -0.105816215, -0.025885792, -0.17346445)
-mesh = ExtResource("110_khu0r")
-surface_material_override/0 = ExtResource("108_jxtki")
-
-[node name="Notebook" type="MeshInstance3D" parent="." unique_id=1413444798]
-transform = Transform3D(0.0524425, 0, 0.07921355, 0, 0.09500001, 0, -0.07921355, 0, 0.0524425, -0.11395964, -0.02468272, -0.063092865)
-mesh = ExtResource("111_ht34x")
-
-[node name="NepobabYnametag" type="MeshInstance3D" parent="." unique_id=671873182]
-transform = Transform3D(0.054999996, 0, 0, 0, 0.055000007, 0, 0, 0, 0.054999996, 0.02356917, -0.026744466, -0.20593712)
-mesh = ExtResource("112_hbkt5")
-surface_material_override/0 = ExtResource("108_jxtki")
-
-[node name="HRnametag" type="MeshInstance3D" parent="." unique_id=1096532253]
-transform = Transform3D(0.05039168, 0, -0.022038102, 0, 0.055000007, 0, 0.022038102, 0, 0.05039168, 0.10503272, -0.026072327, -0.1986579)
-mesh = ExtResource("113_vkcqn")
-surface_material_override/0 = ExtResource("108_jxtki")
-
-[node name="RicharDnametag" type="MeshInstance3D" parent="." unique_id=1457206567]
-transform = Transform3D(0.020007486, 0, -0.051231828, 0, 0.055000007, 0, 0.051231828, 0, 0.020007486, 0.15360361, -0.02746244, -0.13933785)
-material_override = ExtResource("108_jxtki")
-mesh = ExtResource("114_m43pg")
-surface_material_override/0 = ExtResource("108_jxtki")
-
-[node name="MilitarYnametag" type="MeshInstance3D" parent="." unique_id=2067172773]
-transform = Transform3D(0.006795517, 0, -0.054578573, 0, 0.055000007, 0, 0.054578573, 0, 0.006795517, 0.16446976, -0.027016217, -0.059103806)
-mesh = ExtResource("115_biegb")
-surface_material_override/0 = ExtResource("108_jxtki")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1182019080]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66785103, 0.09197715, -0.24590927)
-light_color = Color(0.3663791, 0.625317, 0.66413414, 1)
-light_energy = 0.302
-
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1468190446]
-transform = Transform3D(0.007038731, -0.00034610555, -8.836346e-05, -9.305057e-05, 0.00047072518, -0.0050524124, -0.00040048553, -0.0061923466, -0.00037913176, 0.009637717, -0.023381263, -0.022296239)
-texture = ExtResource("116_jxtki")
-
-[node name="SM_computer" parent="." unique_id=363626069 instance=ExtResource("117_iohwb")]
-transform = Transform3D(0.89078975, 0, -0.45441565, 0, 1, 0, 0.45441565, 0, 0.89078975, 0.09060727, -0.02621052, -0.08123245)
-
-[node name="T_EmpireState" type="Sprite3D" parent="." unique_id=1943350083]
-transform = Transform3D(0.007160496, 0, 0.049484618, 0, 0.05, 0, -0.049484618, 0, 0.007160496, -0.5467801, 0, -0.5211172)
-texture = ExtResource("118_vkcqn")
-
-[node name="T_skyscrapers" type="Sprite3D" parent="." unique_id=106173676]
-transform = Transform3D(0.007160496, 0, 0.049484618, 0, 0.05, 0, -0.049484618, 0, 0.007160496, -0.6151117, 0, -0.027643621)
-texture = ExtResource("119_m43pg")
-
-[node name="T_city" type="Sprite3D" parent="." unique_id=1027041175]
-transform = Transform3D(0.029358033, 0, 0.20288692, 0, 0.205, 0, -0.20288692, 0, 0.029358033, -0.975903, 0, -0.4215892)
-texture = ExtResource("120_biegb")
-
-[node name="T_squarebuilding" type="Sprite3D" parent="." unique_id=1817600045]
-transform = Transform3D(0.0050123474, 0, 0.03463923, 0, 0.035, 0, -0.03463923, 0, 0.0050123474, -0.84601074, 0, 0.13651341)
-texture = ExtResource("121_ux2uo")

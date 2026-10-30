@@ -19,7 +19,7 @@ script = ExtResource("3_2iju7")
 [node name="Area3D" type="Area3D" parent="ugly3Dbaby1/CharacterBody3D" unique_id=1008823550]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ugly3Dbaby1/CharacterBody3D/Area3D" unique_id=1645668883]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.045654226, 1.486329, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.045654226, 1.0871975, 0)
 shape = SubResource("BoxShape3D_ddgnj")
 
 [connection signal="input_event" from="ugly3Dbaby1/CharacterBody3D/Area3D" to="ugly3Dbaby1/CharacterBody3D" method="_on_area_3d_input_event"]
