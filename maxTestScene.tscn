@@ -129,6 +129,10 @@
 [ext_resource type="Texture2D" uid="uid://dsyitb54i5eek" path="res://Art Assets/2d/InfoPage.png" id="116_jxtki"]
 [ext_resource type="PackedScene" uid="uid://cxumsnw3soh87" path="res://Art Assets/3D/SM_computer.glb" id="117_iohwb"]
 [ext_resource type="Texture2D" uid="uid://bjy17dnixjxwm" path="res://Art Assets/Ui/Day_screen.png" id="121_m43pg"]
+[ext_resource type="Material" uid="uid://chwycb6erdllo" path="res://Art Assets/3D/Materials/klook.tres" id="130_tkbkf"]
+[ext_resource type="ArrayMesh" uid="uid://donh5hwwv2sn1" path="res://Art Assets/3D/klook.obj" id="131_yxp24"]
+[ext_resource type="FontFile" uid="uid://io3kl75sfnuy" path="res://Art Assets/Fonts/DS-DIGII.TTF" id="132_pgtdy"]
+[ext_resource type="Script" uid="uid://8s1n1fmsxnfx" path="res://clock_time_label.gd" id="133_um3f3"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_a5qvv"]
 shuffle = true
@@ -1186,3 +1190,18 @@ stream = SubResource("AudioStreamRandomizer_wwm71")
 attenuation_model = 3
 volume_db = 6.0
 panning_strength = 0.0
+
+[node name="Klook" type="MeshInstance3D" parent="." unique_id=406400718]
+transform = Transform3D(0.05176379, 0, -0.19318518, 0, 0.2, 0, 0.19318518, 0, 0.05176379, 0.13979164, -0.026782196, -0.028781934)
+material_overlay = ExtResource("130_tkbkf")
+mesh = ExtResource("131_yxp24")
+
+[node name="ClockTimeLabel" type="Label3D" parent="Klook" unique_id=2001474800 node_paths=PackedStringArray("laptop_ui")]
+transform = Transform3D(0.9999999, 0, 1.0430813e-07, 0, 0.9999994, 0, -1.0430813e-07, 0, 0.9999999, -0.0017790049, 0.059676737, 0.031917453)
+modulate = Color(0.8495599, 3.2969565e-06, 1.540184e-06, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "12:34"
+font = ExtResource("132_pgtdy")
+font_size = 13
+script = ExtResource("133_um3f3")
+laptop_ui = NodePath("../../GlobalMorale3D")

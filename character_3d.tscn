@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dkoaoeh0n818o" path="res://Art Assets/2d/Dollar_Minus.png" id="6_wijti"]
 [ext_resource type="Texture2D" uid="uid://dk0a1qjjn72mo" path="res://Art Assets/2d/Morale_Plus.png" id="7_3400w"]
 [ext_resource type="Texture2D" uid="uid://cne66khevh2hx" path="res://Art Assets/2d/Morale_Minus.png" id="8_68jk5"]
-[ext_resource type="Texture2D" uid="uid://by4scacib8xlc" path="res://Art Assets/2d/Hand_Yes.png" id="9_7gu60"]
+[ext_resource type="Texture2D" uid="uid://5u0tv6hfynua" path="res://Art Assets/2d/Hand_No.png" id="9_2ewqt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lnme8"]
 size = Vector3(1.4263371, 0.24846101, 0.30297852)
@@ -51,7 +51,7 @@ money_up_texture = ExtResource("5_2ewqt")
 money_down_texture = ExtResource("6_wijti")
 morale_up_texture = ExtResource("7_3400w")
 morale_down_texture = ExtResource("8_68jk5")
-neutral_texture = ExtResource("9_7gu60")
+neutral_texture = ExtResource("9_2ewqt")
 icon_pixel_size = 0.01
 
 [connection signal="input_event" from="CharacterBody3D/Area3D" to="CharacterBody3D" method="_on_area_3d_input_event"]

@@ -29,4 +29,4 @@ func update_time_and_round(current_day: int, time_left_seconds: float) -> void:
 	var minutes: int = int(time_left_seconds) / 60
 	var seconds: int = int(time_left_seconds) % 60
 	
-	time_label.text = "Time: %02d:%02d" % [minutes, seconds]
+	time_label.text = "%02d:%02d" % [minutes, seconds]

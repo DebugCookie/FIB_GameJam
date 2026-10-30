@@ -25,11 +25,9 @@ class_name Character3D
 @export var is_janitor: bool = false
 @export var janitor_controller: JanitorController
 
-# Seconds after the working day starts.
 @export var janitor_first_min: float = 60.0
 @export var janitor_first_max: float = 75.0
 
-# Pause starts when Janitor returns to Point A.
 @export var janitor_min_pause: float = 30.0
 @export var janitor_max_pause: float = 35.0
 
@@ -57,6 +55,10 @@ var janitor_auto_visit_in_progress: bool = false
 
 var janitor_next_visit_at: float = -1.0
 
+# NEW: Tracks whether Janitor's dialogue SFX
+# is currently active.
+var janitor_sfx_active: bool = false
+
 
 # ==========================================
 # INITIALIZATION
@@ -70,7 +72,6 @@ func start_character_loop(
 	manager = dm_manager
 	world_scene = main_world
 
-	# Connect dialogue events only once.
 	if not bubble_3d.action_processed.is_connected(
 		_on_bubble_action_processed
 	):
@@ -92,17 +93,14 @@ func start_character_loop(
 			_on_feedback_triggered
 		)
 
-	# Special Janitor setup.
 	if is_janitor:
 
 		if not is_instance_valid(janitor_controller):
 			push_error("JANITOR: Controller not assigned.")
 			return
 
-		# Connect this character's own Bubble3D.
 		janitor_controller.set_bubble(bubble_3d)
 
-		# Listen for the full exit sequence finishing.
 		if not janitor_controller.visit_finished.is_connected(
 			_on_janitor_visit_finished
 		):
@@ -111,12 +109,10 @@ func start_character_loop(
 			)
 
 		print("JANITOR: Character initialized.")
-		print("JANITOR: Character name = ", character_name)
 
 		start_janitor_day()
 		return
 
-	# Ordinary NPC behavior.
 	prepare_next_speech()
 
 
@@ -239,7 +235,6 @@ func start_janitor_day() -> void:
 
 	janitor_visits = 0
 
-	# Randomly choose 1 or 2 automatic visits.
 	janitor_target_visits = randi_range(
 		1,
 		mini(maxi(janitor_max_visits, 1), 2)
@@ -248,7 +243,6 @@ func start_janitor_day() -> void:
 	janitor_auto_visit_in_progress = false
 	janitor_schedule_running = true
 
-	# Random first appearance.
 	janitor_next_visit_at = randf_range(
 		maxf(0.0, minf(janitor_first_min, janitor_first_max)),
 		maxf(0.0, maxf(janitor_first_min, janitor_first_max))
@@ -267,7 +261,7 @@ func start_janitor_day() -> void:
 
 
 # ==========================================
-# JANITOR SCHEDULER UPDATE
+# JANITOR PROCESS
 # ==========================================
 
 func _process(_delta: float) -> void:
@@ -275,8 +269,55 @@ func _process(_delta: float) -> void:
 	if not is_janitor:
 		return
 
+	# NEW: Handle dialogue SFX separately
+	# from the movement and visit scheduler.
+	update_janitor_sfx()
+
 	update_janitor_schedule()
 
+
+# ==========================================
+# NEW: JANITOR DIALOGUE SFX
+# ==========================================
+
+func update_janitor_sfx() -> void:
+
+	if not is_instance_valid(janitor_controller):
+		return
+
+	if not is_instance_valid(bubble_3d):
+		return
+
+	# SFX should play ONLY while the Janitor
+	# is presenting an idea and the bubble is visible.
+	var should_play: bool = (
+		janitor_controller.state
+			== JanitorController.State.WAITING_FOR_DECISION
+		and bubble_3d.is_visible_in_tree()
+	)
+
+	if should_play and not janitor_sfx_active:
+
+		janitor_sfx_active = true
+
+		if custom_sfx_node and custom_sfx_node.stream:
+			custom_sfx_node.play()
+
+		print("JANITOR: Dialogue SFX started.")
+
+	elif not should_play and janitor_sfx_active:
+
+		janitor_sfx_active = false
+
+		if custom_sfx_node:
+			custom_sfx_node.stop()
+
+		print("JANITOR: Dialogue SFX stopped.")
+
+
+# ==========================================
+# JANITOR SCHEDULER UPDATE
+# ==========================================
 
 func update_janitor_schedule() -> void:
 
@@ -306,7 +347,6 @@ func update_janitor_schedule() -> void:
 	if elapsed < janitor_next_visit_at:
 		return
 
-	# Never interrupt an active Janitor visit.
 	if janitor_controller.state != JanitorController.State.IDLE:
 		return
 
@@ -359,7 +399,6 @@ func start_automatic_janitor_visit() -> void:
 			character_name
 		)
 
-		# Avoid trying to load missing dialogue every frame.
 		janitor_schedule_running = false
 		return
 
@@ -375,7 +414,6 @@ func start_automatic_janitor_visit() -> void:
 	janitor_visits += 1
 	janitor_auto_visit_in_progress = true
 
-	# Do not start another visit until this one finishes.
 	janitor_next_visit_at = -1.0
 
 	print(
@@ -387,16 +425,16 @@ func start_automatic_janitor_visit() -> void:
 
 	print("JANITOR: Idea = ", idea_text)
 
-	if custom_sfx_node and custom_sfx_node.stream:
-		custom_sfx_node.play()
+	# CHANGED:
+	# Do not play SFX here.
+	# The new update_janitor_sfx() handles it
+	# when the dialogue bubble appears.
 
 	janitor_controller.start_visit(
 		idea_text,
 		impact
 	)
 
-	# If the controller rejected the visit because
-	# a required node is missing, stop the scheduler.
 	if janitor_controller.state == JanitorController.State.IDLE:
 
 		janitor_auto_visit_in_progress = false
@@ -419,16 +457,15 @@ func _on_janitor_visit_finished() -> void:
 	if custom_sfx_node:
 		custom_sfx_node.stop()
 
+	janitor_sfx_active = false
+
 	if not janitor_schedule_running:
 		return
 
 	var elapsed: float = get_day_elapsed_seconds()
 
-	# J-key visits do not count toward the daily
-	# automatic visit limit.
 	if not janitor_auto_visit_in_progress:
 
-		# Still keep a gap after a manual visit.
 		janitor_next_visit_at = maxf(
 			janitor_next_visit_at,
 			elapsed + maxf(janitor_min_pause, 30.0)
@@ -439,7 +476,6 @@ func _on_janitor_visit_finished() -> void:
 
 	janitor_auto_visit_in_progress = false
 
-	# End scheduling after the planned number of visits.
 	if janitor_visits >= janitor_target_visits:
 
 		janitor_schedule_running = false
@@ -447,7 +483,6 @@ func _on_janitor_visit_finished() -> void:
 		print("JANITOR: Daily visits complete.")
 		return
 
-	# Random interval, never less than 30 seconds.
 	var min_pause: float = maxf(
 		janitor_min_pause,
 		30.0
@@ -484,6 +519,8 @@ func stop_janitor_day() -> void:
 	janitor_schedule_running = false
 	janitor_auto_visit_in_progress = false
 	janitor_next_visit_at = -1.0
+
+	janitor_sfx_active = false
 
 	if custom_sfx_node:
 		custom_sfx_node.stop()
