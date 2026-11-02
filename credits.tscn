@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://br21sk08k8rn3"]
+
+[ext_resource type="Script" uid="uid://cmflohhwj6red" path="res://credits.gd" id="1_pjc1l"]
+[ext_resource type="Texture2D" uid="uid://b3h2tiwt6dvq4" path="res://Art Assets/Ui/FIB_Logo alt3.png" id="2_pjc1l"]
+[ext_resource type="FontFile" uid="uid://dhfm077evoj0t" path="res://Art Assets/Fonts/Geo-Regular.ttf" id="3_4av4j"]
+[ext_resource type="AudioStream" uid="uid://bkfekcfqv6r81" path="res://Audio/Audio Files/Music_Menu.wav" id="4_5em78"]
+
+[node name="Credits" type="ColorRect" unique_id=378681469]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+script = ExtResource("1_pjc1l")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1936042723]
+position = Vector2(685.55554, 541.27606)
+scale = Vector2(1.5042734, 1.122858)
+texture = ExtResource("2_pjc1l")
+
+[node name="Label" type="Label" parent="." unique_id=1313536925]
+layout_mode = 0
+offset_left = 1363.0
+offset_top = 307.0
+offset_right = 1923.0
+offset_bottom = 524.0
+text = "Game was  made for a ffest! game  jam in October 2026. 
+
+Theme: Running.  Location: Game Town, Stockholm
+
+Budget: Pizza and Energy drinks
+
+Third place winner"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="." unique_id=902474762]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1451.0
+offset_top = 506.0
+offset_right = 1800.0
+offset_bottom = 619.0
+theme_override_fonts/font = ExtResource("3_4av4j")
+theme_override_font_sizes/font_size = 37
+text = "Back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1607142802]
+stream = ExtResource("4_5em78")
+autoplay = true
