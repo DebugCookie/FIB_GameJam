@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://br21sk08k8rn3"]
 
 [ext_resource type="Script" uid="uid://cmflohhwj6red" path="res://credits.gd" id="1_pjc1l"]
-[ext_resource type="Texture2D" uid="uid://b3h2tiwt6dvq4" path="res://Art Assets/Ui/FIB_Logo alt3.png" id="2_pjc1l"]
+[ext_resource type="Texture2D" uid="uid://bubwi3tobifeh" path="res://Art Assets/Ui/Credits_screen.png" id="2_pjc1l"]
 [ext_resource type="FontFile" uid="uid://dhfm077evoj0t" path="res://Art Assets/Fonts/Geo-Regular.ttf" id="3_4av4j"]
 [ext_resource type="AudioStream" uid="uid://bkfekcfqv6r81" path="res://Audio/Audio Files/Music_Menu.wav" id="4_5em78"]
 
@@ -15,36 +15,118 @@ color = Color(1, 1, 1, 0)
 script = ExtResource("1_pjc1l")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1936042723]
-position = Vector2(685.55554, 541.27606)
-scale = Vector2(1.5042734, 1.122858)
+position = Vector2(954.99994, 537.99994)
+scale = Vector2(0.9933259, 0.9858952)
+texture = ExtResource("2_pjc1l")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=873447234]
+position = Vector2(955, 546)
+scale = Vector2(0.9933259, 0.77368796)
 texture = ExtResource("2_pjc1l")
 
 [node name="Label" type="Label" parent="." unique_id=1313536925]
 layout_mode = 0
-offset_left = 1363.0
-offset_top = 307.0
-offset_right = 1923.0
-offset_bottom = 524.0
-text = "Game was  made for a ffest! game  jam in October 2026. 
+offset_left = -41.0
+offset_top = 834.0
+offset_right = 1911.0
+offset_bottom = 1016.0
+theme_override_fonts/font = ExtResource("3_4av4j")
+theme_override_font_sizes/font_size = 32
+text = "Game was  made for a ffest! game  jam in October 2026. Third place winner.
 
 Theme: Running.  Location: Game Town, Stockholm
 
-Budget: Pizza and Energy drinks
-
-Third place winner"
+Budget: Pizza and Energy drinks. Made in 2 Days with no AI + 2 Weeks polish."
 horizontal_alignment = 1
 
 [node name="BackButton" type="Button" parent="." unique_id=902474762]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 1451.0
-offset_top = 506.0
-offset_right = 1800.0
-offset_bottom = 619.0
+offset_left = 1434.0
+offset_top = 910.0
+offset_right = 1783.0
+offset_bottom = 1023.0
 theme_override_fonts/font = ExtResource("3_4av4j")
 theme_override_font_sizes/font_size = 37
-text = "Back"
+text = "Back To Menu"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1607142802]
 stream = ExtResource("4_5em78")
 autoplay = true
+
+[node name="CreditsLinks" type="RichTextLabel" parent="." unique_id=7464853]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 660.0
+offset_right = 362.0
+offset_bottom = 721.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[url=https://www.linkedin.com/in/anghello-escalera-irribarrin/]Contact me![/url]"
+
+[node name="CreditsLinks2" type="RichTextLabel" parent="." unique_id=1656052090]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 660.0
+offset_right = 556.0
+offset_bottom = 721.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[url=https://github.com/DebugCookie]Contact me![/url]"
+
+[node name="CreditsLinks3" type="RichTextLabel" parent="." unique_id=1089246080]
+layout_mode = 0
+offset_left = 715.0
+offset_top = 660.0
+offset_right = 851.0
+offset_bottom = 721.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[url=https://www.linkedin.com/in/regina-von-matern-a90296235/]Contact me![/url]"
+
+[node name="CreditsLinks4" type="RichTextLabel" parent="." unique_id=1399564077]
+layout_mode = 0
+offset_left = 886.21
+offset_top = 660.0
+offset_right = 1022.21
+offset_bottom = 721.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[url=https://www.linkedin.com/in/selma-refsbäck-168b00406/]Contact me![/url]"
+
+[node name="CreditsLinks5" type="RichTextLabel" parent="." unique_id=425677552]
+layout_mode = 0
+offset_left = 1069.815
+offset_top = 660.0
+offset_right = 1205.8165
+offset_bottom = 721.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[url=https://www.linkedin.com/in/mia-roberts-332587207/]Contact me![/url]"
+
+[node name="CreditsLinks6" type="RichTextLabel" parent="." unique_id=198895101]
+layout_mode = 0
+offset_left = 1346.19
+offset_top = 660.0
+offset_right = 1482.1915
+offset_bottom = 721.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[url=https://www.linkedin.com/in/maksym-husak-674815232/]Contact me![/url]"
+
+[node name="CreditsLinks7" type="RichTextLabel" parent="." unique_id=323931018]
+layout_mode = 0
+offset_left = 1611.24
+offset_top = 660.0
+offset_right = 1747.2416
+offset_bottom = 721.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[url=https://www.linkedin.com/in/ludvig-sw/]Contact me![/url]"
