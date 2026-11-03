@@ -1,4 +1,3 @@
-
 extends Node3D
 
 
@@ -18,11 +17,11 @@ extends Node3D
 
 # ==========================================
 # JANITOR REFERENCES
-# Based on your actual scene hierarchy
 # ==========================================
 
 @onready var janitor_controller: JanitorController = $Characters/JanitorMoverScriptHolder
 @onready var janitor_character: Character3D = $Characters/JanitorMoverScriptHolder/Janitor
+
 
 # ==========================================
 # GAME SETTINGS
@@ -40,7 +39,11 @@ extends Node3D
 # ==========================================
 
 @export_group("Janitor")
+
 @export var enable_janitor_test: bool = true
+
+# Janitor automatically visits starting with Day 2.
+const JANITOR_FIRST_DAY: int = 2
 
 
 # ==========================================
@@ -60,6 +63,16 @@ const DIALOGUE_FILE_PATH: String = "res://Json/dialogue.json"
 
 var is_game_over: bool = false
 var day_active: bool = false
+
+
+# ==========================================
+# NPC DAY TRANSITION VARIABLES
+# ==========================================
+
+# NPCs whose proposals were interrupted by
+# the end of the day.
+# These NPCs need fresh dialogue cooldowns.
+var interrupted_npcs: Array[Character3D] = []
 
 
 # ==========================================
@@ -106,8 +119,8 @@ func setup_janitor() -> void:
 	janitor_character.is_janitor = true
 	janitor_character.janitor_controller = janitor_controller
 
-	# Character3D will connect the Bubble3D signals.
-	# No duplicate connections here.
+	# Character3D handles Bubble3D signals.
+	# Do not connect them again here.
 
 	print("OFFICE: Janitor references configured.")
 
@@ -126,20 +139,23 @@ func _start_first_day() -> void:
 			loading_screen_duration
 		)
 
+	# Begin collecting approved proposals for Day 1.
+	DayReport.start_day(current_day)
+
 	update_ui()
 
-	# Start ordinary NPC dialogue loops once.
+	# Start regular NPC dialogue loops once.
 	for character in characters_container.get_children():
 
 		if character is Character3D:
 			character.start_character_loop(manager, self)
 
-	# Janitor is outside the Characters container.
+	# The Janitor is nested under his controller,
+	# so he must be initialized separately.
 	if is_instance_valid(janitor_character):
 
 		if is_instance_valid(janitor_controller):
 
-			# Allow scheduling from this point onward.
 			day_active = true
 
 			janitor_character.start_character_loop(
@@ -147,14 +163,25 @@ func _start_first_day() -> void:
 				self
 			)
 
+			# Initialize the Janitor's bubble and signals on Day 1,
+			# but suppress scheduled visits until Day 2.
+			if current_day < JANITOR_FIRST_DAY:
+				janitor_character.stop_janitor_day()
+				janitor_character.hide()
+				print("OFFICE: Janitor hidden and inactive until Day 2.")
+			else:
+				janitor_character.show()
+
 			print("OFFICE: Janitor initialized.")
 			print(
 				"OFFICE: Bubble connected = ",
 				is_instance_valid(janitor_controller.bubble)
 			)
+
 		else:
 			day_active = true
 			push_error("OFFICE: Janitor controller invalid.")
+
 	else:
 		day_active = true
 		push_error("OFFICE: Janitor character invalid.")
@@ -168,7 +195,13 @@ func _start_first_day() -> void:
 
 func _process(delta: float) -> void:
 
+	# NEW:
+	# Regular NPC cooldowns can continue while
+	# the day is inactive. Clear any proposals
+	# that appear during end screens or loading.
 	if is_game_over or not day_active:
+
+		clear_regular_npc_bubbles()
 		return
 
 	time_remaining_seconds = maxf(
@@ -198,6 +231,10 @@ func _input(event: InputEvent) -> void:
 	if is_game_over or not day_active:
 		return
 
+	# The manual J-key test must also respect Day 2 unlock.
+	if current_day < JANITOR_FIRST_DAY:
+		return
+
 	if event is InputEventKey:
 
 		if event.pressed and not event.echo:
@@ -209,6 +246,10 @@ func _input(event: InputEvent) -> void:
 
 
 func test_janitor() -> void:
+
+	if current_day < JANITOR_FIRST_DAY:
+		print("OFFICE: Janitor is unavailable until Day 2.")
+		return
 
 	if not is_instance_valid(janitor_controller):
 		push_error("OFFICE: Janitor controller missing.")
@@ -224,8 +265,6 @@ func test_janitor() -> void:
 
 	print("OFFICE: Starting manual Janitor test.")
 
-	# Keep the existing hardcoded test proposal.
-	# Automatic visits use real dialogue.json ideas.
 	janitor_controller.start_visit(
 		"Make product line better",
 		{
@@ -308,6 +347,105 @@ func update_ui() -> void:
 
 
 # ==========================================
+# NEW: CLOSE A BUBBLE SAFELY
+# ==========================================
+
+func close_dialogue_bubble(bubble: Node3D) -> void:
+
+	if not is_instance_valid(bubble):
+		return
+
+	# Prefer Bubble3D's own cleanup function
+	# when it exists.
+	if bubble.has_method("hide_bubble"):
+		bubble.call("hide_bubble")
+
+	# Always ensure the node is hidden.
+	bubble.hide()
+
+
+# ==========================================
+# NEW: RESET REGULAR NPC BUBBLES
+# ==========================================
+
+func clear_regular_npc_bubbles() -> void:
+
+	for child in characters_container.get_children():
+
+		if not child is Character3D:
+			continue
+
+		var npc: Character3D = child
+
+		var was_speaking: bool = npc.is_speaking
+
+		# Remember interrupted NPCs so they get
+		# a new cooldown when the next day starts.
+		if was_speaking:
+
+			if not interrupted_npcs.has(npc):
+				interrupted_npcs.append(npc)
+
+			npc.is_speaking = false
+
+		# Find the NPC's Bubble3D.
+		var bubble: Node3D = npc.get_node_or_null(
+			"Bubble3D"
+		) as Node3D
+
+		if is_instance_valid(bubble):
+
+			if bubble.visible or was_speaking:
+				close_dialogue_bubble(bubble)
+
+		# Stop dialogue sound.
+		if is_instance_valid(npc.custom_sfx_node):
+			npc.custom_sfx_node.stop()
+
+
+# ==========================================
+# NEW: RESET JANITOR BUBBLE
+# ==========================================
+
+func clear_janitor_bubble() -> void:
+
+	if not is_instance_valid(janitor_character):
+		return
+
+	var bubble: Node3D = janitor_character.get_node_or_null(
+		"Bubble3D"
+	) as Node3D
+
+	if is_instance_valid(bubble):
+		close_dialogue_bubble(bubble)
+
+	if is_instance_valid(janitor_character.custom_sfx_node):
+		janitor_character.custom_sfx_node.stop()
+
+	janitor_character.janitor_sfx_active = false
+
+
+# ==========================================
+# NEW: RESTART INTERRUPTED NPC COOLDOWNS
+# ==========================================
+
+func restart_interrupted_npc_dialogues() -> void:
+
+	for npc in interrupted_npcs:
+
+		if not is_instance_valid(npc):
+			continue
+
+		# This NPC was previously presenting
+		# a proposal that got interrupted.
+		# Start a new cooldown rather than
+		# immediately showing another bubble.
+		npc.prepare_next_speech()
+
+	interrupted_npcs.clear()
+
+
+# ==========================================
 # STOP DAILY ACTIVITY
 # ==========================================
 
@@ -315,11 +453,26 @@ func stop_day_activity() -> void:
 
 	day_active = false
 
+	# Freeze the report before showing the win/loss screen.
+	DayReport.finish_day()
+
+	# NEW:
+	# Clear unanswered proposals immediately.
+	clear_regular_npc_bubbles()
+
+	# Stop Janitor scheduling and movement.
 	if is_instance_valid(janitor_character):
 		janitor_character.stop_janitor_day()
 
 	if is_instance_valid(janitor_controller):
 		janitor_controller.cancel_visit()
+
+	# NEW:
+	# Ensure the Janitor's bubble and SFX
+	# are cleared as well.
+	clear_janitor_bubble()
+
+	print("OFFICE: Daily activity stopped.")
 
 
 # ==========================================
@@ -363,7 +516,7 @@ func check_win_conditions() -> void:
 
 func start_next_day() -> void:
 
-	# Stop any unfinished Janitor activity.
+	# Stop previous day activity.
 	stop_day_activity()
 
 	is_game_over = true
@@ -379,22 +532,37 @@ func start_next_day() -> void:
 
 	update_ui()
 
+	# Keep game inactive during loading.
 	if game_ui:
 		await game_ui.trigger_loading_screen(
 			current_day,
 			loading_screen_duration
 		)
 
+	# NEW:
+	# One final cleanup after loading.
+	# NPC cooldowns might have completed
+	# while the loading screen was displayed.
+	clear_regular_npc_bubbles()
+	clear_janitor_bubble()
+
+	# Clear the previous report and begin recording the new day.
+	DayReport.start_day(current_day)
+
 	is_game_over = false
 	day_active = true
 
-	# Restart only the special Janitor schedule.
-	# Normal NPC dialogue loops are already running.
-	if is_instance_valid(janitor_character):
+	# NEW:
+	# Resume NPCs whose bubbles were interrupted.
+	# Other NPC loops continue normally.
+	restart_interrupted_npc_dialogues()
 
-		if is_instance_valid(janitor_controller):
-
-			janitor_character.start_janitor_day()
+	# Enable automatic Janitor visits from Day 2 onward.
+	if current_day >= JANITOR_FIRST_DAY:
+		if is_instance_valid(janitor_character):
+			if is_instance_valid(janitor_controller):
+				janitor_character.show()
+				janitor_character.start_janitor_day()
 
 	print(
 		"--- STARTAR DAG %d (Ny kvot: $%d) ---"

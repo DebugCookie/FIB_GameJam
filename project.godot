@@ -17,6 +17,10 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="uid://b3h2tiwt6dvq4"
 config/icon="res://icon.svg"
 
+[autoload]
+
+DayReport="*uid://byxh3vvh827qn"
+
 [display]
 
 window/size/viewport_width=1920

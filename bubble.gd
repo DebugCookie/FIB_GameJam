@@ -10,7 +10,7 @@ class_name Bubble3D
 @onready var dialogue_label: Label = $SubViewport/VBoxContainer/DialogueLabel
 @onready var character_label: Label = $SubViewport/VBoxContainer/CharacterLabel
 
-# The new 3D effect spawn point
+# The 3D effect spawn point
 @onready var effect_spawn_point: EffectBurst3D = $"../EffectSpawnPoint"
 
 
@@ -140,9 +140,24 @@ func approve_dialogue() -> void:
 
 	print("Approve")
 
+	# Save the original JSON impact before
+	# the bubble is hidden and its data cleared.
 	var approved_impact: Dictionary = current_impact.duplicate()
 
+	# NEW: Save the exact idea text.
+	var approved_text: String = dialogue_label.text
+
 	is_showing_feedback = true
+
+	# NEW: Record this approval in the daily report.
+	#
+	# This must happen BEFORE action_processed,
+	# because the idea might reduce morale to 0
+	# and immediately trigger Game Over.
+	DayReport.record_approval(
+		approved_text,
+		approved_impact
+	)
 
 	# 1. Hide speech bubble immediately
 	hide_bubble()
@@ -173,6 +188,9 @@ func reject_dialogue() -> void:
 	}
 
 	is_showing_feedback = true
+
+	# Rejected ideas are NOT included
+	# in the daily report.
 
 	# 1. Hide speech bubble immediately
 	hide_bubble()
